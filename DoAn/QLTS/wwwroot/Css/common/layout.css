@@ -1,0 +1,73 @@
+
+.cbx_header {
+    width: auto;
+    height: 35px;
+    margin-left: 15px;
+}
+
+.footer-layout {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    color: #4d4f5c;
+    align-items: center;
+    padding-left: 21px;
+}
+
+    .footer-layout .footer-right {
+        position: absolute;
+        right: 21px;
+    }
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.function-content {
+    text-align: center;
+    justify-content: center;
+    width: 130px;
+}
+
+.text-over {
+    max-width: 20px;
+}
+
+.grid-infor {
+    display: flex;
+    padding: 20px;
+    height: auto;
+}
+
+.grid-infor__left>table, .grid-infor__right>table {
+     border: 2px solid #BBBBBB;
+}
+
+.grid-infor__left table tr:hover, .grid-infor__right table tr:hover {
+    background-color: #fff;
+}
+.grid-infor__left table tr td:first-child, .grid-infor__right table tr td:first-child {
+    font-weight: bold;
+}
+.grid_detail {
+    height: calc(100vh - 360px);
+}
+.grid_cate{
+    height: calc(100vh - 190px);
+}
+.grid_cate1{
+    height: calc(100vh - 235px);
+}
+.grid_cate2{
+    height: calc(100vh - 280px);
+}
+.grid_detailGroup {
+    height: calc(100vh - 320px);
+}

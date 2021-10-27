@@ -1,0 +1,121 @@
+
+.row{
+    flex-wrap:nowrap;
+}
+.grid {
+    position: relative;
+    height: calc(100vh - 150px);
+    display: block;
+}
+
+    .grid .grid-default {
+        width: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: scroll;
+        padding-right: 20px;
+        padding-left: 20px;
+        /* height: 100vh; */
+    }
+/****
+    định dạng danh sách bảng
+*/
+table th, td {
+    padding: 11px 16px;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    max-width: 400px;
+}
+
+table thead tr:first-child {
+    border: none;
+    z-index: 10;
+}
+
+table {
+    border-bottom: none;
+    width: 100%;
+}
+
+    table th {
+        position: sticky;
+        top: 0;
+        padding-top: 0;
+        font-size: 12px;
+        font-weight: 600;
+        background-color: #fff;
+        border-right: none;
+    }
+
+    table td {
+        font-size: 13px;
+        border-right: 1px solid #BBBBBB;
+    }
+
+        table td:last-child {
+            border: none;
+        }
+
+    table tr {
+        border-bottom: 1px solid #BBBBBB;
+    }
+
+        table tr:hover {
+            background-color: #d9dcde;
+        }
+
+        table tr.row-selected {
+            background-color: #d9dcde;
+        }
+
+th:after,
+th:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+
+/*th:before {
+    top: -1px;
+    border-top: 1px solid #bbbbbb;
+}*/
+
+th:after {
+    bottom: 0px;
+    border-bottom: 1px solid #bbbbbb;
+}
+
+.selected-row {
+    background-color: #f0f8ff !important;
+}
+
+    .selected-row:hover {
+        background-color: #f0f8ff !important;
+    }
+/*::-webkit-scrollbar{
+    width:5px;
+}
+::-webkit-scrollbar-thumb{
+    background-color:#454545;
+}*/
+
+
+/*css cho context menu*/
+.menu {
+    background: #fff;
+    width: 60px;
+    padding: 3px 10px;
+    box-shadow: 0 0 10px -3px rgba(0, 0, 0, .3);
+    border: 1px solid #ccc;
+    display: none;
+    position: absolute;
+}
+

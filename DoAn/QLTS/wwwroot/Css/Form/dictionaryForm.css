@@ -1,0 +1,344 @@
+.input-text, .input-detail {
+    width: 319px;
+}
+
+.dialog-footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 56px;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+}
+
+    .dialog-footer .footer-left {
+        position: absolute;
+        left: 21px;
+    }
+
+    .dialog-footer .footer-right {
+        position: absolute;
+        right: 21px;
+    }
+
+.input-dictionary {
+    width: 100%;
+}
+
+.ui-combobox {
+    position: relative;
+    display: inline-block;
+}
+
+    .ui-combobox > input {
+        border: 1px solid #e0e0e0 !important;
+        padding-left: 15px;
+    }
+
+.ui-combobox-toggle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-left: -1px;
+    padding: 0;
+    /* height: 1.7em; */
+    /* top: 0.1em; */
+    height: 32px;
+    width: 32px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    color: #373737;
+}
+
+.ui-combobox-input {
+    margin: 0;
+    padding: 0.3em;
+}
+
+.ui-icon {
+    /*background-image: url('/icon/svg/fi-rr-caret-down.svg') !important;
+    background-size: contain !important;
+    opacity: 0.5;*/
+}
+
+.ui-widget.ui-widget-content {
+    height: 32px;
+    background-color: #fff;
+    /* z-index: 9999; */
+}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl {
+    border-bottom-left-radius: 0 !important;
+}
+
+.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+    border-top-left-radius: 0 !important;
+}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+    border-radius: 0 !important;
+}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+    border-radius: 0 !important;
+}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+    border-bottom-right-radius: 0 !important;
+}
+
+.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
+    border-top-right-radius: 0 !important;
+}
+
+.ui-menu-item, .ui-menu-item > a {
+    display: block;
+}
+
+
+    .ui-menu-item:hover a {
+        background-color: #fff !important;
+    }
+
+    .ui-menu-item .ui-menu-item-wrapper.ui-state-active {
+        background: #fff !important;
+        border: solid 1px transparent;
+        color: black;
+    }
+
+.ui-menu .ui-menu-item-wrapper {
+    position: relative;
+    padding: 3px 1em 3px .4em;
+    background-color: #fff;
+    padding-left: 15px;
+}
+
+/*a.ui-button:active, .ui-button:active {
+    border: none !important;
+    background: #fff !important;
+}*/
+
+.txt-area-facategory {
+    height: 100px !important;
+}
+
+
+
+
+.ui-dialog .ui-dialog-titlebar {
+    /* display: none; */
+    border-radius: 0;
+}
+
+.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
+    border-top-left-radius: 0;
+}
+
+.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+    border-top-right-radius: 0;
+}
+
+.dialog-header {
+    display: flex;
+    font-size: 18px;
+    font-weight: 700;
+    color: #454f63;
+    padding: 21px;
+    width: 100%;
+}
+
+    .dialog-header .header-toolbar {
+        position: relative;
+        /* right: 21px; */
+        display: flex;
+    }
+
+.dialog-content {
+    display: flex;
+    font-size: 13px;
+    color: #373737;
+}
+
+
+
+    .dialog-content .content-left {
+        padding-left: 21px;
+    }
+
+.content-items .input-asset {
+    width: 100%;
+}
+
+.dialog-content .content-right {
+    padding-left: 31px;
+}
+
+.content-items .input-asset2 {
+    width: 100%;
+    background-color: #f5f5f5;
+}
+
+.input-asset3 {
+    width: 100%;
+}
+
+.dialog-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 56px;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+}
+
+    .dialog-footer .footer-left {
+        position: absolute;
+        left: 21px;
+    }
+
+    .dialog-footer .footer-right {
+        position: absolute;
+        right: 21px;
+    }
+
+.content-items {
+    padding-bottom: 18px;
+}
+
+.list-item {
+    display: flex;
+}
+
+.text-header {
+    padding-bottom: 5px;
+}
+
+.m-row-content {
+    padding: 0 21px;
+}
+
+.m-col-5 {
+    padding-right: 15px;
+}
+
+.m-col-5v2 {
+    padding-left: 15px;
+}
+
+.ui-combobox {
+    position: relative;
+    display: inline-block;
+}
+
+.input-right {
+    text-align: right;
+    padding-right: 15px;
+}
+
+.ui-combobox > input {
+    border: 1px solid #e0e0e0 !important;
+    padding-left: 15px;
+}
+
+.ui-combobox-toggle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-left: -1px;
+    padding: 0;
+    height: 32px;
+    width: 32px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    color: #373737;
+}
+
+
+.ui-icon {
+    background-image: url('/icon/svg/fi-rr-caret-down.svg') !important;
+    background-size: contain !important;
+    opacity: 0.5;
+}
+
+.ui-widget.ui-widget-content {
+    height: 32px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+}
+
+.custom-combobox {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-combobox-toggle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-left: -1px;
+    padding: 0;
+    border: 1px solid #e0e0e0;
+}
+
+.ui-widget-content a {
+    width: 32px;
+}
+
+.custom-combobox-input {
+    margin: 0;
+    padding-left: 15px;
+    width: 282px;
+}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl {
+    border-bottom-left-radius: 0 !important;
+}
+
+.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+    border-top-left-radius: 0 !important;
+}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+    border-radius: 0 !important;
+}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+    border-radius: 0 !important;
+}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+    border-bottom-right-radius: 0 !important;
+}
+
+.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
+    border-top-right-radius: 0 !important;
+}
+
+.ui-menu-item, .ui-menu-item > a {
+    display: block;
+}
+
+
+    .ui-menu-item a:hover {
+        background-color: #57c7fd !important;
+    }
+
+    .ui-menu-item .ui-menu-item-wrapper.ui-state-active {
+        background: #57c7fd !important;
+        border: solid 1px transparent;
+        color: black;
+    }
+
+.ui-menu .ui-menu-item-wrapper {
+    position: relative;
+    padding: 3px 1em 3px .4em;
+    background-color: #fff;
+    padding-left: 15px;
+}
+a.ui-button:active {
+    border: 1px solid #e0e0e0;
+    background: #f6f6f6;
+}

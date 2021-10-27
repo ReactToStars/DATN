@@ -1,0 +1,79 @@
+.content{
+    flex-shrink: 1;
+    position: relative;
+    width: 100%;
+    /* height: calc(100% - 50px) !important; */
+    /* height: 100% !important; */
+}
+.content-form{
+    padding:0px 24px 24px 24px;
+}
+.bottom {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e9ebee;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    justify-content: flex-end;
+}
+
+.sub-content{
+    margin-top:10px;
+    position: relative;
+}
+
+.sub-title > span {
+    color: red;
+}
+
+.parent-sub-content{
+    display:flex;
+    justify-content:space-between;
+    margin-top: 10px;
+}
+.parent-sub-content .sub-content:nth-child(2){
+    margin-left:15px;
+}
+.student_of_class {
+    height: 350px;
+    overflow: auto;
+    border:1px solid #808080;
+    border-radius:5px;
+    
+}
+.student_of_group {
+    height: 279px;
+    width: 302px;
+    height: 279px;
+    overflow: auto;
+    border: 1px solid #808080;
+    border-radius: 5px;
+}
+    .student_of_group ul, .student_of_class ul{
+        padding: 5px 10px;
+    }
+    .student_of_group ul li, .student_of_class ul li {
+        margin-top:5px;
+        font-size: 17px;
+        cursor:pointer;
+    }
+        .student_of_group ul li:hover, .student_of_class ul li:hover{
+            color:#1310c7;
+        }
+.set_update .parent-sub-content {
+    display:flex;
+}
+    .set_update .parent-sub-content .sub-content input{
+        width: 100%;
+    }
+    .set_update .parent-sub-content .sub-content:nth-child(2n){
+         margin-left: 20px; 
+    }
+    .set_update .parent-sub-content .sub-content textarea{
+        width: 100%;
+    }
+    .set_update .parent-sub-content .sub-content:nth-child(2) {
+        margin-left: 20px;
+    }

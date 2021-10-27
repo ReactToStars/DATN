@@ -1,0 +1,117 @@
+.m-background-image {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.m-button-clear {
+    outline: none;
+    border: none;
+    background-color: #fff;
+}
+
+    .m-button-clear:focus {
+        outline: none;
+    }
+
+.display-none {
+    display: none;
+}
+
+.border-red {
+    border: 1px solid red !important;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+tr:hover .hide {
+    visibility: visible;
+}
+
+form .form-control:focus {
+    border-color: #ced4da;
+    box-shadow: none !important;
+}
+/**
+   Xét độ rộng cho th, td trong grid
+*/
+.width-stt {
+    width: 40px !important;
+}
+
+.width-datetime {
+    width: 107px !important;
+}
+
+.width-price {
+    width: 115px !important;
+}
+
+.padding-stt {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.width-code {
+    width: 95px !important;
+}
+
+.width-deprectation {
+    width: 170px !important;
+}
+
+input, select {
+    cursor: pointer;
+}
+
+.hidden-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 200px !important;
+}
+
+select, textarea {
+    width: 302px;
+    height: 32px;
+    border: 1px solid #bababa;
+    border-radius: 4px;
+    padding: 0 15px;
+    outline: none;
+    font-family: Roboto-Regular !important;
+}
+
+.text-red {
+    color: red !important;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.text-align-left {
+    text-align: left;
+}
+
+a.parent-title:hover {
+    color: #0056b3 !important;
+}
+
+#logout{
+height: 30px;
+width: 75px;
+text-align: center;
+padding-top: 6px;
+background-color: #ee1616;
+color: white;
+border-radius: 4px;
+}
+#logout:hover{
+background-color: #ff0000;
+}

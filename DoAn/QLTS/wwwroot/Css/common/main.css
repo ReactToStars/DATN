@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    font-size: 13px;
+    font-family:Roboto-Regular !important;
+}
+
+.ui-widget {
+    font-family: Roboto-Regular !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar {
+    height: 8px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: #888;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+html, body {
+    height: 100%;
+}
+
+.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
+    border-top-left-radius: 0;
+}
+
+.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+    border-top-right-radius: 0;
+}
+
+.ui-widget {
+    font-family: Roboto-Regular !important;
+}
+
+.container-fluid, .row, .col, [class*="col-"] {
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+}
+
+    .wrapper .left {
+        width: 200px;
+        transition: width .25s ease;
+    }
+
+    .wrapper .right {
+        flex-direction: column;
+        overflow: auto;
+        height: 100%;
+    }
+
+ul, li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('/Content/font/Roboto-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family:'Dosis';
+    src: url('/Content//font/Dosis-Bold.ttf') format('truetype');
+}

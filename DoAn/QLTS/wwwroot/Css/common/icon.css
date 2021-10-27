@@ -1,0 +1,84 @@
+.icon-search {
+    background-image: url('/Content/icon/search.png');
+    background-repeat: no-repeat;
+    background-position: 270px center;
+}
+.icon-refresh {
+    background-image: url('/Content/icon/refresh.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 18px;
+    height: 18px;
+    margin-top: 4px;
+}
+.icon-remove {
+    background-image: url('/Content/icon/trash.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 14px;
+    height: 14px;
+    margin-top: 6px;
+    margin-left: 1px;
+}
+.icon-add {
+    width: 14px;
+    height: 14px;
+    background-image: url('/Content/icon/');
+    background-position: center;
+}
+.icon-remove-second {
+    background-image: url('/Content/icon/trash.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 14px;
+    height: 14px;
+    margin-right: 9px;
+}
+.icon-close {
+    background-image: url('/Content/icon/cancel.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 14px;
+    height: 14px;
+    margin-top: 4px;
+    outline: none;
+}
+.icon-help {
+    background-image: url('/Content/icon/help.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 16px;
+    height: 16px;
+    margin-top: 3px;
+    outline: none;
+}
+.icon-pie {
+    background-image: url('/Content/icon/svg/fi-rr-time-past.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 18px;
+    height: 18px;
+    opacity: 0.5;
+}
+.icon-remove-function {
+    background-image: url('/Content/icon/trash.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 18px;
+    height: 18px;
+}
+.icon-pencil {
+    background-image: url('/Content/icon/svg/fi-rr-pencil.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 18px;
+    height: 18px;
+    opacity: 0.5;
+}

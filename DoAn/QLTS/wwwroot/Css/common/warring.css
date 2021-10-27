@@ -1,0 +1,176 @@
+.warring {
+    width: 450px;
+    height: auto;
+    overflow: auto;
+    position: fixed;
+    top: calc(50% - 110px);
+    left: calc(50% - 225px);
+    background-color: #ffffff;
+    box-shadow: 0px 0px 8px 2px #251f1f5e;
+    display: none;
+    z-index: 103;
+    border-radius: 5px;
+}
+
+.warring-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #000;
+    opacity: 0.5;
+    z-index: 102;
+}
+
+.warring-title {
+    font-weight: bold;
+    color: black;
+    justify-content: space-between;
+    display: flex;
+}
+
+.title-warring {
+    margin: 24px;
+    box-sizing: border-box;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.close {
+    background-image: url('/Content/icon/close.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    outline: none !important;
+    background-color: white;
+    width: 25px;
+    height: 25px;
+    margin: 5px 5px 0 0;
+    border: none;
+    cursor: pointer;
+}
+
+
+.warring-content {
+    overflow: auto;
+    display: flex;
+    height: 60px;
+    padding: 0 24px 24px 24px;
+}
+
+.warring-icon {
+    background-image: url('/Content/icon/595067.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain !important;
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+}
+
+.warring-notify {
+    box-sizing: border-box;
+    width: calc(100% - 20px);
+    padding-left: 10px;
+}
+
+.warring-button {
+    display: flex;
+    justify-content: flex-end;
+    height: 60px;
+    align-items: center;
+    border-radius: 0 0 5px 5px;
+    padding-right: 24px;
+    background: #f1e7e7;
+}
+
+    .warring-button button {
+        margin-left: 16px;
+        height: 40px;
+        width: 100px;
+        text-align: center;
+        font-size: 13px;
+        cursor: pointer;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+    }
+
+#btn-yes-warring {
+    background-color: #00abfe;
+    color: white;
+}
+
+#btn-ok-warring {
+    background-color: #00abfe;
+    color: white;
+}
+
+#btn-no-warring {
+    background-color: #ffffff;
+    color: black;
+}
+
+#btn-yes-warring:hover {
+    background-color: #57c7fd;
+    color: white;
+}
+
+#btn-ok-warring:hover {
+    background-color: #57c7fd;
+    color: white;
+}
+
+#btn-no-warring:hover {
+    background-color: #251f1f5e;
+    color: black;
+}
+
+.success {
+    font-size: 13px;
+    width: auto;
+    height: 48px;
+    position: fixed;
+    right: 18px;
+    /*    left:50%;
+*/ bottom: 56px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 8px 2px #251f1f5e;
+    z-index: 105;
+    border-radius: 4px;
+    align-items: center;
+    padding: 0 16px;
+    justify-content: space-between;
+    display: none;
+    flex-wrap: nowrap;
+    z-index:10002;
+}
+
+.success_icon {
+    width: 24px;
+    height: 24px;
+    background-image: url('/Content/icon/icon_success.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.success_content {
+    margin-left: 10px;
+    margin-right: 30px;
+}
+
+.success_button {
+    background-image: url('/Content/icon/close.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    outline: none !important;
+    background-color: white;
+    width: 25px;
+    height: 25px;
+    border: none;
+    cursor: pointer;
+}
+}

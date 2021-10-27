@@ -1,0 +1,17 @@
+.tool-bar {
+    display: flex;
+    align-items: center;
+    height: 67px;
+    background-color: #fff;
+    width: 100%;
+    padding: 15px 20px;
+}
+
+    .tool-bar .filter-bar {
+        display:flex;
+    }
+    .tool-bar .tool-bar-right{
+        display:flex;
+        position:absolute;
+        right:21px;
+    }

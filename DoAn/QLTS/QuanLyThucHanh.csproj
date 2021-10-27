@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\Css\custom\**" />
+    <Compile Remove="wwwroot\Css\Form\**" />
+    <Content Remove="wwwroot\Css\custom\**" />
+    <Content Remove="wwwroot\Css\Form\**" />
+    <EmbeddedResource Remove="wwwroot\Css\custom\**" />
+    <EmbeddedResource Remove="wwwroot\Css\Form\**" />
+    <None Remove="wwwroot\Css\custom\**" />
+    <None Remove="wwwroot\Css\Form\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\Js\View\asset.js" />
+    <Content Remove="wwwroot\Js\View\assetCategory.js" />
+    <Content Remove="wwwroot\Js\View\department.js" />
+    <Content Remove="wwwroot\Js\View\moduleclass.js~RF960c51b.TMP" />
+    <Content Remove="wwwroot\View\Asset.html" />
+    <Content Remove="wwwroot\View\AssetCategory.html" />
+    <Content Remove="wwwroot\View\Department.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Content\files\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPPlus" Version="5.7.3" />
+    <PackageReference Include="ExcelDataReader.DataSet" Version="3.6.0" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ApplicationCore\ApplicationCore.csproj" />
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+  </ItemGroup>
+
+
+</Project>

@@ -1,0 +1,187 @@
+
+html {
+    height: 100%;
+}
+
+a {
+    font-size: 13px;
+    color: #00abfe;
+    text-decoration: none;
+    margin: auto !important;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+body {
+    background-image: url("../Content/icon/photo-1477959858617-67f85cf4f1df.jfif");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 0;
+    padding: 0;
+    font-family:Roboto-Regular;
+}
+.form-login {
+    display: flex;
+    justify-content: center;
+}
+.login {
+    background-color: #ffffff;
+    border-radius: 6px;
+    width: 400px;
+    height: 380px;
+    overflow: hidden;
+    /* position: absolute;
+    top: calc(50% - 220px);
+    left: calc(50% - 200px);*/
+    margin: 176px 0 40px 0;
+}
+
+.logo_login {
+    color: #00abfe;
+    width: 56px;
+    height: 57px;
+    margin: 34px auto 0 auto;
+    background-image: url('/Content/icon/logo-qlts.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.title_1 {
+    font-size: 24px;
+    font-weight: 700;
+    /*    letter-spacing: .48px;
+*/
+    color: #011239;
+    margin-top: 21px;
+    text-align: center;
+}
+
+.input>div {
+    display: flex;
+    position:relative;
+}
+
+    .input div:first-child {
+        margin-top: 17px;
+    }
+
+input {
+    margin: 15px auto 0 auto;
+    background-color: #ffffff;
+    border: 1px solid #dedede;
+    width: 299px;
+    height: 31px;
+    padding-left: 12px;
+    box-sizing: border-box;
+    font-size: 13px;
+    outline: none;
+}
+
+#btn-login {
+    margin: 20px auto 0 auto;
+    background-color: #00abfe;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .25);
+    width: 300px;
+    height: 32px;
+    overflow: hidden;
+    outline: none;
+    font-size: 13px;
+}
+
+.login > div:last-child {
+    display: flex;
+    margin-top: 19px;
+    align-items: center !important;
+}
+
+input, button:hover {
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #047c9b;
+}
+
+.copyright {
+    font-size: 13px;
+    color: white;
+        /*position: absolute;
+    top: calc(50% + 260px);
+    left: calc(50% - 75.25px);*/
+    text-align:center;
+/*    height: 15px;
+*/}
+
+.border-red {
+    border: 1px solid red !important;
+}
+
+.ui-tooltip {
+    background-color: #e41d1d;
+    color: white;
+    top: 0;
+    min-width: 150px;
+}
+
+.loading {
+    display: none;
+}
+
+.loading-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #000;
+    opacity: 0.5;
+    z-index: 10000;
+}
+
+
+.loading-icon {
+    position: fixed;
+    border-radius: 50px;
+    top: calc(50% - 15px);
+    left: calc(50% - 15px);
+    border: 5px solid #F3F3F3;
+    border-top: 5px solid #00abfe;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+    z-index: 10001;
+}
+
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('/Content/font/Roboto-Regular.ttf') format('truetype');
+}
+
+.view_pass {
+    position: absolute;
+    top: 20px;
+    right: 60px;
+}
+
+    .view_pass svg {
+        cursor: pointer;
+    }
+    }

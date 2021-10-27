@@ -1,0 +1,82 @@
+
+
+.department_dialog .m-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #454f63;
+    padding-left: 21px;
+    margin-bottom: 5px;
+    position: relative;
+    margin-top: 21px;
+    margin-bottom: 21px;
+    display: flex;
+    align-items: center;
+}
+
+    .department_dialog .m-title button.v-cancel {
+        position: absolute;
+        right: 21px;
+        background-image: url('/icon/cancel.svg');
+        background-size: cover;
+        border: none;
+        outline: none;
+        background-color: #fff;
+        width: 15px;
+        height: 15px;
+        padding: 5px;
+    }
+
+    .department_dialog .top {
+        padding: 0 21px;
+        /* margin-bottom: 30px; */
+    }
+
+.department_dialog .bottom {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 56px;
+    background-color: #f5f5f5;
+}
+    .department_dialog .bottom .btn-cancel{
+        position: absolute;
+        left: 21px;
+    }
+
+    .department_dialog .bottom .btn-add{
+        position: absolute;
+        right: 20px;
+    }
+
+.department_dialog .top .sub-title{
+    padding-bottom: 5px;
+}
+.department_dialog .top .sub-content{
+    margin-bottom: 18px;
+}
+.department_dialog input, .department_dialog select, .department_dialog textarea{
+    width: 100%;
+    outline: none;
+    font-family: 'Roboto-Regular';
+}
+
+.department_dialog{
+    position: relative;
+    /* width: 120px; */
+}
+    .department_dialog .top .sub-content textarea{
+        resize: none;
+        border: 1px solid #e0e0e0;
+        outline: none;
+    }
+.ui-dialog .ui-dialog-title{
+    display: none;
+}
+
+.v-grid {
+    height: calc(100vh - 114px) !important;
+}
+
+.v-grid-overflow{
+    overflow: unset !important;
+}

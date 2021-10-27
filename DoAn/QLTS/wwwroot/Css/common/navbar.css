@@ -1,0 +1,151 @@
+.navbar {
+    background-color: #011239;
+    height: 100%;
+    padding: 0;
+    align-content: flex-start;
+}
+
+    .navbar .logo-site {
+        display: flex;
+        align-items: center;
+        height: 50px;
+        width: 100%;
+        position: relative;
+    }
+
+        .navbar .logo-site .qlts-logo {
+            background-image: url('/Content/icon/logo-qlts.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            width: 28px;
+            height: 28px;
+            position: absolute;
+            left: 12px;
+            background-color: #011239;
+        }
+
+        .navbar .logo-site .qlts-text {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: .77px;
+            color: #f5f5f5;
+            font-family: CustomForm1;
+            position: absolute;
+            left: 55px;
+        }
+
+            .navbar .logo-site .qlts-text a {
+                color: white;
+            }
+
+        .navbar .logo-site .toggle-icon {
+            background-image: url(/Content/icon/hamburger-menu.svg);
+            background-origin: content-box;
+            width: 28px;
+            height: 26px;
+            overflow: hidden;
+            padding: 6px;
+            background-color: inherit;
+            border: none;
+            outline: none;
+            position: absolute;
+            right: 10px;
+        }
+
+    .navbar .navbar-content {
+        width: 100%;
+    }
+
+.navbar-content .navbar-item-box {
+    width: 100%;
+    position: relative;
+}
+
+.navbar .navbar-content .navbar-item {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    color: #f5f5f5;
+    padding-left: 15px;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+    .navbar .navbar-content .navbar-item:hover {
+        background-color: #273557;
+        border-left: 4px solid #00abfe;
+        padding-left: 11px;
+    }
+
+        .navbar .navbar-content .navbar-item:hover .navbar-item-direct i {
+            color: #00abfe;
+        }
+
+.navbar-item .navbar-item-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 7px;
+}
+
+.navbar-item .navbar-item-direct {
+    position: absolute;
+    right: 16px;
+}
+
+.icon-ology {
+    background-image: url('/Content/icon/ology.svg');
+}
+
+.icon-majors {
+    background-image: url('/Content/icon/majors.svg');
+}
+
+.icon-course {
+    background-image: url('/Content/icon/course.svg');
+}
+
+.icon-subject {
+    background-image: url('/Content/icon/subject.svg');
+}
+
+.icon-module {
+    background-image: url('/Content/icon/module.svg');
+}
+
+.icon-ModuleClass {
+    background-image: url('/Content/icon/moduleclass.svg');
+}
+
+.icon-PracticeGroup {
+    background-image: url('/Content/icon/practicegroup.svg');
+}
+
+.icon-Class {
+    background-image: url('/Content/icon/class.svg');
+}
+
+.icon-Teacher {
+    background-image: url('/Content/icon/teacher.svg');
+}
+
+.icon-Student {
+    background-image: url('/Content/icon/student.svg');
+}
+
+.icon-Building {
+    background-image: url('/Content/icon/building.svg');
+}
+
+.icon-PracticalLaboratory {
+    background-image: url('/Content/icon/practicallaboratory.svg');
+}
+.icon-schoolyear {
+    background-image: url('/Content/icon/school-calendar.svg');
+}
+.icon-semester {
+    background-image: url('/Content/icon/semester.svg');
+}
+.icon-user {
+    background-image: url('/Content/icon/user.svg');
+}
