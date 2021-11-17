@@ -396,7 +396,12 @@ class ModuleClassJS extends BaseJS {
             //    statustId = parseInt(statustId);
             //}
             listData = cacheData.filter(function (item) {
-                return ((item["ModuleClassCode"].toLowerCase()).includes(value.toLowerCase())) /*&& (moduletId ? item["ModuleID"] === moduletId : item["ModuleID"] != moduletId)*/ && (statusId ? item["Status"] === parseInt(statusId) : item["Status"] !== "") && (schoolyearId ? item["SchoolYearID"] === schoolyearId : item["SchoolYearID"] != schoolyearId) && (semesterId ? item["SemesterID"] === semesterId : item["SemesterID"] != semesterId) && (teacherId ? item["TeacherID"] === teacherId : item["TeacherID"] != teacherId);
+                return ((item["ModuleClassCode"].toLowerCase()).includes(value.toLowerCase()))
+                    /*&& (moduletId ? item["ModuleID"] === moduletId : item["ModuleID"] != moduletId)*/
+                    && (statusId ? item["Status"] === parseInt(statusId) : item["Status"] !== "")
+                    && (schoolyearId ? item["SchoolYearID"] === schoolyearId : item["SchoolYearID"] != schoolyearId)
+                    && (semesterId ? item["SemesterID"] === semesterId : item["SemesterID"] != semesterId)
+                    && (teacherId ? item["TeacherID"] === teacherId : item["TeacherID"] != teacherId);
             });
 
             $('.loading').show();

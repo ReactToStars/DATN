@@ -80,7 +80,14 @@ namespace QLTS
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IPermissionRepository, PermissionRepository>();
             services.AddScoped<IPermissionService, PermissionService>();
-
+            services.AddScoped<IEquipmentRepository, EquipmentRepository>();
+            services.AddScoped<IEquipmentService, EquipmentService>();
+            services.AddScoped<IMaintainanceRepository, MaintainanceRepository>();
+            services.AddScoped<IMaintainanceService, MaintainanceService>();
+            services.AddScoped<IPracticeScheduleRepository, PracticeScheduleRepository>();
+            services.AddScoped<IPracticeScheduleService, PracticeScheduleService>();
+            services.AddScoped<ITechnicalStaffRepository, TechnicalStaffRepository>();
+            services.AddScoped<ITechnicalStaffService, TechnicalStaffService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -104,6 +111,7 @@ namespace QLTS
             app.UseAuthorization();
 
             app.UseSession();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

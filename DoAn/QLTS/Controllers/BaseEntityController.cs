@@ -19,8 +19,8 @@ namespace DATN.Controllers
     public class BaseEntityController<TEntity> : ControllerBase
     {
         #region Declare
-        IBaseService<TEntity> _baseService;
-        protected string _controllerName;
+        protected readonly IBaseService<TEntity> _baseService;
+        protected readonly string _controllerName;
 
         #endregion
         #region Constructor
@@ -215,7 +215,7 @@ namespace DATN.Controllers
             }
         }
         #endregion
-
+        #region Get file and role
         /// <summary>
         /// Hàm import file data
         /// </summary>
@@ -223,7 +223,9 @@ namespace DATN.Controllers
         /// <param name="hostingEnvironment"></param>
         /// <returns></returns>
 
+
         [HttpPost("UploadFile")]
+        [Obsolete]
         public IActionResult readAndGetFile(IFormFile file, [FromServices] IHostingEnvironment hostingEnvironment)
         {
             var role = GetRole();
@@ -323,5 +325,6 @@ namespace DATN.Controllers
             }
             return role;
         }
+        #endregion
     }
 }

@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iis": {
-      "applicationUrl": "http://localhost/DATN",
+      "applicationUrl": "http://localhost/datn",
       "sslPort": 0
     },
     "iisExpress": {

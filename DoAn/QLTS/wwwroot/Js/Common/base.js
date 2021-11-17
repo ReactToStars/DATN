@@ -6,7 +6,6 @@ class BaseJS {
         this.setDataUrl();
         this.loadData();
         this.initEvents();
-
     }
     /**
      * Lấy địa chỉ API dữ liệu
@@ -41,6 +40,11 @@ class BaseJS {
                 id = url.split("=")[1];
                 getDataUrl = "/api/v1/detailPracticeGroup/filter?Id=" + id;
             }
+            else if (equipment != undefined) {
+                let id = window.location.href;
+                id = id.split("=")[1];
+                getDataUrl = "/api/v1/equipment/filter?Id=" + id;
+            }
             maxCode = 0;
             $.ajax({
                 url: getDataUrl, //Địa chỉ API lấy dữ liệu
@@ -68,12 +72,12 @@ class BaseJS {
                     cacheData = responses;
                     if (getCode) {
                         $.each(responses, function (index, item) {
-                            var code = parseInt(item[getCode].split("-")[1]);
+                            var code = parseInt(item[getCode].split('-')[1]);
                             if (maxCode < code) {
                                 maxCode = code;
                             }
                             //console.log(maxCode);
-                        })
+                        });
                         maxCode = maxCode + 1;
                     }
                     $('#tbListData tbody').empty();
@@ -346,3 +350,4 @@ var detailModuleClass = null;
 var detailPracticeGroup = null;
 var dividePracticeGroups = null;
 var setDisabled = null;
+var equipment = null;

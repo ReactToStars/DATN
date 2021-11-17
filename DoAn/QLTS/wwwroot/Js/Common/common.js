@@ -1,4 +1,16 @@
-﻿/**------------------------------------------------------
+﻿/**
+ * Hàm định dạng trạng thái bảo trì
+ * @param {any} status dữ liệu dạng số
+ * Created By NTHung (14/11/2021)
+ */
+function formatMaintainance(status) {
+    if (status == 0)
+        return status = "Bình thường";
+    else
+        return status = "Bảo trì";
+}
+
+/**------------------------------------------------------
  *Hàm định dạng Ngày/Tháng/Năm
  *Author: Nguyen Dang Tung(9/12/2020)
  **@param {dob} date dữ liệu dạng date
@@ -97,7 +109,7 @@ function formatStatusJob(statusJob) {
     }
 }
 /**
- * Lấy dữ liệu từ input qua Diolag
+ * Lấy dữ liệu từ input qua Dialog
  * Author: Nguyen Dang Tung(1/1/2021)
  * */
 function getObject(objectId) {
@@ -207,6 +219,15 @@ function generateTable(response) {
                         var td = $(`<td> <a href="/view/DetailPracticeGroup.html?moduleClassId=` + obj[moduleclassid] + `&&practiceGroupId=` + obj[objectID] + `" >Xem chi tiết</a></td>`);
                         td.addClass("text-align-center");
                         break;
+                    case "equipment":
+                        var td = $(`<td><a href="/view/Equipment.html?ID=` + obj[objectID] + `">Chi tiết</a></td>`);
+                        td.addClass("text-align-center");
+                        break;
+                    case "maintainance":
+                        value = formatMaintainance(value);
+                        var td = $(`<td title="` + value + `"></td>`);
+                        td.addClass("text-align-center");
+                        break;
                     //case "statusjob":
                     //    value = formatStatusJob(value);
                     //    var td = $(`<td title="` + value + `"></td>`);
@@ -221,7 +242,7 @@ function generateTable(response) {
                 }
                 td.append(value);
                 $(tr).append(td);
-            })
+            });
             $('#tbListData tbody ').append(tr);
         })
         var trs = $('#tbListData tbody tr');
@@ -338,7 +359,9 @@ function hideMessengerSuccess() {
 
 function formatGenerateTable(trs) {
     $.each(trs, function (index, item) {
-        let tb = $(this).find("td").eq(5).text(); tx1 = $(this).find("td").eq(3); tx2 = $(this).find("td").eq(4);
+        let tb = $(this).find("td").eq(5).text();
+        tx1 = $(this).find("td").eq(3);
+        tx2 = $(this).find("td").eq(4);
         if (parseFloat(tb)) {
             if (!tx1.text()) {
                 tx1.text(0);

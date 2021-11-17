@@ -371,6 +371,7 @@ class DetailModuleClassJS extends BaseJS {
 
     btnSaveOnClick() {
         var object = getObject();
+        console.log(object);
         listData = cacheData.filter(function (item) {
             return (item["ModuleClassID"] === object['ModuleClassID']) && (item["StudentID"] === object['StudentID']);
         });
@@ -401,7 +402,7 @@ class DetailModuleClassJS extends BaseJS {
                             showMessengerSuccess(msg);
                             detailmoduleclassJS.loadData();
                             $(".txt_student_id").attr('value', object["StudentID"]);
-                            setDisabled();
+                            //setDisabled();
                         }
                     }).fail(function (response) {
                         //console.log(response);
@@ -489,7 +490,6 @@ class DetailModuleClassJS extends BaseJS {
 
     btnUpdateOnClick() {
         var object = getObject(recordId);
-        console.log(object);
         var isvalidate = $('input[validate="false"]');
         try {
             if (isvalidate.length == 0) {
@@ -534,7 +534,8 @@ class DetailModuleClassJS extends BaseJS {
 
             var value = $('#txt-search').val();
             listData = cacheData.filter(function (item) {
-                return (item["StudentCode"].toLowerCase()).includes(value.toLowerCase()) || (item["FullName"].toLowerCase()).includes(value.toLowerCase());
+                return (item["StudentCode"].toLowerCase()).includes(value.toLowerCase())
+                    || (item["FullName"].toLowerCase()).includes(value.toLowerCase());
             });
 
             $('.loading').show();
@@ -549,6 +550,11 @@ class DetailModuleClassJS extends BaseJS {
         }
     }
 }
+
+/**
+ * Lấy dữ liệu từ input qua dialog
+ * @param {any} id
+ */
 function getObject(id) {
     var object = {};
     if (formModel === "Edit") {

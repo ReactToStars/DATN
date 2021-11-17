@@ -104,14 +104,31 @@ a.parent-title:hover {
 }
 
 #logout{
-height: 30px;
-width: 75px;
-text-align: center;
-padding-top: 6px;
-background-color: #ee1616;
-color: white;
-border-radius: 4px;
+
+height: 30px;
+
+width: 75px;
+
+text-align: center;
+
+padding-top: 6px;
+
+background-color: #ee1616;
+
+color: white;
+
+border-radius: 4px;
 }
 #logout:hover{
-background-color: #ff0000;
+
+background-color: #ff0000;
+}
+
+.margin-right{
+    margin-right: 10px;
+}
+
+.font-weight{
+    font-weight: bold;
+    font-size: 16px;
 }

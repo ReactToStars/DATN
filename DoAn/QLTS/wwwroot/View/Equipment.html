@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -25,9 +25,9 @@
     <link href="../Css/common/warring.css" rel="stylesheet" />
 </head>
 <body>
-    <!--Navbar Menu-->
     <div class="wrapper container-fluid h-100">
         <div class="row h-100">
+            <!-- Navbar Menu -->
             <div class="left col-auto ">
                 <div class="navbar">
                     <div class="logo-site">
@@ -133,19 +133,25 @@
                     </div>
                 </div>
             </div>
+            <!-- Navbar End -->
+
+
             <div class="right col">
+                <!-- header-content -->
                 <div class="header">
                     <div class="header-left">
                         <div><a class="parent-title" href="/View/Home.html" title="Quản lý thực hành">Quản lý thực hành</a></div>
                         <div class="m-seperator m-background-image"></div>
-                        <div class="child-title"><a class="parent-title" href="/View/ModuleClass.html" title="Lớp học phần">Lớp học phần</a></div>
+                        <div class="child-title"><a class="parent-title" href="/View/PracticalLaboratory.html" title="Phòng TNTH">Phòng thí nghiệm - thực hành</a></div>
                         <div class="m-seperator m-background-image"></div>
-                        <div class="child-title"><a href="javascript:;" title="Chi tiết lớp học phần">Chi tiết lớp học phần</a></div>
+                        <div class="child-title"><a href="javascript:;" title="Chi tiết lớp học phần">Chi tiết trang thiết bị</a></div>
                     </div>
                     <div class="header-right">
                         <a href="javascript:;" title="Đăng xuất" id="logout">Đăng xuất</a>
                     </div>
                 </div>
+                <!-- header-content-end -->
+                <!-- content -->
                 <div class="content">
                     <div>
                         <div class="tool-bar" id="tbGrdDepartment">
@@ -154,9 +160,6 @@
                                 <button class="btn-search">Tìm kiếm</button>
                             </div>
                             <div class="tool-bar-right">
-                                <div>
-                                    <button class="button btn-add " id="btn-dividepracticegroups" title="Chia nhóm">Chia nhóm</button>
-                                </div>
                                 <div>
                                     <button class="button btn-add" id="btn-add" title="Thêm mới">Thêm mới</button>
                                 </div>
@@ -181,53 +184,33 @@
                             </div>
                             <a href="javascript:;" title="Import" id="import">Import</a>
                         </div>
+                        <!-- Table -->
                         <div class="grid-infor">
                             <div class="grid-infor__left" style="width:60%">
-                                <table border="0" cellspacing="0" cellpadding="0">
-                                    <tr>
-                                        <td>Bộ môn:</td>
-                                        <td fieldName="SubjectName"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Học phần:</td>
-                                        <td fieldName="ModuleName"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Số tín chỉ:</td>
-                                        <td fieldName="NumberOfModule"></td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="grid-infor__right" style="width:40%">
-                                <table border="0" cellspacing="0" cellpadding="0">
-                                    <tr>
-                                        <td>Mã Học Phần:</td>
-                                        <td fieldName="ModuleCode"></td>
-                                    </tr>
-                                    <tr>
-                                        <td> Mã lớp học phần:</td>
-                                        <td fieldName="ModuleClassCode"></td>
-                                    </tr>
-                                    <tr>
-                                        <td> Giảng viên:</td>
-                                        <td fieldName="FullName"></td>
-                                    </tr>
-                                </table>
+                                <p>
+                                    <label class="font-weight margin-right">Mã phòng: </label><span fieldName="PracticalLaboratoryCode"></span>
+                                </p>
+                                <p>
+                                    <label class="font-weight margin-right">Tên phòng: </label><span fieldName="PracticalLaboratoryName"></span>
+                                </p>
+                                <p>
+                                    <label class="font-weight margin-right">Trạng thái: </label><span fieldName="Status"></span>
+                                </p>
                             </div>
                         </div>
+                        <!-- end table -->
+                        <!-- load data -->
                         <div class=" grid grid_detail">
                             <div class="grid-default">
                                 <table id="tbListData" border="0" cellspacing="0" cellpadding="0">
                                     <thead>
-
                                         <tr>
                                             <th class="text-center" fomatType="STT" style="width:5%">STT</th>
-                                            <th fieldName="StudentCode" class="text-align-left" style="width:20%">Mã Sinh Viên</th>
-                                            <th fieldName="FullName" class="text-align-left" style="width:20%">Họ Tên</th>
-                                            <th fieldName="FrequentPoints1" fomatType="number" class="text-align-center " style="width:10%">Thường Xuyên 1</th>
-                                            <th fieldName="FrequentPoints2" fomatType="number" class="text-align-center " style="width:10%">Thường Xuyên 2</th>
-                                            <th fieldName="MediumScore" fomatType="number" class="text-align-center " style="width:10%">TB <br />KTTX </th>
-                                            <th fieldName="ClassName" class="text-align-left" style="width:20%">Thuộc Lớp </th>
+                                            <th fieldName="EquipmentCode" class="text-align-left" style="width:10%">Mã thiết bị</th>
+                                            <th fieldName="EquipmentName" class="text-align-center " style="width:20%">Tên thiết bị</th>
+                                            <th fieldName="Description" class="text-align-center " style="width:30%">Mô tả</th>
+                                            <th fieldName="Quantity" fomatType="number" class="text-align-center " style="width:10%">Số lượng</th>
+                                            <th fieldName="EquipmentStatus" fomatType="maintainance" class="text-align-left" style="width:15%">Trạng thái</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -235,72 +218,53 @@
                                 </table>
                             </div>
                         </div>
+                        <!-- end load data -->
                     </div>
+
+                    <!-- Create new equipment -->
                     <div class="dialog">
-                        <div id="dialog" class="dialog__content" title="Quản Lý Chi Tiết Học Phần" style="display:block">
+                        <div id="dialog" class="dialog__content" title="Thêm trang thiết bị mới" style="display:block">
                             <div class="container-fluid">
                                 <div class="row content-form">
                                     <div class="top col-12">
                                         <div class=" parent-sub-content">
                                             <div class=" sub-content" style="width:100%">
-                                                <div class="sub-title">Lớp học phần (<span>*</span>)</div>
-                                                <input class="input-text info__type__emp txt_module_class " dataType="text" tabindex="1" disabled />
+                                                <div class="sub-title">Mã phòng (<span>*</span>)</div>
+                                                <input class="input-text info__type__emp txt-PracticalLaboratoryID" dataType="text" tabindex="1" disabled/>
                                             </div>
                                         </div>
                                         <div class=" parent-sub-content">
                                             <div class=" sub-content" style="width:100%">
-                                                <div class="sub-title">Khóa học (<span>*</span>)</div>
-                                                <select class="cbx_course info__type__emp set_add " fieldName="CourseID" required tabindex="2">
-                                                    <option value="">--Vui lòng chọn khóa học--</option>
+                                                <div class="sub-title">Mã thiết bị(<span>*</span>)</div>
+                                                <input class="input-text info__type__emp txt-EquipmentCode" id="txt-code" name-code="E" fieldName="EquipmentCode" dataType="text" tabindex="2">
+                                            </div>
+                                        </div>
+                                        <div class=" parent-sub-content">
+                                            <div class=" sub-content" style="width:100%">
+                                                <div class="sub-title">Tên thiết bị (<span>*</span>)</div>
+                                                <input class="input-text info__type__emp txt-EquipmentName" fieldName="EquipmentName" tabindex="3" dataType="text" />
+                                            </div>
+                                        </div>
+                                        <div class=" parent-sub-content">
+                                            <div class=" sub-content" style="width:100%">
+                                                <div class="sub-title">Mô tả(<span>*</span>)</div>
+                                                <input class="input-text info__type__emp txt-Description" fieldName="Description" tabindex="4" dataType="text" />
+                                            </div>
+                                        </div>
+                                        <div class=" parent-sub-content">
+                                            <div class=" sub-content" style="width:100%">
+                                                <div class="sub-title">Số lượng(<span>*</span>)</div>
+                                                <input class="input-text info__type__emp txt-Quantity" fieldName="Quantity" tabindex="5" min="0" dataType="number" type="number" />
+                                            </div>
+                                        </div>
+                                        <div class=" parent-sub-content">
+                                            <div class=" sub-content" style="width:100%">
+                                                <div class="sub-title">Trạng thái</div>
+                                                <select class="cbx_status info__type__emp" fieldName="EquipmentStatus" dataType="number" tabindex="6">
+                                                    <option value="0">Bình thường</option>
+                                                    <option value="1">Bảo trì</option>
                                                 </select>
-                                                <input class="input-text info__type__emp set_update" fieldName="CourseName" tabindex="2" dataType="text" disabled />
-
-                                            </div>
-                                        </div>
-                                        <div class=" parent-sub-content">
-                                            <div class=" sub-content" style="width:100%">
-                                                <div class="sub-title">Ngành học (<span>*</span>)</div>
-                                                <select class="cbx_majors info__type__emp set_add " fieldName="MajorsID" tabindex="3" required>
-                                                    <option value="">--Vui lòng chọn ngành học--</option>
-                                                </select>
-                                                <input class="input-text info__type__emp set_update" fieldName="MajorsName" tabindex="3" dataType="text" disabled />
-
-                                            </div>
-                                        </div>
-                                        <div class=" parent-sub-content">
-                                            <div class=" sub-content" style="width:100%">
-                                                <div class="sub-title">Lớp học (<span>*</span>)</div>
-                                                <select class="cbx_class info__type__emp set_add " fieldName="ClassID" tabindex="4" required disabled>
-                                                </select>
-                                                <input class="input-text info__type__emp set_update" fieldName="ClassName" tabindex="4" dataType="text" disabled />
-
-                                            </div>
-                                        </div>
-                                        <div class=" parent-sub-content">
-                                            <div class=" sub-content" style="width:100%">
-                                                <div class="sub-title">Sinh Viên (<span>*</span>)</div>
-                                                <select class="cbx_student info__type__emp set_add " fieldName="StudentID" tabindex="5" required disabled>
-                                                </select>
-                                                <input class="input-text info__type__emp txt_student_id set_update" fieldName="FullName" tabindex="5" dataType="text" disabled />
-
-                                            </div>
-                                        </div>
-                                        <div class=" parent-sub-content">
-                                            <div class=" sub-content" style="width:100%">
-                                                <div class="sub-title">Thường xuyên 1</div>
-                                                <input class="input-text info__type__emp" fieldName="FrequentPoints1" type="number" min="0" max="10" dataType="text" tabindex="6" />
-                                            </div>
-                                        </div>
-                                        <div class=" parent-sub-content">
-                                            <div class=" sub-content" style="width:100%">
-                                                <div class="sub-title">Thường xuyên 2</div>
-                                                <input class="input-text info__type__emp" fieldName="FrequentPoints2" type="number" min="0" max="10" dataType="text" tabindex="7" />
-                                            </div>
-                                        </div>
-                                        <div class=" parent-sub-content">
-                                            <div class=" sub-content" style="width:100%">
-                                                <div class="sub-title">TB - KTTX</div>
-                                                <input class="input-text info__type__emp" fomatType="float" fieldName="MediumScore" type="number" min="0" max="10" dataType="text" disabled  />
+                                                <!--<input class="input-text info__type__emp txt-status set_update" fieldName="Status" tabindex="2" dataType="text" disabled />-->
                                             </div>
                                         </div>
                                     </div>
@@ -313,18 +277,20 @@
                             </div>
                         </div>
                     </div>
+                    <!-- End create new student -->
                 </div>
+                <!-- end-content -->
             </div>
         </div>
     </div>
-    <!--End Navbar-->
 
+    <!-- Notification -->
     <div class="warring">
         <div class="warring-title">
             <div class="title-warring">Quản lý thực hành</div>
             <button class="close" type="submit"></button>
         </div>
-        <div >
+        <div>
             <div class="warring-content">
                 <div class="warring-icon"></div>
                 <div class="warring-notify"></div>
@@ -347,10 +313,12 @@
         <div class="loading-modal"></div>
         <div class="loading-icon"></div>
     </div>
+    <!-- End Notification -->
 
-    <input id="objectID" value="DetailModuleClassID" type="hidden" />
-    <input id="objectTitle" value="FullName" type="hidden" />
+    <input id="objectID" value="EquipmentID" type="hidden" />
+    <input id="objectTitle" value="EquipmentName" type="hidden" />
 
+    <!-- Script -->
     <script src="../lib/jquery-3.5.1.min.js"></script>
     <script src="../lib/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
     <script src="../lib/moment/moment.js"></script>
@@ -358,7 +326,6 @@
     <script src="../Js/navigation.js"></script>
     <script src="../Js/Common/common.js"></script>
     <script src="../Js/Common/base.js"></script>
-
-    <script src="../Js/View/detailmoduleclass.js"></script>
+    <script src="../js/view/Equipment.js"></script>
 </body>
 </html>

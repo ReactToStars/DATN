@@ -52,6 +52,7 @@ namespace QuanLyThucHanh.Controllers
             }
             return Ok(_serviceResult);
         }
+
         [HttpPost("Logout")]
         public IActionResult Logout()
         {
