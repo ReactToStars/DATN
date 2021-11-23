@@ -11,26 +11,26 @@ $(document).ready(function () {
 
     });
 
-    detailmoduleclassJS = new DetailModuleClassJS();
+    practiceScheduleJS = new PracticeScheduleJS();
 
 
 })
 
-class DetailModuleClassJS extends BaseJS {
+class PracticeScheduleJS extends BaseJS {
     constructor() {
         super();
         this.initEventsPage();
-        this.creditcheck();
-        //this.loadCourse();
-        //this.loadMajors();
-        this.loadClass();
-        this.loadStudent();
-        this.loadModuleClass();
+        //this.creditcheck();
+        this.loadPracticeShift();
+        this.loadPracticalLaboratory();
+        this.loadSemester();
+        this.loadSchoolYear();
+        this.loadPracticeGroup();
 
     }
 
     setDataUrl() {
-        this.getDataUrl = "/api/v1/DetailModuleClass/";
+        this.getDataUrl = "/api/v1/PracticeSchedule/";
         this.getCode = "";
     }
 
@@ -233,7 +233,7 @@ class DetailModuleClassJS extends BaseJS {
                         $('#file_import').val('');
                         showAlertWarring('Vui lòng kiểm tra lại file dữ liệu!');
                         displaynone(3000);
-                    //    console.log(response);
+                        //    console.log(response);
                     })
                 }
 
@@ -252,21 +252,23 @@ class DetailModuleClassJS extends BaseJS {
         }
     }
 
-    loadCourse() {
+    /**
+     * Load practice shift to combobox
+     * Created By HTHang (22/11/2021)
+     * */
+    loadPracticeShift() {
         try {
-            //$('#cbxDepartmentr option').empty();
             $.ajax({
-                url: "/api/v1/Course",
+                url: "/api/v1/PracticeShift",
                 method: "GET",
                 async: true,
                 data: null,
                 dataType: 'json',
                 connectType: 'application/json'
             }).done(function (response) {
-                // console.log(response);
                 $.each(response, function (index, item) {
-                    var option = $(`<option value=` + item['CourseID'] + `>` + item['CourseName'] + `</option>`);
-                    $('.cbx_course ').append(option);
+                    var option = $(`<option value=` + item['PracticeShiftID'] + `>` + item['PracticeShiftName'] + `</option>`);
+                    $('.cbx_practiceShift ').append(option);
                 })
             }).fail(function (response) {
                 console.log(response);
@@ -275,21 +277,24 @@ class DetailModuleClassJS extends BaseJS {
             console.log(e);
         }
     }
-    loadMajors() {
+
+    /**
+     * Load practical laboratory to combobox
+     * Created by HTHang (22/11/2021)
+     * */
+    loadPracticalLaboratory() {
         try {
-            //$('#cbxDepartmentr option').empty();
             $.ajax({
-                url: "/api/v1/Majors",
+                url: "/api/v1/PracticalLaboratory",
                 method: "GET",
                 async: true,
                 data: null,
                 dataType: 'json',
                 connectType: 'application/json'
             }).done(function (response) {
-                //console.log(response);
                 $.each(response, function (index, item) {
-                    var option = $(`<option value=` + item['MajorsID'] + `>` + item['MajorsName'] + `</option>`);
-                    $('.cbx_majors').append(option);
+                    var option = $(`<option value=` + item['PracticalLaboratoryID'] + `>` + item['PracticalLaboratoryName'] + `</option>`);
+                    $('.cbx_practicalLaboratory').append(option);
                 })
             }).fail(function (response) {
                 console.log(response);
@@ -298,21 +303,26 @@ class DetailModuleClassJS extends BaseJS {
             console.log(e);
         }
     }
-    loadClass() {
+
+    /**
+     * Load semester to combobox
+     * Created by HTHang (22/11/2021)
+     * */
+    loadSemester() {
         try {
 
             $.ajax({
-                url: "/api/v1/Class",
+                url: "/api/v1/Semester",
                 method: "GET",
                 async: true,
                 data: null,
                 dataType: 'json',
                 connectType: 'application/json'
             }).done(function (response) {
-                listClass = response;
+                //listClass = response;
                 $.each(response, function (index, item) {
-                    var option = `<option value = "${item['ClassID']}"> ${item['ClassName']} </option>`;
-                    $('.cbx_class').append(option);
+                    var option = `<option value = "${item['SemesterID']}"> ${item['SemesterName']} </option>`;
+                    $('.cbx_semester').append(option);
                 });
             }).fail(function (response) {
                 console.log(response);
@@ -321,22 +331,26 @@ class DetailModuleClassJS extends BaseJS {
             console.log(e);
         }
     }
-    loadStudent() {
-        try {
 
+    /**
+     * Load school year to combobox
+     * Created by HTHang (22/11/2021)
+     * */
+    loadSchoolYear() {
+        try {
             $.ajax({
-                url: "/api/v1/Student",
+                url: "/api/v1/SchoolYear",
                 method: "GET",
                 async: true,
                 data: null,
                 dataType: 'json',
                 connectType: 'application/json'
             }).done(function (response) {
-                listStudent = response;
-                //$.each(response, function (index, item) {
-                //    var option = `<option value ="${item['StudentID']}"> ${item['StudentName']} </option>`;
-                //    $('cbx_student').append(option);
-                //});
+                //listStudent = response;
+                $.each(response, function (index, item) {
+                    var option = `<option value ="${item['SchoolYearID']}"> ${item['SchoolYearName']} </option>`;
+                    $('.cbx_schoolYear').append(option);
+                });
             }).fail(function (response) {
                 console.log(response);
             })
@@ -344,12 +358,14 @@ class DetailModuleClassJS extends BaseJS {
             console.log(e);
         }
     }
-    loadModuleClass() {
+
+
+    loadPracticeGroup() {
         try {
             let id = window.location.href;
             id = id.split("=")[1];
             $.ajax({
-                url: "/api/v1/moduleclass/find?id=" + id,
+                url: "/api/v1/PracticeGroup/find?id=" + id,
                 method: "GET",
                 async: true,
                 data: null,
@@ -357,8 +373,8 @@ class DetailModuleClassJS extends BaseJS {
                 connectType: 'application/json'
             }).done(function (response) {
                 //console.log(response);
-                $('.txt_module_class').attr('value', response['ModuleClassID']);
-                $('.txt_module_class').attr('placeholder', response['ModuleClassCode']);
+                $('.txt_practiceGroup').attr('value', response['PracticeGroupID']);
+                $('.txt_practiceGroup').attr('placeholder', response['PracticeGroupName']);
                 var td = $('.grid-infor table td[fieldName]');
                 $.each(td, function (index, item) {
                     var fieldName = $(this).attr('fieldName');

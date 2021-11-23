@@ -54,6 +54,7 @@ class BaseJS {
                 dataType: 'json',
                 connectType: 'application/json'
             }).done(function (response) {
+                //console.log(response);
                 let responses = [];
                 if (response.Code === Enum.StatusResponse.NotImplemented) {
                     window.location.href = response.Data;

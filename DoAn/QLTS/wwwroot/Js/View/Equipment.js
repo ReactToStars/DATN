@@ -298,7 +298,7 @@ class EquipmentJS extends BaseJS {
                         }
                         else if (response.Code == Enum.StatusResponse.Success) {
                             showMessengerSuccess(response.Messenger);
-                            equipment.loadData();
+                            equipmentJS.loadData();
                             $('#file_import').val('');
                         }
                         else if (response.Code = Enum.StatusResponse.NotValid) {

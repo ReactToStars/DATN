@@ -20,11 +20,16 @@ namespace ApplicationCore.Models
         [Required("Mã ca thực hành", "Mã ca thực hành không được để trống !")]
         public Guid PracticalShiftID { get; set; }
 
+        public string PracticalShiftName { get; set; }
+
         [Required("Mã nhóm thực hành", "Mã nhóm thực hành không được để trống !")]
         public Guid PracticeGroupID { get; set; }
 
+        public string PracticeGroupName { get; set; }
+
         [Required("Mã phòng TNTH", "Mã phòng thực hành không được để trống !")]
         public Guid PracticalLaboratoryID{ get; set; }
+        public string PracticalLaboratoryName{ get; set; }
 
         public int Status { get; set; }
 
@@ -35,9 +40,11 @@ namespace ApplicationCore.Models
 
         [Required("Mã năm học", "Mã năm học không được để trống")]
         public Guid SchoolYearID { get; set; }
+        public string SchoolYearName { get; set; }
 
         [Required("Mã học kỳ", "Mã học kỳ không được để trống")]
         public Guid SemesterID { get; set; }
+        public string SemesterName { get; set; }
 
     }
 }

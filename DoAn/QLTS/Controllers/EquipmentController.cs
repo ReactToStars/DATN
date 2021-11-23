@@ -62,9 +62,6 @@ namespace DATN.Controllers
                         Description = worksheet.Cells[row, 5].Value.ToString(),
                         EquipmentStatus = int.Parse(worksheet.Cells[row, 6].Value.ToString()),
                         Quantity = int.Parse(worksheet.Cells[row, 7].Value.ToString()),
-
-
-
                     }) ;
                 }
             }

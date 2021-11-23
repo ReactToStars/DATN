@@ -217,6 +217,7 @@ function generateTable(response) {
                     case "detailgroup":
                         let moduleclassid = $('#moduleClassID').val();
                         var td = $(`<td> <a href="/view/DetailPracticeGroup.html?moduleClassId=` + obj[moduleclassid] + `&&practiceGroupId=` + obj[objectID] + `" >Xem chi tiết</a></td>`);
+                        //var td = $(`<td> <a href="/view/DetailPracticeGroup.html?practiceGroupId=` + obj[objectID] + `" >Xem chi tiết</a></td>`);
                         td.addClass("text-align-center");
                         break;
                     case "equipment":

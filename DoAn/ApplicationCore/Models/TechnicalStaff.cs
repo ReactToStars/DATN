@@ -14,6 +14,11 @@ namespace ApplicationCore.Models
         }
         public Guid TechnicalStaffID { get; set; }
 
+        [Required("Mã cán bộ kỹ thuật", "Mã cán bộ kỹ thuật không được để trống !")]
+        [Duplicate("Mã cán bỗ kỹ thuật", "Mã cán bộ kỹ thuật đã tồn tại trong hệ thống")]
+        [MaxLength("Mã cán bộ kỹ thuật", 20)]
+        public string TechnicalStaffCode { get; set; }
+
         [Required("Tên cán bộ kỹ thuật", "Tên cán bộ kỹ thuật không được để trống !")]
         public string FullName { get; set; }
 

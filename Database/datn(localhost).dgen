@@ -1089,6 +1089,25 @@
           <GeneratorDescription>fill with 16-byte GUID values</GeneratorDescription>
           <Length>36</Length>
         </Column>
+        <Column Name="TechnicalStaffCode">
+          <Checked>true</Checked>
+          <DataType>VARCHAR</DataType>
+          <GeneratorOptions xsi:type="MySqlRegularExpressionGeneratorOptions">
+            <AllowEmptyStrings>false</AllowEmptyStrings>
+            <EmptyStringProportion>10</EmptyStringProportion>
+            <AllowNulls>false</AllowNulls>
+            <NullProportion>0</NullProportion>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>57</SeedValue>
+            <Unique>true</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Expression>TS-[0-9]{6}</Expression>
+          </GeneratorOptions>
+          <GeneratorType>MySqlStringRegularExpressionGenerator</GeneratorType>
+          <GeneratorName>Reg Exp</GeneratorName>
+          <GeneratorDescription>values based on a regular expression</GeneratorDescription>
+          <Length>20</Length>
+        </Column>
         <Column Name="FullName">
           <Checked>true</Checked>
           <DataType>VARCHAR</DataType>
@@ -1672,7 +1691,7 @@
             <SeedValue>35</SeedValue>
             <Unique>true</Unique>
             <IsAlwaysUnique>false</IsAlwaysUnique>
-            <Expression>P-[0-9]{4}</Expression>
+            <Expression>P-[0-9]{6}</Expression>
           </GeneratorOptions>
           <GeneratorType>MySqlStringRegularExpressionGenerator</GeneratorType>
           <GeneratorName>Reg Exp</GeneratorName>
@@ -2611,7 +2630,7 @@
             <SeedValue>43</SeedValue>
             <Unique>true</Unique>
             <IsAlwaysUnique>false</IsAlwaysUnique>
-            <Expression>G-[0-9]{6}</Expression>
+            <Expression>NH-[0-9]{6}</Expression>
           </GeneratorOptions>
           <GeneratorType>MySqlStringRegularExpressionGenerator</GeneratorType>
           <GeneratorName>Reg Exp</GeneratorName>
@@ -3162,7 +3181,7 @@
             <SeedValue>57</SeedValue>
             <Unique>true</Unique>
             <IsAlwaysUnique>false</IsAlwaysUnique>
-            <Expression>(2018|2019|2020|2021)[0-9]{6}</Expression>
+            <Expression>SV-[0-9]{8}</Expression>
           </GeneratorOptions>
           <GeneratorType>MySqlStringRegularExpressionGenerator</GeneratorType>
           <GeneratorName>Reg Exp</GeneratorName>
@@ -4160,25 +4179,9 @@
           <GeneratorCategory>Product</GeneratorCategory>
           <Length>1000</Length>
         </Column>
-        <Column Name="Status">
-          <Checked>true</Checked>
+        <Column Name="EquipmentStatus">
+          <Checked>false</Checked>
           <DataType>TINYINT</DataType>
-          <GeneratorOptions xsi:type="MySqlTinyIntegerGeneratorOptions">
-            <AllowNulls>false</AllowNulls>
-            <NullProportion>0</NullProportion>
-            <Unique>false</Unique>
-            <IsAlwaysUnique>false</IsAlwaysUnique>
-            <Increment xsi:type="xsd:int">1</Increment>
-            <ValueDistributionMode>Seed</ValueDistributionMode>
-            <SeedValue>16</SeedValue>
-            <MinValue>0</MinValue>
-            <MaxValue>1</MaxValue>
-            <UseDefault>false</UseDefault>
-            <DefaultValue>0</DefaultValue>
-          </GeneratorOptions>
-          <GeneratorType>MySqlTinyIntegerGenerator</GeneratorType>
-          <GeneratorName>tinyint</GeneratorName>
-          <GeneratorDescription>fill with 8-bit signed integer values</GeneratorDescription>
           <Precision>4</Precision>
         </Column>
         <Column Name="CreatedDate">
@@ -4419,6 +4422,27 @@
           <GeneratorDescription>references a column from parent table</GeneratorDescription>
           <HasForeignKey>true</HasForeignKey>
           <Length>36</Length>
+        </Column>
+        <Column Name="MaintainanceStatus">
+          <Checked>true</Checked>
+          <DataType>TINYINT</DataType>
+          <GeneratorOptions xsi:type="MySqlTinyIntegerGeneratorOptions">
+            <AllowNulls>true</AllowNulls>
+            <NullProportion>10</NullProportion>
+            <Unique>false</Unique>
+            <IsAlwaysUnique>false</IsAlwaysUnique>
+            <Increment xsi:type="xsd:int">1</Increment>
+            <ValueDistributionMode>Seed</ValueDistributionMode>
+            <SeedValue>18</SeedValue>
+            <MinValue>0</MinValue>
+            <MaxValue>1</MaxValue>
+            <UseDefault>false</UseDefault>
+            <DefaultValue>0</DefaultValue>
+          </GeneratorOptions>
+          <GeneratorType>MySqlTinyIntegerGenerator</GeneratorType>
+          <GeneratorName>tinyint</GeneratorName>
+          <GeneratorDescription>fill with 8-bit signed integer values</GeneratorDescription>
+          <Precision>4</Precision>
         </Column>
         <Column Name="CreatedDate">
           <Checked>true</Checked>

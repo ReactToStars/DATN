@@ -103,6 +103,13 @@ class DetailPracticeGroupJS extends BaseJS {
 
         });
 
+        $('#btn-practiceSchedule').click(function () {
+            let id = window.location.href;
+            id = id.split("&&")[1];
+            id = id.split("=")[1];
+            window.location.href = "/view/PracticeSchedule.html?PracticeGroupID=" + id + "";
+        });
+
     }
 
     /**
