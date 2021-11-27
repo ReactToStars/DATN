@@ -480,7 +480,7 @@ class DetailModuleClassJS extends BaseJS {
                     detailmoduleclassJS.loadData();
                     var msg = response.Messenger;
                     showMessengerSuccess(msg);
-                    setDisabled();
+                    //setDisabled();
                 }
             }).fail(function (response) {
                 console.log(response);

@@ -4,7 +4,7 @@ $(document).ready(function () {
     //Định nghĩa Dialog
     dialog = $(".dialog__content").dialog({
         autoOpen: false,
-        width: 350,
+        width: 700,
         //height: 198,
         modal: true,
 
@@ -20,7 +20,6 @@ class PracticeScheduleJS extends BaseJS {
     constructor() {
         super();
         this.initEventsPage();
-        //this.creditcheck();
         this.loadPracticeShift();
         this.loadPracticalLaboratory();
         this.loadSemester();
@@ -30,121 +29,52 @@ class PracticeScheduleJS extends BaseJS {
     }
 
     setDataUrl() {
-        this.getDataUrl = "/api/v1/PracticeSchedule/";
+        this.getDataUrl = `/api/v1/PracticeSchedule/`;
         this.getCode = "";
     }
 
-    creditcheck() {
-        var optionTitle, course, majors, itemClass;
-        //$('.cbx_course').on("change", function () {
-        //    course = $(this).select().val().trim();
-        //    if (!course) {
-        //        $(".cbx_class option,.cbx_student option").remove();
-        //        $('.cbx_class,.cbx_student ').attr("disabled", "disabled");
-        //        $('.cbx_class,.cbx_student ').removeClass('border-red');
-        //    }
-        //    else {
-        //        if (course && majors) {
-        //            $('.cbx_class ').removeClass('border-red');
-
-        //            $(".cbx_class option").remove();
-        //            $('.cbx_class').removeAttr("disabled");
-        //            var Classs = listClass.filter(function (item) {
-        //                return ((item["CourseID"] === course && item["MajorsID"] === majors));
-        //            });
-        //            optionTitle = `<option value="">--Vui lòng chọn lớp học--</option>`
-        //            $('.cbx_class').prepend(optionTitle);
-        //            $.each(Classs, function (index, item) {
-        //                var option = $(`<option value=` + item['ClassID'] + `>` + item['ClassName'] + `</option>`);
-        //                $('.cbx_class').append(option);
-        //            });
-        //        }
-
-        //    }
-        //});
-        //$('.cbx_majors').on("change", function () {
-        //    majors = $(this).select().val().trim();
-        //    if (!majors) {
-        //        $(".cbx_class option,.cbx_student option").remove();
-        //        $('.cbx_class,.cbx_student ').attr("disabled", "disabled");
-        //        $('.cbx_class,.cbx_student ').removeClass('border-red');
-        //    }
-        //    else {
-        //        if (course && majors) {
-        //            $('.cbx_class ').removeClass('border-red');
-
-        //            $(".cbx_class option").remove();
-        //            $('.cbx_class').removeAttr("disabled");
-        //            var Classs = listClass.filter(function (item) {
-        //                return ((item["CourseID"] === course && item["MajorsID"] === majors));
-        //            });
-        //            optionTitle = `<option value="">--Vui lòng chọn lớp học--</option>`
-        //            $('.cbx_class').prepend(optionTitle);
-        //            $.each(Classs, function (index, item) {
-        //                var option = $(`<option value=` + item['ClassID'] + `>` + item['ClassName'] + `</option>`);
-        //                $('.cbx_class').append(option);
-        //            });
-        //        }
-
-        //    }
-        //});
-        $('.cbx_class').on("change", function () {
-            itemClass = $(this).select().val().trim();
-            if (itemClass) {
-                $('.cbx_student ').removeClass('border-red');
-                $(".cbx_student option").remove();
-                $('.cbx_student').removeAttr("disabled");
-                var listStu = listStudent.filter(function (item) {
-                    return ((item["ClassID"] === itemClass));
-                });
-                optionTitle = `<option value="">--Vui lòng chọn sinh viên--</option>`
-                $('.cbx_student').prepend(optionTitle);
-                $.each(listStu, function (index, item) {
-                    var option = $(`<option value=` + item['StudentID'] + `>` + item['FullName'] + `</option>`);
-                    $('.cbx_student').append(option);
-                });
-            }
-            else {
-                $(".cbx_student option").remove();
-                $('.cbx_student ').attr("disabled", "disabled");
-                $('.cbx_student ').removeClass('border-red');
-            }
-        });
-
-        $('#btn-save,#btn-update').click(function () {
-            //Validate dữ liệu
-            var inputValadate = $('input[number]');
-            $.each(inputValadate, function (index, input) {
-                $(input).trigger('blur');
-            });
-            var inputNotValidate = $('input[Validate="false"]')
-            if (inputValadate && inputNotValidate.length > 0) {
-                showAlertWarring("Vui lòng kiểm tra lại dữ liệu đã nhập!");
-                displaynone(3000);
-                inputNotValidate[0].focus();
-                return;
-            }
-
-
-
-        });
-
-        $('input[type="number"]').blur(function () {
-            //Kiểm tra dữ liệu đã được nhập, nếu trống thì cảnh báo
-            checkPoint(this);
-        });
-        $('input[type="number"]').keyup(function () {
-            mediumSore();
-            checkPoint(this);
-
-        });
-
-
-        $('#btn-dividepracticegroups').click(function () {
+    loadData() {
+        try {
+            $('.loading').show();
             let id = window.location.href;
             id = id.split("=")[1];
-            window.location.href = "/view/DividePracticeGroups.html?moduleClassId=" + id + "";
-        });
+            let getDataUrl = `/api/v1/PracticeSchedule/filter?Id=${id}`;
+            $.ajax({
+                url: getDataUrl, //Địa chỉ API lấy dữ liệu
+                method: "GET",//Phương thức Get, Set, Put, Delete...
+                async: true,
+                //data: null,
+                dataType: 'json',
+                connectType: 'application/json'
+            }).done(function (response) {
+                //console.log(response);
+                let responses = [];
+                if (response.Code === Enum.StatusResponse.NotImplemented) {
+                    window.location.href = response.Data;
+                }
+                else {
+                    if (!Array.isArray(response)) {
+                        responses.push(response);
+                        if ($('.cbx_permission').length != 0) {
+                            $(".cbx_permission").attr("disabled", 'disabled');
+                        }
+                    }
+                    else {
+                        responses = response;
+                    }
+                    $('#tbListData tbody').empty();
+                    generateTable(responses);
+                    setTimeout(function () {
+                        $('.loading').hide();
+                    }, 500)
+                }
+            }).fail(function (response) {
+                console.log(response);
+                $('.loading').hide();
+            })
+        } catch (e) {
+            console.log(e);
+        }
     }
 
     //*
@@ -153,19 +83,21 @@ class PracticeScheduleJS extends BaseJS {
     // *
     initEventsPage() {
 
-        $('#txt-search').keypress(function (e) {
-            if (e.which == 13 && $('#txt-search').val()) {
-                this.filterData();
-            }
-        }.bind(this));
+        //$('#txt-search').keypress(function (e) {
+        //    if (e.which == 13 && $('#txt-search').val()) {
+        //        this.filterData();
+        //    }
+        //}.bind(this));
 
-        $('.btn-search').click(function (e) {
-            if ($('#txt-search').val()) {
-                {
-                    this.filterData();
-                }
-            }
-        }.bind(this));
+        //$('.btn-search').click(function (e) {
+        //    if ($('#txt-search').val()) {
+        //        this.filterData();
+        //    }
+        //}.bind(this));
+
+        //$('.cbx_header').on('change', function () {
+        //    this.filterData();
+        //}.bind(this));
 
 
         $('.dialog__content').keypress(function (e) {
@@ -184,72 +116,6 @@ class PracticeScheduleJS extends BaseJS {
         $('#btn-yes-warring').click(this.btnDeleteOnClick);
         $('#btn-update').click(this.btnUpdateOnClick);
 
-        $('input[type="number"]').change(function () {
-            mediumSore();
-        });
-        $('#import').click(this.importFile);
-
-    }
-
-    /**Import dữ liệu vào db */
-    importFile() {
-        var file = document.getElementById('file_import');
-        var files = file.files;
-        if (files.length != 0) {
-            var extensions = files[0].name;
-            if (extensions.split('.')[1].trim() === "xlsx") {
-                var formData = new FormData();
-                if (file.files.length) {
-                    formData.append("file", files[0]);
-                    $.ajax({
-                        url: "/api/v1/DetailModuleClass/UploadFile",
-                        method: "Post",
-                        data: formData,
-                        contentType: false,
-                        processData: false,
-                        async: true
-                    }).done(function (response) {
-                        if (response.Code == Enum.StatusResponse.MethodNotAllowed) {
-                            showAlertWarring(response.Messenger);
-                            displaynone(3000);
-                        }
-                        else if (response.Code == Enum.StatusResponse.Success) {
-                            var msg = response.Messenger;
-                            showMessengerSuccess(msg);
-                            detailmoduleclassJS.loadData();
-                            $('#file_import').val('');
-
-                        }
-                        else if (response.Code == Enum.StatusResponse.NotValid) {
-                            setTimeout(function () {
-                                showAlertWarring(response.Messenger, response.Data);
-                            }, 1000);
-                            detailmoduleclassJS.loadData();
-                            $('#file_import').val('');
-
-                        }
-
-                    }).fail(function (response) {
-                        $('#file_import').val('');
-                        showAlertWarring('Vui lòng kiểm tra lại file dữ liệu!');
-                        displaynone(3000);
-                        //    console.log(response);
-                    })
-                }
-
-            }
-            else {
-                showAlertWarring("Vui lòng nhập đúng định dạng file Excel!");
-                $('#file_import').val('');
-                displaynone(3000);
-                return;
-            }
-
-        }
-        else {
-
-            showAlertWarring("Vui lòng chọn file dữ liệu!", "");
-        }
     }
 
     /**
@@ -295,7 +161,8 @@ class PracticeScheduleJS extends BaseJS {
                 $.each(response, function (index, item) {
                     var option = $(`<option value=` + item['PracticalLaboratoryID'] + `>` + item['PracticalLaboratoryName'] + `</option>`);
                     $('.cbx_practicalLaboratory').append(option);
-                })
+                    //$('#cbx-practicalLaboratory').append(option);
+                });
             }).fail(function (response) {
                 console.log(response);
             })
@@ -359,7 +226,10 @@ class PracticeScheduleJS extends BaseJS {
         }
     }
 
-
+    /**
+     * Load Practice group to combobox
+     * Created by HTHang (22/11/2021)
+     * */
     loadPracticeGroup() {
         try {
             let id = window.location.href;
@@ -375,6 +245,8 @@ class PracticeScheduleJS extends BaseJS {
                 //console.log(response);
                 $('.txt_practiceGroup').attr('value', response['PracticeGroupID']);
                 $('.txt_practiceGroup').attr('placeholder', response['PracticeGroupName']);
+                $('.txt-practiceGroup').text(`${response['PracticeGroupName']}`);
+                $('.txt-teacherName').text(`${response['FullName']}`);
                 var td = $('.grid-infor table td[fieldName]');
                 $.each(td, function (index, item) {
                     var fieldName = $(this).attr('fieldName');
@@ -391,61 +263,50 @@ class PracticeScheduleJS extends BaseJS {
 
     //*
     // * Lưu dữ liệu
-    //* Author: Nguyen Dang Tung(31 / 12 / 2020)
+    //* Created by HTHang (26/11/2021)
 
     btnSaveOnClick() {
         var object = getObject();
-        console.log(object);
-        listData = cacheData.filter(function (item) {
-            return (item["ModuleClassID"] === object['ModuleClassID']) && (item["StudentID"] === object['StudentID']);
-        });
-        if (listData.length != 0) {
-            showAlertWarring('Sinh viên đã thuộc trong lớp học phần!', '');
-            displaynone(3000);
-        }
-        else {
-            var isvalidate = $('input[validate="false"]');
-            try {
-                if (isvalidate.length == 0) {
-                    $.ajax({
-                        url: "/api/v1/DetailModuleClass",
-                        method: "POST",
-                        data: JSON.stringify(object),
-                        dataType: 'json',
-                        contentType: 'application/json',
-                        async: true
-                    }).done(function (response) {
-                        if (response.Code == Enum.StatusResponse.MethodNotAllowed) {
-                            showAlertWarring(response.Messenger);
-                            displaynone(3000);
-                        }
-                        else if (response.Code == Enum.StatusResponse.Success) {
-                            //console.log(response);
-                            dialog.dialog("close");
-                            var msg = response.Messenger;
-                            showMessengerSuccess(msg);
-                            detailmoduleclassJS.loadData();
-                            $(".txt_student_id").attr('value', object["StudentID"]);
-                            //setDisabled();
-                        }
-                    }).fail(function (response) {
-                        //console.log(response);
-                        var msg = response.responseJSON.Data;
-                        var msgLength = response.responseJSON.Data.length;
-                        showAlertWarring(msg, msgLength);
+        //console.log(object);
+        var isvalidate = $('input[validate="false"]');
+        try {
+            if (isvalidate.length == 0) {
+                $.ajax({
+                    url: "/api/v1/PracticeSchedule",
+                    method: "POST",
+                    data: JSON.stringify(object),
+                    dataType: 'json',
+                    contentType: 'application/json',
+                    async: true
+                }).done(function (response) {
+                    if (response.Code == Enum.StatusResponse.MethodNotAllowed) {
+                        showAlertWarring(response.Messenger);
                         displaynone(3000);
-                    })
+                    }
+                    else if (response.Code == Enum.StatusResponse.Success) {
+                        //console.log(response);
+                        dialog.dialog("close");
+                        var msg = response.Messenger;
+                        showMessengerSuccess(msg);
+                        practiceScheduleJS.loadData();
+                    }
+                }).fail(function (response) {
+                    //console.log(response);
+                    var msg = response.responseJSON.Data;
+                    //var msgLength = response.responseJSON.Data.length;
+                    showAlertWarring(msg, "");
+                    displaynone(3000);
+                });
 
-                }
-            } catch (e) {
-                console.log(e);
             }
+        } catch (e) {
+            console.log(e);
         }
     }
 
     //*
     // * Sự kiện khi click vào một dòng tr trong table
-    //* Author: Nguyen Dang Tung(31 / 12 / 2020)
+    //* Created by HTHang (26/11/2021)
     //    *
     rowSelected() {
         try {
@@ -461,7 +322,7 @@ class PracticeScheduleJS extends BaseJS {
 
     //*
     //* Lấy ra câu thông báo khi nhấn nút Xóa
-    //* Author: Nguyen Dang Tung(31 / 12 / 2020)
+    //* Created by HTHang (26/11/2021)
     //    *
     messengerDelete() {
         var tr = $('#tbListData tbody .row-selected');
@@ -476,12 +337,12 @@ class PracticeScheduleJS extends BaseJS {
 
     //*
     // * Xóa data khỏi hệ thống
-    //* Author: Nguyen Dang Tung(1 / 1 / 2021)
+    //* Created by HTHang (26/11/2021)
     //    *
     btnDeleteOnClick() {
         try {
             $.ajax({
-                url: "/api/v1/detailmoduleclass/" + recordId,
+                url: "/api/v1/PracticeSchedule/" + recordId,
                 method: "DELETE",
                 data: null,
                 dataType: 'json',
@@ -493,10 +354,10 @@ class PracticeScheduleJS extends BaseJS {
                     displaynone(3000);
                 }
                 else if (response.Code == Enum.StatusResponse.Success) {
-                    detailmoduleclassJS.loadData();
+                    practiceScheduleJS.loadData();
                     var msg = response.Messenger;
                     showMessengerSuccess(msg);
-                    setDisabled();
+                    //setDisabled();
                 }
             }).fail(function (response) {
                 console.log(response);
@@ -510,7 +371,7 @@ class PracticeScheduleJS extends BaseJS {
 
     //*
     // * Cập nhật lại thông tin dữ liệu trên hệ thống
-    //* Author: Nguyen Dang Tung(2 / 1 / 2021)
+    //* Created by HTHang (26/11/2021)
 
     btnUpdateOnClick() {
         var object = getObject(recordId);
@@ -518,24 +379,24 @@ class PracticeScheduleJS extends BaseJS {
         try {
             if (isvalidate.length == 0) {
                 $.ajax({
-                    url: "/api/v1/detailmoduleclass",
+                    url: "/api/v1/PracticeSchedule",
                     method: "PUT",
                     data: JSON.stringify(object),
                     dataType: 'json',
                     contentType: 'application/json',
                     async: true
                 }).done(function (response) {
+                    //console.log(response);
                     if (response.Code == Enum.StatusResponse.MethodNotAllowed) {
                         showAlertWarring(response.Messenger);
                         displaynone(3000);
                     }
                     else if (response.Code == Enum.StatusResponse.Success) {
-                        //console.log(response);
                         dialog.dialog("close");
                         var msg = response.Messenger;
                         showMessengerSuccess(msg);
-                        detailmoduleclassJS.loadData();
-                        setDisabled();
+                        practiceScheduleJS.loadData();
+                        //setDisabled();
                     }
                 }).fail(function (response) {
                     //console.log(response);
@@ -551,101 +412,75 @@ class PracticeScheduleJS extends BaseJS {
     }
     //*
     // * Hàm tìm kiếm dữ liệu
-    //* Author: Nguyen Dang Tung(15 / 12 / 2020)
+    //* Created by HTHang (26/11/2021)
     //    *
-    filterData() {
-        try {
+    //filterData() {
+    //    try {
+    //        //var value = $('#txt-search').val();
+    //        var practicalLaboratoryID = $('#cbx-practicalLaboratory').val();
+    //        var date = $('#cbx-date').val();
+    //        console.log(practicalLaboratoryID);
+    //        console.log(date);
+    //        listData = cacheData.filter(function (item) {
+    //            return 
+    //                //item["PracticalLaboratoryName"].toLowerCase()).includes(value.toLowerCase())
+    //                (practicalLaboratoryID ? item["PracticalLaboratoryID"] === practicalLaboratoryID : item["PracticalLaboratoryID"] !== practicalLaboratoryID)
+    //                && (date ? item["Date"] === parseInt(date) : item["Date"] !== "");
+    //        });
+    //        $('.loading').show();
+    //        $('#tbListData tbody').empty();
+    //        generateTable(listData);
+    //        setTimeout(function () {
+    //            $('.loading').hide();
+    //        }, 300)
 
-            var value = $('#txt-search').val();
-            listData = cacheData.filter(function (item) {
-                return (item["StudentCode"].toLowerCase()).includes(value.toLowerCase())
-                    || (item["FullName"].toLowerCase()).includes(value.toLowerCase());
-            });
-
-            $('.loading').show();
-            $('#tbListData tbody').empty();
-            generateTable(listData);
-            setTimeout(function () {
-                $('.loading').hide();
-            }, 300)
-
-        } catch (e) {
-            console.log(e);
-        }
-    }
+    //    } catch (e) {
+    //        console.log(e);
+    //    }
+    //}
 }
 
 /**
  * Lấy dữ liệu từ input qua dialog
+ * Created by HTHang (26/11/2021)
  * @param {any} id
  */
 function getObject(id) {
     var object = {};
-    if (formModel === "Edit") {
-        object["StudentID"] = $(".txt_student_id").attr('value');
-    }
-    else {
-        object["StudentID"] = $(".cbx_student").val();
-    }
-    object["ModuleClassID"] = $('.txt_module_class').attr('value');
-    object["FrequentPoints1"] = parseFloat($('input[fieldName="FrequentPoints1"]').val());
-    object["FrequentPoints2"] = parseFloat($('input[fieldName="FrequentPoints2"]').val());
-    object["MediumScore"] = parseFloat($('input[fieldName="MediumScore"]').val());
-    object["DetailModuleClassID"] = id;
+    object["PracticeGroupID"] = $('.txt_practiceGroup').attr('value');
+    object['PracticeShiftID'] = $('.cbx_practiceShift').val();
+    object['PracticalLaboratoryID'] = $('.cbx_practicalLaboratory').val();
+    object['Date'] = parseInt($('.cbx_date').val());
+    object['SemesterID'] = $('.cbx_semester').val();
+    object['SchoolYearID'] = $('.cbx_schoolYear').val();
+    object['StartTime'] = $('input[fieldName="StartTime"]').val();
+    object['EndTime'] = $('input[fieldName="EndTime"]').val();
+    object['Status'] = parseInt($('.cbx_status').val());
+    object['Description'] = $('textarea[fieldName="Description"]').val();
+    object['PracticeScheduleID'] = id;
     return object;
 }
 
-//*
-// * Tính điểm trung bình
-//    *
-function mediumSore() {
-    let v1, v2, tb;
-    v1 = parseFloat($('input[fieldName="FrequentPoints1"]').val());
-    v2 = parseFloat($('input[fieldName="FrequentPoints2"]').val());
-    if (v1 >= 0 && v2 >= 0 && v1 <= 10 && v2 <= 10) {
-        tb = ((v1 + v2) / 2).toFixed(2);
-        $('input[fieldName="MediumScore"]').val(tb);
-    }
-    else {
-        $('input[fieldName="MediumScore"]').val("");
-    }
-}
-/* * Check số điểm*/
-function checkPoint(input) {
-    var value = $(input).val();
-    var val = parseFloat(value);
-    if (val > 10) {
-        $(input).addClass('border-red');
-        $(input).attr('title', 'Điểm tối đa là 10 điểm!');
-        $(input).attr('Validate', false);
-    }
-    else if (val < 0) {
-        $(input).addClass('border-red');
-        $(input).attr('title', 'Điểm thấp nhất là 0 điểm!');
-        $(input).attr('Validate', false);
-    }
-    else if (val && val >= 0 && val <= 10) {
-        $(input).removeClass('border-red');
-        $(input).removeAttr('title');
-        $(input).attr('Validate', true);
-    }
-}
-
+/**
+ * Reset dialog
+ * Created by HTHang (26/11/2021)
+ * */
 function resetDialog() {
-    $('input[fieldName]').val("");
-    $(".cbx_course ").find('option:eq(0)').prop('selected', true)
-    $(".cbx_majors ").find('option:eq(0)').prop('selected', true)
+    $('input[fieldName], textarea').val("");
+    $(".txt_practiceGroup ").find('option:eq(0)').prop('selected', true);
+    $(".cbx_practiceShift ").find('option:eq(0)').prop('selected', true);
+    $(".cbx_practicalLaboratory ").find('option:eq(0)').prop('selected', true);
+    $(".cbx_date ").find('option:eq(0)').prop('selected', true);
+    $(".cbx_schoolYear ").find('option:eq(0)').prop('selected', true);
+    $(".cbx_semester").find('option:eq(0)').prop('selected', true);
+    $(".cbx_status ").find('option:eq(0)').prop('selected', true);
     //$(".cbx_class option,.cbx_student option").remove();
     //$('.cbx_class,.cbx_student ').attr("disabled", "disabled");
-    $('input,select').removeClass('border-red');
+    $('input,select,textarea').removeClass('border-red');
 }
-
-var listStudent = [];
-var listClass = [];
 
 var recordId = null;
 var recordTitle = null;
 var cacheData = [];
 var listData = [];
-var detailModuleClass = true;
 var setDisabled = true;

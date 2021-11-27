@@ -18,7 +18,7 @@ namespace Infrastructure
         #region DECLARE
         protected readonly IConfiguration _configuration;
         protected readonly string _connectionString = string.Empty;
-        protected  readonly IDbConnection _dbConnection = null;
+        protected readonly IDbConnection _dbConnection = null;
         protected readonly string _tableName;
         #endregion
         #region CONSTRUCTOR

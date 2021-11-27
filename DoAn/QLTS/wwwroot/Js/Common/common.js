@@ -1,4 +1,31 @@
-﻿/**
+﻿function formatDay(status) {
+    switch (status) {
+        case 0:
+            status = "Thứ 2";
+            break;
+        case 1:
+            status = "Thứ 3";
+            break;
+        case 2:
+            status = "Thứ 4";
+            break;
+        case 3:
+            status = "Thứ 5";
+            break;
+        case 4:
+            status = "Thứ 6";
+            break;
+        case 5:
+            status = "Thứ 7";
+            break;
+        case 6:
+            status = "Chủ nhật";
+            break;
+    }
+    return status;
+}
+
+/**
  * Hàm định dạng trạng thái bảo trì
  * @param {any} status dữ liệu dạng số
  * Created By NTHung (14/11/2021)
@@ -217,7 +244,6 @@ function generateTable(response) {
                     case "detailgroup":
                         let moduleclassid = $('#moduleClassID').val();
                         var td = $(`<td> <a href="/view/DetailPracticeGroup.html?moduleClassId=` + obj[moduleclassid] + `&&practiceGroupId=` + obj[objectID] + `" >Xem chi tiết</a></td>`);
-                        //var td = $(`<td> <a href="/view/DetailPracticeGroup.html?practiceGroupId=` + obj[objectID] + `" >Xem chi tiết</a></td>`);
                         td.addClass("text-align-center");
                         break;
                     case "equipment":
@@ -227,6 +253,11 @@ function generateTable(response) {
                     case "maintainance":
                         value = formatMaintainance(value);
                         var td = $(`<td title="` + value + `"></td>`);
+                        td.addClass("text-align-center");
+                        break;
+                    case "day":
+                        value = formatDay(value);
+                        var td = $(`<td title="${value}"></td>`);
                         td.addClass("text-align-center");
                         break;
                     //case "statusjob":

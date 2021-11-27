@@ -15,12 +15,12 @@ namespace ApplicationCore.Models
         public Guid PracticeScheduleID { get; set; }
 
         [Required("Ngày đăng ký", "Ngày đăng ký không được để trống !")]
-        public DateTime Date { get; set; }
+        public int Date { get; set; }
 
         [Required("Mã ca thực hành", "Mã ca thực hành không được để trống !")]
-        public Guid PracticalShiftID { get; set; }
+        public Guid PracticeShiftID { get; set; }
 
-        public string PracticalShiftName { get; set; }
+        public string PracticeShiftName { get; set; }
 
         [Required("Mã nhóm thực hành", "Mã nhóm thực hành không được để trống !")]
         public Guid PracticeGroupID { get; set; }
