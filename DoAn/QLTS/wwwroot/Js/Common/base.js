@@ -71,6 +71,7 @@ class BaseJS {
                         responses = response;
                     }
                     cacheData = responses;
+                    //console.log(cacheData);
                     if (getCode) {
                         $.each(responses, function (index, item) {
                             var code = parseInt(item[getCode].split('-')[1]);
@@ -197,7 +198,7 @@ class BaseJS {
                     contenttype: 'application/json',
                     async: true
                 }).done(function (response) {
-
+                    //console.log(response);
                     var res = response;
                     if ($(".txt_student_id").length != 0) {
                         $(".txt_student_id").attr('value', res["StudentID"]);

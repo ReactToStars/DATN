@@ -403,7 +403,6 @@ class ModuleClassJS extends BaseJS {
                     && (semesterId ? item["SemesterID"] === semesterId : item["SemesterID"] != semesterId)
                     && (teacherId ? item["TeacherID"] === teacherId : item["TeacherID"] != teacherId);
             });
-
             $('.loading').show();
             $('#tbListData tbody').empty();
             generateTable(listData);

@@ -141,7 +141,7 @@
                             </a>
                         </div>
                         <div class="navbar-item-box">
-                            <a class="navbar-item" href="/View/PracticeSchedule.html" title="Lịch thực hành">
+                            <a class="navbar-item" href="/View/PracticeSchedules.html" title="Lịch thực hành">
                                 <div class="navbar-item-icon m-background-image">
                                     <img src="../Content/icon/PracticeSchedule.svg" />
                                 </div>
@@ -163,9 +163,7 @@
                     <div class="header-left">
                         <div><a class="parent-title" href="/View/Home.html" title="Quản lý thực hành">Quản lý thực hành</a></div>
                         <div class="m-seperator m-background-image"></div>
-                        <div class="child-title"><a href="/View/DetailPracticeGroup.html" title="Chi tiết nhóm thực hành - thí nghiệm">Chi tiết nhóm thực hành thí nghiệm</a></div>
-                        <div class="m-seperator m-background-image"></div>
-                        <div class="child-title"><a href="/View/PracticeSchedule.html" title="Lịch thực hành - thí nghiệm">Lịch thực hành - thí nghiệm</a></div>
+                        <div class="child-title"><a href="/View/PracticeSchedules.html" title="Lịch thực hành - thí nghiệm">Lịch thực hành - thí nghiệm</a></div>
                     </div>
                     <div class="header-right">
                         <a href="javascript:;" title="Đăng xuất" id="logout">Đăng xuất</a>
@@ -175,51 +173,65 @@
                     <div>
                         <div class="tool-bar" id="tbGrdDepartment">
                             <div class="filter-bar">
-                            <input id="txt-search" class="input-search icon-search info__type__emp" type="text" placeholder="Tìm Kiếm ..." autocomplete="off" />
-                            <button class="btn-search">Tìm kiếm</button>
-                            <select class="cbx_header info__type__emp" id="cbx-practicalLaboratory" fieldName="PracticalLaboratoryID">
-                                    <option value="">---Vui lòng chọn phòng thực hành học---</option>
+                                <input id="txt-search" class="input-search icon-search info__type__emp" type="text" placeholder="Tìm Kiếm ..." autocomplete="off" />
+                                <button class="btn-search">Tìm kiếm</button>
+                                <select class="cbx_header info__type__emp" id="cbx-schoolYear" fieldName="SchoolYearID">
+                                    <option value="">--Chọn năm học--</option>
+                                </select>
+                                <select class="cbx_header info__type__emp" id="cbx-semester" fieldName="SemesterID">
+                                    <option value="">--Chọn học kỳ--</option>
+                                </select>
+                                <select class="cbx_header info__type__emp" id="cbx-date" fieldName="SemesterID">
+                                    <option value="">--Chọn Ngày--</option>
+                                    <option value="0">Thứ 2</option>
+                                    <option value="1">Thứ 3</option>
+                                    <option value="2">Thứ 4</option>
+                                    <option value="3">Thứ 5</option>
+                                    <option value="4">Thứ 6</option>
+                                    <option value="5">Thứ 7</option>
+                                    <option value="6">Chủ nhật</option>
+                                </select>
+                                <select class="cbx_header info__type__emp" id="cbx-teacher" fieldName="TeacherID">
+                                    <option value="">--Chọn Giảng viên--</option>
                                 </select>
                             </div>
                             <div class="tool-bar-right">
-                                <div>
+                                <!--<div>
                                     <button class="button btn-add" id="btn-add" title="Thêm mới">Thêm mới</button>
-                                </div>
+                                </div>-->
                                 <div>
                                     <button class="button btn-refresh" id="btn-refresh" title="Làm mới">
-                                        <div class="icon-refresh">
-
-                                        </div>
+                                        <div class="icon-refresh"></div>
                                     </button>
                                 </div>
                                 <div>
                                     <button class="button btn-remove" id="btn-remove" title="Xóa">
-                                        <div class="icon-remove ">
-                                        </div>
+                                        <div class="icon-remove "></div>
                                     </button>
                                 </div>
                             </div>
                         </div>
-                        <div class="box_upload">
+                        <!--<div class="box_upload">
                             <span>Vui lòng chọn file: </span>
                             <div class="box_select_file">
                                 <input id="file_import" type="file" />
                             </div>
                             <a href="javascript:;" title="Import" id="import">Import</a>
-                        </div>
+                        </div>-->
                         <div class="grid grid_cate">
                             <div class="grid-default">
                                 <table id="tbListData" border="0" cellspacing="0" cellpadding="0">
                                     <thead>
                                         <tr>
                                             <th class="text-center" fomatType="STT" style="width:5%">STT</th>
-                                            <th fieldName="PracticeGroupName" class="text-align-left" style="width:10%">Nhóm</th>
-                                            <th fieldName="PracticeShiftName" class="text-align-left" style="width:10%">Ca</th>
+                                            <th fieldName="PracticeShiftName" class="text-align-left" style="width:5%">Ca</th>
+                                            <th fieldName="PracticeGroupName" class="text-align-left" style="width:5%">Nhóm</th>
                                             <th fieldName="PracticalLaboratoryName" class="text-align-left" style="width:10%">Phòng</th>
+                                            <th fieldName="FullName" class="text-align-left" style="width:10%">Giảng viên</th>
                                             <th fieldName="Date" fomatType="day" class="text-align-left" style="width:5%">Ngày</th>
                                             <th fieldName="StartTime" fomatType="ddmmyyyy" class="text-align-left" style="width:10%">Thời gian bắt đầu</th>
                                             <th fieldName="EndTime" fomatType="ddmmyyyy" class="text-align-left" style="width:10%">Thời gian kết thúc</th>
-                                            <th fieldName="Status" fomatType="status" class="text-align-left" style="width:10%">Trạng thái</th>
+                                            <th fieldName="Status" fomatType="practiceScheduleStatus" class="text-align-left" style="width:10%">Trạng thái</th>
                                             <th fieldName="SemesterName" class="text-align-left" style="width:10%">Kỳ</th>
                                             <th fieldName="SchoolYearName" class="text-align-left" style="width:10%">Năm</th>
                                             <th fieldName="Description" class="text-align-left text-over" style="width:10%">Ghi chú</th>
@@ -242,44 +254,34 @@
                                                 <input class="txt_practiceGroup input-text info__type__emp" fieldName="PracticeGroupID" dataType="text" disabled tabindex="1" />
                                             </div>
                                             <div class=" sub-content" style="width:100%">
-                                                <div class="sub-title"> Ca <span>*</span></div>
-                                                <select class="cbx_practiceShift info__type__emp" fieldName="PracticeShiftID" tabindex="2" required>
+                                                <div class="sub-title">Ca</div>
+                                                <select class="cbx_practiceShift info__type__emp" fieldName="PracticeShiftID" tabindex="2" disabled>
                                                     <option>-- Chọn ca thực hành --</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class=" parent-sub-content">
                                             <div class=" sub-content" style="width:100%">
-                                                <div class="sub-title">Phòng <span>*</span></div>
-                                                <select class="cbx_practicalLaboratory info__type__emp" fieldName="PracticalLaboratoryID" tabindex="3" required>
+                                                <div class="sub-title">Phòng</div>
+                                                <select class="cbx_practicalLaboratory info__type__emp" fieldName="PracticalLaboratoryID" tabindex="3" disabled>
                                                     <option>-- Chọn phòng thực hành --</option>
                                                 </select>
                                             </div>
-                                            <div class=" sub-content" style="width:100%">
-                                                <div class="sub-title">Ngày <span>*</span></div>
-                                                <!--<input type="date" class="input-text info__type__emp" fieldName="Date" dataType="date" tabindex="4" required />-->
-                                                <select class="cbx_date info__type__emp" fieldName="Date" tabindex="4" required>
-                                                    <option>-- Chọn ngày thực hành --</option>
-                                                    <option value="0">Thứ 2</option>
-                                                    <option value="1">Thứ 3</option>
-                                                    <option value="2">Thứ 4</option>
-                                                    <option value="3">Thứ 5</option>
-                                                    <option value="4">Thứ 6</option>
-                                                    <option value="5">Thứ 7</option>
-                                                    <option value="6">Chủ nhật</option>
-                                                </select>
+                                            <div class="sub-content" style="width:100%">
+                                                <div class="sub-title">Giảng viên</div>
+                                                <input type="text" class="input-text info__type__emp" fieldName="FullName" tabindex="4" disabled />
                                             </div>
                                         </div>
                                         <div class=" parent-sub-content">
                                             <div class=" sub-content" style="width:100%">
-                                                <div class="sub-title">Kỳ <span>*</span></div>
-                                                <select class="cbx_semester info__type__emp" fieldName="SemesterID" required tabindex="5">
+                                                <div class="sub-title">Kỳ</div>
+                                                <select class="cbx_semester info__type__emp" fieldName="SemesterID" disabled tabindex="5">
                                                     <option>-- Chọn kỳ --</option>
                                                 </select>
                                             </div>
                                             <div class=" sub-content" style="width:100%">
-                                                <div class="sub-title">Năm <span>*</span></div>
-                                                <select class="cbx_schoolYear info__type__emp" fieldName="SchoolYearID" required tabindex="6">
+                                                <div class="sub-title">Năm </div>
+                                                <select class="cbx_schoolYear info__type__emp" fieldName="SchoolYearID" disabled tabindex="6">
                                                     <option>-- Chọn năm học --</option>
                                                 </select>
                                             </div>
@@ -296,17 +298,31 @@
                                         </div>
                                         <div class=" parent-sub-content">
                                             <div class=" sub-content" style="width:100%">
-                                                <div class="sub-title">Trạng thái <span>*</span></div>
-                                                <select class="cbx_status info__type__emp" fieldName="Status" tabindex="9">
-                                                    <option value="0">Chưa học</option>
-                                                    <option value="1">Đang học</option>
+                                                <div class="sub-title">Ngày <span>*</span></div>
+                                                <!--<input type="date" class="input-text info__type__emp" fieldName="Date" dataType="date" tabindex="4" required />-->
+                                                <select class="cbx_date info__type__emp" fieldName="Date" tabindex="9" disabled>
+                                                    <option>-- Chọn ngày thực hành --</option>
+                                                    <option value="0">Thứ 2</option>
+                                                    <option value="1">Thứ 3</option>
+                                                    <option value="2">Thứ 4</option>
+                                                    <option value="3">Thứ 5</option>
+                                                    <option value="4">Thứ 6</option>
+                                                    <option value="5">Thứ 7</option>
+                                                    <option value="6">Chủ nhật</option>
+                                                </select>
+                                            </div>
+                                            <div class=" sub-content" style="width:100%">
+                                                <div class="sub-title">Trạng thái </div>
+                                                <select class="cbx_status info__type__emp" fieldName="Status" tabindex="10">
+                                                    <option value="0">Chưa dạy</option>
+                                                    <option value="1">Đã dạy</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class=" parent-sub-content">
                                             <div class=" sub-content" style="width:100%">
                                                 <div class="sub-title">Ghi chú</div>
-                                                <textarea class="textarea info__type__emp" fieldName="Description" tabindex="10" dataType="text"></textarea>
+                                                <textarea class="textarea info__type__emp" fieldName="Description" tabindex="11" dataType="text"></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -364,6 +380,6 @@
     <script src="../Js/Common/common.js"></script>
     <script src="../Js/Common/base.js"></script>
 
-    <script src="../Js/View/PracticeSchedule.js"></script>
+    <script src="../Js/View/PracticeSchedules.js"></script>
 </body>
 </html>

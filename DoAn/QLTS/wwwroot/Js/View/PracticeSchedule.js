@@ -62,6 +62,7 @@ class PracticeScheduleJS extends BaseJS {
                     else {
                         responses = response;
                     }
+                    cacheData = responses;
                     $('#tbListData tbody').empty();
                     generateTable(responses);
                     setTimeout(function () {
@@ -83,21 +84,19 @@ class PracticeScheduleJS extends BaseJS {
     // *
     initEventsPage() {
 
-        //$('#txt-search').keypress(function (e) {
-        //    if (e.which == 13 && $('#txt-search').val()) {
-        //        this.filterData();
-        //    }
-        //}.bind(this));
+        $('#txt-search').keypress(function (e) {
+            if (e.which == 13) {
+                this.filterData();
+            }
+        }.bind(this));
 
-        //$('.btn-search').click(function (e) {
-        //    if ($('#txt-search').val()) {
-        //        this.filterData();
-        //    }
-        //}.bind(this));
+        $('.btn-search').click(function (e) {
+            this.filterData();
+        }.bind(this));
 
-        //$('.cbx_header').on('change', function () {
-        //    this.filterData();
-        //}.bind(this));
+        $('.cbx_header').on('change', function () {
+            this.filterData();
+        }.bind(this));
 
 
         $('.dialog__content').keypress(function (e) {
@@ -160,8 +159,7 @@ class PracticeScheduleJS extends BaseJS {
             }).done(function (response) {
                 $.each(response, function (index, item) {
                     var option = $(`<option value=` + item['PracticalLaboratoryID'] + `>` + item['PracticalLaboratoryName'] + `</option>`);
-                    $('.cbx_practicalLaboratory').append(option);
-                    //$('#cbx-practicalLaboratory').append(option);
+                    $('.cbx_practicalLaboratory, #cbx-practicalLaboratory').append(option);
                 });
             }).fail(function (response) {
                 console.log(response);
@@ -414,30 +412,28 @@ class PracticeScheduleJS extends BaseJS {
     // * Hàm tìm kiếm dữ liệu
     //* Created by HTHang (26/11/2021)
     //    *
-    //filterData() {
-    //    try {
-    //        //var value = $('#txt-search').val();
-    //        var practicalLaboratoryID = $('#cbx-practicalLaboratory').val();
-    //        var date = $('#cbx-date').val();
-    //        console.log(practicalLaboratoryID);
-    //        console.log(date);
-    //        listData = cacheData.filter(function (item) {
-    //            return 
-    //                //item["PracticalLaboratoryName"].toLowerCase()).includes(value.toLowerCase())
-    //                (practicalLaboratoryID ? item["PracticalLaboratoryID"] === practicalLaboratoryID : item["PracticalLaboratoryID"] !== practicalLaboratoryID)
-    //                && (date ? item["Date"] === parseInt(date) : item["Date"] !== "");
-    //        });
-    //        $('.loading').show();
-    //        $('#tbListData tbody').empty();
-    //        generateTable(listData);
-    //        setTimeout(function () {
-    //            $('.loading').hide();
-    //        }, 300)
+    filterData() {
+        try {
+            var value = $('#txt-search').val();
+            var practicalLaboratoryID = $('#cbx-practicalLaboratory option:selected').val();
+            var date = $('#cbx-date option:selected').val();
+            console.log(cacheData);
+            listData = cacheData.filter(function (item) {
+                return  item["PracticalLaboratoryName"].toLowerCase().includes(value.toLowerCase())
+                    && (practicalLaboratoryID ? item["PracticalLaboratoryID"] === practicalLaboratoryID : item["PracticalLaboratoryID"] !== practicalLaboratoryID)
+                    && (date ? item["Date"] === parseInt(date) : item["Date"] !== "");
+            });
+            $('.loading').show();
+            $('#tbListData tbody').empty();
+            generateTable(listData);
+            setTimeout(function () {
+                $('.loading').hide();
+            }, 300)
 
-    //    } catch (e) {
-    //        console.log(e);
-    //    }
-    //}
+        } catch (e) {
+            console.log(e);
+        }
+    }
 }
 
 /**

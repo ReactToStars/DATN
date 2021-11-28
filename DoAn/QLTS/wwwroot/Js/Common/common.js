@@ -1,4 +1,22 @@
-﻿function formatDay(status) {
+﻿function formatPracticeSchedule(status) {
+    switch (status) {
+        case 0:
+            status = "Chưa dạy";
+            break;
+        case 1:
+            status = "Đã dạy";
+            break;
+    }
+    return status;
+}
+
+/**
+ * Format day function
+ * Created by NTHung (25/11/2021)
+ * 
+ * @param {any} status
+ */
+function formatDay(status) {
     switch (status) {
         case 0:
             status = "Thứ 2";
@@ -259,6 +277,11 @@ function generateTable(response) {
                         value = formatDay(value);
                         var td = $(`<td title="${value}"></td>`);
                         td.addClass("text-align-center");
+                        break;
+                    case "practiceScheduleStatus":
+                        value = formatPracticeSchedule(value);
+                        var td = $(`<td title="${value}"></td>`);
+                        td.addClass('text-align-center');
                         break;
                     //case "statusjob":
                     //    value = formatStatusJob(value);

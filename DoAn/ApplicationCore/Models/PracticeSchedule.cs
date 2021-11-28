@@ -46,5 +46,9 @@ namespace ApplicationCore.Models
         public Guid SemesterID { get; set; }
         public string SemesterName { get; set; }
 
+        [Required("Mã giảng viên", "Mã giảng viên không được để trống")]
+        public Guid TeacherID { get; set; }
+        public string FullName { get; set; }
+
     }
 }
