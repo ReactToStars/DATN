@@ -20,62 +20,18 @@ class PracticeSchedulesJS extends BaseJS {
     constructor() {
         super();
         this.initEventsPage();
-        //this.loadPracticeShift();
+        this.loadPracticeShift();
         this.loadTeacher();
         this.loadSemester();
         this.loadSchoolYear();
-        //this.loadPracticeGroup();
-
+        this.loadPracticeGroup();
+        this.loadPracticalLaboratory();
     }
 
     setDataUrl() {
         this.getDataUrl = `/api/v1/PracticeSchedule/`;
         this.getCode = "";
     }
-
-    //loadData() {
-    //    try {
-    //        $('.loading').show();
-    //        let id = window.location.href;
-    //        id = id.split("=")[1];
-    //        let getDataUrl = `/api/v1/PracticeSchedule/filter?Id=${id}`;
-    //        $.ajax({
-    //            url: getDataUrl, //Địa chỉ API lấy dữ liệu
-    //            method: "GET",//Phương thức Get, Set, Put, Delete...
-    //            async: true,
-    //            //data: null,
-    //            dataType: 'json',
-    //            connectType: 'application/json'
-    //        }).done(function (response) {
-    //            //console.log(response);
-    //            let responses = [];
-    //            if (response.Code === Enum.StatusResponse.NotImplemented) {
-    //                window.location.href = response.Data;
-    //            }
-    //            else {
-    //                if (!Array.isArray(response)) {
-    //                    responses.push(response);
-    //                    if ($('.cbx_permission').length != 0) {
-    //                        $(".cbx_permission").attr("disabled", 'disabled');
-    //                    }
-    //                }
-    //                else {
-    //                    responses = response;
-    //                }
-    //                $('#tbListData tbody').empty();
-    //                generateTable(responses);
-    //                setTimeout(function () {
-    //                    $('.loading').hide();
-    //                }, 500)
-    //            }
-    //        }).fail(function (response) {
-    //            console.log(response);
-    //            $('.loading').hide();
-    //        })
-    //    } catch (e) {
-    //        console.log(e);
-    //    }
-    //}
 
     //*
     //* Các sự kiện cho các button của trang
@@ -132,7 +88,7 @@ class PracticeSchedulesJS extends BaseJS {
             }).done(function (response) {
                 $.each(response, function (index, item) {
                     var option = $(`<option value=` + item['PracticeShiftID'] + `>` + item['PracticeShiftName'] + `</option>`);
-                    $('.cbx_practiceShift ').append(option);
+                    $('.cbx_practiceShift').append(option);
                 })
             }).fail(function (response) {
                 console.log(response);
@@ -143,7 +99,7 @@ class PracticeSchedulesJS extends BaseJS {
     }
 
     /**
-     * Load practical laboratory to combobox
+     * Load teacher to combobox
      * Created by HTHang (22/11/2021)
      * */
     loadTeacher() {
@@ -159,6 +115,30 @@ class PracticeSchedulesJS extends BaseJS {
                 $.each(response, function (index, item) {
                     var option = $(`<option value=` + item['TeacherID'] + `>` + item['FullName'] + `</option>`);
                     $('#cbx-teacher').append(option);
+                });
+            }).fail(function (response) {
+                console.log(response);
+            })
+        } catch (e) {
+            console.log(e);
+        }
+    }
+    /**
+     * load practical laboratory to combobox
+     * */
+    loadPracticalLaboratory() {
+        try {
+            $.ajax({
+                url: "/api/v1/practicalLaboratory",
+                method: "GET",
+                async: true,
+                data: null,
+                dataType: 'json',
+                connectType: 'application/json'
+            }).done(function (response) {
+                $.each(response, function (index, item) {
+                    var option = $(`<option value=` + item['PracticalLaboratoryID'] + `>` + item['PracticalLaboratoryName'] + `</option>`);
+                    $('.cbx_practicalLaboratory').append(option);
                 });
             }).fail(function (response) {
                 console.log(response);
@@ -186,7 +166,7 @@ class PracticeSchedulesJS extends BaseJS {
                 //listClass = response;
                 $.each(response, function (index, item) {
                     var option = `<option value = "${item['SemesterID']}"> ${item['SemesterName']} </option>`;
-                    $('#cbx-semester').append(option);
+                    $('#cbx-semester, .cbx_semester').append(option);
                 });
             }).fail(function (response) {
                 console.log(response);
@@ -213,7 +193,7 @@ class PracticeSchedulesJS extends BaseJS {
                 //listStudent = response;
                 $.each(response, function (index, item) {
                     var option = `<option value ="${item['SchoolYearID']}"> ${item['SchoolYearName']} </option>`;
-                    $('#cbx-schoolYear').append(option);
+                    $('#cbx-schoolYear, .cbx_schoolYear').append(option);
                 });
             }).fail(function (response) {
                 console.log(response);
@@ -370,6 +350,7 @@ class PracticeSchedulesJS extends BaseJS {
 
     btnUpdateOnClick() {
         var object = getObject(recordId);
+        console.log(object);
         var isvalidate = $('input[validate="false"]');
         try {
             if (isvalidate.length == 0) {
@@ -396,8 +377,8 @@ class PracticeSchedulesJS extends BaseJS {
                 }).fail(function (response) {
                     //console.log(response);
                     var msg = response.responseJSON.Data;
-                    var msgLength = response.responseJSON.Data.length;
-                    showAlertWarring(msg, msgLength);
+                    //var msgLength = response.responseJSON.Data.length;
+                    showAlertWarring(msg, "");
                     displaynone(3000);
                 })
             }
@@ -418,7 +399,7 @@ class PracticeSchedulesJS extends BaseJS {
             var semesterId = $('#cbx-semester option:selected ').val();
             var date = $('#cbx-date option:selected ').val();
             var teacherId = $('#cbx-teacher option:selected ').val();
-            console.log(cacheData);
+            
             listData = cacheData.filter(function (item) {
                 return (item["FullName"].toLowerCase()).includes(value.toLowerCase())
                     && (schoolyearId ? item["SchoolYearID"] === schoolyearId : item["SchoolYearID"] != schoolyearId)
