@@ -338,7 +338,7 @@ function getObject(id) {
     object["EquipmentCode"] = $('.txt-EquipmentCode').val();
     object["EquipmentName"] = $('.txt-EquipmentName').val();
     object["Description"] = $('.txt-Description').val();
-    object["Quantity"] = parseInt($('.txt-Quantity').val());
+    //object["Quantity"] = parseInt($('.txt-Quantity').val());
     object["EquipmentStatus"] = parseInt($('.cbx_status').val());
     object["EquipmentID"] = id;
     return object;

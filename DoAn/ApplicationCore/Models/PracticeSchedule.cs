@@ -50,5 +50,6 @@ namespace ApplicationCore.Models
         public Guid TeacherID { get; set; }
         public string FullName { get; set; }
 
+        public int Request { get; set; }
     }
 }

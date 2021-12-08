@@ -177,19 +177,6 @@
                             <div class="filter-bar">
                                 <input id="txt-search" class="input-search icon-search info__type__emp" type="text" placeholder="Tìm Kiếm ..." autocomplete="off" />
                                 <button class="btn-search">Tìm kiếm</button>
-                                <select class="cbx_header info__type__emp" id="cbx-practicalLaboratory" fieldName="PracticalLaboratoryID">
-                                    <option value="">---Vui lòng chọn phòng thực hành học---</option>
-                                </select>
-                                <select class=" cbx_header info__type__emp" id="cbx-date" fieldName="Date">
-                                    <option value="">---Vui lòng chọn ngày thực hành---</option>
-                                    <option value="0">Thứ 2</option>
-                                    <option value="1">Thứ 3</option>
-                                    <option value="2">Thứ 4</option>
-                                    <option value="3">Thứ 5</option>
-                                    <option value="4">Thứ 6</option>
-                                    <option value="5">Thứ 7</option>
-                                    <option value="6">Chủ nhật</option>
-                                </select>
                             </div>
                             <div class="tool-bar-right">
                                 <div>
@@ -210,6 +197,21 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="box_fitter">
+                            <select class="cbx_header info__type__emp" id="cbx-practicalLaboratory" fieldName="PracticalLaboratoryID">
+                                <option value="">---Vui lòng chọn phòng thực hành học---</option>
+                            </select>
+                            <select class=" cbx_header info__type__emp" id="cbx-date" fieldName="Date">
+                                <option value="">---Vui lòng chọn ngày thực hành---</option>
+                                <option value="0">Thứ 2</option>
+                                <option value="1">Thứ 3</option>
+                                <option value="2">Thứ 4</option>
+                                <option value="3">Thứ 5</option>
+                                <option value="4">Thứ 6</option>
+                                <option value="5">Thứ 7</option>
+                                <option value="6">Chủ nhật</option>
+                            </select>
+                        </div>
                         <div style="margin: 10px">
                             <p><span class="margin-right font-weight">Nhóm:</span> <span class="txt-practiceGroup"></span></p>
                             <p><span class="margin-right font-weight">Giảng viên:</span> <span class="txt-teacherName"></span></p>
@@ -228,15 +230,16 @@
                                         <tr>
                                             <th class="text-center" fomatType="STT" style="width:5%">STT</th>
                                             <!--<th fieldName="PracticeGroupName" class="text-align-left" style="width:10%">Nhóm</th>-->
-                                            <th fieldName="PracticeShiftName" class="text-align-left" style="width:10%">Ca</th>
+                                            <th fieldName="PracticeShiftName" class="text-align-left" style="width:5%">Ca</th>
                                             <th fieldName="PracticalLaboratoryName" class="text-align-left" style="width:10%">Phòng</th>
                                             <th fieldName="Date" fomatType="day" class="text-align-left" style="width:5%">Ngày</th>
                                             <th fieldName="StartTime" fomatType="ddmmyyyy" class="text-align-left" style="width:10%">Thời gian bắt đầu</th>
                                             <th fieldName="EndTime" fomatType="ddmmyyyy" class="text-align-left" style="width:10%">Thời gian kết thúc</th>
                                             <th fieldName="Status" fomatType="practiceScheduleStatus" class="text-align-left" style="width:10%">Trạng thái</th>
-                                            <th fieldName="SemesterName" class="text-align-left" style="width:10%">Kỳ</th>
+                                            <th fieldName="SemesterName" class="text-align-left" style="width:5%">Kỳ</th>
                                             <th fieldName="SchoolYearName" class="text-align-left" style="width:10%">Năm</th>
                                             <th fieldName="Description" class="text-align-left text-over" style="width:20%">Ghi chú</th>
+                                            <th fieldName="Request" fomatType="request" class="text-align-left text-over" style="width:10%">Yêu cầu</th>
                                         </tr>
                                     </thead>
                                     <tbody>

@@ -30,6 +30,15 @@ class MaintainanceJS extends BaseJS {
      *  Created by NTHung (20/11/2021)
      * */
     initEventsPage() {
+        //$('#txt-search').keypress(function (e) {
+        //    if (e.which == 13) {
+        //        this.filterData();
+        //    }
+        //}.bind(this));
+
+        $('.btn-search').click(function (e) {
+            this.filterData();
+        }.bind(this));
 
         $('#cbx_practicalLaboratory').on('change', function () {
             this.filterData();
@@ -165,7 +174,7 @@ class MaintainanceJS extends BaseJS {
             console.log(e);
         }
     }
-    
+
 
     /**
      * Save data 
@@ -317,13 +326,14 @@ class MaintainanceJS extends BaseJS {
      * */
     filterData() {
         try {
+            var value = $('#txt-search').val();
             var practicalLaboratoryId = $('#cbx_practicalLaboratory option:selected ').val();
             var technicalStaffId = $('#cbx_technicalStaff option:selected ').val();
-
+            console.log(value);
             listData = cacheData.filter(function (item) {
-                return item["MaintainanceID"]
-                &&(practicalLaboratoryId ? item["PracticalLaboratoryID"] === practicalLaboratoryId : item["PracticalLaboratoryID"] != practicalLaboratoryId)
-                && (technicalStaffId ? item["TechnicalStaffID"] === technicalStaffId : item["TechnicalStaffID"] != technicalStaffId);
+                return (item["PracticalLaboratoryName"].toLowerCase().includes(value.toLowerCase()) || item["FullName"].toLowerCase().includes(value.toLowerCase()))
+                    && (practicalLaboratoryId ? item["PracticalLaboratoryID"] === practicalLaboratoryId : item["PracticalLaboratoryID"] != practicalLaboratoryId)
+                    && (technicalStaffId ? item["TechnicalStaffID"] === technicalStaffId : item["TechnicalStaffID"] != technicalStaffId);
             });
 
             $('.loading').show();

@@ -22,16 +22,12 @@ namespace DATN.Controllers
         public override string GetRole()
         {
             string role = "Admin";
-            var roleAcount = HttpContext.Session.GetString("Role");
-            if (roleAcount == "TechnicalStaff")
+            var roleAccount = HttpContext.Session.GetString("Role");
+            if (roleAccount == "TechnicalStaff")
             {
                 role = "TechnicalStaff";
             }
-            if (roleAcount == "Teacher")
-            {
-                role = "Teacher";
-            }
-            if (roleAcount != "TechnicalStaff" && roleAcount != "Admin" && roleAcount != "TechnicalStaff")
+            if (roleAccount != "TechnicalStaff" && roleAccount != "Admin")
             {
                 role = "";
             }
@@ -61,7 +57,6 @@ namespace DATN.Controllers
                         PracticalLaboratoryID = Guid.Parse(worksheet.Cells[row, 4].Value.ToString()),
                         Description = worksheet.Cells[row, 5].Value.ToString(),
                         EquipmentStatus = int.Parse(worksheet.Cells[row, 6].Value.ToString()),
-                        Quantity = int.Parse(worksheet.Cells[row, 7].Value.ToString()),
                     }) ;
                 }
             }

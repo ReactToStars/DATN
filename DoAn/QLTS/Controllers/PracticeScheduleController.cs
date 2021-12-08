@@ -16,5 +16,20 @@ namespace DATN.Controllers
         {
             this._practiceScheduleService = practiceScheduleService;
         }
+
+        public override string GetRole()
+        {
+            string role = "Admin";
+            var roleAccount = HttpContext.Session.GetString("Role");
+            if(roleAccount == "Teacher")
+            {
+                role = roleAccount;
+            }
+            if(roleAccount != "Admin" && roleAccount != "Teacher")
+            {
+                role = "";
+            }
+            return role;
+        }
     }
 }

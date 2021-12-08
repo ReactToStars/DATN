@@ -175,25 +175,6 @@
                             <div class="filter-bar">
                                 <input id="txt-search" class="input-search icon-search info__type__emp" type="text" placeholder="Tìm Kiếm ..." autocomplete="off" />
                                 <button class="btn-search">Tìm kiếm</button>
-                                <select class="cbx_header info__type__emp" id="cbx-schoolYear" fieldName="SchoolYearID">
-                                    <option value="">--Chọn năm học--</option>
-                                </select>
-                                <select class="cbx_header info__type__emp" id="cbx-semester" fieldName="SemesterID">
-                                    <option value="">--Chọn học kỳ--</option>
-                                </select>
-                                <select class="cbx_header info__type__emp" id="cbx-date" fieldName="SemesterID">
-                                    <option value="">--Chọn Ngày--</option>
-                                    <option value="0">Thứ 2</option>
-                                    <option value="1">Thứ 3</option>
-                                    <option value="2">Thứ 4</option>
-                                    <option value="3">Thứ 5</option>
-                                    <option value="4">Thứ 6</option>
-                                    <option value="5">Thứ 7</option>
-                                    <option value="6">Chủ nhật</option>
-                                </select>
-                                <select class="cbx_header info__type__emp" id="cbx-teacher" fieldName="TeacherID">
-                                    <option value="">--Chọn Giảng viên--</option>
-                                </select>
                             </div>
                             <div class="tool-bar-right">
                                 <!--<div>
@@ -210,6 +191,27 @@
                                     </button>
                                 </div>
                             </div>
+                        </div>
+                        <div class="box_fitter">
+                            <select class="cbx_header info__type__emp" id="cbx-schoolYear" fieldName="SchoolYearID">
+                                <option value="">--Chọn năm học--</option>
+                            </select>
+                            <select class="cbx_header info__type__emp" id="cbx-semester" fieldName="SemesterID">
+                                <option value="">--Chọn học kỳ--</option>
+                            </select>
+                            <select class="cbx_header info__type__emp" id="cbx-date" fieldName="SemesterID">
+                                <option value="">--Chọn Ngày--</option>
+                                <option value="0">Thứ 2</option>
+                                <option value="1">Thứ 3</option>
+                                <option value="2">Thứ 4</option>
+                                <option value="3">Thứ 5</option>
+                                <option value="4">Thứ 6</option>
+                                <option value="5">Thứ 7</option>
+                                <option value="6">Chủ nhật</option>
+                            </select>
+                            <select class="cbx_header info__type__emp" id="cbx-teacher" fieldName="TeacherID">
+                                <option value="">--Chọn Giảng viên--</option>
+                            </select>
                         </div>
                         <!--<div class="box_upload">
                             <span>Vui lòng chọn file: </span>
@@ -231,10 +233,11 @@
                                             <th fieldName="Date" fomatType="day" class="text-align-left" style="width:5%">Ngày</th>
                                             <th fieldName="StartTime" fomatType="ddmmyyyy" class="text-align-left" style="width:10%">Thời gian bắt đầu</th>
                                             <th fieldName="EndTime" fomatType="ddmmyyyy" class="text-align-left" style="width:10%">Thời gian kết thúc</th>
-                                            <th fieldName="Status" fomatType="practiceScheduleStatus" class="text-align-left" style="width:10%">Trạng thái</th>
-                                            <th fieldName="SemesterName" class="text-align-left" style="width:10%">Kỳ</th>
+                                            <th fieldName="Status" fomatType="practiceScheduleStatus" class="text-align-left" style="width:5%">Trạng thái</th>
+                                            <th fieldName="SemesterName" class="text-align-left" style="width:5%">Kỳ</th>
                                             <th fieldName="SchoolYearName" class="text-align-left" style="width:10%">Năm</th>
                                             <th fieldName="Description" class="text-align-left text-over" style="width:10%">Ghi chú</th>
+                                            <th fieldName="Request" fomatType="request" class="text-align-left text-over" style="width:10%">Yêu cầu</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -319,10 +322,19 @@
                                                 </select>
                                             </div>
                                         </div>
+                                        <div class="parent-sub-content">
+                                            <div class=" sub-content" style="width:100%">
+                                                <div class="sub-title">Yêu cầu</div>
+                                                <select class="cbx_request info__type__emp" fieldName="Request" tabindex="11">
+                                                    <option value="0">Đăng ký</option>
+                                                    <option value="1">Xác nhận</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                         <div class=" parent-sub-content">
                                             <div class=" sub-content" style="width:100%">
                                                 <div class="sub-title">Ghi chú</div>
-                                                <textarea class="textarea info__type__emp" fieldName="Description" tabindex="11" dataType="text"></textarea>
+                                                <textarea class="textarea info__type__emp" fieldName="Description" tabindex="12" dataType="text"></textarea>
                                             </div>
                                         </div>
                                     </div>

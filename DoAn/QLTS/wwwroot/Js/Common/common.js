@@ -1,4 +1,24 @@
-﻿function formatPracticeSchedule(status) {
+﻿/**
+ * format request from practice schedule
+ * Created by NTHung (7/12/2021)
+ * @param {any} request
+ */
+function formatRequest(request) {
+    if (request == 0) {
+        request = "Đăng ký";
+    }
+    else {
+        request = "Xác nhận";
+    }
+    return request;
+}
+
+/**
+ * Format status of practice schedule
+ * Created by NTHung (26/11/2021)
+ * @param {any} status
+ */
+function formatPracticeSchedule(status) {
     switch (status) {
         case 0:
             status = "Chưa dạy";
@@ -280,6 +300,11 @@ function generateTable(response) {
                         break;
                     case "practiceScheduleStatus":
                         value = formatPracticeSchedule(value);
+                        var td = $(`<td title="${value}"></td>`);
+                        td.addClass('text-align-center');
+                        break;
+                    case "request":
+                        value = formatRequest(value);
                         var td = $(`<td title="${value}"></td>`);
                         td.addClass('text-align-center');
                         break;

@@ -172,6 +172,10 @@
                 <div class="content">
                     <div>
                         <div class="tool-bar" id="tbGrdDepartment">
+                            <div class="filter-bar">
+                                <input id="txt-search" class="input-search icon-search info__type__emp" type="text" placeholder="Tìm Kiếm ..." autocomplete="off" />
+                                <button class="btn-search">Tìm kiếm</button>
+                            </div>
                             <div class="tool-bar-right">
                                 <div>
                                     <button class="button btn-add" id="btn-add" title="Thêm mới">Thêm mới</button>
@@ -189,13 +193,6 @@
                                     </button>
                                 </div>
                             </div>
-                            <div class="box_upload" style="margin: 50px;">
-                                <span>Vui lòng chọn file: </span>
-                                <div class="box_select_file">
-                                    <input id="file_import" type="file" />
-                                </div>
-                                <a href="javascript:;" title="Import" id="import">Import</a>
-                            </div>
                         </div>
                         <div class="box_fitter">
                             <select class="cbx_header cbx_practicalLaboratory info__type__emp" id="cbx_practicalLaboratory" dataType="text" fieldName="PracticalLaboratoryID">
@@ -204,6 +201,13 @@
                             <select class=" cbx_header cbx_technicalStaff info__type__emp" id="cbx_technicalStaff" dataType="text" fieldName="TechnicalStaffID">
                                 <option value="">-- Vui lòng chọn cán bộ kỹ thuật --</option>
                             </select>
+                        </div>
+                        <div class="box_upload">
+                            <span>Vui lòng chọn file: </span>
+                            <div class="box_select_file">
+                                <input id="file_import" type="file" />
+                            </div>
+                            <a href="javascript:;" title="Import" id="import">Import</a>
                         </div>
                         <div class="grid">
                             <div class="grid-default">
@@ -277,17 +281,17 @@
                                     </div>
                                 </div>
                             </div>
-                                <div class="bottom col-12">
-                                    <button class="button btn-cancel" id="btn-cancel" tabindex="5">Hủy</button>
-                                    <button class="btn-save button" id="btn-save" tabindex="6">Lưu</button>
-                                    <button class="btn-save button" id="btn-update" tabindex="6">Cập nhật</button>
-                                </div>
+                            <div class="bottom col-12">
+                                <button class="button btn-cancel" id="btn-cancel" tabindex="5">Hủy</button>
+                                <button class="btn-save button" id="btn-save" tabindex="6">Lưu</button>
+                                <button class="btn-save button" id="btn-update" tabindex="6">Cập nhật</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <div class="warring">
 

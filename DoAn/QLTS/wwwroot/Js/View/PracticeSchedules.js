@@ -29,7 +29,7 @@ class PracticeSchedulesJS extends BaseJS {
     }
 
     setDataUrl() {
-        this.getDataUrl = `/api/v1/PracticeSchedule/`;
+        this.getDataUrl = `/api/v1/PracticeSchedules/`;
         this.getCode = "";
     }
 
@@ -247,7 +247,7 @@ class PracticeSchedulesJS extends BaseJS {
         try {
             if (isvalidate.length == 0) {
                 $.ajax({
-                    url: "/api/v1/PracticeSchedule",
+                    url: "/api/v1/PracticeSchedules",
                     method: "POST",
                     data: JSON.stringify(object),
                     dataType: 'json',
@@ -317,7 +317,7 @@ class PracticeSchedulesJS extends BaseJS {
     btnDeleteOnClick() {
         try {
             $.ajax({
-                url: "/api/v1/PracticeSchedule/" + recordId,
+                url: "/api/v1/PracticeSchedules/" + recordId,
                 method: "DELETE",
                 data: null,
                 dataType: 'json',
@@ -355,7 +355,7 @@ class PracticeSchedulesJS extends BaseJS {
         try {
             if (isvalidate.length == 0) {
                 $.ajax({
-                    url: "/api/v1/PracticeSchedule",
+                    url: "/api/v1/PracticeSchedules",
                     method: "PUT",
                     data: JSON.stringify(object),
                     dataType: 'json',
@@ -437,6 +437,7 @@ function getObject(id) {
     object['StartTime'] = $('input[fieldName="StartTime"]').val();
     object['EndTime'] = $('input[fieldName="EndTime"]').val();
     object['Status'] = parseInt($('.cbx_status').val());
+    object['Request'] = parseInt($('.cbx_request').val());
     object['Description'] = $('textarea[fieldName="Description"]').val();
     object['PracticeScheduleID'] = id;
     return object;
@@ -455,6 +456,7 @@ function resetDialog() {
     $(".cbx_schoolYear ").find('option:eq(0)').prop('selected', true);
     $(".cbx_semester").find('option:eq(0)').prop('selected', true);
     $(".cbx_status ").find('option:eq(0)').prop('selected', true);
+    $(".cbx_request ").find('option:eq(0)').prop('selected', true);
     //$(".cbx_class option,.cbx_student option").remove();
     //$('.cbx_class,.cbx_student ').attr("disabled", "disabled");
     $('input,select,textarea').removeClass('border-red');

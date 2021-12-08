@@ -23,12 +23,8 @@ namespace ApplicationCore.Models
         public Guid PracticalLaboratoryID { get; set; }
 
         [Required("Tên trang thiết bị", "Tên trang thiết bị không được để trống !")]
-        [Duplicate("Tên trang thiết bị", "Tên trang thiết bị đã tồn tại trong hệ thống !")]
         public string EquipmentName { get; set; }
         public string Description { get; set; }
         public int EquipmentStatus { get; set; }
-
-        [Required("Số lượng", "Số lượng không được để trống !")]
-        public int Quantity { get; set; }
     }
 }
