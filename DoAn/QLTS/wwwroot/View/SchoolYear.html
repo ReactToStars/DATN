@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,7 +24,48 @@
     <link href="../Css/common/responsive.css" rel="stylesheet" />
     <link rel="stylesheet" href="../Css/site.css" />
     <link href="../Css/common/warring.css" rel="stylesheet" />
+    <style>
+        .header {
+            height: 50px;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        div .avt-list .avt-img {
+            width: 40px;
+            border-radius: 100%;
+            margin-right: 40px;
+        }
+
+        div .avt-list .avt-list-item {
+            margin-left: -65px;
+            position: absolute;
+            z-index: 2;
+            background-color: #273557;
+            text-align: center;
+            display: none;
+        }
+
+            div .avt-list .avt-list-item .avt-list-item-link {
+                width: 150px;
+                color: white;
+                border-bottom: 1px solid #fff;
+                line-height: 30px;
+                display: inline-block;
+            }
+
+        div .avt-list-item-link:hover {
+            background-color: brown;
+        }
+
+        div .avt-list:hover .avt-list-item {
+            display: block;
+
+    </style>
 </head>
+
 <body>
     <div class="wrapper container-fluid h-100">
         <div class="row h-100">
@@ -120,7 +162,8 @@
                             </a>
                         </div>
                         <div class="navbar-item-box">
-                            <a class="navbar-item" href="/View/PracticalLaboratory.html" title="Phòng thực hành - thí nghiệm">
+                            <a class="navbar-item" href="/View/PracticalLaboratory.html"
+                               title="Phòng thực hành - thí nghiệm">
                                 <div class="navbar-item-icon m-background-image icon-PracticalLaboratory"></div>
                                 <div class="navbar-item-text">Phòng thực hành - thí nghiệm</div>
                             </a>
@@ -137,19 +180,38 @@
             <div class="right col">
                 <div class="header">
                     <div class="header-left">
-                        <div ><a class="parent-title" href="/View/Home.html" title="Quản lý thực hành">Quản lý thực hành</a></div>
+                        <div>
+                            <a class="parent-title" href="/View/Home.html" title="Quản lý thực hành">
+                                Quản lý thực
+                                hành
+                            </a>
+                        </div>
                         <div class="m-seperator m-background-image"></div>
                         <div class="child-title"><a href="/View/SchoolYear.html" title="Năm học">Năm học</a></div>
                     </div>
+
                     <div class="header-right">
-                        <a href="javascript:;" title="Đăng xuất" id="logout">Đăng xuất</a>
+                        <div class="avt">
+                            <div class="avt-list">
+                                <img src="../Content/icon/avata.png" class="avt-img">
+                                <ul class="avt-list-item">
+                                    <li>
+                                        <a class="avt-list-item-link" href="/View/User.html">Quản lý tài khoản</a>
+                                    </li>
+                                    <li>
+                                        <a class="avt-list-item-link" href="javascript:;" title="Đăng xuất" id="logout">Đăng xuất</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="content">
                     <div>
                         <div class="tool-bar" id="tbGrdDepartment">
                             <div class="filter-bar">
-                                <input id="txt-search" class="input-search icon-search info__type__emp" type="text" placeholder="Tìm Kiếm ..." autocomplete="off" />
+                                <input id="txt-search" class="input-search icon-search info__type__emp" type="text"
+                                       placeholder="Tìm Kiếm ..." autocomplete="off" />
                                 <button class="btn-search">Tìm kiếm</button>
                             </div>
                             <div class="tool-bar-right">
@@ -178,8 +240,14 @@
 
                                         <tr>
                                             <th class="text-center" fomatType="STT" style="width:5%">STT</th>
-                                            <th fieldName="SchoolYearID" class="text-align-left" style="width:40%">Khóa Chính Năm Học</th>
-                                            <th fieldName="SchoolYearName" class="text-align-left" style="width:45%">Năm Học</th>
+                                            <th fieldName="SchoolYearID" class="text-align-left" style="width:40%">
+                                                Khóa
+                                                Chính Năm Học
+                                            </th>
+                                            <th fieldName="SchoolYearName" class="text-align-left" style="width:45%">
+                                                Năm
+                                                Học
+                                            </th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -196,13 +264,15 @@
                                         <div class=" parent-sub-content set_update">
                                             <div class="sub-content" style="width:100%">
                                                 <div class="sub-title">Khóa chính năm học</div>
-                                                <input class="input-text info__type__emp" fieldName="SchoolYearID" dataType="text" disabled />
+                                                <input class="input-text info__type__emp" fieldName="SchoolYearID"
+                                                       dataType="text" disabled />
                                             </div>
                                         </div>
                                         <div class=" parent-sub-content">
                                             <div class=" sub-content" style="width:100%">
                                                 <div class="sub-title">Năm học(<span>*</span>)</div>
-                                                <input class="input-text info__type__emp" fieldName="SchoolYearName" dataType="text" required tabindex="1" />
+                                                <input class="input-text info__type__emp" fieldName="SchoolYearName"
+                                                       dataType="text" required tabindex="1" />
                                             </div>
                                         </div>
                                     </div>
@@ -225,7 +295,7 @@
             <div class="title-warring">Quản lý thực hành</div>
             <button class="close" type="submit"></button>
         </div>
-        <div >
+        <div>
             <div class="warring-content">
                 <div class="warring-icon"></div>
                 <div class="warring-notify"></div>
@@ -262,4 +332,5 @@
 
     <script src="../Js/View/schoolyear.js"></script>
 </body>
+
 </html>
