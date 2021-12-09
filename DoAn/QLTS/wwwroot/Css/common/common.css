@@ -103,15 +103,3 @@ a.parent-title:hover {
     color: #0056b3 !important;
 }
 
-#logout{
-height: 30px;
-width: 75px;
-text-align: center;
-padding-top: 6px;
-background-color: #ee1616;
-color: white;
-border-radius: 4px;
-}
-#logout:hover{
-background-color: #ff0000;
-}
