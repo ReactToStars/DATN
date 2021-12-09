@@ -23,6 +23,46 @@
     <link href="../Css/common/responsive.css" rel="stylesheet" />
     <link rel="stylesheet" href="../Css/site.css" />
     <link href="../Css/common/warring.css" rel="stylesheet" />
+    <style>
+        .header {
+            height: 50px;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        div .avt-list .avt-img {
+            width: 40px;
+            border-radius: 100%;
+            margin-right: 40px;
+        }
+
+        div .avt-list .avt-list-item {
+            margin-left: -65px;
+            position: absolute;
+            z-index: 2;
+            background-color: #273557;
+            text-align: center;
+            display: none;
+        }
+
+            div .avt-list .avt-list-item .avt-list-item-link {
+                width: 150px;
+                color: white;
+                border-bottom: 1px solid #fff;
+                line-height: 30px;
+                display: inline-block;
+            }
+
+        div .avt-list-item-link:hover {
+            background-color: brown;
+        }
+
+        div .avt-list:hover .avt-list-item {
+            display: block;
+
+    </style>
 </head>
 <body>
     <div class="wrapper container-fluid h-100">
@@ -140,7 +180,19 @@
                         <div class="child-title"><a href="/View/Class.html" title="Lớp học">Lớp học</a></div>
                     </div>
                     <div class="header-right">
-                        <a href="javascript:;" title="Đăng xuất" id="logout">Đăng xuất</a>
+                        <div class="avt">
+                            <div class="avt-list">
+                                <img src="./avata.png" class="avt-img">
+                                <ul class="avt-list-item">
+                                    <li>
+                                        <a  class="avt-list-item-link" href="/View/User.html">Quản lý tài khoản</a>
+                                    </li>
+                                    <li>
+                                        <a  class="avt-list-item-link" href="javascript:;" title="Đăng xuất" id="logout">Đăng xuất</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="content">
