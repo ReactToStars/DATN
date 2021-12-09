@@ -15,7 +15,7 @@ namespace ApplicationCore.Models
         public Guid PracticeScheduleID { get; set; }
 
         [Required("Ngày đăng ký", "Ngày đăng ký không được để trống !")]
-        public int Date { get; set; }
+        public DateTime Date { get; set; }
 
         [Required("Mã ca thực hành", "Mã ca thực hành không được để trống !")]
         public Guid PracticeShiftID { get; set; }
@@ -35,8 +35,8 @@ namespace ApplicationCore.Models
 
         public string Description{ get; set; }
 
-        public DateTime StartTime { get; set; }
-        public DateTime EndTime { get; set; }
+        public string StartTime { get; set; }
+        public string EndTime { get; set; }
 
         [Required("Mã năm học", "Mã năm học không được để trống")]
         public Guid SchoolYearID { get; set; }

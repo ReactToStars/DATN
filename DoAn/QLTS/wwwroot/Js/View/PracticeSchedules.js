@@ -26,6 +26,7 @@ class PracticeSchedulesJS extends BaseJS {
         this.loadSchoolYear();
         this.loadPracticeGroup();
         this.loadPracticalLaboratory();
+        this.loadDate();
     }
 
     setDataUrl() {
@@ -125,6 +126,7 @@ class PracticeSchedulesJS extends BaseJS {
     }
     /**
      * load practical laboratory to combobox
+     * Created by HTHang (22/11/2021)
      * */
     loadPracticalLaboratory() {
         try {
@@ -235,6 +237,42 @@ class PracticeSchedulesJS extends BaseJS {
         }
     }
 
+    /**
+     * Load Date to combobox
+     * Created by HTHang (06/12/2021)
+     * */
+    loadDate() {
+        try {
+            $.ajax({
+                url: "/api/v1/PracticeSchedules",
+                method: "GET",
+                data: null,
+                asysn: true,
+                dataType: 'json',
+                connectType: 'application/json'
+            }).done(function (response) {
+                $.each(response, function (index, item) {
+                    var date = new Date(item['Date']);
+                    var day = date.getDate();
+                    var month = date.getMonth() + 1;
+                    var year = date.getFullYear();
+                    if (day < 10) {
+                        day = '0' + day;
+                    }
+                    if (month < 10) {
+                        month = '0' + month;
+                    }
+                    date = day + '/' + month + '/' + year;
+                    var option = `<option value="${item['Date']}">${date}</option>`;
+                    $('#cbx-date').append(option);
+                });
+            }).fail(function (item, response) {
+                console.log(response);
+            });
+        } catch (e) {
+            console.log(e);
+        }
+    }
 
     //*
     // * Lưu dữ liệu
@@ -305,7 +343,7 @@ class PracticeSchedulesJS extends BaseJS {
             showAlertWarring("Bạn chưa chọn phần tử muốn xóa!", "")
         }
         else {
-            var msg = "Bạn có chắc chắn muốn xóa " + recordTitle + " không?";
+            var msg = "Bạn có chắc chắn muốn xóa bản ghi này không?";
             showAlertConfirm(msg)
         }
     }
@@ -388,7 +426,7 @@ class PracticeSchedulesJS extends BaseJS {
     }
 
     /**
-     * Filter data
+     * Filter data on webpage
      * Created by HTHang (28/11/2021)
      * */
     filterData() {
@@ -399,12 +437,12 @@ class PracticeSchedulesJS extends BaseJS {
             var semesterId = $('#cbx-semester option:selected ').val();
             var date = $('#cbx-date option:selected ').val();
             var teacherId = $('#cbx-teacher option:selected ').val();
-            
+
             listData = cacheData.filter(function (item) {
                 return (item["FullName"].toLowerCase()).includes(value.toLowerCase())
                     && (schoolyearId ? item["SchoolYearID"] === schoolyearId : item["SchoolYearID"] != schoolyearId)
                     && (semesterId ? item["SemesterID"] === semesterId : item["SemesterID"] != semesterId)
-                    && (date ? item["Date"] === parseInt(date) : item["Date"] !== "")
+                    && (date ? item["Date"] === date : item["Date"] !== date)
                     && (teacherId ? item["TeacherID"] === teacherId : item["TeacherID"] != teacherId);
             });
             $('.loading').show();
@@ -431,7 +469,7 @@ function getObject(id) {
     object['PracticeShiftID'] = $('.cbx_practiceShift').val();
     object['PracticalLaboratoryID'] = $('.cbx_practicalLaboratory').val();
     object['FullName'] = $('input[fieldName="FullName"]').val();
-    object['Date'] = parseInt($('.cbx_date').val());
+    object['Date'] = $('input[fieldName="Date"]').val();
     object['SemesterID'] = $('.cbx_semester').val();
     object['SchoolYearID'] = $('.cbx_schoolYear').val();
     object['StartTime'] = $('input[fieldName="StartTime"]').val();
@@ -452,7 +490,7 @@ function resetDialog() {
     $(".txt_practiceGroup ").find('option:eq(0)').prop('selected', true);
     $(".cbx_practiceShift ").find('option:eq(0)').prop('selected', true);
     $(".cbx_practicalLaboratory ").find('option:eq(0)').prop('selected', true);
-    $(".cbx_date ").find('option:eq(0)').prop('selected', true);
+    //$(".cbx_date ").find('option:eq(0)').prop('selected', true);
     $(".cbx_schoolYear ").find('option:eq(0)').prop('selected', true);
     $(".cbx_semester").find('option:eq(0)').prop('selected', true);
     $(".cbx_status ").find('option:eq(0)').prop('selected', true);

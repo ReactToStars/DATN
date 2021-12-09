@@ -201,7 +201,7 @@
                             <select class="cbx_header info__type__emp" id="cbx-practicalLaboratory" fieldName="PracticalLaboratoryID">
                                 <option value="">---Vui lòng chọn phòng thực hành học---</option>
                             </select>
-                            <select class=" cbx_header info__type__emp" id="cbx-date" fieldName="Date">
+                            <!--<select class=" cbx_header info__type__emp" id="cbx-date" fieldName="Date">
                                 <option value="">---Vui lòng chọn ngày thực hành---</option>
                                 <option value="0">Thứ 2</option>
                                 <option value="1">Thứ 3</option>
@@ -210,7 +210,7 @@
                                 <option value="4">Thứ 6</option>
                                 <option value="5">Thứ 7</option>
                                 <option value="6">Chủ nhật</option>
-                            </select>
+                            </select>-->
                         </div>
                         <div style="margin: 10px">
                             <p><span class="margin-right font-weight">Nhóm:</span> <span class="txt-practiceGroup"></span></p>
@@ -230,15 +230,15 @@
                                         <tr>
                                             <th class="text-center" fomatType="STT" style="width:5%">STT</th>
                                             <!--<th fieldName="PracticeGroupName" class="text-align-left" style="width:10%">Nhóm</th>-->
-                                            <th fieldName="PracticeShiftName" class="text-align-left" style="width:5%">Ca</th>
+                                            <th fieldName="PracticeShiftName" class="text-align-left" style="width:10%">Ca</th>
                                             <th fieldName="PracticalLaboratoryName" class="text-align-left" style="width:10%">Phòng</th>
-                                            <th fieldName="Date" fomatType="day" class="text-align-left" style="width:5%">Ngày</th>
-                                            <th fieldName="StartTime" fomatType="ddmmyyyy" class="text-align-left" style="width:10%">Thời gian bắt đầu</th>
-                                            <th fieldName="EndTime" fomatType="ddmmyyyy" class="text-align-left" style="width:10%">Thời gian kết thúc</th>
+                                            <th fieldName="Date" fomatType="ddmmyyyy" class="text-align-left" style="width:10%">Ngày</th>
+                                            <!--<th fieldName="StartTime" fomatType="ddmmyyyy" class="text-align-left" style="width:10%">Thời gian bắt đầu</th>
+                                            <th fieldName="EndTime" fomatType="ddmmyyyy" class="text-align-left" style="width:10%">Thời gian kết thúc</th>-->
                                             <th fieldName="Status" fomatType="practiceScheduleStatus" class="text-align-left" style="width:10%">Trạng thái</th>
-                                            <th fieldName="SemesterName" class="text-align-left" style="width:5%">Kỳ</th>
+                                            <th fieldName="SemesterName" class="text-align-left" style="width:10%">Kỳ</th>
                                             <th fieldName="SchoolYearName" class="text-align-left" style="width:10%">Năm</th>
-                                            <th fieldName="Description" class="text-align-left text-over" style="width:20%">Ghi chú</th>
+                                            <th fieldName="Description" class="text-align-left text-over" style="width:25%">Ghi chú</th>
                                             <th fieldName="Request" fomatType="request" class="text-align-left text-over" style="width:10%">Yêu cầu</th>
                                         </tr>
                                     </thead>
@@ -274,8 +274,8 @@
                                             </div>
                                             <div class=" sub-content" style="width:100%">
                                                 <div class="sub-title">Ngày <span>*</span></div>
-                                                <!--<input type="date" class="input-text info__type__emp" fieldName="Date" dataType="date" tabindex="4" required />-->
-                                                <select class="cbx_date info__type__emp" fieldName="Date" tabindex="4" required>
+                                                <input type="date" class="input-text info__type__emp" fieldName="Date" dataType="date" tabindex="4" required />
+                                                <!--<select class="cbx_date info__type__emp" fieldName="Date" tabindex="4" required>
                                                     <option>-- Chọn ngày thực hành --</option>
                                                     <option value="0">Thứ 2</option>
                                                     <option value="1">Thứ 3</option>
@@ -284,7 +284,7 @@
                                                     <option value="4">Thứ 6</option>
                                                     <option value="5">Thứ 7</option>
                                                     <option value="6">Chủ nhật</option>
-                                                </select>
+                                                </select>-->
                                             </div>
                                         </div>
                                         <div class=" parent-sub-content">
@@ -301,20 +301,22 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class=" parent-sub-content">
+                                        <!--<div class=" parent-sub-content">
                                             <div class="sub-content" style="width: 100%">
-                                                <div class="sub-title">Ngày bắt đầu <span>*</span></div>
-                                                <input type="date" class="input-text info__type__emp" dataType="date" fieldName="StartTime" required tabindex="7" />
+                                                <div class="sub-title">Ngày bắt đầu <span>*</span></div>-->
+                                                <!--<input type="date" class="input-text info__type__emp" dataType="date" fieldName="StartTime" required tabindex="7" />-->
+                                                <!--<input type="text" class="input-text info__type__emp" fieldName="StartTime" tabindex="7"/>
                                             </div>
                                             <div class="sub-content" style="width: 100%">
-                                                <div class="sub-title">Ngày kết thúc <span>*</span></div>
-                                                <input type="date" class="input-text info__type__emp" dataType="date" fieldName="EndTime" required tabindex="8" />
+                                                <div class="sub-title">Ngày kết thúc <span>*</span></div>-->
+                                                <!--<input type="date" class="input-text info__type__emp" dataType="date" fieldName="EndTime" required tabindex="8" />-->
+                                                <!--<input type="text" class="input-text info__type__emp" fieldName="EndTime" tabindex="8" />
                                             </div>
-                                        </div>
+                                        </div>-->
                                         <div class=" parent-sub-content" hidden>
                                             <div class=" sub-content" style="width:100%">
                                                 <div class="sub-title">Trạng thái</div>
-                                                <select class="cbx_status info__type__emp" fieldName="Status" tabindex="9" disabled>
+                                                <select class="cbx_status info__type__emp" fieldName="Status" tabindex="7" disabled>
                                                     <option value="0">Chưa dạy</option>
                                                     <option value="1">Đã dạy</option>
                                                 </select>
@@ -323,7 +325,7 @@
                                         <div class=" parent-sub-content">
                                             <div class=" sub-content" style="width:100%">
                                                 <div class="sub-title">Ghi chú</div>
-                                                <textarea class="textarea info__type__emp" fieldName="Description" tabindex="10" dataType="text"></textarea>
+                                                <textarea class="textarea info__type__emp" fieldName="Description" tabindex="8" dataType="text"></textarea>
                                             </div>
                                         </div>
                                     </div>

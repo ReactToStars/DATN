@@ -328,7 +328,7 @@ class PracticeScheduleJS extends BaseJS {
             showAlertWarring("Bạn chưa chọn phần tử muốn xóa!", "")
         }
         else {
-            var msg = "Bạn có chắc chắn muốn xóa " + recordTitle + " không?";
+            var msg = "Bạn có chắc chắn muốn xóa bản ghi này không?";
             showAlertConfirm(msg)
         }
     }
@@ -416,12 +416,12 @@ class PracticeScheduleJS extends BaseJS {
         try {
             var value = $('#txt-search').val();
             var practicalLaboratoryID = $('#cbx-practicalLaboratory option:selected').val();
-            var date = $('#cbx-date option:selected').val();
+            //var date = $('#cbx-date option:selected').val();
             console.log(cacheData);
             listData = cacheData.filter(function (item) {
-                return  item["PracticalLaboratoryName"].toLowerCase().includes(value.toLowerCase())
-                    && (practicalLaboratoryID ? item["PracticalLaboratoryID"] === practicalLaboratoryID : item["PracticalLaboratoryID"] !== practicalLaboratoryID)
-                    && (date ? item["Date"] === parseInt(date) : item["Date"] !== "");
+                return item["PracticalLaboratoryName"].toLowerCase().includes(value.toLowerCase())
+                    && (practicalLaboratoryID ? item["PracticalLaboratoryID"] === practicalLaboratoryID : item["PracticalLaboratoryID"] !== practicalLaboratoryID);
+                    //&& (date ? item["Date"] === parseInt(date) : item["Date"] !== "");
             });
             $('.loading').show();
             $('#tbListData tbody').empty();
@@ -446,11 +446,12 @@ function getObject(id) {
     object["PracticeGroupID"] = $('.txt_practiceGroup').attr('value');
     object['PracticeShiftID'] = $('.cbx_practiceShift').val();
     object['PracticalLaboratoryID'] = $('.cbx_practicalLaboratory').val();
-    object['Date'] = parseInt($('.cbx_date').val());
+    //object['Date'] = parseInt($('.cbx_date').val());
+    object['Date'] = $('input[fieldName="Date"]').val();
     object['SemesterID'] = $('.cbx_semester').val();
     object['SchoolYearID'] = $('.cbx_schoolYear').val();
-    object['StartTime'] = $('input[fieldName="StartTime"]').val();
-    object['EndTime'] = $('input[fieldName="EndTime"]').val();
+    //object['StartTime'] = $('input[fieldName="StartTime"]').val();
+    //object['EndTime'] = $('input[fieldName="EndTime"]').val();
     object['Status'] = parseInt($('.cbx_status').val());
     object['Description'] = $('textarea[fieldName="Description"]').val();
     object['PracticeScheduleID'] = id;
@@ -466,7 +467,7 @@ function resetDialog() {
     $(".txt_practiceGroup ").find('option:eq(0)').prop('selected', true);
     $(".cbx_practiceShift ").find('option:eq(0)').prop('selected', true);
     $(".cbx_practicalLaboratory ").find('option:eq(0)').prop('selected', true);
-    $(".cbx_date ").find('option:eq(0)').prop('selected', true);
+    //$(".cbx_date ").find('option:eq(0)').prop('selected', true);
     $(".cbx_schoolYear ").find('option:eq(0)').prop('selected', true);
     $(".cbx_semester").find('option:eq(0)').prop('selected', true);
     $(".cbx_status ").find('option:eq(0)').prop('selected', true);

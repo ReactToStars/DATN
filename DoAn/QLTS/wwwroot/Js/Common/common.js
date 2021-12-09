@@ -308,10 +308,11 @@ function generateTable(response) {
                         var td = $(`<td title="${value}"></td>`);
                         td.addClass('text-align-center');
                         break;
-                    //case "statusjob":
-                    //    value = formatStatusJob(value);
-                    //    var td = $(`<td title="` + value + `"></td>`);
-                    //    break;
+                    case "attendance":
+                        let practiceGroupID = $('#practiceGroupID').val();
+                        var td = $(`<td><a href="/view/Attendance.html?PracticeScheduleID=` + obj[objectID] + `&&PracticeGroupID=` + obj[practiceGroupID] + `">Điểm danh</a></td>`);
+                        td.addClass("text-align-center");
+                        break;
                     case "STT":
                         value = ind;
                         var td = $(`<td title="` + value + `"></td>`);

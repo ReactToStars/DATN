@@ -90,7 +90,8 @@ namespace QLTS
             services.AddScoped<ITechnicalStaffService, TechnicalStaffService>();
             services.AddScoped<IPracticeShiftRepository, PracticeShiftRepository>();
             services.AddScoped<IPracticeShiftService, PracticeShiftService>();
-
+            services.AddScoped<IAttendanceRepository, AttendanceRepository>();
+            services.AddScoped<IAttendanceService, AttendanceService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
