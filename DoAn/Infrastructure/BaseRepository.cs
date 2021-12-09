@@ -16,10 +16,10 @@ namespace Infrastructure
     public class BaseRepository<TEntity> : IBaseRepository<TEntity>, IDisposable where TEntity : BaseEntity
     {
         #region DECLARE
-        IConfiguration _configuration;
-        string _connectionString = string.Empty;
-        protected IDbConnection _dbConnection = null;
-        protected string _tableName;
+        protected readonly IConfiguration _configuration;
+        protected readonly string _connectionString = string.Empty;
+        protected readonly IDbConnection _dbConnection = null;
+        protected readonly string _tableName;
         #endregion
         #region CONSTRUCTOR
         public BaseRepository(IConfiguration configuration)
@@ -129,6 +129,12 @@ namespace Infrastructure
             return entities;
         }
         
+        /// <summary>
+        /// Lấy toàn bộ danh sách theo ID
+        /// </summary>
+        /// <param name="entityId">Guid</param>
+        /// <returns>Danh sách dữ liệu</returns>
+        /// Created By: NDTung (11/1/2021)
         public IEnumerable<TEntity> GetEntities(Guid entityId)
         {
             var param = new DynamicParameters();

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản Lý Thực Hành</title>
+    <link rel="icon" href="/Content/icon/logo-qlts.svg" />
+    <link href="../lib/jquery-ui-1.12.1.custom/jquery-ui.css" rel="stylesheet" />
+    <link href="../lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../uicons-solid-rounded/css/uicons-solid-rounded.css" rel="stylesheet" />
+    <link href="../Css/common/common.css" rel="stylesheet" />
+    <link href="../Css/common/main.css" rel="stylesheet" />
+    <link href="../Css/common/navbar.css" rel="stylesheet" />
+    <link href="../Css/common/header.css" rel="stylesheet" />
+    <link href="../Css/common/content.css" rel="stylesheet" />
+    <link href="../Css/common/button.css" rel="stylesheet" />
+    <link href="../Css/common/grid.css" rel="stylesheet" />
+    <link href="../Css/common/icon.css" rel="stylesheet" />
+    <link href="../Css/common/input.css" rel="stylesheet" />
+    <link href="../Css/common/layout.css" rel="stylesheet" />
+    <link href="../Css/common/toolbar.css" rel="stylesheet" />
+    <link href="../Css/common/loading.css" rel="stylesheet" />
+    <link href="../Css/common/responsive.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../Css/site.css" />
+    <link href="../Css/common/warring.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="wrapper container-fluid h-100">
+        <div class="row h-100">
+            <!-- Navbar Menu -->
+            <div class="left col-auto ">
+                <div class="navbar">
+                    <div class="logo-site">
+                        <button class="qlts-logo m-button-clear m-background-image"></button>
+                        <div class="qlts-text">
+                            <a href="/View/Home.html" title="Trang chủ">
+                                QLTH.VN
+                            </a>
+                        </div>
+                        <button class="toggle-icon m-background-image"></button>
+                    </div>
+                    <div class="navbar-content">
+                        <div class="navbar-item-box">
+                            <a class="navbar-item" href="/View/SchoolYear.html" title="Năm học">
+                                <div class="navbar-item-icon m-background-image icon-schoolyear"></div>
+                                <div class="navbar-item-text">Năm học</div>
+                            </a>
+                        </div>
+                        <div class="navbar-item-box">
+                            <a class="navbar-item" href="/View/Semester.html" title="Học kỳ">
+                                <div class="navbar-item-icon m-background-image icon-semester"></div>
+                                <div class="navbar-item-text">Học kỳ</div>
+                            </a>
+                        </div>
+                        <div class="navbar-item-box">
+                            <a class="navbar-item" href="/View/Course.html" title="Khóa học">
+                                <div class="navbar-item-icon m-background-image icon-course"></div>
+                                <div class="navbar-item-text">Khóa học</div>
+                            </a>
+                        </div>
+                        <div class="navbar-item-box">
+                            <a class="navbar-item" href="/View/Ology.html" title="Khoa">
+                                <div class="navbar-item-icon m-background-image icon-ology"></div>
+                                <div class="navbar-item-text">Khoa</div>
+                            </a>
+                        </div>
+                        <div class="navbar-item-box">
+                            <a class="navbar-item" href="/View/Majors.html" title="Ngành">
+                                <div class="navbar-item-icon m-background-image icon-majors"></div>
+                                <div class="navbar-item-text">Ngành</div>
+                            </a>
+                        </div>
+                        <div class="navbar-item-box">
+                            <a class="navbar-item" href="/View/Subject.html" title="Bộ môn">
+                                <div class="navbar-item-icon m-background-image icon-subject"></div>
+                                <div class="navbar-item-text">Bộ môn</div>
+                            </a>
+                        </div>
+                        <div class="navbar-item-box">
+                            <a class="navbar-item" href="/View/Module.html" title="Học phần">
+                                <div class="navbar-item-icon m-background-image icon-module"></div>
+                                <div class="navbar-item-text">Học phần</div>
+                            </a>
+                        </div>
+                        <div class="navbar-item-box">
+                            <a class="navbar-item" href="/View/ModuleClass.html" title="Lớp học phần">
+                                <div class="navbar-item-icon m-background-image icon-ModuleClass"></div>
+                                <div class="navbar-item-text">Lớp học phần</div>
+                            </a>
+                        </div>
+                        <div class="navbar-item-box">
+                            <a class="navbar-item" href="/View/PracticeGroup.html" title="Nhóm thực hành - thí nghiệm">
+                                <div class="navbar-item-icon m-background-image icon-PracticeGroup"></div>
+                                <div class="navbar-item-text">Nhóm thực hành - thí nghiệm</div>
+                            </a>
+                        </div>
+                        <div class="navbar-item-box">
+                            <a class="navbar-item" href="/View/Class.html" title="Lớp học">
+                                <div class="navbar-item-icon m-background-image icon-Class"></div>
+                                <div class="navbar-item-text">Lớp học</div>
+                            </a>
+                        </div>
+                        <div class="navbar-item-box">
+                            <a class="navbar-item" href="/View/Teacher.html" title="Giảng viên">
+                                <div class="navbar-item-icon m-background-image icon-Teacher"></div>
+                                <div class="navbar-item-text">Giảng viên</div>
+                            </a>
+                        </div>
+                        <div class="navbar-item-box">
+                            <a class="navbar-item" href="/View/Student.html" title="Sinh viên">
+                                <div class="navbar-item-icon m-background-image icon-Student"></div>
+                                <div class="navbar-item-text">Sinh viên</div>
+                            </a>
+                        </div>
+                        <div class="navbar-item-box">
+                            <a class="navbar-item" href="/View/TechnicalStaff.html" title="Cán bộ kỹ thuật">
+                                <div class="navbar-item-icon m-background-image">
+                                    <img src="../Content/icon/TechnicalStaff.svg" />
+                                </div>
+                                <div class="navbar-item-text">Cán bộ kỹ thuật</div>
+                            </a>
+                        </div>
+                        <div class="navbar-item-box">
+                            <a class="navbar-item" href="/View/Building.html" title="Tòa nhà">
+                                <div class="navbar-item-icon m-background-image icon-Building"></div>
+                                <div class="navbar-item-text">Tòa nhà</div>
+                            </a>
+                        </div>
+                        <div class="navbar-item-box">
+                            <a class="navbar-item" href="/View/PracticalLaboratory.html" title="Phòng thực hành - thí nghiệm">
+                                <div class="navbar-item-icon m-background-image icon-PracticalLaboratory"></div>
+                                <div class="navbar-item-text">Phòng thực hành - thí nghiệm</div>
+                            </a>
+                        </div>
+                        <div class="navbar-item-box">
+                            <a class="navbar-item" href="/View/Maintainance.html" title="Bảo trì">
+                                <div class="navbar-item-icon m-background-image">
+                                    <img src="../Content/icon/maintainance.svg" />
+                                </div>
+                                <div class="navbar-item-text">Bảo trì</div>
+                            </a>
+                        </div>
+                        <div class="navbar-item-box">
+                            <a class="navbar-item" href="/View/PracticeSchedules.html" title="Lịch thực hành">
+                                <div class="navbar-item-icon m-background-image">
+                                    <img src="../Content/icon/PracticeSchedule.svg" />
+                                </div>
+                                <div class="navbar-item-text">Lịch thực hành</div>
+                            </a>
+                        </div>
+                        <div class="navbar-item-box">
+                            <a class="navbar-item" href="/View/User.html" title="Quản lý tài khoản">
+                                <div class="navbar-item-icon m-background-image icon-user"></div>
+                                <div class="navbar-item-text">Quản lý tài khoản</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Navbar End -->
+
+
+            <div class="right col">
+                <!-- header-content -->
+                <div class="header">
+                    <div class="header-left">
+                        <div><a class="parent-title" href="/View/Home.html" title="Quản lý thực hành">Quản lý thực hành</a></div>
+                        <div class="m-seperator m-background-image"></div>
+                        <div class="child-title"><a class="parent-title" href="/View/PracticalLaboratory.html" title="Phòng TNTH">Phòng thí nghiệm - thực hành</a></div>
+                        <div class="m-seperator m-background-image"></div>
+                        <div class="child-title"><a href="javascript:;" title="Chi tiết lớp học phần">Chi tiết trang thiết bị</a></div>
+                    </div>
+                    <div class="header-right">
+                        <a href="javascript:;" title="Đăng xuất" id="logout">Đăng xuất</a>
+                    </div>
+                </div>
+                <!-- header-content-end -->
+                <!-- content -->
+                <div class="content">
+                    <div>
+                        <div class="tool-bar" id="tbGrdDepartment">
+                            <div class="filter-bar">
+                                <input id="txt-search" class="input-search icon-search info__type__emp" type="text" placeholder="Tìm Kiếm ..." autocomplete="off" />
+                                <button class="btn-search">Tìm kiếm</button>
+                            </div>
+                            <div class="tool-bar-right">
+                                <div>
+                                    <button class="button btn-add" id="btn-add" title="Thêm mới">Thêm mới</button>
+                                </div>
+                                <div>
+                                    <button class="button btn-refresh" id="btn-refresh" title="Làm mới">
+                                        <div class="icon-refresh">
+                                        </div>
+                                    </button>
+                                </div>
+                                <div>
+                                    <button class="button btn-remove" id="btn-remove" title="Xóa">
+                                        <div class="icon-remove ">
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box_upload">
+                            <span>Vui lòng chọn file: </span>
+                            <div class="box_select_file">
+                                <input id="file_import" type="file" />
+                            </div>
+                            <a href="javascript:;" title="Import" id="import">Import</a>
+                        </div>
+                        <!-- Table -->
+                        <div class="grid-infor">
+                            <div class="grid-infor__left" style="width:60%">
+                                <p>
+                                    <label class="font-weight margin-right">Mã phòng: </label><span fieldName="PracticalLaboratoryCode"></span>
+                                </p>
+                                <p>
+                                    <label class="font-weight margin-right">Tên phòng: </label><span fieldName="PracticalLaboratoryName"></span>
+                                </p>
+                                <p>
+                                    <label class="font-weight margin-right">Trạng thái: </label><span fieldName="Status"></span>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- end table -->
+                        <!-- load data -->
+                        <div class=" grid grid_detail">
+                            <div class="grid-default">
+                                <table id="tbListData" border="0" cellspacing="0" cellpadding="0">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center" fomatType="STT" style="width:5%">STT</th>
+                                            <th fieldName="EquipmentCode" class="text-align-left" style="width:10%">Mã thiết bị</th>
+                                            <th fieldName="EquipmentName" class="text-align-center " style="width:20%">Tên thiết bị</th>
+                                            <th fieldName="Description" class="text-align-center " style="width:40%">Mô tả</th>
+                                            <!--<th fieldName="Quantity" fomatType="number" class="text-align-center " style="width:10%">Số lượng</th>-->
+                                            <th fieldName="EquipmentStatus" fomatType="maintainance" class="text-align-left" style="width:15%">Trạng thái</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- end load data -->
+                    </div>
+
+                    <!-- Create new equipment -->
+                    <div class="dialog">
+                        <div id="dialog" class="dialog__content" title="Thêm trang thiết bị mới" style="display:block">
+                            <div class="container-fluid">
+                                <div class="row content-form">
+                                    <div class="top col-12">
+                                        <div class=" parent-sub-content">
+                                            <div class=" sub-content" style="width:100%">
+                                                <div class="sub-title">Mã phòng (<span>*</span>)</div>
+                                                <input class="input-text info__type__emp txt-PracticalLaboratoryID" dataType="text" tabindex="1" disabled/>
+                                            </div>
+                                        </div>
+                                        <div class=" parent-sub-content">
+                                            <div class=" sub-content" style="width:100%">
+                                                <div class="sub-title">Mã thiết bị(<span>*</span>)</div>
+                                                <input class="input-text info__type__emp txt-EquipmentCode" id="txt-code" name-code="E" fieldName="EquipmentCode" dataType="text" tabindex="2">
+                                            </div>
+                                        </div>
+                                        <div class=" parent-sub-content">
+                                            <div class=" sub-content" style="width:100%">
+                                                <div class="sub-title">Tên thiết bị (<span>*</span>)</div>
+                                                <input class="input-text info__type__emp txt-EquipmentName" fieldName="EquipmentName" tabindex="3" dataType="text" />
+                                            </div>
+                                        </div>
+                                        <div class=" parent-sub-content">
+                                            <div class=" sub-content" style="width:100%">
+                                                <div class="sub-title">Mô tả(<span>*</span>)</div>
+                                                <textarea class="input-text info__type__emp txt-Description" fieldName="Description" tabindex="4" dataType="text"></textarea>
+                                            </div>
+                                        </div>
+                                        <!--<div class=" parent-sub-content">
+                                            <div class=" sub-content" style="width:100%">
+                                                <div class="sub-title">Số lượng(<span>*</span>)</div>
+                                                <input class="input-text info__type__emp txt-Quantity" fieldName="Quantity" tabindex="5" min="0" dataType="number" type="number" />
+                                            </div>
+                                        </div>-->
+                                        <div class=" parent-sub-content">
+                                            <div class=" sub-content" style="width:100%">
+                                                <div class="sub-title">Trạng thái</div>
+                                                <select class="cbx_status info__type__emp" fieldName="EquipmentStatus" dataType="number" tabindex="6">
+                                                    <option value="0">Bình thường</option>
+                                                    <option value="1">Bảo trì</option>
+                                                </select>
+                                                <!--<input class="input-text info__type__emp txt-status set_update" fieldName="Status" tabindex="2" dataType="text" disabled />-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bottom col-12">
+                                    <button class="button btn-cancel" id="btn-cancel" tabindex="8">Hủy</button>
+                                    <button class="btn-save button" id="btn-save" tabindex="9">Lưu</button>
+                                    <button class="btn-save button" id="btn-update" tabindex="9">Cập nhật</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End create new student -->
+                </div>
+                <!-- end-content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="warring">
+        <div class="warring-title">
+            <div class="title-warring">Quản lý thực hành</div>
+            <button class="close" type="submit"></button>
+        </div>
+        <div>
+            <div class="warring-content">
+                <div class="warring-icon"></div>
+                <div class="warring-notify"></div>
+            </div>
+            <div class="warring-button">
+                <button id="btn-no-warring">Hủy</button>
+                <button id="btn-yes-warring">Xóa</button>
+                <button id="btn-ok-warring">Đóng</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="success">
+        <div class="success_icon"></div>
+        <div class="success_content"> </div>
+        <button class="success_button" type="submit"></button>
+    </div>
+
+    <div class="loading">
+        <div class="loading-modal"></div>
+        <div class="loading-icon"></div>
+    </div>
+    <!-- End Notification -->
+
+    <input id="objectID" value="EquipmentID" type="hidden" />
+    <input id="objectTitle" value="EquipmentName" type="hidden" />
+
+    <!-- Script -->
+    <script src="../lib/jquery-3.5.1.min.js"></script>
+    <script src="../lib/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+    <script src="../lib/moment/moment.js"></script>
+    <script src="../Js/site.js"></script>
+    <script src="../Js/navigation.js"></script>
+    <script src="../Js/Common/common.js"></script>
+    <script src="../Js/Common/base.js"></script>
+    <script src="../js/view/Equipment.js"></script>
+</body>
+</html>

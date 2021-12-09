@@ -37,6 +37,6 @@ namespace ApplicationCore.Models
         [Required("Bộ môn", "Thông tin bộ môn không được để trống !")]
         public Guid? SubjectID { get; set; }
         public string SubjectName { get; set; }
-
+        public int Status { get; set; }
     }
 }

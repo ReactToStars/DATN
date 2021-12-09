@@ -1,5 +1,6 @@
 ﻿using ApplicationCore.Interface;
 using ApplicationCore.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -19,5 +20,20 @@ namespace DATN.Controllers
             _baseService = baseService;
         }
         #endregion
+
+        public override string GetRole()
+        {
+            string role = "Admin";
+            var roleAccount = HttpContext.Session.GetString("Role");
+            if (roleAccount == "TechnicalStaff")
+            {
+                role = roleAccount;
+            }
+            if(roleAccount != "Admin" && roleAccount != "TechnicalStaff")
+            {
+                role = "";
+            }
+            return role;
+        }
     }
 }

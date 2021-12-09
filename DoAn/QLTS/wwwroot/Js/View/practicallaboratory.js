@@ -1,6 +1,5 @@
 ﻿
 $(document).ready(function () {
-
     //Định nghĩa Dialog
     dialog = $(".dialog__content").dialog({
         autoOpen: false,
@@ -10,9 +9,7 @@ $(document).ready(function () {
 
 
     });
-
     practicallaboratoryJS = new PracticalLaboratoryJS();
-
 })
 
 class PracticalLaboratoryJS extends BaseJS {
@@ -45,13 +42,13 @@ class PracticalLaboratoryJS extends BaseJS {
         }.bind(this));
 
         $('#cbx_building').on('change', function () {
-                this.filterData();
+            this.filterData();
         }.bind(this));
         $('#cbx_subject').on('change', function () {
-                this.filterData();
+            this.filterData();
         }.bind(this));
         $('#cbx_ology').on('change', function () {
-                this.filterData();
+            this.filterData();
         }.bind(this));
 
         $('.dialog__content').keypress(function (e) {
@@ -70,8 +67,10 @@ class PracticalLaboratoryJS extends BaseJS {
         $('#btn-yes-warring').click(this.btnDeleteOnClick);
         $('#btn-update').click(this.btnUpdateOnClick);
 
-      
+
     }
+
+
     /**
     * Load dữ liệu bảng Department lên trang
     * Author: Nguyen Dang Tung(27/12/2020)
@@ -152,7 +151,6 @@ class PracticalLaboratoryJS extends BaseJS {
      */
     btnSaveOnClick() {
         var object = getObject();
-        //console.log(object);
         var isvalidate = $('input[validate="false"]');
         try {
             if (isvalidate.length == 0) {
@@ -175,7 +173,7 @@ class PracticalLaboratoryJS extends BaseJS {
                         practicallaboratoryJS.loadData();
                     }
                 }).fail(function (response) {
-                    //console.log(response);
+                    console.log(response);
                     var msg = response.responseJSON.Data;
                     showAlertWarring("", msg);
                     displaynone(3000);
@@ -257,7 +255,6 @@ class PracticalLaboratoryJS extends BaseJS {
      */
     btnUpdateOnClick() {
         var object = getObject(recordId);
-        //console.log(object);
         var isvalidate = $('input[validate="false"]');
         try {
             if (isvalidate.length == 0) {
@@ -280,7 +277,7 @@ class PracticalLaboratoryJS extends BaseJS {
                         practicallaboratoryJS.loadData();
                     }
                 }).fail(function (response) {
-                    //console.log(response);
+                    console.log(response);
                     var msg = response.responseJSON.Data;
                     showAlertWarring("", msg);
                     displaynone(3000);
@@ -302,7 +299,11 @@ class PracticalLaboratoryJS extends BaseJS {
             var subjectId = $('#cbx_subject option:selected ').val();
             var ologyId = $('#cbx_ology option:selected ').val();
             listData = cacheData.filter(function (item) {
-                return ((item["PracticalLaboratoryCode"].toLowerCase()).includes(value.toLowerCase()) || (item["PracticalLaboratoryName"].toLowerCase()).includes(value.toLowerCase())) && (buildingId ? item["BuildingID"] === buildingId : item["BuildingID"] != buildingId) && (subjectId ? item["SubjectID"] === subjectId : item["SubjectID"] != subjectId) && (ologyId ? item["OlogyID"] === ologyId : item["OlogyID"] != ologyId);
+                return ((item["PracticalLaboratoryCode"].toLowerCase()).includes(value.toLowerCase())
+                    || (item["PracticalLaboratoryName"].toLowerCase()).includes(value.toLowerCase()))
+                    && (buildingId ? item["BuildingID"] === buildingId : item["BuildingID"] != buildingId)
+                    && (subjectId ? item["SubjectID"] === subjectId : item["SubjectID"] != subjectId)
+                    && (ologyId ? item["OlogyID"] === ologyId : item["OlogyID"] != ologyId);
             });
             $('.loading').show();
             $('#tbListData tbody').empty();
