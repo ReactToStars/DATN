@@ -162,7 +162,6 @@ function formatStatus(status) {
  **@param {any} number:1,2,0
  */
 function formatGender(status) {
-
     if (status == 1) {
         return status = "Nam";
     }

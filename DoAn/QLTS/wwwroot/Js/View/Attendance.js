@@ -220,7 +220,7 @@ class AttendanceJS extends BaseJS {
                                 displaynone(3000);
                             }
                             else if (response.Code == Enum.StatusResponse.Success) {
-                                
+
                                 dialog.dialog("close");
                                 var msg = response.Messenger;
                                 showMessengerSuccess(msg);
@@ -233,8 +233,7 @@ class AttendanceJS extends BaseJS {
                             var msgLength = response.responseJSON.Data.length;
                             showAlertWarring(msg, msgLength);
                             displaynone(3000);
-                        })
-
+                        });
                     }
                 } catch (e) {
                     console.log(e);
@@ -400,12 +399,15 @@ function getObject(id) {
         object["StartTime"] = $('input[fieldName="StartTime"]').val();
         object["EndTime"] = $('input[fieldName="EndTime"]').val();
 
-        //if ($('.txt_attendanceStatus').attr('checked')) {
-        //    object['AttendanceStatus'] = 1;
-        //}
-        //else{
-        //    object['AttendanceStatus'] = 0;
-        //}
+        //$('.txt_attendanceStatus').click(function () {
+        //    if ($(this).attr('checked')) {
+        //        object['AttendanceStatus'] = 1;
+        //    }
+        //    else {
+        //        object['AttendanceStatus'] = 0;
+        //    }
+        //});
+
         //object['AttendanceStatus'] = parseInt($('.attendanceStatus').val());
         object["AttendanceID"] = id;
         console.log(object);

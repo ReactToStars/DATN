@@ -14,4 +14,14 @@
         $(".wrapper .row .left").attr("style", "width: 200px;");
         $(".navbar-item-box .navbar-item-direct").attr("style", "display: block;");
     });
+
+    $('.general').click(function () {
+        $('.sub-general').slideToggle();
+        $('.sub-general').removeClass('display-none');
+    });
+
+    $('.human').click(function () {
+        $('.sub-human').slideToggle();
+        $('.sub-human').removeClass('display-none');
+    });
 });

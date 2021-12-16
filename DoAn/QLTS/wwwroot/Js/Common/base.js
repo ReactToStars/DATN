@@ -216,13 +216,14 @@ class BaseJS {
                             var money = formatMoney(propertyvalue);
                             propertyvalue = money;
                         }
+
                         //if ($(item).attr('type') == 'checkbox') {
                         //    if (propertyvalue == 1) {
-                        //        $(item).attr('checked', true);
+                        //        $(item).attr('checked');
                         //    }
-                        //    else {
-                        //        $(item).attr('checked', false);
-                        //    }
+                        //    //else {
+                        //    //    $(item).attr('checked', false);
+                        //    //}
                         //}
                         this.value = propertyvalue;
                     })
