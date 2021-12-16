@@ -124,9 +124,6 @@ class DetailModuleClassJS extends BaseJS {
                 inputNotValidate[0].focus();
                 return;
             }
-
-
-
         });
 
         $('input[type="number"]').blur(function () {

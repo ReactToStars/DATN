@@ -256,7 +256,7 @@ namespace DATN.Controllers
                         if (item.Code == Code.NotValid || ((int)item.Data) == 0)
                         {
                             i++;
-                            arrayError.Add("Dữ liệu dòng số " + i + " không hợp lệ!");
+                            arrayError.Add("Dữ liệu dòng số " + i + " đã tồn tại hoặc không hợp lệ!");
                             isValidate = false;
                         }
                     }
@@ -264,7 +264,7 @@ namespace DATN.Controllers
                     {
                         _serviceResult.Code = Code.Success;
                         _serviceResult.Data = i;
-                        _serviceResult.Messenger = "Bạn đã impore dữ liệu thành công!";
+                        _serviceResult.Messenger = "Bạn đã import dữ liệu thành công!";
                     }
                     else
                     {

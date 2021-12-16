@@ -42,7 +42,7 @@ namespace DATN.Controllers
                         FullName = worksheet.Cells[row, 3].Value.ToString(),
                         DateOfBirth = DateTime.Parse(worksheet.Cells[row, 4].Value.ToString()),
                         Gender = int.Parse(worksheet.Cells[row, 5].Value.ToString()),
-                        ClassCode = worksheet.Cells[row, 6].Value.ToString(),
+                        ClassID = Guid.Parse(worksheet.Cells[row, 6].Value.ToString()),
                     });
                 }
             }

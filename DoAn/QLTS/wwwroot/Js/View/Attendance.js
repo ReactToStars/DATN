@@ -17,9 +17,8 @@ class AttendanceJS extends BaseJS {
     constructor() {
         super();
         this.initEventsPage();
-        this.loadData();
         this.loadstudent();
-        //this.loadPracticeGroup();
+        this.loadPracticeSchedule();
         this.creditcheck();
 
     }
@@ -31,12 +30,14 @@ class AttendanceJS extends BaseJS {
 
     /**
      * Load attendance from database
+     * Created by NTHung (10/12/2021)
      * */
     loadData() {
         try {
             $('.loading').show();
             var id = window.location.href;
-            id = id.split("=")[1];
+            id = id.split("&&")[0];
+            id = id.split('=')[1];
             $.ajax({
                 url: "/api/v1/attendance/filter?Id=" + id,
                 method: "GET",
@@ -44,17 +45,12 @@ class AttendanceJS extends BaseJS {
                 dataType: 'json',
                 connectType: 'application/json'
             }).done(function (response) {
-                let responses = [];
-                if (response.Code === Enum.StatusResponse.NotImplemented) {
-                    window.location.href = response.Data;
-                }
-                else {
-                    $('#tbListData tbody').empty();
-                    generateTable(responses);
-                    setTimeout(function () {
-                        $('.loading').hide();
-                    }, 500);
-                }
+                cacheData = response;
+                $('#tbListData tbody').empty();
+                generateTable(response);
+                setTimeout(function () {
+                    $('.loading').hide();
+                }, 500);
             }).fail(function (response) {
                 console.log(response);
                 $('.loading').hide();
@@ -65,23 +61,18 @@ class AttendanceJS extends BaseJS {
     }
 
     /**
-    * Các sự kiện cho các button của trang 
-     * Author: Nguyen Dang Tung(27/12/2020)
+    * events in page 
+     * Created by NTHung (11/12/2021);
      * */
     initEventsPage() {
-
         $('#txt-search').keypress(function (e) {
-            if (e.which == 13 && $('#txt-search').val()) {
+            if (e.which == 13) {
                 this.filterData();
             }
         }.bind(this));
 
-        $('.btn-search').click(function (e) {
-            if ($('#txt-search').val()) {
-                {
-                    this.filterData();
-                }
-            }
+        $('.btn-search').click(function () {
+            this.filterData();
         }.bind(this));
 
 
@@ -93,35 +84,37 @@ class AttendanceJS extends BaseJS {
                 $('#btn-update').trigger('click');
             }
         });
+
         $('#btn-save').click(this.btnSaveOnClick);
         $('#btn-ok-warring,#btn-no-warring,#btn-yes-warring,.close').click(closeWarring);
         $("#tbListData tbody ").on('click', 'tr', this.rowSelected);
         $('#btn-remove').click(this.messengerDelete);
-
+        $('#btn-refresh').click(function () {
+            this.loadData();
+            this.loadPracticeSchedule();
+        }.bind(this));
         $('#btn-yes-warring').click(this.btnDeleteOnClick);
         $('#btn-update').click(this.btnUpdateOnClick);
 
         $('.student_of_class ul').off('click').on('click', "li", function () {
-
             var li = $(`<li value=` + $(this).attr("value") + `>` + $(this).text() + `</li>`)
             $('.student_of_group ul').prepend(li);
-
             $(this).remove();
-
         });
-        $('.student_of_group ul').off('click').on('click', "li", function () {
 
+        $('.student_of_group ul').off('click').on('click', "li", function () {
             var li = $(`<li value=` + $(this).attr("value") + `>` + $(this).text() + `</li>`)
             $('.student_of_class ul').append(li);
-
             $(this).remove();
-
         });
 
     }
 
+    /**
+     * check value when save data
+     * Created by NTHung (10/12/2021)
+     * */
     creditcheck() {
-
         $('#btn-save').on('click', function () {
             //Validate dữ liệu
             var studentGroup = $('.student_of_group ul li');
@@ -141,38 +134,47 @@ class AttendanceJS extends BaseJS {
     }
 
     /**
-    * Load dữ liệu bảng Department lên trang
-    * Author: Nguyen Dang Tung(27/12/2020)
+    * Load students
+    * Created by NTHung (10/12/2021)
     */
     loadstudent() {
         let id = window.location.href;
+        id = id.split("&&")[1];
         id = id.split("=")[1];
         loadStudentClass(id);
     }
 
-    loadPracticeGroup() {
+    /**
+     * Load practice schedule
+     * Created by NTHung (10/12/2021)
+     * */
+    loadPracticeSchedule() {
         try {
-            let id = window.location.href, url1 = id.split("&&")[0], url2 = id.split("&&")[1], id1, id2;
-            id1 = url1.split("=")[1];
-            id2 = url2.split("=")[1];
-
-            $('.Back_To_Page').attr('href', '/view/DividePracticeGroups.html?moduleClassId=' + id1 + '')
-
+            let id = window.location.href;
+            id = id.split("&&")[0];
+            id = id.split("=")[1];
             $.ajax({
-                url: "/api/v1/PracticeGroup/find?id=" + id2,
+                url: "/api/v1/PracticeSchedule/find?id=" + id,
                 method: "GET",
                 async: true,
                 //data: null,
                 dataType: 'json',
                 connectType: 'application/json'
             }).done(function (response) {
-                $('.txt_Group').attr('value', response['PracticeGroupName']);
-                $('.txt_GroupID').attr('value', response['PracticeGroupID']);
-                var td = $('.grid-infor table td[fieldName]');
-                $.each(td, function (index, item) {
-                    var fieldName = $(this).attr('fieldName');
-                    $(this).text(response[fieldName]);
+                var count = 0;
+                $.each(cacheData, function (index, item) {
+                    if (item["AttendanceStatus"] == 0) {
+                        count += 1;
+                    }
                 });
+                $('.txt_PracticeScheduleID').attr('value', response['PracticeScheduleID']);
+                $('.grid-infor table td[fieldName="PracticeShiftName"]').text(`${response["PracticeShiftName"]}`);
+                $('.grid-infor table td[fieldName="PracticeGroupName"]').text(`${response["PracticeGroupName"]}`);
+                $('.grid-infor table td[fieldName="PracticalLaboratoryName"]').text(`${response["PracticalLaboratoryName"]}`);
+                $('.grid-infor table td[fieldName="FullName"]').text(`${response["FullName"]}`);
+                var date = formatDate(response["Date"]);
+                $('.grid-infor table td[fieldName="Date"]').text(`${date}`);
+                $('#absent').text(`${count}`);
             }).fail(function (response) {
                 console.log(response);
             })
@@ -182,8 +184,8 @@ class AttendanceJS extends BaseJS {
     }
 
     /**
-     * Lưu dữ liệu 
-     * Author: Nguyen Dang Tung(31/12/2020)
+     * Save data to database 
+     * Created by NTHung (10/12/2021)
      */
     btnSaveOnClick() {
         //let id = window.location.href, url1 = id.split("&&")[0], id1;
@@ -193,7 +195,7 @@ class AttendanceJS extends BaseJS {
         $.each(listobject, function (index, items) {
 
             listData = cacheData.filter(function (item) {
-                return (item["PracticeGroupID"] === items['PracticeGroupID']) && (item["StudentID"] === items['StudentID']);
+                return (item["PracticeSchedule"] === items['PracticeSchedule']) && (item["StudentID"] === items['StudentID']);
             });
             if (listData.length != 0) {
                 $('select[fieldName="StudentID"]').focus();
@@ -218,11 +220,12 @@ class AttendanceJS extends BaseJS {
                                 displaynone(3000);
                             }
                             else if (response.Code == Enum.StatusResponse.Success) {
-                                console.log(response);
+                                
                                 dialog.dialog("close");
                                 var msg = response.Messenger;
                                 showMessengerSuccess(msg);
-                                detailpracticegroupJS.loadData();
+                                attendanceJS.loadData();
+                                attendanceJS.loadPracticeSchedule();
                             }
                         }).fail(function (response) {
                             //console.log(response);
@@ -267,7 +270,7 @@ class AttendanceJS extends BaseJS {
             showAlertWarring("Bạn chưa chọn phần tử muốn xóa!", "")
         }
         else {
-            var msg = "Bạn có chắc chắn muốn xóa " + recordTitle + " không?";
+            var msg = "Bạn có chắc chắn muốn xóa sinh viên " + recordTitle+ " không?";
             showAlertConfirm(msg)
         }
     }
@@ -291,7 +294,8 @@ class AttendanceJS extends BaseJS {
                     displaynone(3000);
                 }
                 else if (response.Code == Enum.StatusResponse.Success) {
-                    detailpracticegroupJS.loadData();
+                    attendanceJS.loadData();
+                    attendanceJS.loadPracticeSchedule();
                     var msg = response.Messenger;
                     showMessengerSuccess(msg);
                 }
@@ -332,13 +336,14 @@ class AttendanceJS extends BaseJS {
                         dialog.dialog("close");
                         var msg = response.Messenger;
                         showMessengerSuccess(msg);
-                        detailpracticegroupJS.loadData();
+                        attendanceJS.loadData();
+                        attendanceJS.loadPracticeSchedule();
                     }
                 }).fail(function (response) {
                     //console.log(response);
                     var msg = response.responseJSON.Data;
-                    var msgLength = response.responseJSON.Data.length;
-                    showAlertWarring(msg, msgLength);
+                    //var msgLength = response.responseJSON.Data.length;
+                    showAlertWarring(msg, "");
                     displaynone(3000);
                 })
             }
@@ -352,13 +357,11 @@ class AttendanceJS extends BaseJS {
      * */
     filterData() {
         try {
-
             var value = $('#txt-search').val();
             listData = cacheData.filter(function (item) {
-                return (item["StudentCode"].toLowerCase()).includes(value.toLowerCase())
-                    || (item["FullName"].toLowerCase()).includes(value.toLowerCase());
+                return (item["StudentCode"].toLowerCase().includes(value.toLowerCase())
+                    || item["FullName"].toLowerCase().includes(value.toLowerCase()));
             });
-
             $('.loading').show();
             $('#tbListData tbody').empty();
             generateTable(listData);
@@ -381,7 +384,7 @@ function getObject(id) {
         let listStudent = $(".student_of_group ul li");
         $.each(listStudent, function (index, item) {
             var object = {};
-            object["PracticeGroupID"] = $('.txt_GroupID').attr('value');
+            object["PracticeScheduleID"] = $('.txt_PracticeScheduleID').attr('value');
             object["StudentID"] = $(this).attr("value");
             ListObject.push(object);
 
@@ -390,80 +393,74 @@ function getObject(id) {
     }
     else if (formMode === "Edit") {
         var object = {};
-        object["PracticeGroupID"] = $('.txt_GroupID').attr('value');
+        object["PracticeScheduleID"] = $('.txt_PracticeScheduleID').attr('value');
         object["StudentID"] = $(".txt_StudentID").val();
-        object["Note"] = $('textarea[fieldName="Note"]').val();
-        object["DetailPracticeGroupID"] = id;
+        object["Description"] = $('textarea[fieldName="Description"]').val();
+        object["AttendanceStatus"] = parseInt($('.cbx_attendanceStatus').val());
+        object["StartTime"] = $('input[fieldName="StartTime"]').val();
+        object["EndTime"] = $('input[fieldName="EndTime"]').val();
+
+        //if ($('.txt_attendanceStatus').attr('checked')) {
+        //    object['AttendanceStatus'] = 1;
+        //}
+        //else{
+        //    object['AttendanceStatus'] = 0;
+        //}
+        //object['AttendanceStatus'] = parseInt($('.attendanceStatus').val());
+        object["AttendanceID"] = id;
+        console.log(object);
         return object;
     }
 }
-//Load sinh viên trong lớp học phần
-//@param {any} id
 
+/**
+ * Load Student form detail practice group
+ * Created by NTHung (10/12/2021)
+ * @param {any} id
+ */
 function loadStudentClass(id) {
     try {
-        let ListOfStudentsWithGroups = [];
-        console.log(id);
+        let listStudentsFromPracticeGroup = [];
+
         $.ajax({
-            url: `/api/v1/PracticeSchedule/filter?Id=${id}`, //Địa chỉ API lấy dữ liệu
+            url: "/api/v1/detailPracticeGroup/filter?Id=" + id, //Địa chỉ API lấy dữ liệu
             method: "GET",//Phương thức Get, Set, Put, Delete...
             async: false,
             //data: null,
             dataType: 'json',
             connectType: 'application/json'
         }).done(function (response) {
-            console.log(response);
-            if (response != null) {
-                $.each(response, function (index, item) {
-                    $.ajax({
-                        url: "/api/v1/detailPracticeGroup/filter?Id=" + item["PracticeGroupID"], //Địa chỉ API lấy dữ liệu
-                        method: "GET",//Phương thức Get, Set, Put, Delete...
-                        async: false,
-                        //data: null,
-                        dataType: 'json',
-                        connectType: 'application/json'
-                    }).done(function (response1) {
-                        $.each(response1, function (index, student) {
-                            ListOfStudentsWithGroups.push(student);
-                        });
-                        console.log(ListOfStudentsWithGroups);
-                        $.each(ListOfStudentsWithGroups, function (index, item) {
-                            li = $(`<li value=` + item['StudentID'] + `>` + item['FullName'] + `</li>`);
-                            $('.student_of_class ul ').append(li);
-                        });
-                    }).fail(function (response) {
-                        console.log(response);
-                    })
-                });
+            $.each(response, function (index, student) {
+                listStudentsFromPracticeGroup.push(student);
+            });
 
-            }
         }).fail(function (response) {
             console.log(response);
-        })
+        });
+        var practiceScheduleId = window.location.href;
+        practiceScheduleId = practiceScheduleId.split("&&")[0];
+        practiceScheduleId = practiceScheduleId.split('=')[1];
 
-        //$.ajax({
-        //    url: "/api/v1/DetailModuleClass/filter?Id=" + id + "",
-        //    method: "GET",
-        //    async: true,
-        //    //data: null,
-        //    dataType: 'json',
-        //    connectType: 'application/json'
-        //}).done(function (response) {
-        //    // console.log(response);
-        //    var ListStudentOfClass = response;
-        //    var li = "";
-        //    $.each(ListOfStudentsWithGroups, function (index, studentGroup) {
-        //        ListStudentOfClass = ListStudentOfClass.filter(item => item["StudentID"] != studentGroup["StudentID"]);
-        //    });
-        //    $.each(ListStudentOfClass, function (index, item) {
+        $.ajax({
+            url: "/api/v1/attendance/filter?Id=" + practiceScheduleId,
+            method: "GET",
+            async: false,
+            data: null,
+            dataType: 'json',
+            connectType: 'application/json'
+        }).done(function (response) {
+            var listStudentsFromAttendance = response;
+            $.each(listStudentsFromAttendance, function (index, listStudents) {
+                listStudentsFromPracticeGroup = listStudentsFromPracticeGroup.filter(item => item["StudentID"] != listStudents["StudentID"]);
+            });
+            $.each(listStudentsFromPracticeGroup, function (index, item) {
+                var li = $(`<li value=` + item['StudentID'] + `>` + item['FullName'] + `</li>`);
+                $('.student_of_class ul ').append(li);
 
-        //        li = $(`<li value=` + item['StudentID'] + `>` + item['FullName'] + `</li>`);
-        //        $('.student_of_class ul ').append(li);
-
-        //    });
-        //}).fail(function (response) {
-        //    console.log(response);
-        //})
+            });
+        }).fail(function (response) {
+            console.log(response);
+        });
     } catch (e) {
         console.log(e);
     }
@@ -473,9 +470,10 @@ function loadStudentClass(id) {
 function resetDialog() {
     $('.student_of_class ul ').find('li').remove();
     $('.student_of_group ul ').find('li').remove();
-    let id = window.location.href, url1 = id.split("&&")[0], url2 = id.split("&&")[1], id1, id2;
-    id1 = url1.split("=")[1];
-    loadStudentClass(id1)
+    let id = window.location.href;
+    id = id.split("&&")[1];
+    id = id.split("=")[1];
+    loadStudentClass(id);
 }
 
 

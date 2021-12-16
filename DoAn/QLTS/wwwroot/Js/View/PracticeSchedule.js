@@ -25,7 +25,6 @@ class PracticeScheduleJS extends BaseJS {
         this.loadSemester();
         this.loadSchoolYear();
         this.loadPracticeGroup();
-
     }
 
     setDataUrl() {
@@ -33,12 +32,24 @@ class PracticeScheduleJS extends BaseJS {
         this.getCode = "";
     }
 
+    /**
+     * Load practice schedule by id from database
+     * Created by HTHang (22/11/2021)
+     * */
     loadData() {
         try {
-            $('.loading').show();
             let id = window.location.href;
-            id = id.split("=")[1];
-            let getDataUrl = `/api/v1/PracticeSchedule/filter?Id=${id}`;
+            var moduleClassId = id.split("&&")[0];
+            moduleClassId = moduleClassId.split("=")[1];
+            var practiceGroupId = id.split("&&")[1];
+            practiceGroupId = practiceGroupId.split("=")[1];
+            
+            $('.Back_To_Page').attr('href', `/View/detailpracticegroup.html?moduleClassId=${moduleClassId}&&practiceGroupId=${practiceGroupId}`);
+
+            $('.loading').show();
+            //let id = window.location.href;
+            //id = id.split("=")[1];
+            let getDataUrl = `/api/v1/PracticeSchedule/filter?Id=${practiceGroupId}`;
             $.ajax({
                 url: getDataUrl, //Địa chỉ API lấy dữ liệu
                 method: "GET",//Phương thức Get, Set, Put, Delete...
@@ -47,7 +58,24 @@ class PracticeScheduleJS extends BaseJS {
                 dataType: 'json',
                 connectType: 'application/json'
             }).done(function (response) {
-                //console.log(response);
+                //load Date
+                $.each(response, function (index, item) {
+                    var date = new Date(item['Date']);
+                    var day = date.getDate();
+                    var month = date.getMonth() + 1;
+                    var year = date.getFullYear();
+                    if (day < 10) {
+                        day = '0' + day;
+                    }
+                    if (month < 10) {
+                        month = '0' + month;
+                    }
+                    date = day + '/' + month + '/' + year;
+                    var option = `<option value="${item['Date']}">${date}</option>`;
+                    $('#cbx-date').append(option);
+                });
+
+                //load Data
                 let responses = [];
                 if (response.Code === Enum.StatusResponse.NotImplemented) {
                     window.location.href = response.Data;
@@ -80,7 +108,7 @@ class PracticeScheduleJS extends BaseJS {
 
     //*
     //* Các sự kiện cho các button của trang
-    //* Author: Nguyen Dang Tung(27/12/2020)
+    //* Created by HTHang(22/11/2021)
     // *
     initEventsPage() {
 
@@ -115,6 +143,7 @@ class PracticeScheduleJS extends BaseJS {
         $('#btn-yes-warring').click(this.btnDeleteOnClick);
         $('#btn-update').click(this.btnUpdateOnClick);
 
+        $('#import').click(this.importFile);
     }
 
     /**
@@ -230,10 +259,16 @@ class PracticeScheduleJS extends BaseJS {
      * */
     loadPracticeGroup() {
         try {
+            //let id = window.location.href;
+            //id = id.split("=")[1];
             let id = window.location.href;
-            id = id.split("=")[1];
+            var moduleClassId = id.split("&&")[0];
+            moduleClassId = moduleClassId.split("=")[1];
+            var practiceGroupId = id.split("&&")[1];
+            practiceGroupId = practiceGroupId.split("=")[1];
+
             $.ajax({
-                url: "/api/v1/PracticeGroup/find?id=" + id,
+                url: "/api/v1/PracticeGroup/find?id=" + practiceGroupId,
                 method: "GET",
                 async: true,
                 data: null,
@@ -258,6 +293,13 @@ class PracticeScheduleJS extends BaseJS {
         }
     }
 
+    //loadDetailPracticeGroup() {
+    //    let id = window.location.href, url1 = id.split("&&")[0], url2 = id.split("&&")[1], id1, id2;
+    //    id1 = url1.split("=")[1];
+    //    id2 = url2.split("=")[1];
+
+    //    $('.Back_To_Page').attr('href', '/view/DividePracticeGroups.html?moduleClassId=' + id1 + '');
+    //}
 
     //*
     // * Lưu dữ liệu
@@ -416,11 +458,13 @@ class PracticeScheduleJS extends BaseJS {
         try {
             var value = $('#txt-search').val();
             var practicalLaboratoryID = $('#cbx-practicalLaboratory option:selected').val();
+            var date = $('#cbx-date option:selected ').val();
             //var date = $('#cbx-date option:selected').val();
             console.log(cacheData);
             listData = cacheData.filter(function (item) {
                 return item["PracticalLaboratoryName"].toLowerCase().includes(value.toLowerCase())
-                    && (practicalLaboratoryID ? item["PracticalLaboratoryID"] === practicalLaboratoryID : item["PracticalLaboratoryID"] !== practicalLaboratoryID);
+                    && (practicalLaboratoryID ? item["PracticalLaboratoryID"] === practicalLaboratoryID : item["PracticalLaboratoryID"] !== practicalLaboratoryID)
+                    && (date ? item["Date"] === date : item["Date"] !== date);
                     //&& (date ? item["Date"] === parseInt(date) : item["Date"] !== "");
             });
             $('.loading').show();
@@ -432,6 +476,67 @@ class PracticeScheduleJS extends BaseJS {
 
         } catch (e) {
             console.log(e);
+        }
+    }
+
+    /**Import dữ liệu vào db */
+    importFile() {
+        var file = document.getElementById('file_import');
+        var files = file.files;
+        if (files.length != 0) {
+            var extensions = files[0].name;
+            if (extensions.split('.')[1].trim() === "xlsx") {
+                var formData = new FormData();
+                if (file.files.length) {
+                    formData.append("file", files[0]);
+                    $.ajax({
+                        url: "/api/v1/PracticeSchedule/UploadFile",
+                        method: "Post",
+                        data: formData,
+                        contentType: false,
+                        processData: false,
+                        async: true
+                    }).done(function (response) {
+                        if (response.Code == Enum.StatusResponse.MethodNotAllowed) {
+                            showAlertWarring(response.Messenger);
+                            displaynone(3000);
+                        }
+                        else if (response.Code == Enum.StatusResponse.Success) {
+                            var msg = response.Messenger;
+                            showMessengerSuccess(msg);
+                            practiceScheduleJS.loadData();
+                            $('#file_import').val('');
+
+                        }
+                        else if (response.Code == Enum.StatusResponse.NotValid) {
+                            setTimeout(function () {
+                                showAlertWarring(response.Messenger, response.Data);
+                            }, 1000);
+                            practiceScheduleJS.loadData();
+                            $('#file_import').val('');
+
+                        }
+
+                    }).fail(function (response) {
+                        $('#file_import').val('');
+                        showAlertWarring('Vui lòng kiểm tra lại file dữ liệu!');
+                        displaynone(3000);
+                        //    console.log(response);
+                    })
+                }
+
+            }
+            else {
+                showAlertWarring("Vui lòng nhập đúng định dạng file Excel!");
+                $('#file_import').val('');
+                displaynone(3000);
+                return;
+            }
+
+        }
+        else {
+
+            showAlertWarring("Vui lòng chọn file dữ liệu!", "");
         }
     }
 }

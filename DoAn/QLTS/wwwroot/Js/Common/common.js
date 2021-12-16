@@ -1,6 +1,22 @@
-﻿/**
+﻿
+/**
+ * format attendance status
+ * Created by NTHung (12/12/2021)
+ * @param {any} status
+ */
+function formatAttendanceStatus(status) {
+    if (status == 1) {
+        status = "Có";
+    }
+    else {
+        status = "vắng";
+    }
+    return status;
+}
+
+/**
  * format request from practice schedule
- * Created by NTHung (7/12/2021)
+ * Created by HTHang (7/12/2021)
  * @param {any} request
  */
 function formatRequest(request) {
@@ -15,7 +31,7 @@ function formatRequest(request) {
 
 /**
  * Format status of practice schedule
- * Created by NTHung (26/11/2021)
+ * Created by HTHang (26/11/2021)
  * @param {any} status
  */
 function formatPracticeSchedule(status) {
@@ -313,6 +329,22 @@ function generateTable(response) {
                         var td = $(`<td><a href="/view/Attendance.html?PracticeScheduleID=` + obj[objectID] + `&&PracticeGroupID=` + obj[practiceGroupID] + `">Điểm danh</a></td>`);
                         td.addClass("text-align-center");
                         break;
+                    case "attendanceStatus":
+                        value = formatAttendanceStatus(value);
+                        var td = $(`<td title="` + value + `"></td>`);
+                        td.addClass("text-align-center");
+                        break;
+                    //case "check":
+                    //    var checkbox;
+                    //    if (value == 1) {
+                    //        checkbox = `<input type="checkbox" checked/>`;
+                    //    }
+                    //    else {
+                    //        checkbox = `<input type="checkbox"/>`;
+                    //    }
+                    //    value = "";
+                    //    td.append(checkbox);
+                    //    break;
                     case "STT":
                         value = ind;
                         var td = $(`<td title="` + value + `"></td>`);

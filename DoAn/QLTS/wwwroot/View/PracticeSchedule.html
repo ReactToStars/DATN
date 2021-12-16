@@ -163,7 +163,7 @@
                     <div class="header-left">
                         <div><a class="parent-title" href="/View/Home.html" title="Quản lý thực hành">Quản lý thực hành</a></div>
                         <div class="m-seperator m-background-image"></div>
-                        <div class="child-title"><a href="/View/DetailPracticeGroup.html" title="Chi tiết nhóm thực hành - thí nghiệm">Chi tiết nhóm thực hành thí nghiệm</a></div>
+                        <div class="child-title"><a class="parent-title Back_To_Page" href="/View/DetailPracticeGroup.html" title="Chi tiết nhóm thực hành - thí nghiệm">Chi tiết nhóm thực hành thí nghiệm</a></div>
                         <div class="m-seperator m-background-image"></div>
                         <div class="child-title"><a href="/View/PracticeSchedule.html" title="Lịch thực hành - thí nghiệm">Lịch thực hành - thí nghiệm</a></div>
                     </div>
@@ -201,6 +201,9 @@
                             <select class="cbx_header info__type__emp" id="cbx-practicalLaboratory" fieldName="PracticalLaboratoryID">
                                 <option value="">---Vui lòng chọn phòng thực hành học---</option>
                             </select>
+                            <select class="cbx_header info__type__emp" id="cbx-date" fieldName="Date">
+                                <option value="">--Chọn ngày--</option>
+                            </select>
                             <!--<select class=" cbx_header info__type__emp" id="cbx-date" fieldName="Date">
                                 <option value="">---Vui lòng chọn ngày thực hành---</option>
                                 <option value="0">Thứ 2</option>
@@ -211,6 +214,13 @@
                                 <option value="5">Thứ 7</option>
                                 <option value="6">Chủ nhật</option>
                             </select>-->
+                        </div>
+                        <div class="box_upload">
+                            <span>Vui lòng chọn file: </span>
+                            <div class="box_select_file">
+                                <input id="file_import" type="file" />
+                            </div>
+                            <a href="javascript:;" title="Import" id="import">Import</a>
                         </div>
                         <div style="margin: 10px">
                             <p><span class="margin-right font-weight">Nhóm:</span> <span class="txt-practiceGroup"></span></p>
@@ -304,13 +314,13 @@
                                         <!--<div class=" parent-sub-content">
                                             <div class="sub-content" style="width: 100%">
                                                 <div class="sub-title">Ngày bắt đầu <span>*</span></div>-->
-                                                <!--<input type="date" class="input-text info__type__emp" dataType="date" fieldName="StartTime" required tabindex="7" />-->
-                                                <!--<input type="text" class="input-text info__type__emp" fieldName="StartTime" tabindex="7"/>
-                                            </div>
-                                            <div class="sub-content" style="width: 100%">
-                                                <div class="sub-title">Ngày kết thúc <span>*</span></div>-->
-                                                <!--<input type="date" class="input-text info__type__emp" dataType="date" fieldName="EndTime" required tabindex="8" />-->
-                                                <!--<input type="text" class="input-text info__type__emp" fieldName="EndTime" tabindex="8" />
+                                        <!--<input type="date" class="input-text info__type__emp" dataType="date" fieldName="StartTime" required tabindex="7" />-->
+                                        <!--<input type="text" class="input-text info__type__emp" fieldName="StartTime" tabindex="7"/>
+                                        </div>
+                                        <div class="sub-content" style="width: 100%">
+                                            <div class="sub-title">Ngày kết thúc <span>*</span></div>-->
+                                        <!--<input type="date" class="input-text info__type__emp" dataType="date" fieldName="EndTime" required tabindex="8" />-->
+                                        <!--<input type="text" class="input-text info__type__emp" fieldName="EndTime" tabindex="8" />
                                             </div>
                                         </div>-->
                                         <div class=" parent-sub-content" hidden>

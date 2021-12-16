@@ -45,6 +45,7 @@ namespace DATN.Controllers
             var filePath = $"{(Directory.GetCurrentDirectory())}{@"\wwwroot\Content\files"}" + "\\" + fileName;
             List<DetailModuleClass> ListObject = new List<DetailModuleClass>();
             //Cách 1
+
             FileInfo fileInfor = new FileInfo(filePath);
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             using (ExcelPackage package = new ExcelPackage(fileInfor))
@@ -56,14 +57,11 @@ namespace DATN.Controllers
                 {
                     ListObject.Add(new DetailModuleClass()
                     {
-                        StudentCode = worksheet.Cells[row, 2].Value.ToString(),
-                        ModuleClassCode = worksheet.Cells[row, 3].Value.ToString(),
-                        FrequentPoints1 = float.Parse(worksheet.Cells[row, 4].Value.ToString()),
-                        FrequentPoints2 = float.Parse(worksheet.Cells[row, 5].Value.ToString()),
-                        MediumScore = float.Parse(worksheet.Cells[row, 6].Value.ToString()),
-                     
-
-
+                        StudentID = Guid.Parse(worksheet.Cells[row, 2].Value.ToString()),
+                        FrequentPoints1 = float.Parse(worksheet.Cells[row, 3].Value.ToString()),
+                        FrequentPoints2 = float.Parse(worksheet.Cells[row, 4].Value.ToString()),
+                        MediumScore = float.Parse(worksheet.Cells[row, 5].Value.ToString()),
+                        ModuleClassID = Guid.Parse(worksheet.Cells[row, 6].Value.ToString()),
                     });
                 }
             }

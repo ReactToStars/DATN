@@ -52,15 +52,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>-340 px</X>
-              <Y>-250 px</Y>
+              <X>-1090 px</X>
+              <Y>-260 px</Y>
             </Location>
             <Size>
-              <Width>196 px</Width>
-              <Height>161 px</Height>
+              <Width>227 px</Width>
+              <Height>229 px</Height>
             </Size>
             <DbOid>
-              <Path>do_an_tot_nghiep.course</Path>
+              <Path>datn.attendance</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -75,15 +75,61 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>-350 px</X>
-              <Y>10 px</Y>
+              <X>-60 px</X>
+              <Y>-240 px</Y>
+            </Location>
+            <Size>
+              <Width>199 px</Width>
+              <Height>144 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.building</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>3</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>-60 px</X>
+              <Y>0 px</Y>
             </Location>
             <Size>
               <Width>196 px</Width>
               <Height>195 px</Height>
             </Size>
             <DbOid>
-              <Path>do_an_tot_nghiep.class</Path>
+              <Path>datn.class</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>4</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>-420 px</X>
+              <Y>50 px</Y>
+            </Location>
+            <Size>
+              <Width>196 px</Width>
+              <Height>161 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.course</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -94,73 +140,63 @@
           </Model>
           <Model xsi:type="RelationLinkModel">
             <CustomProperties>
-              <OID>3</OID>
-              <Comment>4</Comment>
-              <OutModel>2</OutModel>
-              <InModel>1</InModel>
-              <OutPort>5</OutPort>
-              <InPort>6</InPort>
+              <OID>5</OID>
+              <Comment>6</Comment>
+              <OutModel>3</OutModel>
+              <InModel>4</InModel>
+              <OutPort>7</OutPort>
+              <InPort>8</InPort>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>43 px</X>
-                  <Y>0 px</Y>
+                  <X>0 px</X>
+                  <Y>122.5 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
                 <CustomProperties>
-                  <OID>5</OID>
+                  <OID>7</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
               <Port>
                 <Location>
-                  <X>153 px</X>
-                  <Y>0 px</Y>
+                  <X>0 px</X>
+                  <Y>72.5 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Bottom</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
                 <CustomProperties>
-                  <OID>6</OID>
+                  <OID>8</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
-            <BendPoints>
-              <PointD>
-                <X>-307 px</X>
-                <Y>-10 px</Y>
-              </PointD>
-              <PointD>
-                <X>-187 px</X>
-                <Y>-10 px</Y>
-              </PointD>
-            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>do_an_tot_nghiep.class.FK_class_CourseID</Path>
+              <Path>datn.class.FK_class_CourseID</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
           <Model xsi:type="RelationCommentModel">
             <CustomProperties>
-              <OID>4</OID>
-              <HolderModel>3</HolderModel>
-              <Port>7</Port>
+              <OID>6</OID>
+              <HolderModel>5</HolderModel>
+              <Port>9</Port>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-60 px</X>
-                  <Y>20 px</Y>
+                  <X>82 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Top</Align>
+                <Align>Left</Align>
                 <CustomProperties>
-                  <OID>7</OID>
+                  <OID>9</OID>
                   <PortType>FixedAnchor</PortType>
                 </CustomProperties>
                 <LinkPortAnchor>OutPoint</LinkPortAnchor>
@@ -173,19 +209,19 @@
           </Model>
           <Model xsi:type="TableModel">
             <CustomProperties>
-              <OID>8</OID>
+              <OID>10</OID>
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>-350 px</X>
-              <Y>530 px</Y>
+              <X>260 px</X>
+              <Y>-250 px</Y>
             </Location>
             <Size>
-              <Width>196 px</Width>
-              <Height>127 px</Height>
+              <Width>240 px</Width>
+              <Height>212 px</Height>
             </Size>
             <DbOid>
-              <Path>do_an_tot_nghiep.ology</Path>
+              <Path>datn.detailmoduleclass</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -196,19 +232,88 @@
           </Model>
           <Model xsi:type="TableModel">
             <CustomProperties>
-              <OID>9</OID>
+              <OID>11</OID>
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>-350 px</X>
-              <Y>270 px</Y>
+              <X>260 px</X>
+              <Y>-10 px</Y>
+            </Location>
+            <Size>
+              <Width>249 px</Width>
+              <Height>178 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.detailpracticegroup</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>12</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>230 px</X>
+              <Y>220 px</Y>
+            </Location>
+            <Size>
+              <Width>246 px</Width>
+              <Height>212 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.equipment</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>13</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>-90 px</X>
+              <Y>300 px</Y>
+            </Location>
+            <Size>
+              <Width>246 px</Width>
+              <Height>229 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.maintainance</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>14</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>-360 px</X>
+              <Y>280 px</Y>
             </Location>
             <Size>
               <Width>196 px</Width>
               <Height>178 px</Height>
             </Size>
             <DbOid>
-              <Path>do_an_tot_nghiep.majors</Path>
+              <Path>datn.majors</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -219,79 +324,10 @@
           </Model>
           <Model xsi:type="RelationLinkModel">
             <CustomProperties>
-              <OID>10</OID>
-              <Comment>11</Comment>
-              <OutModel>9</OutModel>
-              <InModel>8</InModel>
-              <OutPort>12</OutPort>
-              <InPort>13</InPort>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port>
-                <Location>
-                  <X>98 px</X>
-                  <Y>0 px</Y>
-                </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Bottom</Align>
-                <CustomProperties>
-                  <OID>12</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-              <Port>
-                <Location>
-                  <X>98 px</X>
-                  <Y>0 px</Y>
-                </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
-                <CustomProperties>
-                  <OID>13</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-            </PortAnchors>
-            <IsManuallyRouted>false</IsManuallyRouted>
-            <DbOid>
-              <Path>do_an_tot_nghiep.majors.FK_majors_OlogyID</Path>
-              <TypeName>ForeignKey</TypeName>
-            </DbOid>
-          </Model>
-          <Model xsi:type="RelationCommentModel">
-            <CustomProperties>
-              <OID>11</OID>
-              <HolderModel>10</HolderModel>
-              <Port>14</Port>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port xsi:type="LinkPort">
-                <Location>
-                  <X>0 px</X>
-                  <Y>-41 px</Y>
-                </Location>
-                <Anchors>None</Anchors>
-                <Align>Bottom</Align>
-                <CustomProperties>
-                  <OID>14</OID>
-                  <PortType>FixedAnchor</PortType>
-                </CustomProperties>
-                <LinkPortAnchor>OutPoint</LinkPortAnchor>
-              </Port>
-            </PortAnchors>
-            <CommentOffset>
-              <X>22 px</X>
-              <Y>2 px</Y>
-            </CommentOffset>
-          </Model>
-          <Model xsi:type="RelationLinkModel">
-            <CustomProperties>
               <OID>15</OID>
               <Comment>16</Comment>
-              <OutModel>2</OutModel>
-              <InModel>9</InModel>
+              <OutModel>3</OutModel>
+              <InModel>14</InModel>
               <OutPort>17</OutPort>
               <InPort>18</InPort>
               <Parent>0</Parent>
@@ -299,7 +335,7 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>153 px</X>
+                  <X>98 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
@@ -311,11 +347,11 @@
               </Port>
               <Port>
                 <Location>
-                  <X>43 px</X>
-                  <Y>0 px</Y>
+                  <X>0 px</X>
+                  <Y>89 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>18</OID>
                   <PortType>FloatAnchor</PortType>
@@ -324,25 +360,13 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>-197 px</X>
-                <Y>225 px</Y>
-              </PointD>
-              <PointD>
-                <X>-250 px</X>
-                <Y>225 px</Y>
-              </PointD>
-              <PointD>
-                <X>-250 px</X>
-                <Y>247.5 px</Y>
-              </PointD>
-              <PointD>
-                <X>-307 px</X>
-                <Y>247.5 px</Y>
+                <X>38 px</X>
+                <Y>369 px</Y>
               </PointD>
             </BendPoints>
-            <IsManuallyRouted>true</IsManuallyRouted>
+            <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>do_an_tot_nghiep.class.FK_class_MajorsID</Path>
+              <Path>datn.class.FK_class_MajorsID</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -356,8 +380,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>53 px</X>
-                  <Y>-31.25 px</Y>
+                  <X>101 px</X>
+                  <Y>-174 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Bottom</Align>
@@ -379,15 +403,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>-200 px</X>
-              <Y>990 px</Y>
+              <X>-620 px</X>
+              <Y>260 px</Y>
             </Location>
             <Size>
-              <Width>196 px</Width>
-              <Height>127 px</Height>
+              <Width>222 px</Width>
+              <Height>246 px</Height>
             </Size>
             <DbOid>
-              <Path>do_an_tot_nghiep.subject</Path>
+              <Path>datn.module</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -402,15 +426,15 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>80 px</X>
-              <Y>960 px</Y>
+              <X>360 px</X>
+              <Y>530 px</Y>
             </Location>
             <Size>
-              <Width>202 px</Width>
-              <Height>195 px</Height>
+              <Width>221 px</Width>
+              <Height>263 px</Height>
             </Size>
             <DbOid>
-              <Path>do_an_tot_nghiep.teacher</Path>
+              <Path>datn.moduleclass</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -432,20 +456,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>151.643055997815 px</X>
-                  <Y>74.8900418965277 px</Y>
-                </Location>
-                <Anchors>None</Anchors>
-                <Align>Right</Align>
-                <CustomProperties>
-                  <OID>25</OID>
-                  <PortType>FixedAnchor</PortType>
-                </CustomProperties>
-              </Port>
-              <Port>
-                <Location>
                   <X>0 px</X>
-                  <Y>104.890041896528 px</Y>
+                  <Y>131.5 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
@@ -454,10 +466,28 @@
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
+              <Port>
+                <Location>
+                  <X>111 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>25</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
             </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>-509 px</X>
+                <Y>661.5 px</Y>
+              </PointD>
+            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>do_an_tot_nghiep.teacher.FK_Teacher_SubjectID</Path>
+              <Path>datn.moduleclass.FK_moduleclass_ModuleID</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -471,8 +501,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>42 px</X>
-                  <Y>2.72480904186523E-05 px</Y>
+                  <X>434.5 px</X>
+                  <Y>0 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
@@ -488,94 +518,83 @@
               <Y>2 px</Y>
             </CommentOffset>
           </Model>
-          <Model xsi:type="TableModel">
-            <CustomProperties>
-              <OID>27</OID>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <Location>
-              <X>-40 px</X>
-              <Y>510 px</Y>
-            </Location>
-            <Size>
-              <Width>222 px</Width>
-              <Height>246 px</Height>
-            </Size>
-            <DbOid>
-              <Path>do_an_tot_nghiep.module</Path>
-              <TypeName>Table</TypeName>
-            </DbOid>
-            <Compartments>
-              <ConstraintsCollapsed>True</ConstraintsCollapsed>
-              <IndexesCollapsed>True</IndexesCollapsed>
-              <TriggersCollapsed>True</TriggersCollapsed>
-            </Compartments>
-          </Model>
           <Model xsi:type="RelationLinkModel">
             <CustomProperties>
-              <OID>28</OID>
-              <Comment>29</Comment>
-              <OutModel>27</OutModel>
-              <InModel>20</InModel>
-              <OutPort>30</OutPort>
-              <InPort>31</InPort>
+              <OID>27</OID>
+              <Comment>28</Comment>
+              <OutModel>10</OutModel>
+              <InModel>21</InModel>
+              <OutPort>29</OutPort>
+              <InPort>30</InPort>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>23.5770443146313 px</X>
-                  <Y>129.469404320094 px</Y>
+                  <X>170 px</X>
+                  <Y>0 px</Y>
                 </Location>
-                <Anchors>None</Anchors>
-                <Align>Left</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
                 <CustomProperties>
-                  <OID>30</OID>
-                  <PortType>FixedAnchor</PortType>
+                  <OID>29</OID>
+                  <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
               <Port>
                 <Location>
-                  <X>101.631281347639 px</X>
-                  <Y>19.1313734003902 px</Y>
+                  <X>70 px</X>
+                  <Y>0 px</Y>
                 </Location>
-                <Anchors>None</Anchors>
+                <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
                 <CustomProperties>
-                  <OID>31</OID>
-                  <PortType>FixedAnchor</PortType>
+                  <OID>30</OID>
+                  <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>-98.3687210083008 px</X>
-                <Y>639.469421386719 px</Y>
+                <X>430 px</X>
+                <Y>-18 px</Y>
+              </PointD>
+              <PointD>
+                <X>519 px</X>
+                <Y>-18 px</Y>
+              </PointD>
+              <PointD>
+                <X>519 px</X>
+                <Y>510 px</Y>
+              </PointD>
+              <PointD>
+                <X>430 px</X>
+                <Y>510 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>do_an_tot_nghiep.module.FK_Module_SubjectID</Path>
+              <Path>datn.detailmoduleclass.FK_detailmoduleclass_ModuleClassID</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
           <Model xsi:type="RelationCommentModel">
             <CustomProperties>
-              <OID>29</OID>
-              <HolderModel>28</HolderModel>
-              <Port>32</Port>
+              <OID>28</OID>
+              <HolderModel>27</HolderModel>
+              <Port>31</Port>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>58.3687210083008 px</X>
-                  <Y>-175.265336890844 px</Y>
+                  <X>-89 px</X>
+                  <Y>-284 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Left</Align>
+                <Align>Bottom</Align>
                 <CustomProperties>
-                  <OID>32</OID>
+                  <OID>31</OID>
                   <PortType>FixedAnchor</PortType>
                 </CustomProperties>
                 <LinkPortAnchor>OutPoint</LinkPortAnchor>
@@ -588,19 +607,19 @@
           </Model>
           <Model xsi:type="TableModel">
             <CustomProperties>
-              <OID>33</OID>
+              <OID>32</OID>
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>-10 px</X>
-              <Y>-230 px</Y>
+              <X>-60 px</X>
+              <Y>620 px</Y>
             </Location>
             <Size>
               <Width>196 px</Width>
-              <Height>212 px</Height>
+              <Height>127 px</Height>
             </Size>
             <DbOid>
-              <Path>do_an_tot_nghiep.student</Path>
+              <Path>datn.ology</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -611,34 +630,34 @@
           </Model>
           <Model xsi:type="RelationLinkModel">
             <CustomProperties>
-              <OID>34</OID>
-              <Comment>35</Comment>
-              <OutModel>33</OutModel>
-              <InModel>2</InModel>
-              <OutPort>36</OutPort>
-              <InPort>37</InPort>
+              <OID>33</OID>
+              <Comment>34</Comment>
+              <OutModel>14</OutModel>
+              <InModel>32</InModel>
+              <OutPort>35</OutPort>
+              <InPort>36</InPort>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>162.8 px</X>
-                  <Y>91.2 px</Y>
+                  <X>0 px</X>
+                  <Y>133.5 px</Y>
                 </Location>
-                <Anchors>None</Anchors>
+                <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
                 <CustomProperties>
-                  <OID>37</OID>
-                  <PortType>FixedAnchor</PortType>
+                  <OID>35</OID>
+                  <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>106 px</Y>
+                  <X>98 px</X>
+                  <Y>0 px</Y>
                 </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
                 <CustomProperties>
                   <OID>36</OID>
                   <PortType>FloatAnchor</PortType>
@@ -647,37 +666,41 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>-30 px</X>
-                <Y>-124 px</Y>
+                <X>-144 px</X>
+                <Y>413.5 px</Y>
               </PointD>
               <PointD>
-                <X>-30 px</X>
-                <Y>101.2 px</Y>
+                <X>-144 px</X>
+                <Y>580 px</Y>
+              </PointD>
+              <PointD>
+                <X>38 px</X>
+                <Y>580 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>do_an_tot_nghiep.student.FK_Student_ClassID</Path>
+              <Path>datn.majors.FK_majors_OlogyID</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
           <Model xsi:type="RelationCommentModel">
             <CustomProperties>
-              <OID>35</OID>
-              <HolderModel>34</HolderModel>
-              <Port>38</Port>
+              <OID>34</OID>
+              <HolderModel>33</HolderModel>
+              <Port>37</Port>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>20 px</X>
-                  <Y>-112.599998474121 px</Y>
+                  <X>-111 px</X>
+                  <Y>-166.5 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Left</Align>
+                <Align>Right</Align>
                 <CustomProperties>
-                  <OID>38</OID>
+                  <OID>37</OID>
                   <PortType>FixedAnchor</PortType>
                 </CustomProperties>
                 <LinkPortAnchor>OutPoint</LinkPortAnchor>
@@ -690,19 +713,42 @@
           </Model>
           <Model xsi:type="TableModel">
             <CustomProperties>
+              <OID>38</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>-480 px</X>
+              <Y>580 px</Y>
+            </Location>
+            <Size>
+              <Width>211 px</Width>
+              <Height>107 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.permission</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
               <OID>39</OID>
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>-40 px</X>
-              <Y>230 px</Y>
+              <X>-220 px</X>
+              <Y>780 px</Y>
             </Location>
             <Size>
-              <Width>220 px</Width>
-              <Height>212 px</Height>
+              <Width>267 px</Width>
+              <Height>263 px</Height>
             </Size>
             <DbOid>
-              <Path>do_an_tot_nghiep.detailmoduleclass</Path>
+              <Path>datn.practicallaboratory</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -716,7 +762,7 @@
               <OID>40</OID>
               <Comment>41</Comment>
               <OutModel>39</OutModel>
-              <InModel>33</InModel>
+              <InModel>2</InModel>
               <OutPort>42</OutPort>
               <InPort>43</InPort>
               <Parent>0</Parent>
@@ -724,23 +770,23 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>118.694974921888 px</X>
-                  <Y>-0.664287189231345 px</Y>
+                  <X>133.5 px</X>
+                  <Y>0 px</Y>
                 </Location>
-                <Anchors>None</Anchors>
+                <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
                 <CustomProperties>
                   <OID>42</OID>
-                  <PortType>FixedAnchor</PortType>
+                  <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
               <Port>
                 <Location>
-                  <X>173 px</X>
-                  <Y>0 px</Y>
+                  <X>0 px</X>
+                  <Y>72 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Bottom</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>43</OID>
                   <PortType>FloatAnchor</PortType>
@@ -749,17 +795,21 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>78.694974921888 px</X>
-                <Y>170 px</Y>
+                <X>-86.5 px</X>
+                <Y>740 px</Y>
               </PointD>
               <PointD>
-                <X>163 px</X>
-                <Y>170 px</Y>
+                <X>-109 px</X>
+                <Y>740 px</Y>
+              </PointD>
+              <PointD>
+                <X>-109 px</X>
+                <Y>-168 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>do_an_tot_nghiep.detailmoduleclass.FK_detailmoduleclass_StudentID</Path>
+              <Path>datn.practicallaboratory.FK_practicallaboratory_BuildingID</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -773,8 +823,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-84.305025078112 px</X>
-                  <Y>154 px</Y>
+                  <X>22.5 px</X>
+                  <Y>494 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Top</Align>
@@ -786,48 +836,264 @@
               </Port>
             </PortAnchors>
             <CommentOffset>
-              <X>2.23958587646484 px</X>
-              <Y>-196.285714285714 px</Y>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>45</OID>
+              <Comment>46</Comment>
+              <OutModel>39</OutModel>
+              <InModel>32</InModel>
+              <OutPort>47</OutPort>
+              <InPort>48</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>240.25 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>47</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>80.25 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>48</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.practicallaboratory.FK_practicallaboratory_OlogyID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>46</OID>
+              <HolderModel>45</HolderModel>
+              <Port>49</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>0 px</X>
+                  <Y>16.5 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>49</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>50</OID>
+              <Comment>51</Comment>
+              <OutModel>12</OutModel>
+              <InModel>39</InModel>
+              <OutPort>52</OutPort>
+              <InPort>53</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>106 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>52</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>200.25 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>53</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>210 px</X>
+                <Y>326 px</Y>
+              </PointD>
+              <PointD>
+                <X>210 px</X>
+                <Y>601 px</Y>
+              </PointD>
+              <PointD>
+                <X>-19.75 px</X>
+                <Y>601 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.equipment.FK_equipment_PracticalLaboratoryID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>51</OID>
+              <HolderModel>50</HolderModel>
+              <Port>54</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>134.875 px</X>
+                  <Y>-275 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>54</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>55</OID>
+              <Comment>56</Comment>
+              <OutModel>13</OutModel>
+              <InModel>39</InModel>
+              <OutPort>57</OutPort>
+              <InPort>58</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>34.25 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>57</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>164.25 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>58</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>-55.75 px</X>
+                <Y>549 px</Y>
+              </PointD>
+              <PointD>
+                <X>-69.75 px</X>
+                <Y>549 px</Y>
+              </PointD>
+              <PointD>
+                <X>-69.75 px</X>
+                <Y>760 px</Y>
+              </PointD>
+              <PointD>
+                <X>-55.75 px</X>
+                <Y>760 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.maintainance.FK_maintainance_PracticalLaboratoryID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>56</OID>
+              <HolderModel>55</HolderModel>
+              <Port>59</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>14 px</X>
+                  <Y>-125.5 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>59</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
             </CommentOffset>
           </Model>
           <Model xsi:type="TableModel">
             <CustomProperties>
-              <OID>45</OID>
+              <OID>60</OID>
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>330 px</X>
-              <Y>70 px</Y>
+              <X>130 px</X>
+              <Y>840 px</Y>
             </Location>
             <Size>
               <Width>235 px</Width>
               <Height>212 px</Height>
             </Size>
             <DbOid>
-              <Path>do_an_tot_nghiep.practicegroup</Path>
-              <TypeName>Table</TypeName>
-            </DbOid>
-            <Compartments>
-              <ConstraintsCollapsed>True</ConstraintsCollapsed>
-              <IndexesCollapsed>True</IndexesCollapsed>
-              <TriggersCollapsed>True</TriggersCollapsed>
-            </Compartments>
-          </Model>
-          <Model xsi:type="TableModel">
-            <CustomProperties>
-              <OID>46</OID>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <Location>
-              <X>310 px</X>
-              <Y>-240 px</Y>
-            </Location>
-            <Size>
-              <Width>249 px</Width>
-              <Height>178 px</Height>
-            </Size>
-            <DbOid>
-              <Path>do_an_tot_nghiep.detailpracticegroup</Path>
+              <Path>datn.practicegroup</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -838,457 +1104,144 @@
           </Model>
           <Model xsi:type="RelationLinkModel">
             <CustomProperties>
-              <OID>47</OID>
-              <Comment>48</Comment>
-              <OutModel>46</OutModel>
-              <InModel>45</InModel>
-              <OutPort>49</OutPort>
-              <InPort>50</InPort>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port>
-                <Location>
-                  <X>134.5 px</X>
-                  <Y>0 px</Y>
-                </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Bottom</Align>
-                <CustomProperties>
-                  <OID>49</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-              <Port>
-                <Location>
-                  <X>114.5 px</X>
-                  <Y>0 px</Y>
-                </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
-                <CustomProperties>
-                  <OID>50</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-            </PortAnchors>
-            <IsManuallyRouted>false</IsManuallyRouted>
-            <DbOid>
-              <Path>do_an_tot_nghiep.detailpracticegroup.FK_detailpracticegroup_PracticeGroupID</Path>
-              <TypeName>ForeignKey</TypeName>
-            </DbOid>
-          </Model>
-          <Model xsi:type="RelationCommentModel">
-            <CustomProperties>
-              <OID>48</OID>
-              <HolderModel>47</HolderModel>
-              <Port>51</Port>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port xsi:type="LinkPort">
-                <Location>
-                  <X>0 px</X>
-                  <Y>-66 px</Y>
-                </Location>
-                <Anchors>None</Anchors>
-                <Align>Bottom</Align>
-                <CustomProperties>
-                  <OID>51</OID>
-                  <PortType>FixedAnchor</PortType>
-                </CustomProperties>
-                <LinkPortAnchor>OutPoint</LinkPortAnchor>
-              </Port>
-            </PortAnchors>
-            <CommentOffset>
-              <X>32 px</X>
-              <Y>-44.5 px</Y>
-            </CommentOffset>
-          </Model>
-          <Model xsi:type="RelationLinkModel">
-            <CustomProperties>
-              <OID>52</OID>
-              <Comment>53</Comment>
-              <OutModel>46</OutModel>
-              <InModel>33</InModel>
-              <OutPort>54</OutPort>
-              <InPort>55</InPort>
+              <OID>61</OID>
+              <Comment>62</Comment>
+              <OutModel>60</OutModel>
+              <InModel>21</InModel>
+              <OutPort>63</OutPort>
+              <InPort>64</InPort>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>21 px</Y>
-                </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
-                <CustomProperties>
-                  <OID>54</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-              <Port>
-                <Location>
-                  <X>0 px</X>
-                  <Y>191 px</Y>
+                  <Y>106 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Right</Align>
-                <CustomProperties>
-                  <OID>55</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-            </PortAnchors>
-            <BendPoints>
-              <PointD>
-                <X>290 px</X>
-                <Y>-219 px</Y>
-              </PointD>
-              <PointD>
-                <X>290 px</X>
-                <Y>-39 px</Y>
-              </PointD>
-            </BendPoints>
-            <IsManuallyRouted>false</IsManuallyRouted>
-            <DbOid>
-              <Path>do_an_tot_nghiep.detailpracticegroup.FK_detailpracticegroup_StudentID</Path>
-              <TypeName>ForeignKey</TypeName>
-            </DbOid>
-          </Model>
-          <Model xsi:type="RelationCommentModel">
-            <CustomProperties>
-              <OID>53</OID>
-              <HolderModel>52</HolderModel>
-              <Port>56</Port>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port xsi:type="LinkPort">
-                <Location>
-                  <X>20 px</X>
-                  <Y>-90 px</Y>
-                </Location>
-                <Anchors>None</Anchors>
-                <Align>Left</Align>
-                <CustomProperties>
-                  <OID>56</OID>
-                  <PortType>FixedAnchor</PortType>
-                </CustomProperties>
-                <LinkPortAnchor>OutPoint</LinkPortAnchor>
-              </Port>
-            </PortAnchors>
-            <CommentOffset>
-              <X>22 px</X>
-              <Y>2 px</Y>
-            </CommentOffset>
-          </Model>
-          <Model xsi:type="TableModel">
-            <CustomProperties>
-              <OID>57</OID>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <Location>
-              <X>450 px</X>
-              <Y>440 px</Y>
-            </Location>
-            <Size>
-              <Width>208 px</Width>
-              <Height>127 px</Height>
-            </Size>
-            <DbOid>
-              <Path>do_an_tot_nghiep.semester</Path>
-              <TypeName>Table</TypeName>
-            </DbOid>
-            <Compartments>
-              <ConstraintsCollapsed>True</ConstraintsCollapsed>
-              <IndexesCollapsed>True</IndexesCollapsed>
-              <TriggersCollapsed>True</TriggersCollapsed>
-            </Compartments>
-          </Model>
-          <Model xsi:type="TableModel">
-            <CustomProperties>
-              <OID>58</OID>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <Location>
-              <X>330 px</X>
-              <Y>1000 px</Y>
-            </Location>
-            <Size>
-              <Width>218 px</Width>
-              <Height>127 px</Height>
-            </Size>
-            <DbOid>
-              <Path>do_an_tot_nghiep.schoolyear</Path>
-              <TypeName>Table</TypeName>
-            </DbOid>
-            <Compartments>
-              <ConstraintsCollapsed>True</ConstraintsCollapsed>
-              <IndexesCollapsed>True</IndexesCollapsed>
-              <TriggersCollapsed>True</TriggersCollapsed>
-            </Compartments>
-          </Model>
-          <Model xsi:type="TableModel">
-            <CustomProperties>
-              <OID>59</OID>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <Location>
-              <X>-580 px</X>
-              <Y>900 px</Y>
-            </Location>
-            <Size>
-              <Width>267 px</Width>
-              <Height>246 px</Height>
-            </Size>
-            <DbOid>
-              <Path>do_an_tot_nghiep.practicallaboratory</Path>
-              <TypeName>Table</TypeName>
-            </DbOid>
-            <Compartments>
-              <ConstraintsCollapsed>True</ConstraintsCollapsed>
-              <IndexesCollapsed>True</IndexesCollapsed>
-              <TriggersCollapsed>True</TriggersCollapsed>
-            </Compartments>
-          </Model>
-          <Model xsi:type="RelationLinkModel">
-            <CustomProperties>
-              <OID>60</OID>
-              <Comment>61</Comment>
-              <OutModel>59</OutModel>
-              <InModel>8</InModel>
-              <OutPort>62</OutPort>
-              <InPort>63</InPort>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port>
-                <Location>
-                  <X>128 px</X>
-                  <Y>0 px</Y>
-                </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
-                <CustomProperties>
-                  <OID>62</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-              <Port>
-                <Location>
-                  <X>98 px</X>
-                  <Y>0 px</Y>
-                </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Bottom</Align>
                 <CustomProperties>
                   <OID>63</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
-            </PortAnchors>
-            <BendPoints>
-              <PointD>
-                <X>-452 px</X>
-                <Y>680 px</Y>
-              </PointD>
-              <PointD>
-                <X>-252 px</X>
-                <Y>680 px</Y>
-              </PointD>
-            </BendPoints>
-            <IsManuallyRouted>false</IsManuallyRouted>
-            <DbOid>
-              <Path>do_an_tot_nghiep.practicallaboratory.FK_practicallaboratory_OlogyID</Path>
-              <TypeName>ForeignKey</TypeName>
-            </DbOid>
-          </Model>
-          <Model xsi:type="RelationCommentModel">
-            <CustomProperties>
-              <OID>61</OID>
-              <HolderModel>60</HolderModel>
-              <Port>64</Port>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port xsi:type="LinkPort">
-                <Location>
-                  <X>-100 px</X>
-                  <Y>220 px</Y>
-                </Location>
-                <Anchors>None</Anchors>
-                <Align>Top</Align>
-                <CustomProperties>
-                  <OID>64</OID>
-                  <PortType>FixedAnchor</PortType>
-                </CustomProperties>
-                <LinkPortAnchor>OutPoint</LinkPortAnchor>
-              </Port>
-            </PortAnchors>
-            <CommentOffset>
-              <X>22 px</X>
-              <Y>2 px</Y>
-            </CommentOffset>
-          </Model>
-          <Model xsi:type="RelationLinkModel">
-            <CustomProperties>
-              <OID>65</OID>
-              <Comment>66</Comment>
-              <OutModel>59</OutModel>
-              <InModel>20</InModel>
-              <OutPort>67</OutPort>
-              <InPort>68</InPort>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
               <Port>
                 <Location>
-                  <X>0 px</X>
-                  <Y>185.25 px</Y>
-                </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Right</Align>
-                <CustomProperties>
-                  <OID>67</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-              <Port>
-                <Location>
-                  <X>0 px</X>
-                  <Y>95.25 px</Y>
-                </Location>
-                <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
-                <CustomProperties>
-                  <OID>68</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-            </PortAnchors>
-            <IsManuallyRouted>false</IsManuallyRouted>
-            <DbOid>
-              <Path>do_an_tot_nghiep.practicallaboratory.FK_practicallaboratory_SubjectID</Path>
-              <TypeName>ForeignKey</TypeName>
-            </DbOid>
-          </Model>
-          <Model xsi:type="RelationCommentModel">
-            <CustomProperties>
-              <OID>66</OID>
-              <HolderModel>65</HolderModel>
-              <Port>69</Port>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port xsi:type="LinkPort">
-                <Location>
-                  <X>-56.5 px</X>
-                  <Y>0 px</Y>
-                </Location>
-                <Anchors>None</Anchors>
-                <Align>Right</Align>
-                <CustomProperties>
-                  <OID>69</OID>
-                  <PortType>FixedAnchor</PortType>
-                </CustomProperties>
-                <LinkPortAnchor>OutPoint</LinkPortAnchor>
-              </Port>
-            </PortAnchors>
-            <CommentOffset>
-              <X>22 px</X>
-              <Y>2 px</Y>
-            </CommentOffset>
-          </Model>
-          <Model xsi:type="TableModel">
-            <CustomProperties>
-              <OID>70</OID>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <Location>
-              <X>-340 px</X>
-              <Y>750 px</Y>
-            </Location>
-            <Size>
-              <Width>199 px</Width>
-              <Height>144 px</Height>
-            </Size>
-            <DbOid>
-              <Path>do_an_tot_nghiep.building</Path>
-              <TypeName>Table</TypeName>
-            </DbOid>
-            <Compartments>
-              <ConstraintsCollapsed>True</ConstraintsCollapsed>
-              <IndexesCollapsed>True</IndexesCollapsed>
-              <TriggersCollapsed>True</TriggersCollapsed>
-            </Compartments>
-          </Model>
-          <Model xsi:type="RelationLinkModel">
-            <CustomProperties>
-              <OID>71</OID>
-              <Comment>72</Comment>
-              <OutModel>59</OutModel>
-              <InModel>70</InModel>
-              <OutPort>73</OutPort>
-              <InPort>74</InPort>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port>
-                <Location>
-                  <X>254.410346963714 px</X>
-                  <Y>129.457629669918 px</Y>
-                </Location>
-                <Anchors>None</Anchors>
-                <Align>Right</Align>
-                <CustomProperties>
-                  <OID>73</OID>
-                  <PortType>FixedAnchor</PortType>
-                </CustomProperties>
-              </Port>
-              <Port>
-                <Location>
-                  <X>99.5 px</X>
+                  <X>110.5 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Bottom</Align>
                 <CustomProperties>
-                  <OID>74</OID>
+                  <OID>64</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>-240.5 px</X>
-                <Y>1029.45762966992 px</Y>
+                <X>470.5 px</X>
+                <Y>946 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>do_an_tot_nghiep.practicallaboratory.FK_practicallaboratory_BuildingID</Path>
+              <Path>datn.practicegroup.FK_practicegroup_ModuleClassID</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
           <Model xsi:type="RelationCommentModel">
             <CustomProperties>
-              <OID>72</OID>
-              <HolderModel>71</HolderModel>
-              <Port>75</Port>
+              <OID>62</OID>
+              <HolderModel>61</HolderModel>
+              <Port>65</Port>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-72.5 px</X>
-                  <Y>67.7288088691366 px</Y>
+                  <X>-105.5 px</X>
+                  <Y>76.5 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Right</Align>
                 <CustomProperties>
-                  <OID>75</OID>
+                  <OID>65</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>66</OID>
+              <Comment>67</Comment>
+              <OutModel>11</OutModel>
+              <InModel>60</InModel>
+              <OutPort>68</OutPort>
+              <InPort>69</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>124.5 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>68</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>53 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>69</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>384.5 px</X>
+                <Y>893 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.detailpracticegroup.FK_detailpracticegroup_PracticeGroupID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>67</OID>
+              <HolderModel>66</HolderModel>
+              <Port>70</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>0 px</X>
+                  <Y>-362.5 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>70</OID>
                   <PortType>FixedAnchor</PortType>
                 </CustomProperties>
                 <LinkPortAnchor>OutPoint</LinkPortAnchor>
@@ -1301,19 +1254,19 @@
           </Model>
           <Model xsi:type="TableModel">
             <CustomProperties>
-              <OID>76</OID>
+              <OID>71</OID>
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>290 px</X>
-              <Y>650 px</Y>
+              <X>-1100 px</X>
+              <Y>70 px</Y>
             </Location>
             <Size>
-              <Width>221 px</Width>
-              <Height>263 px</Height>
+              <Width>246 px</Width>
+              <Height>314 px</Height>
             </Size>
             <DbOid>
-              <Path>do_an_tot_nghiep.moduleclass</Path>
+              <Path>datn.practiceschedule</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -1324,10 +1277,89 @@
           </Model>
           <Model xsi:type="RelationLinkModel">
             <CustomProperties>
+              <OID>72</OID>
+              <Comment>73</Comment>
+              <OutModel>71</OutModel>
+              <InModel>39</InModel>
+              <OutPort>74</OutPort>
+              <InPort>75</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>101.5 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>74</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>161.5 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>75</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>-194 px</X>
+                <Y>171.5 px</Y>
+              </PointD>
+              <PointD>
+                <X>-194 px</X>
+                <Y>941.5 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.practiceschedule.FK_practiceschedule_PracticalLaboratoryID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>73</OID>
+              <HolderModel>72</HolderModel>
+              <Port>76</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-660 px</X>
+                  <Y>-385 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>76</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
               <OID>77</OID>
               <Comment>78</Comment>
-              <OutModel>76</OutModel>
-              <InModel>27</InModel>
+              <OutModel>71</OutModel>
+              <InModel>60</InModel>
               <OutPort>79</OutPort>
               <InPort>80</InPort>
               <Parent>0</Parent>
@@ -1336,10 +1368,10 @@
               <Port>
                 <Location>
                   <X>0 px</X>
-                  <Y>131.5 px</Y>
+                  <Y>159 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
-                <Align>Left</Align>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>79</OID>
                   <PortType>FloatAnchor</PortType>
@@ -1347,11 +1379,11 @@
               </Port>
               <Port>
                 <Location>
-                  <X>111 px</X>
-                  <Y>0 px</Y>
+                  <X>0 px</X>
+                  <Y>159 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Bottom</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>80</OID>
                   <PortType>FloatAnchor</PortType>
@@ -1360,13 +1392,17 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>71 px</X>
-                <Y>781.5 px</Y>
+                <X>-42 px</X>
+                <Y>229 px</Y>
+              </PointD>
+              <PointD>
+                <X>-42 px</X>
+                <Y>999 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>do_an_tot_nghiep.moduleclass.FK_moduleclass_ModuleID</Path>
+              <Path>datn.practiceschedule.FK_practiceschedule_PracticeGroupID</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -1380,11 +1416,11 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>109.5 px</X>
-                  <Y>0 px</Y>
+                  <X>-812 px</X>
+                  <Y>-385 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Left</Align>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>81</OID>
                   <PortType>FixedAnchor</PortType>
@@ -1401,8 +1437,8 @@
             <CustomProperties>
               <OID>82</OID>
               <Comment>83</Comment>
-              <OutModel>76</OutModel>
-              <InModel>58</InModel>
+              <OutModel>1</OutModel>
+              <InModel>71</InModel>
               <OutPort>84</OutPort>
               <InPort>85</InPort>
               <Parent>0</Parent>
@@ -1410,32 +1446,42 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>121.764972856965 px</X>
-                  <Y>264.575560277175 px</Y>
+                  <X>133.5 px</X>
+                  <Y>0 px</Y>
                 </Location>
-                <Anchors>None</Anchors>
+                <Anchors>Left Right</Anchors>
                 <Align>Bottom</Align>
                 <CustomProperties>
                   <OID>84</OID>
-                  <PortType>FixedAnchor</PortType>
+                  <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
               <Port>
                 <Location>
-                  <X>81.7649728569645 px</X>
-                  <Y>0 px</Y>
+                  <X>144 px</X>
+                  <Y>2.8 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
+                <Anchors>None</Anchors>
                 <Align>Top</Align>
                 <CustomProperties>
                   <OID>85</OID>
-                  <PortType>FloatAnchor</PortType>
+                  <PortType>FixedAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
-            <IsManuallyRouted>false</IsManuallyRouted>
+            <BendPoints>
+              <PointD>
+                <X>-956.5 px</X>
+                <Y>29.5 px</Y>
+              </PointD>
+              <PointD>
+                <X>-956 px</X>
+                <Y>29.5 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>true</IsManuallyRouted>
             <DbOid>
-              <Path>do_an_tot_nghiep.moduleclass.FK_moduleclass_SchoolYearID</Path>
+              <Path>datn.attendance.FK_attendance_PracticeScheduleID</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
@@ -1449,8 +1495,8 @@
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>-1.127389435851E-05 px</X>
-                  <Y>-43.5 px</Y>
+                  <X>0 px</X>
+                  <Y>-30.25 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Bottom</Align>
@@ -1466,65 +1512,200 @@
               <Y>2 px</Y>
             </CommentOffset>
           </Model>
-          <Model xsi:type="RelationLinkModel">
+          <Model xsi:type="TableModel">
             <CustomProperties>
               <OID>87</OID>
-              <Comment>88</Comment>
-              <OutModel>76</OutModel>
-              <InModel>57</InModel>
-              <OutPort>89</OutPort>
-              <InPort>90</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>240 px</X>
+              <Y>1150 px</Y>
+            </Location>
+            <Size>
+              <Width>226 px</Width>
+              <Height>161 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.practiceshift</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>88</OID>
+              <Comment>89</Comment>
+              <OutModel>71</OutModel>
+              <InModel>87</InModel>
+              <OutPort>90</OutPort>
+              <InPort>91</InPort>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>205.75 px</X>
-                  <Y>0 px</Y>
+                  <X>0 px</X>
+                  <Y>235.5 px</Y>
                 </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Top</Align>
-                <CustomProperties>
-                  <OID>89</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-              <Port>
-                <Location>
-                  <X>45.75 px</X>
-                  <Y>0 px</Y>
-                </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Bottom</Align>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>90</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
+              <Port>
+                <Location>
+                  <X>113 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>91</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
             </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>-274 px</X>
+                <Y>305.5 px</Y>
+              </PointD>
+              <PointD>
+                <X>-274 px</X>
+                <Y>1130 px</Y>
+              </PointD>
+              <PointD>
+                <X>353 px</X>
+                <Y>1130 px</Y>
+              </PointD>
+            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>do_an_tot_nghiep.moduleclass.FK_moduleclass_SemesterID</Path>
+              <Path>datn.practiceschedule.FK_practiceschedule_PracticeShiftID</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
           <Model xsi:type="RelationCommentModel">
             <CustomProperties>
-              <OID>88</OID>
-              <HolderModel>87</HolderModel>
-              <Port>91</Port>
+              <OID>89</OID>
+              <HolderModel>88</HolderModel>
+              <Port>92</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-580 px</X>
+                  <Y>-412.25 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>92</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>93</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>-40 px</X>
+              <Y>1160 px</Y>
+            </Location>
+            <Size>
+              <Width>218 px</Width>
+              <Height>127 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.schoolyear</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>94</OID>
+              <Comment>95</Comment>
+              <OutModel>21</OutModel>
+              <InModel>93</InModel>
+              <OutPort>96</OutPort>
+              <InPort>97</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>55.25 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>96</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>63.5 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>97</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>415.25 px</X>
+                <Y>1223.5 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.moduleclass.FK_moduleclass_SchoolYearID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>95</OID>
+              <HolderModel>94</HolderModel>
+              <Port>98</Port>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
                   <X>0 px</X>
-                  <Y>41.5 px</Y>
+                  <Y>-215.25 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Top</Align>
+                <Align>Bottom</Align>
                 <CustomProperties>
-                  <OID>91</OID>
+                  <OID>98</OID>
                   <PortType>FixedAnchor</PortType>
                 </CustomProperties>
                 <LinkPortAnchor>OutPoint</LinkPortAnchor>
@@ -1537,12 +1718,876 @@
           </Model>
           <Model xsi:type="RelationLinkModel">
             <CustomProperties>
-              <OID>92</OID>
-              <Comment>93</Comment>
-              <OutModel>76</OutModel>
-              <InModel>21</InModel>
-              <OutPort>94</OutPort>
-              <InPort>95</InPort>
+              <OID>99</OID>
+              <Comment>100</Comment>
+              <OutModel>71</OutModel>
+              <InModel>93</InModel>
+              <OutPort>101</OutPort>
+              <InPort>102</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>274.75 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>101</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>109 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>102</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>-274 px</X>
+                <Y>344.75 px</Y>
+              </PointD>
+              <PointD>
+                <X>-274 px</X>
+                <Y>1062 px</Y>
+              </PointD>
+              <PointD>
+                <X>69 px</X>
+                <Y>1062 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.practiceschedule.FK_practiceschedule_SchoolYearID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>100</OID>
+              <HolderModel>99</HolderModel>
+              <Port>103</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-580 px</X>
+                  <Y>-358.625 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>103</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>104</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>-290 px</X>
+              <Y>1160 px</Y>
+            </Location>
+            <Size>
+              <Width>208 px</Width>
+              <Height>127 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.semester</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>105</OID>
+              <Comment>106</Comment>
+              <OutModel>21</OutModel>
+              <InModel>104</InModel>
+              <OutPort>107</OutPort>
+              <InPort>108</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>165.75 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>107</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>63.5 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>108</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>525.75 px</X>
+                <Y>1223.5 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.moduleclass.FK_moduleclass_SemesterID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>106</OID>
+              <HolderModel>105</HolderModel>
+              <Port>109</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>303.875 px</X>
+                  <Y>-430.5 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>109</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>110</OID>
+              <Comment>111</Comment>
+              <OutModel>71</OutModel>
+              <InModel>104</InModel>
+              <OutPort>112</OutPort>
+              <InPort>113</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>196.25 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>112</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>104 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>113</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>-250 px</X>
+                <Y>266.25 px</Y>
+              </PointD>
+              <PointD>
+                <X>-250 px</X>
+                <Y>1150 px</Y>
+              </PointD>
+              <PointD>
+                <X>-186 px</X>
+                <Y>1150 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.practiceschedule.FK_practiceschedule_SemesterID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>111</OID>
+              <HolderModel>110</HolderModel>
+              <Port>114</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-604 px</X>
+                  <Y>-441.875 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>114</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>115</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>-680 px</X>
+              <Y>-250 px</Y>
+            </Location>
+            <Size>
+              <Width>196 px</Width>
+              <Height>212 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.student</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>116</OID>
+              <Comment>117</Comment>
+              <OutModel>115</OutModel>
+              <InModel>3</InModel>
+              <OutPort>118</OutPort>
+              <InPort>119</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>185.5 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>118</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>98 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>119</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>38 px</X>
+                <Y>-64.5 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.student.FK_Student_ClassID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>117</OID>
+              <HolderModel>116</HolderModel>
+              <Port>120</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-261 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>120</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>121</OID>
+              <Comment>122</Comment>
+              <OutModel>1</OutModel>
+              <InModel>115</InModel>
+              <OutPort>123</OutPort>
+              <InPort>124</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>209.5 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>123</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>1.60000000000002 px</X>
+                  <Y>198.8 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>124</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>-770 px</X>
+                <Y>-50.5 px</Y>
+              </PointD>
+              <PointD>
+                <X>-770 px</X>
+                <Y>-51.2 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>true</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.attendance.FK_Attendance_StudentID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>122</OID>
+              <HolderModel>121</HolderModel>
+              <Port>125</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-46.5 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>125</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>126</OID>
+              <Comment>127</Comment>
+              <OutModel>10</OutModel>
+              <InModel>115</InModel>
+              <OutPort>128</OutPort>
+              <InPort>129</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>60 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>128</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>106 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>129</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>320 px</X>
+                <Y>-144 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.detailmoduleclass.FK_detailmoduleclass_StudentID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>127</OID>
+              <HolderModel>126</HolderModel>
+              <Port>130</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>402 px</X>
+                  <Y>106 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>130</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>131</OID>
+              <Comment>132</Comment>
+              <OutModel>11</OutModel>
+              <InModel>115</InModel>
+              <OutPort>133</OutPort>
+              <InPort>134</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>62.25 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>133</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>53 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>134</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>322.25 px</X>
+                <Y>-197 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.detailpracticegroup.FK_detailpracticegroup_StudentID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>132</OID>
+              <HolderModel>131</HolderModel>
+              <Port>135</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>403.125 px</X>
+                  <Y>365 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>135</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>136</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>-840 px</X>
+              <Y>910 px</Y>
+            </Location>
+            <Size>
+              <Width>196 px</Width>
+              <Height>127 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.subject</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>137</OID>
+              <Comment>138</Comment>
+              <OutModel>20</OutModel>
+              <InModel>136</InModel>
+              <OutPort>139</OutPort>
+              <InPort>140</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>38 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>139</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>158 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>140</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>-582 px</X>
+                <Y>526 px</Y>
+              </PointD>
+              <PointD>
+                <X>-682 px</X>
+                <Y>526 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.module.FK_Module_SubjectID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>138</OID>
+              <HolderModel>137</HolderModel>
+              <Port>141</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>100 px</X>
+                  <Y>-212 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>141</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>142</OID>
+              <Comment>143</Comment>
+              <OutModel>39</OutModel>
+              <InModel>136</InModel>
+              <OutPort>144</OutPort>
+              <InPort>145</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>201.5 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>144</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>61.5 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>145</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>-382 px</X>
+                <Y>981.5 px</Y>
+              </PointD>
+              <PointD>
+                <X>-382 px</X>
+                <Y>971.5 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.practicallaboratory.FK_practicallaboratory_SubjectID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>143</OID>
+              <HolderModel>142</HolderModel>
+              <Port>146</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>293 px</X>
+                  <Y>10 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>146</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>147</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>-800 px</X>
+              <Y>1110 px</Y>
+            </Location>
+            <Size>
+              <Width>202 px</Width>
+              <Height>195 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.teacher</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>148</OID>
+              <Comment>149</Comment>
+              <OutModel>147</OutModel>
+              <InModel>136</InModel>
+              <OutPort>150</OutPort>
+              <InPort>151</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>78 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>150</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>118 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>151</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.teacher.FK_Teacher_SubjectID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>149</OID>
+              <HolderModel>148</HolderModel>
+              <Port>152</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>0 px</X>
+                  <Y>36.5 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>152</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>153</OID>
+              <Comment>154</Comment>
+              <OutModel>21</OutModel>
+              <InModel>147</InModel>
+              <OutPort>155</OutPort>
+              <InPort>156</InPort>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
@@ -1554,52 +2599,68 @@
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
                 <CustomProperties>
-                  <OID>94</OID>
+                  <OID>155</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
               <Port>
                 <Location>
-                  <X>101 px</X>
+                  <X>151.5 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
                 <CustomProperties>
-                  <OID>95</OID>
+                  <OID>156</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>181 px</X>
-                <Y>847.25 px</Y>
+                <X>340 px</X>
+                <Y>727.25 px</Y>
+              </PointD>
+              <PointD>
+                <X>340 px</X>
+                <Y>812 px</Y>
+              </PointD>
+              <PointD>
+                <X>402 px</X>
+                <Y>812 px</Y>
+              </PointD>
+              <PointD>
+                <X>402 px</X>
+                <Y>1090 px</Y>
+              </PointD>
+              <PointD>
+                <X>-648.5 px</X>
+                <Y>1090 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>do_an_tot_nghiep.moduleclass.FK_moduleclass_TeacherID</Path>
+              <Path>datn.moduleclass.FK_moduleclass_TeacherID</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
           <Model xsi:type="RelationCommentModel">
             <CustomProperties>
-              <OID>93</OID>
-              <HolderModel>92</HolderModel>
-              <Port>96</Port>
+              <OID>154</OID>
+              <HolderModel>153</HolderModel>
+              <Port>157</Port>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>109 px</X>
-                  <Y>-56.375 px</Y>
+                  <X>483.25 px</X>
+                  <Y>-362.75 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
                 <CustomProperties>
-                  <OID>96</OID>
+                  <OID>157</OID>
                   <PortType>FixedAnchor</PortType>
                 </CustomProperties>
                 <LinkPortAnchor>OutPoint</LinkPortAnchor>
@@ -1612,160 +2673,77 @@
           </Model>
           <Model xsi:type="RelationLinkModel">
             <CustomProperties>
-              <OID>97</OID>
-              <Comment>98</Comment>
-              <OutModel>39</OutModel>
-              <InModel>76</InModel>
-              <OutPort>99</OutPort>
-              <InPort>100</InPort>
+              <OID>158</OID>
+              <Comment>159</Comment>
+              <OutModel>60</OutModel>
+              <InModel>147</InModel>
+              <OutPort>160</OutPort>
+              <InPort>161</InPort>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>215.275171416933 px</X>
-                  <Y>119.166697350917 px</Y>
-                </Location>
-                <Anchors>None</Anchors>
-                <Align>Right</Align>
-                <CustomProperties>
-                  <OID>99</OID>
-                  <PortType>FixedAnchor</PortType>
-                </CustomProperties>
-              </Port>
-              <Port>
-                <Location>
                   <X>0 px</X>
-                  <Y>65.75 px</Y>
+                  <Y>106 px</Y>
                 </Location>
                 <Anchors>Top Bottom</Anchors>
                 <Align>Left</Align>
                 <CustomProperties>
-                  <OID>100</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-            </PortAnchors>
-            <BendPoints>
-              <PointD>
-                <X>250 px</X>
-                <Y>349.166697350917 px</Y>
-              </PointD>
-              <PointD>
-                <X>250 px</X>
-                <Y>400 px</Y>
-              </PointD>
-              <PointD>
-                <X>280 px</X>
-                <Y>400 px</Y>
-              </PointD>
-              <PointD>
-                <X>280 px</X>
-                <Y>715.75 px</Y>
-              </PointD>
-            </BendPoints>
-            <IsManuallyRouted>true</IsManuallyRouted>
-            <DbOid>
-              <Path>do_an_tot_nghiep.detailmoduleclass.FK_detailmoduleclass_ModuleClassID</Path>
-              <TypeName>ForeignKey</TypeName>
-            </DbOid>
-          </Model>
-          <Model xsi:type="RelationCommentModel">
-            <CustomProperties>
-              <OID>98</OID>
-              <HolderModel>97</HolderModel>
-              <Port>101</Port>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port xsi:type="LinkPort">
-                <Location>
-                  <X>-100 px</X>
-                  <Y>-208.708302649083 px</Y>
-                </Location>
-                <Anchors>None</Anchors>
-                <Align>Right</Align>
-                <CustomProperties>
-                  <OID>101</OID>
-                  <PortType>FixedAnchor</PortType>
-                </CustomProperties>
-                <LinkPortAnchor>OutPoint</LinkPortAnchor>
-              </Port>
-            </PortAnchors>
-            <CommentOffset>
-              <X>22 px</X>
-              <Y>2 px</Y>
-            </CommentOffset>
-          </Model>
-          <Model xsi:type="RelationLinkModel">
-            <CustomProperties>
-              <OID>102</OID>
-              <Comment>103</Comment>
-              <OutModel>45</OutModel>
-              <InModel>76</InModel>
-              <OutPort>104</OutPort>
-              <InPort>105</InPort>
-              <Parent>0</Parent>
-            </CustomProperties>
-            <PortAnchors>
-              <Port>
-                <Location>
-                  <X>132.5 px</X>
-                  <Y>0 px</Y>
-                </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Bottom</Align>
-                <CustomProperties>
-                  <OID>104</OID>
+                  <OID>160</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
               <Port>
                 <Location>
-                  <X>102.5 px</X>
+                  <X>50.5 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
                 <CustomProperties>
-                  <OID>105</OID>
+                  <OID>161</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>462.5 px</X>
-                <Y>412 px</Y>
+                <X>93.5 px</X>
+                <Y>946 px</Y>
               </PointD>
               <PointD>
-                <X>392.5 px</X>
-                <Y>412 px</Y>
+                <X>93.5 px</X>
+                <Y>1103 px</Y>
+              </PointD>
+              <PointD>
+                <X>-749.5 px</X>
+                <Y>1103 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>do_an_tot_nghiep.practicegroup.FK_practicegroup_ModuleClassID</Path>
+              <Path>datn.practicegroup.FK_practicegroup_TeacherID</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
           <Model xsi:type="RelationCommentModel">
             <CustomProperties>
-              <OID>103</OID>
-              <HolderModel>102</HolderModel>
-              <Port>106</Port>
+              <OID>159</OID>
+              <HolderModel>158</HolderModel>
+              <Port>162</Port>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>70 px</X>
-                  <Y>-249 px</Y>
+                  <X>458 px</X>
+                  <Y>-157 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Bottom</Align>
+                <Align>Left</Align>
                 <CustomProperties>
-                  <OID>106</OID>
+                  <OID>162</OID>
                   <PortType>FixedAnchor</PortType>
                 </CustomProperties>
                 <LinkPortAnchor>OutPoint</LinkPortAnchor>
@@ -1778,19 +2756,19 @@
           </Model>
           <Model xsi:type="TableModel">
             <CustomProperties>
-              <OID>107</OID>
+              <OID>163</OID>
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>-630 px</X>
-              <Y>400 px</Y>
+              <X>-850 px</X>
+              <Y>620 px</Y>
             </Location>
             <Size>
-              <Width>211 px</Width>
-              <Height>107 px</Height>
+              <Width>232 px</Width>
+              <Height>195 px</Height>
             </Size>
             <DbOid>
-              <Path>do_an_tot_nghiep.permission</Path>
+              <Path>datn.technicalstaff</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -1799,21 +2777,104 @@
               <TriggersCollapsed>True</TriggersCollapsed>
             </Compartments>
           </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>164</OID>
+              <Comment>165</Comment>
+              <OutModel>13</OutModel>
+              <InModel>163</InModel>
+              <OutPort>166</OutPort>
+              <InPort>167</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>114.5 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>166</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>116 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>167</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>-110 px</X>
+                <Y>414.5 px</Y>
+              </PointD>
+              <PointD>
+                <X>-110 px</X>
+                <Y>548 px</Y>
+              </PointD>
+              <PointD>
+                <X>-734 px</X>
+                <Y>548 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.maintainance.FK_maintainance_TechnicalStaffID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>165</OID>
+              <HolderModel>164</HolderModel>
+              <Port>168</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>332 px</X>
+                  <Y>-133.5 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>168</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
           <Model xsi:type="TableModel">
             <CustomProperties>
-              <OID>108</OID>
+              <OID>169</OID>
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>-630 px</X>
-              <Y>20 px</Y>
+              <X>-1080 px</X>
+              <Y>1190 px</Y>
             </Location>
             <Size>
               <Width>202 px</Width>
               <Height>229 px</Height>
             </Size>
             <DbOid>
-              <Path>do_an_tot_nghiep.user</Path>
+              <Path>datn.user</Path>
               <TypeName>Table</TypeName>
             </DbOid>
             <Compartments>
@@ -1824,73 +2885,93 @@
           </Model>
           <Model xsi:type="RelationLinkModel">
             <CustomProperties>
-              <OID>109</OID>
-              <Comment>110</Comment>
-              <OutModel>108</OutModel>
-              <InModel>107</InModel>
-              <OutPort>111</OutPort>
-              <InPort>112</InPort>
+              <OID>170</OID>
+              <Comment>171</Comment>
+              <OutModel>169</OutModel>
+              <InModel>38</InModel>
+              <OutPort>172</OutPort>
+              <InPort>173</InPort>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>111 px</X>
-                  <Y>0 px</Y>
-                </Location>
-                <Anchors>Left Right</Anchors>
-                <Align>Bottom</Align>
-                <CustomProperties>
-                  <OID>111</OID>
-                  <PortType>FloatAnchor</PortType>
-                </CustomProperties>
-              </Port>
-              <Port>
-                <Location>
-                  <X>91 px</X>
+                  <X>151.5 px</X>
                   <Y>0 px</Y>
                 </Location>
                 <Anchors>Left Right</Anchors>
                 <Align>Top</Align>
                 <CustomProperties>
-                  <OID>112</OID>
+                  <OID>172</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>80.25 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>173</OID>
                   <PortType>FloatAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>-519 px</X>
-                <Y>269 px</Y>
+                <X>-928.5 px</X>
+                <Y>1170 px</Y>
               </PointD>
               <PointD>
-                <X>-539 px</X>
-                <Y>269 px</Y>
+                <X>-859 px</X>
+                <Y>1170 px</Y>
+              </PointD>
+              <PointD>
+                <X>-859 px</X>
+                <Y>1438 px</Y>
+              </PointD>
+              <PointD>
+                <X>-579 px</X>
+                <Y>1438 px</Y>
+              </PointD>
+              <PointD>
+                <X>-579 px</X>
+                <Y>644 px</Y>
+              </PointD>
+              <PointD>
+                <X>-500 px</X>
+                <Y>644 px</Y>
+              </PointD>
+              <PointD>
+                <X>-500 px</X>
+                <Y>660.25 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
-              <Path>do_an_tot_nghiep.user.FK_user_PermissionID</Path>
+              <Path>datn.user.FK_user_PermissionID</Path>
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
           <Model xsi:type="RelationCommentModel">
             <CustomProperties>
-              <OID>110</OID>
-              <HolderModel>109</HolderModel>
-              <Port>113</Port>
+              <OID>171</OID>
+              <HolderModel>170</HolderModel>
+              <Port>174</Port>
               <Parent>0</Parent>
             </CustomProperties>
             <PortAnchors>
               <Port xsi:type="LinkPort">
                 <Location>
-                  <X>20 px</X>
-                  <Y>-85.5 px</Y>
+                  <X>-349.5 px</X>
+                  <Y>149 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Bottom</Align>
+                <Align>Top</Align>
                 <CustomProperties>
-                  <OID>113</OID>
+                  <OID>174</OID>
                   <PortType>FixedAnchor</PortType>
                 </CustomProperties>
                 <LinkPortAnchor>OutPoint</LinkPortAnchor>
@@ -1904,10 +2985,10 @@
         </Children>
         <ViewPort>
           <ScaleMode>Free</ScaleMode>
-          <Scale>0.404153168</Scale>
+          <Scale>1</Scale>
           <Location>
-            <X>-1362.72119140625 px</X>
-            <Y>-279.875061035156 px</Y>
+            <X>-1188.8 px</X>
+            <Y>342.40000038147 px</Y>
           </Location>
         </ViewPort>
       </Model>

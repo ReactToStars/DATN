@@ -12,12 +12,8 @@ namespace ApplicationCore.Models
         public string StudentCode { get; set; }
         public string FullName { get; set; }
         public Guid PracticeScheduleID { get; set; }
-        public Guid SubjectID { get; set; }
-        public string SubjectName{ get; set; }
-        public Guid PracticeGroupID { get; set; }
-        public string PracticeGroupName{ get; set; }
-        public DateTime StartTime { get; set; }
-        public DateTime EndTime { get; set; }
+        public string StartTime { get; set; }
+        public string EndTime { get; set; }
         public string Description { get; set; }
         public int AttendanceStatus { get; set; }
     }

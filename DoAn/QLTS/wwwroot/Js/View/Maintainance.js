@@ -331,7 +331,9 @@ class MaintainanceJS extends BaseJS {
             var technicalStaffId = $('#cbx_technicalStaff option:selected ').val();
             console.log(value);
             listData = cacheData.filter(function (item) {
-                return (item["PracticalLaboratoryName"].toLowerCase().includes(value.toLowerCase()) || item["FullName"].toLowerCase().includes(value.toLowerCase()))
+                return (item["PracticalLaboratoryName"].toLowerCase().includes(value.toLowerCase())
+                    || item["TechnicalStaffCode"].toLowerCase().includes(value.toLowerCase())
+                    || item["FullName"].toLowerCase().includes(value.toLowerCase()))
                     && (practicalLaboratoryId ? item["PracticalLaboratoryID"] === practicalLaboratoryId : item["PracticalLaboratoryID"] != practicalLaboratoryId)
                     && (technicalStaffId ? item["TechnicalStaffID"] === technicalStaffId : item["TechnicalStaffID"] != technicalStaffId);
             });

@@ -207,8 +207,8 @@ class BaseJS {
 
                     var inputs = $('.dialog__content input[fieldname],.dialog__content select[fieldname],.dialog__content textarea[fieldname]');
                     $.each(inputs, function (index, item) {
-                        var propetyname = $(item).attr('fieldname');
-                        var propertyvalue = res[propetyname];
+                        var propertyname = $(item).attr('fieldname');
+                        var propertyvalue = res[propertyname];
                         if ($(this).attr('type') == 'date') {
                             propertyvalue = formatStringDate(propertyvalue);
                         }
@@ -216,7 +216,14 @@ class BaseJS {
                             var money = formatMoney(propertyvalue);
                             propertyvalue = money;
                         }
-
+                        //if ($(item).attr('type') == 'checkbox') {
+                        //    if (propertyvalue == 1) {
+                        //        $(item).attr('checked', true);
+                        //    }
+                        //    else {
+                        //        $(item).attr('checked', false);
+                        //    }
+                        //}
                         this.value = propertyvalue;
                     })
                 }).fail(function (response) {
@@ -274,7 +281,7 @@ class BaseJS {
          * Author: Nguyen Dang Tung(20/12/2020)
          */
         $('input[type="email"]').blur(function () {
-            var testEmail = /^[A-Z0-9._%+-]+@[A-Z0-9]+\.[A-Z]{2,4}$/i;
+            var testEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.]+[A-Z]{2,4}$/i;
             if (!testEmail.test($(this).val())) {
                 $(this).addClass('border-red');
                 $(this).attr('title', 'Email không đúng định dạng');

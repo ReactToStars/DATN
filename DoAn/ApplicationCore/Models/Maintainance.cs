@@ -24,7 +24,7 @@ namespace ApplicationCore.Models
 
         [Required("Mã cán bộ kỹ thuật", "Mã cán bộ kỹ thuật không được để trống")]
         public Guid TechnicalStaffID { get; set; }
-
+        public string TechnicalStaffCode { get; set; }
         public string FullName { get; set; }
 
         public int MaintainanceStatus { get; set; }

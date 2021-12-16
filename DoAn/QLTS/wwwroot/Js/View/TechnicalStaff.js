@@ -196,7 +196,7 @@ class TechnicalStaffJS extends BaseJS {
         }
         else {
             var msg = "Bạn có chắc chắn muốn xóa " + recordTitle + " không?";
-            showAlertConfirm(msg)
+            showAlertConfirm(msg);
         }
     }
 
@@ -225,10 +225,10 @@ class TechnicalStaffJS extends BaseJS {
                 }
             }).fail(function (response) {
                 console.log(response);
-            })
+            });
 
         } catch (e) {
-            alert(e);
+            console.log(e);
         }
     }
 
@@ -281,9 +281,9 @@ class TechnicalStaffJS extends BaseJS {
 
             var value = $('#txt-search').val();
             listData = cacheData.filter(function (item) {
-                return (
-                    (item["FullName"].toLowerCase()).includes(value.toLowerCase())
-                    || (item["PhoneNumber"].toLowerCase()).includes(value.toLowerCase()));
+                return item["TechnicalStaffCode"].toLowerCase().includes(value.toLowerCase())
+                    || item["FullName"].toLowerCase().includes(value.toLowerCase())
+                    || item["PhoneNumber"].toLowerCase().includes(value.toLowerCase());
             });
             $('.loading').show();
             $('#tbListData tbody').empty();

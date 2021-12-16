@@ -210,40 +210,38 @@
                         </div>-->
                         <!-- Table -->
                         <div class="grid-infor">
-                            <div class="grid-infor">
-                                <div class="grid-infor__left" style="width:60%">
-                                    <table border="0" cellspacing="0" cellpadding="0">
-                                        <tr>
-                                            <td>Bộ môn:</td>
-                                            <td fieldName="SubjectName"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Học phần:</td>
-                                            <td fieldName="ModuleName"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Mã lớp học phần:</td>
-                                            <td fieldName="ModuleClassCode"></td>
-                                        </tr>
+                            <div class="grid-infor__left" style="width:50%">
+                                <table border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td>Ca:</td>
+                                        <td fieldName="PracticeShiftName"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nhóm:</td>
+                                        <td fieldName="PracticeGroupName"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Phòng:</td>
+                                        <td fieldName="PracticalLaboratoryName"></td>
+                                    </tr>
 
-                                    </table>
-                                </div>
-                                <div class="grid-infor__right" style="width:40%">
-                                    <table border="0" cellspacing="0" cellpadding="0">
-                                        <tr>
-                                            <td>Giảng viên:</td>
-                                            <td fieldName="FullName"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Mã nhóm:</td>
-                                            <td fieldName="PracticeGroupCode"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Tên nhóm:</td>
-                                            <td fieldName="PracticeGroupName"></td>
-                                        </tr>
-                                    </table>
-                                </div>
+                                </table>
+                            </div>
+                            <div class="grid-infor__right" style="width:50%">
+                                <table border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td>Giảng viên:</td>
+                                        <td fieldName="FullName"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ngày:</td>
+                                        <td fieldName="Date"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Vắng:</td>
+                                        <td id="absent"></td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
                         <!-- end table -->
@@ -256,8 +254,10 @@
                                             <th class="text-center" fomatType="STT" style="width:5%">STT</th>
                                             <th fieldName="StudentCode" class="text-align-left" style="width:10%">Mã sinh viên</th>
                                             <th fieldName="FullName" class="text-align-center " style="width:20%">Tên sinh viên</th>
-                                            <th fieldName="Description" class="text-align-center " style="width:40%">Mô tả</th>
-                                            <th fieldName="AttendanceStatus" fomatType="" class="text-align-left" style="width:15%">Trạng thái</th>
+                                            <th fieldName="StartTime" class="text-align-center " style="width:10%">Thời gian bắt đầu</th>
+                                            <th fieldName="EndTime" class="text-align-center " style="width:10%">Thời gian kết thúc</th>
+                                            <th fieldName="Description" class="text-align-center " style="width:20%">Ghi chú</th>
+                                            <th fieldName="AttendanceStatus" fomatType="attendanceStatus" class="text-align-center" style="width:15%">Trạng thái</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -274,28 +274,21 @@
                             <div class="container-fluid">
                                 <div class="row content-form" style="display:flex; align-content:space-between">
                                     <div class="top col-6 set_add">
+                                        <input class="input-text info__type__emp txt_PracticeScheduleID " hidden />
                                         <div class=" parent-sub-content">
                                             <div class=" sub-content" style="width:100%">
-                                                <div class="sub-title">Nhóm thực hành - thí nghiệm</div>
-                                                <input class="input-text info__type__emp txt_Group " dataType="text" disabled />
-                                                <input class="input-text info__type__emp txt_GroupID " type="hidden" />
-                                            </div>
-                                        </div>
-                                        <div class=" parent-sub-content ">
-                                            <div class=" sub-content" style="width:100%">
-                                                <div class="sub-title">Sinh viên nhóm(<span>*</span>)</div>
-                                                <div class="student_of_group">
+                                                <div class="sub-title">Điểm danh(<span>*</span>)</div>
+                                                <div class="student_of_group" style="height: 350px;">
                                                     <ul>
                                                     </ul>
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
                                     <div class="top col-6 set_add" style="">
                                         <div class=" parent-sub-content">
                                             <div class=" sub-content" style="width:100%">
-                                                <div class="sub-title">Sinh viên lớp học phần</div>
+                                                <div class="sub-title">Sinh viên nhóm thực hành</div>
                                                 <div class="student_of_class">
                                                     <ul></ul>
                                                 </div>
@@ -305,21 +298,41 @@
                                     </div>
                                     <div class="top col-12 set_update">
                                         <div class=" parent-sub-content">
-                                            <div class=" sub-content" style="width:100%">
-                                                <div class="sub-title">Nhóm thực hành - thí nghiệm(<span>*</span>)</div>
-                                                <input class="input-text info__type__emp txt_Group " dataType="text" disabled />
-                                                <input class="input-text info__type__emp txt_GroupID " type="hidden" />
-                                            </div>
-                                            <div class=" sub-content" style="width:100%">
+                                            <div class=" sub-content" style="width: 100%">
+                                                <input class="input-text info__type__emp txt_PracticeScheduleID" type="hidden" />
                                                 <div class="sub-title">Sinh viên (<span>*</span>)</div>
                                                 <input class="input-text info__type__emp" fieldName="FullName" disabled>
                                                 <input class="input-text info__type__emp txt_StudentID " fieldName="StudentID" type="hidden">
+                                            </div>
+                                            <div class="sub-content" style="width: 100%">
+                                                <div class="sub-title">Điểm danh</div>
+                                                <select class="cbx_attendanceStatus info__type__emp" fieldName="AttendanceStatus" tabindex="2">
+                                                    <option value="1">Có</option>
+                                                    <option value="0">Vắng</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <!--<div class="parent-sub-content">
+                                            <div class="sub-content" style="width: 100%">
+                                                <div class="sub-title">Điểm danh
+                                                    <input type="checkbox" class="txt_attendanceStatus"  fieldName="AttendanceStatus" tabindex="2" />
+                                                </div>
+                                            </div>
+                                        </div>-->
+                                        <div class=" parent-sub-content">
+                                            <div class=" sub-content" style="width: 100%">
+                                                <div class="sub-title">Thời gian bắt đầu</div>
+                                                <input type="time" class="input-text info__type__emp" fieldName="StartTime" tabindex="3">
+                                            </div>
+                                            <div class="sub-content" style="width: 100%">
+                                                <div class="sub-title">Thời gian kết thúc</div>
+                                                <input type="time" class="input-text info__type__emp" fieldName="EndTime" tabindex="4">
                                             </div>
                                         </div>
                                         <div class="parent-sub-content">
                                             <div class=" sub-content" style="width:100%">
                                                 <div class="sub-title">Ghi chú</div>
-                                                <textarea class="input-text info__type__emp" fieldName="Note" dataType="text" tabindex="1"></textarea>
+                                                <textarea class="input-text info__type__emp" fieldName="Description" dataType="text" tabindex="1"></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -371,7 +384,7 @@
     <!-- End Notification -->
 
     <input id="objectID" value="AttendanceID" type="hidden" />
-    <input id="objectTitle" value="AttendanceID" type="hidden" />
+    <input id="objectTitle" value="FullName" type="hidden" />
 
     <!-- Script -->
     <script src="../lib/jquery-3.5.1.min.js"></script>
