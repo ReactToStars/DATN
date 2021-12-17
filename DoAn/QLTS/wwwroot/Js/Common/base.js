@@ -217,14 +217,17 @@ class BaseJS {
                             propertyvalue = money;
                         }
 
-                        //if ($(item).attr('type') == 'checkbox') {
-                        //    if (propertyvalue == 1) {
-                        //        $(item).attr('checked');
-                        //    }
-                        //    //else {
-                        //    //    $(item).attr('checked', false);
-                        //    //}
-                        //}
+                        if ($(item).attr('type') == 'checkbox') {
+                            if (propertyvalue == 1) {
+                                $(this).attr('checked', '');
+                                $(this).val('1');
+                            }
+                            else if (propertyvalue == 0) {
+                                $(this).removeAttr('checked');
+                                $(this).val('0');
+                            }
+                        }
+
                         this.value = propertyvalue;
                     })
                 }).fail(function (response) {

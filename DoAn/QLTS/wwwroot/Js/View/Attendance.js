@@ -9,8 +9,6 @@ $(document).ready(function () {
     });
 
     attendanceJS = new AttendanceJS();
-
-
 })
 
 class AttendanceJS extends BaseJS {
@@ -108,6 +106,18 @@ class AttendanceJS extends BaseJS {
             $(this).remove();
         });
 
+        //checkbox
+        $('#txt_attendanceStatus').click(function () {
+            if ($(this).attr('class') == 'isChecked') {
+                $(this).removeAttr('checked');
+                $(this).removeClass('isChecked');
+                $(this).val('0');
+            }
+            else {
+                $(this).addClass('isChecked');
+                $(this).val('1');
+            }
+        });
     }
 
     /**
@@ -398,19 +408,9 @@ function getObject(id) {
         object["AttendanceStatus"] = parseInt($('.cbx_attendanceStatus').val());
         object["StartTime"] = $('input[fieldName="StartTime"]').val();
         object["EndTime"] = $('input[fieldName="EndTime"]').val();
-
-        //$('.txt_attendanceStatus').click(function () {
-        //    if ($(this).attr('checked')) {
-        //        object['AttendanceStatus'] = 1;
-        //    }
-        //    else {
-        //        object['AttendanceStatus'] = 0;
-        //    }
-        //});
-
-        //object['AttendanceStatus'] = parseInt($('.attendanceStatus').val());
+        
+        //object['AttendanceStatus'] = parseInt($('#txt_attendanceStatus').val());
         object["AttendanceID"] = id;
-        console.log(object);
         return object;
     }
 }
@@ -472,6 +472,12 @@ function loadStudentClass(id) {
 function resetDialog() {
     $('.student_of_class ul ').find('li').remove();
     $('.student_of_group ul ').find('li').remove();
+    if ($('#txt_attendanceStatus').val() == '1') {
+        $('#txt_attendanceStatus').attr('checked', '');
+    }
+    else {
+        $('#txt_attendanceStatus').removeAttr('checked');
+    }
     let id = window.location.href;
     id = id.split("&&")[1];
     id = id.split("=")[1];

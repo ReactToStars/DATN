@@ -3,7 +3,7 @@
         $(".navbar-item-box .navbar-item-text").addClass("display-none");
         $(".logo-site .qlts-text").addClass("display-none");
         $(".logo-site .toggle-icon").addClass("display-none");
-        $(".wrapper .row .left").attr("style", "width: 50px;");
+        $(".wrapper .row .left").attr("style", "width: 80px;");
         $(".navbar-item-box .navbar-item-direct").attr("style", "display: none;");
     });
 

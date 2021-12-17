@@ -204,7 +204,20 @@
                         <div class="child-title"><a href="javascript:;" title="Điểm danh">Điểm danh</a></div>
                     </div>
                     <div class="header-right">
-                        <a href="javascript:;" title="Đăng xuất" id="logout">Đăng xuất</a>
+                        <!--<a href="javascript:;" title="Đăng xuất" id="logout">Đăng xuất</a>-->
+                        <div class="avt">
+                            <div class="avt-list">
+                                <img src="../Content/icon/avata.png" class="avt-img">
+                                <ul class="avt-list-item">
+                                    <li>
+                                        <a class="avt-list-item-link" href="/View/User.html">Quản lý tài khoản</a>
+                                    </li>
+                                    <li>
+                                        <a class="avt-list-item-link" href="javascript:;" title="Đăng xuất" id="logout">Đăng xuất</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- header-content-end -->
@@ -289,8 +302,8 @@
                                             <th fieldName="FullName" class="text-align-center " style="width:20%">Tên sinh viên</th>
                                             <th fieldName="StartTime" class="text-align-center " style="width:10%">Thời gian bắt đầu</th>
                                             <th fieldName="EndTime" class="text-align-center " style="width:10%">Thời gian kết thúc</th>
-                                            <th fieldName="Description" class="text-align-center " style="width:20%">Ghi chú</th>
-                                            <th fieldName="AttendanceStatus" fomatType="attendanceStatus" class="text-align-center" style="width:15%">Trạng thái</th>
+                                            <th fieldName="Description" class="text-align-center " style="width:30%">Ghi chú</th>
+                                            <th fieldName="AttendanceStatus" fomatType="check" class="text-align-center" style="width:5%">Trạng thái</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -348,24 +361,24 @@
                                         <!--<div class="parent-sub-content">
                                             <div class="sub-content" style="width: 100%">
                                                 <div class="sub-title">Điểm danh
-                                                    <input type="checkbox" class="txt_attendanceStatus"  fieldName="AttendanceStatus" tabindex="2" />
+                                                    <input type="checkbox" id="txt_attendanceStatus" fieldname="AttendanceStatus" tabindex="2" />
                                                 </div>
                                             </div>
                                         </div>-->
                                         <div class=" parent-sub-content">
                                             <div class=" sub-content" style="width: 100%">
                                                 <div class="sub-title">Thời gian bắt đầu</div>
-                                                <input type="time" class="input-text info__type__emp" fieldName="StartTime" tabindex="3">
+                                                <input type="time" class="input-text info__type__emp" fieldname="StartTime" tabindex="3">
                                             </div>
                                             <div class="sub-content" style="width: 100%">
                                                 <div class="sub-title">Thời gian kết thúc</div>
-                                                <input type="time" class="input-text info__type__emp" fieldName="EndTime" tabindex="4">
+                                                <input type="time" class="input-text info__type__emp" fieldname="EndTime" tabindex="4">
                                             </div>
                                         </div>
                                         <div class="parent-sub-content">
                                             <div class=" sub-content" style="width:100%">
                                                 <div class="sub-title">Ghi chú</div>
-                                                <textarea class="input-text info__type__emp" fieldName="Description" dataType="text" tabindex="1"></textarea>
+                                                <textarea class="input-text info__type__emp" fieldname="Description" dataType="text" tabindex="1"></textarea>
                                             </div>
                                         </div>
                                     </div>

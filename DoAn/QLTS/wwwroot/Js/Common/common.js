@@ -9,7 +9,7 @@ function formatAttendanceStatus(status) {
         status = "Có";
     }
     else {
-        status = "vắng";
+        status = "Vắng";
     }
     return status;
 }
@@ -232,6 +232,7 @@ function resetDialog() {
     $('input[dataType="date"]').val("mm/dd/yyyy");
     $('input').removeClass('border-red');
     $('input[fieldname="PassWord"]').attr("type", 'password');
+    //$('input[type="checkbox"]').prop('checked', false);
 }
 
 /**
@@ -333,17 +334,18 @@ function generateTable(response) {
                         var td = $(`<td title="` + value + `"></td>`);
                         td.addClass("text-align-center");
                         break;
-                    //case "check":
-                    //    var checkbox;
-                    //    if (value == 1) {
-                    //        checkbox = `<input type="checkbox" checked/>`;
-                    //    }
-                    //    else {
-                    //        checkbox = `<input type="checkbox"/>`;
-                    //    }
-                    //    value = "";
-                    //    td.append(checkbox);
-                    //    break;
+                    case "check":
+                        var checkbox;
+                        if (value == 1) {
+                            checkbox = `<input type="checkbox" checked=""/>`;
+                        }
+                        else {
+                            checkbox = `<input type="checkbox"/>`;
+                        }
+                        value = "";
+                        td.append(checkbox);
+                        td.addClass('text-align-center');
+                        break;
                     case "STT":
                         value = ind;
                         var td = $(`<td title="` + value + `"></td>`);
