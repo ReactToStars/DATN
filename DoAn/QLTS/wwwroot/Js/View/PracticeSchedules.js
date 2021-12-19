@@ -71,6 +71,17 @@ class PracticeSchedulesJS extends BaseJS {
         $('#btn-yes-warring').click(this.btnDeleteOnClick);
         $('#btn-update').click(this.btnUpdateOnClick);
 
+        //checkbox
+        $('#request').change(function (e) {
+            if ($(this).attr('value') == '1') {
+                $(this).val('0');
+                $(this).prop('checked', false);
+            }
+            else {
+                $(this).prop('checked', true);
+                $(this).val('1');
+            }
+        });
     }
 
     /**
@@ -475,7 +486,7 @@ function getObject(id) {
     object['StartTime'] = $('input[fieldName="StartTime"]').val();
     object['EndTime'] = $('input[fieldName="EndTime"]').val();
     object['Status'] = parseInt($('.cbx_status').val());
-    object['Request'] = parseInt($('.cbx_request').val());
+    object['Request'] = parseInt($('#request').val());
     object['Description'] = $('textarea[fieldName="Description"]').val();
     object['PracticeScheduleID'] = id;
     return object;

@@ -219,11 +219,11 @@ class BaseJS {
 
                         if ($(item).attr('type') == 'checkbox') {
                             if (propertyvalue == 1) {
-                                $(this).attr('checked', '');
+                                $(this).prop('checked', true);
                                 $(this).val('1');
                             }
-                            else if (propertyvalue == 0) {
-                                $(this).removeAttr('checked');
+                            else {
+                                $(this).prop('checked', false);
                                 $(this).val('0');
                             }
                         }

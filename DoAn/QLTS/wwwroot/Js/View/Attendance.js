@@ -107,14 +107,13 @@ class AttendanceJS extends BaseJS {
         });
 
         //checkbox
-        $('#txt_attendanceStatus').click(function () {
-            if ($(this).attr('class') == 'isChecked') {
-                $(this).removeAttr('checked');
-                $(this).removeClass('isChecked');
+        $('#txt_attendanceStatus').change(function (e) {
+            if ($(this).attr('value') == '1') {
                 $(this).val('0');
+                $(this).prop('checked', false);
             }
             else {
-                $(this).addClass('isChecked');
+                $(this).prop('checked', true);
                 $(this).val('1');
             }
         });
@@ -405,11 +404,11 @@ function getObject(id) {
         object["PracticeScheduleID"] = $('.txt_PracticeScheduleID').attr('value');
         object["StudentID"] = $(".txt_StudentID").val();
         object["Description"] = $('textarea[fieldName="Description"]').val();
-        object["AttendanceStatus"] = parseInt($('.cbx_attendanceStatus').val());
+        //object["AttendanceStatus"] = parseInt($('.cbx_attendanceStatus').val());
         object["StartTime"] = $('input[fieldName="StartTime"]').val();
         object["EndTime"] = $('input[fieldName="EndTime"]').val();
         
-        //object['AttendanceStatus'] = parseInt($('#txt_attendanceStatus').val());
+        object['AttendanceStatus'] = parseInt($('#txt_attendanceStatus').val());
         object["AttendanceID"] = id;
         return object;
     }
@@ -472,12 +471,7 @@ function loadStudentClass(id) {
 function resetDialog() {
     $('.student_of_class ul ').find('li').remove();
     $('.student_of_group ul ').find('li').remove();
-    if ($('#txt_attendanceStatus').val() == '1') {
-        $('#txt_attendanceStatus').attr('checked', '');
-    }
-    else {
-        $('#txt_attendanceStatus').removeAttr('checked');
-    }
+    $('#txt_attendanceStatus').prop('checked', false);
     let id = window.location.href;
     id = id.split("&&")[1];
     id = id.split("=")[1];
