@@ -1,9 +1,13 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #fff;
+    background-image: url("../Content/icon/a1.1.jpg");
+    background-repeat: no-repeat;
+    background-size: 1800px 1246px;
+    object-fit: cover;
+    background-position: left -420px;
     font-size: 13px;
-    font-family:Roboto-Regular !important;
+    font-family: Roboto-Regular !important;
 }
 
 .ui-widget {
@@ -67,7 +71,7 @@ html, body {
     .wrapper .right {
         flex-direction: column;
         overflow: auto;
-        height: 100%;
+        height: 90%;
     }
 
 ul, li {

@@ -13,8 +13,8 @@ namespace ApplicationCore.Services
     public class BaseService<TEntity> : IBaseService<TEntity> where TEntity : BaseEntity
     {
         #region Declare
-        IBaseRepository<TEntity> _baseRepository;
-        ServiceResult _serviceResult;
+        protected readonly IBaseRepository <TEntity> _baseRepository;
+        protected readonly ServiceResult _serviceResult;
         #endregion
         #region Constructor
         public BaseService(IBaseRepository<TEntity> baseRepository)

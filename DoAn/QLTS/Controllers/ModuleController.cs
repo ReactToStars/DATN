@@ -42,15 +42,13 @@ namespace DATN.Controllers
                 {
                     ListObject.Add(new Module()
                     {
-                        ModuleCode = worksheet.Cells[row, 3].Value.ToString(),
-                        ModuleName = worksheet.Cells[row, 4].Value.ToString(),
-                        NumberOfModule = float.Parse(worksheet.Cells[row, 7].Value.ToString()),
-                        Theory = float.Parse(worksheet.Cells[row, 8].Value.ToString()),
-                        Practice = float.Parse(worksheet.Cells[row, 9].Value.ToString()),
-                        BigExercise = float.Parse(worksheet.Cells[row, 9].Value.ToString()),
-                        SubjectID = Guid.Parse(worksheet.Cells[row, 13].Value.ToString()),
-
-
+                        ModuleCode = worksheet.Cells[row, 2].Value.ToString(),
+                        ModuleName = worksheet.Cells[row, 3].Value.ToString(),
+                        NumberOfModule = float.Parse(worksheet.Cells[row, 4].Value.ToString()),
+                        Theory = float.Parse(worksheet.Cells[row, 5].Value.ToString()),
+                        Practice = float.Parse(worksheet.Cells[row, 6].Value.ToString()),
+                        BigExercise = float.Parse(worksheet.Cells[row, 7].Value.ToString()),
+                        SubjectID = Guid.Parse(worksheet.Cells[row, 8].Value.ToString()),
                     });
                 }
             }

@@ -1,8 +1,14 @@
+.sub-general, .sub-human {
+    padding-left: 30px;
+}
+
 .navbar {
     background-color: #011239;
     height: 100%;
     padding: 0;
     align-content: flex-start;
+    overflow-y: scroll;
+    height: 100vh;
 }
 
     .navbar .logo-site {
@@ -149,3 +155,4 @@
 .icon-user {
     background-image: url('/Content/icon/user.svg');
 }
+

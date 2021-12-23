@@ -43,7 +43,7 @@ namespace QuanLyThucHanh.Controllers
                 _serviceResult.Messenger = "Đăng nhập thành công!";
                 HttpContext.Session.SetString("Role", account.PermissionName);
                 HttpContext.Session.SetString("AcountID", account.UserID.ToString());
-             
+
             }
             else
             {
@@ -52,6 +52,7 @@ namespace QuanLyThucHanh.Controllers
             }
             return Ok(_serviceResult);
         }
+
         [HttpPost("Logout")]
         public IActionResult Logout()
         {
