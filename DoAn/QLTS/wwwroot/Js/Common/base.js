@@ -6,7 +6,6 @@ class BaseJS {
         this.setDataUrl();
         this.loadData();
         this.initEvents();
-
     }
     /**
      * Lấy địa chỉ API dữ liệu
@@ -41,6 +40,11 @@ class BaseJS {
                 id = url.split("=")[1];
                 getDataUrl = "/api/v1/detailPracticeGroup/filter?Id=" + id;
             }
+            else if (equipment != undefined) {
+                let id = window.location.href;
+                id = id.split("=")[1];
+                getDataUrl = "/api/v1/equipment/filter?Id=" + id;
+            }
             maxCode = 0;
             $.ajax({
                 url: getDataUrl, //Địa chỉ API lấy dữ liệu
@@ -50,6 +54,7 @@ class BaseJS {
                 dataType: 'json',
                 connectType: 'application/json'
             }).done(function (response) {
+                //console.log(response);
                 let responses = [];
                 if (response.Code === Enum.StatusResponse.NotImplemented) {
                     window.location.href = response.Data;
@@ -66,14 +71,15 @@ class BaseJS {
                         responses = response;
                     }
                     cacheData = responses;
+                    //console.log(cacheData);
                     if (getCode) {
                         $.each(responses, function (index, item) {
-                            var code = parseInt(item[getCode].split("-")[1]);
+                            var code = parseInt(item[getCode].split('-')[1]);
                             if (maxCode < code) {
                                 maxCode = code;
                             }
                             //console.log(maxCode);
-                        })
+                        });
                         maxCode = maxCode + 1;
                     }
                     $('#tbListData tbody').empty();
@@ -192,7 +198,7 @@ class BaseJS {
                     contenttype: 'application/json',
                     async: true
                 }).done(function (response) {
-
+                    //console.log(response);
                     var res = response;
                     if ($(".txt_student_id").length != 0) {
                         $(".txt_student_id").attr('value', res["StudentID"]);
@@ -201,14 +207,25 @@ class BaseJS {
 
                     var inputs = $('.dialog__content input[fieldname],.dialog__content select[fieldname],.dialog__content textarea[fieldname]');
                     $.each(inputs, function (index, item) {
-                        var propetyname = $(item).attr('fieldname');
-                        var propertyvalue = res[propetyname];
+                        var propertyname = $(item).attr('fieldname');
+                        var propertyvalue = res[propertyname];
                         if ($(this).attr('type') == 'date') {
                             propertyvalue = formatStringDate(propertyvalue);
                         }
                         if ($(this).attr('fieldname') == "salary") {
                             var money = formatMoney(propertyvalue);
                             propertyvalue = money;
+                        }
+
+                        if ($(item).attr('type') == 'checkbox') {
+                            if (propertyvalue == 1) {
+                                $(this).prop('checked', true);
+                                $(this).val('1');
+                            }
+                            else {
+                                $(this).prop('checked', false);
+                                $(this).val('0');
+                            }
                         }
 
                         this.value = propertyvalue;
@@ -268,7 +285,7 @@ class BaseJS {
          * Author: Nguyen Dang Tung(20/12/2020)
          */
         $('input[type="email"]').blur(function () {
-            var testEmail = /^[A-Z0-9._%+-]+@[A-Z0-9]+\.[A-Z]{2,4}$/i;
+            var testEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.]+[A-Z]{2,4}$/i;
             if (!testEmail.test($(this).val())) {
                 $(this).addClass('border-red');
                 $(this).attr('title', 'Email không đúng định dạng');
@@ -346,3 +363,4 @@ var detailModuleClass = null;
 var detailPracticeGroup = null;
 var dividePracticeGroups = null;
 var setDisabled = null;
+var equipment = null;

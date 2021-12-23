@@ -41,14 +41,14 @@ namespace DATN.Controllers
                 ExcelWorksheet worksheet = package.Workbook.Worksheets.FirstOrDefault();
                 int colums = worksheet.Dimension.End.Column;
                 int rows = worksheet.Dimension.End.Row;
-                for (int row = 3; row <= rows; row++)
+                for (int row = 2; row <= rows; row++)
                 {
                     ListObject.Add(new Teacher()
                     {
                         FullName = worksheet.Cells[row, 2].Value.ToString(),
-                        PhoneNumber = worksheet.Cells[row, 7].Value.ToString(),
-                        Email = worksheet.Cells[row, 8].Value.ToString(),
-                        SubjectID = Guid.Parse(worksheet.Cells[row, 4].Value.ToString()),
+                        PhoneNumber = worksheet.Cells[row, 3].Value.ToString(),
+                        Email = worksheet.Cells[row, 4].Value.ToString(),
+                        SubjectID = Guid.Parse(worksheet.Cells[row, 5].Value.ToString()),
                     });
                 }
             }

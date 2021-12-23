@@ -36,16 +36,16 @@ namespace DATN.Controllers
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             using (ExcelPackage package = new ExcelPackage(fileInfor))
             {
-                var date = DateTime.Now;
-                var month = date.Month;
-                var year = date.Year;
-                month = month + 3;
-                if (month > 12)
-                {
-                    month = month - 12;
-                    year = year + 1;
-                }
-                DateTime EndTime = new DateTime(year, month, date.Day);
+                //var date = DateTime.Now;
+                //var month = date.Month;
+                //var year = date.Year;
+                //month = month + 3;
+                //if (month > 12)
+                //{
+                //    month = month - 12;
+                //    year = year + 1;
+                //}
+                //DateTime EndTime = new DateTime(year, month, date.Day);
                 ExcelWorksheet worksheet = package.Workbook.Worksheets.FirstOrDefault();
                 int colums = worksheet.Dimension.End.Column;
                 int rows = worksheet.Dimension.End.Row;
@@ -54,13 +54,13 @@ namespace DATN.Controllers
                     ListObject.Add(new ModuleClass()
                     {
                         ModuleClassCode = worksheet.Cells[row, 2].Value.ToString(),
-                        ModuleCode = worksheet.Cells[row, 3].Value.ToString(),
-                        SemesterID = Guid.Parse(worksheet.Cells[row, 10].Value.ToString()),
-                        SchoolYearID = Guid.Parse(worksheet.Cells[row, 11].Value.ToString()),
+                        SemesterID = Guid.Parse(worksheet.Cells[row, 3].Value.ToString()),
+                        SchoolYearID = Guid.Parse(worksheet.Cells[row, 4].Value.ToString()),
+                        TeacherID = Guid.Parse(worksheet.Cells[row, 5].Value.ToString()),
+                        StartTime = DateTime.Parse(worksheet.Cells[row, 6].Value.ToString()),
+                        EndTime = DateTime.Parse(worksheet.Cells[row, 7].Value.ToString()),
                         Status = 0,
-                        StartTime = DateTime.Now,
-                        EndTime = EndTime,
-                        TeacherID = Guid.Parse(worksheet.Cells[row, 12].Value.ToString()),
+                        ModuleID = Guid.Parse(worksheet.Cells[row, 8].Value.ToString()),
                     }); ;
                 }
             }

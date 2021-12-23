@@ -21,8 +21,8 @@ class DetailModuleClassJS extends BaseJS {
         super();
         this.initEventsPage();
         this.creditcheck();
-        this.loadCourse();
-        this.loadMajors();
+        //this.loadCourse();
+        //this.loadMajors();
         this.loadClass();
         this.loadStudent();
         this.loadModuleClass();
@@ -36,58 +36,58 @@ class DetailModuleClassJS extends BaseJS {
 
     creditcheck() {
         var optionTitle, course, majors, itemClass;
-        $('.cbx_course').on("change", function () {
-            course = $(this).select().val().trim();
-            if (!course) {
-                $(".cbx_class option,.cbx_student option").remove();
-                $('.cbx_class,.cbx_student ').attr("disabled", "disabled");
-                $('.cbx_class,.cbx_student ').removeClass('border-red');
-            }
-            else {
-                if (course && majors) {
-                    $('.cbx_class ').removeClass('border-red');
+        //$('.cbx_course').on("change", function () {
+        //    course = $(this).select().val().trim();
+        //    if (!course) {
+        //        $(".cbx_class option,.cbx_student option").remove();
+        //        $('.cbx_class,.cbx_student ').attr("disabled", "disabled");
+        //        $('.cbx_class,.cbx_student ').removeClass('border-red');
+        //    }
+        //    else {
+        //        if (course && majors) {
+        //            $('.cbx_class ').removeClass('border-red');
 
-                    $(".cbx_class option").remove();
-                    $('.cbx_class').removeAttr("disabled");
-                    var Classs = listClass.filter(function (item) {
-                        return ((item["CourseID"] === course && item["MajorsID"] === majors));
-                    });
-                    optionTitle = `<option value="">--Vui lòng chọn lớp học--</option>`
-                    $('.cbx_class').prepend(optionTitle);
-                    $.each(Classs, function (index, item) {
-                        var option = $(`<option value=` + item['ClassID'] + `>` + item['ClassName'] + `</option>`);
-                        $('.cbx_class').append(option);
-                    });
-                }
+        //            $(".cbx_class option").remove();
+        //            $('.cbx_class').removeAttr("disabled");
+        //            var Classs = listClass.filter(function (item) {
+        //                return ((item["CourseID"] === course && item["MajorsID"] === majors));
+        //            });
+        //            optionTitle = `<option value="">--Vui lòng chọn lớp học--</option>`
+        //            $('.cbx_class').prepend(optionTitle);
+        //            $.each(Classs, function (index, item) {
+        //                var option = $(`<option value=` + item['ClassID'] + `>` + item['ClassName'] + `</option>`);
+        //                $('.cbx_class').append(option);
+        //            });
+        //        }
 
-            }
-        });
-        $('.cbx_majors').on("change", function () {
-            majors = $(this).select().val().trim();
-            if (!majors) {
-                $(".cbx_class option,.cbx_student option").remove();
-                $('.cbx_class,.cbx_student ').attr("disabled", "disabled");
-                $('.cbx_class,.cbx_student ').removeClass('border-red');
-            }
-            else {
-                if (course && majors) {
-                    $('.cbx_class ').removeClass('border-red');
+        //    }
+        //});
+        //$('.cbx_majors').on("change", function () {
+        //    majors = $(this).select().val().trim();
+        //    if (!majors) {
+        //        $(".cbx_class option,.cbx_student option").remove();
+        //        $('.cbx_class,.cbx_student ').attr("disabled", "disabled");
+        //        $('.cbx_class,.cbx_student ').removeClass('border-red');
+        //    }
+        //    else {
+        //        if (course && majors) {
+        //            $('.cbx_class ').removeClass('border-red');
 
-                    $(".cbx_class option").remove();
-                    $('.cbx_class').removeAttr("disabled");
-                    var Classs = listClass.filter(function (item) {
-                        return ((item["CourseID"] === course && item["MajorsID"] === majors));
-                    });
-                    optionTitle = `<option value="">--Vui lòng chọn lớp học--</option>`
-                    $('.cbx_class').prepend(optionTitle);
-                    $.each(Classs, function (index, item) {
-                        var option = $(`<option value=` + item['ClassID'] + `>` + item['ClassName'] + `</option>`);
-                        $('.cbx_class').append(option);
-                    });
-                }
+        //            $(".cbx_class option").remove();
+        //            $('.cbx_class').removeAttr("disabled");
+        //            var Classs = listClass.filter(function (item) {
+        //                return ((item["CourseID"] === course && item["MajorsID"] === majors));
+        //            });
+        //            optionTitle = `<option value="">--Vui lòng chọn lớp học--</option>`
+        //            $('.cbx_class').prepend(optionTitle);
+        //            $.each(Classs, function (index, item) {
+        //                var option = $(`<option value=` + item['ClassID'] + `>` + item['ClassName'] + `</option>`);
+        //                $('.cbx_class').append(option);
+        //            });
+        //        }
 
-            }
-        });
+        //    }
+        //});
         $('.cbx_class').on("change", function () {
             itemClass = $(this).select().val().trim();
             if (itemClass) {
@@ -124,9 +124,6 @@ class DetailModuleClassJS extends BaseJS {
                 inputNotValidate[0].focus();
                 return;
             }
-
-
-
         });
 
         $('input[type="number"]').blur(function () {
@@ -310,6 +307,10 @@ class DetailModuleClassJS extends BaseJS {
                 connectType: 'application/json'
             }).done(function (response) {
                 listClass = response;
+                $.each(response, function (index, item) {
+                    var option = `<option value = "${item['ClassID']}"> ${item['ClassName']} </option>`;
+                    $('.cbx_class').append(option);
+                });
             }).fail(function (response) {
                 console.log(response);
             })
@@ -329,6 +330,10 @@ class DetailModuleClassJS extends BaseJS {
                 connectType: 'application/json'
             }).done(function (response) {
                 listStudent = response;
+                //$.each(response, function (index, item) {
+                //    var option = `<option value ="${item['StudentID']}"> ${item['StudentName']} </option>`;
+                //    $('cbx_student').append(option);
+                //});
             }).fail(function (response) {
                 console.log(response);
             })
@@ -371,6 +376,7 @@ class DetailModuleClassJS extends BaseJS {
 
     btnSaveOnClick() {
         var object = getObject();
+        console.log(object);
         listData = cacheData.filter(function (item) {
             return (item["ModuleClassID"] === object['ModuleClassID']) && (item["StudentID"] === object['StudentID']);
         });
@@ -401,7 +407,7 @@ class DetailModuleClassJS extends BaseJS {
                             showMessengerSuccess(msg);
                             detailmoduleclassJS.loadData();
                             $(".txt_student_id").attr('value', object["StudentID"]);
-                            setDisabled();
+                            //setDisabled();
                         }
                     }).fail(function (response) {
                         //console.log(response);
@@ -471,7 +477,7 @@ class DetailModuleClassJS extends BaseJS {
                     detailmoduleclassJS.loadData();
                     var msg = response.Messenger;
                     showMessengerSuccess(msg);
-                    setDisabled();
+                    //setDisabled();
                 }
             }).fail(function (response) {
                 console.log(response);
@@ -489,7 +495,6 @@ class DetailModuleClassJS extends BaseJS {
 
     btnUpdateOnClick() {
         var object = getObject(recordId);
-        console.log(object);
         var isvalidate = $('input[validate="false"]');
         try {
             if (isvalidate.length == 0) {
@@ -534,7 +539,8 @@ class DetailModuleClassJS extends BaseJS {
 
             var value = $('#txt-search').val();
             listData = cacheData.filter(function (item) {
-                return (item["StudentCode"].toLowerCase()).includes(value.toLowerCase()) || (item["FullName"].toLowerCase()).includes(value.toLowerCase());
+                return (item["StudentCode"].toLowerCase()).includes(value.toLowerCase())
+                    || (item["FullName"].toLowerCase()).includes(value.toLowerCase());
             });
 
             $('.loading').show();
@@ -549,6 +555,11 @@ class DetailModuleClassJS extends BaseJS {
         }
     }
 }
+
+/**
+ * Lấy dữ liệu từ input qua dialog
+ * @param {any} id
+ */
 function getObject(id) {
     var object = {};
     if (formModel === "Edit") {
@@ -605,8 +616,8 @@ function resetDialog() {
     $('input[fieldName]').val("");
     $(".cbx_course ").find('option:eq(0)').prop('selected', true)
     $(".cbx_majors ").find('option:eq(0)').prop('selected', true)
-    $(".cbx_class option,.cbx_student option").remove();
-    $('.cbx_class,.cbx_student ').attr("disabled", "disabled");
+    //$(".cbx_class option,.cbx_student option").remove();
+    //$('.cbx_class,.cbx_student ').attr("disabled", "disabled");
     $('input,select').removeClass('border-red');
 }
 

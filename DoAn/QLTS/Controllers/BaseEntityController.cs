@@ -19,8 +19,8 @@ namespace DATN.Controllers
     public class BaseEntityController<TEntity> : ControllerBase
     {
         #region Declare
-        IBaseService<TEntity> _baseService;
-        protected string _controllerName;
+        protected readonly IBaseService<TEntity> _baseService;
+        protected readonly string _controllerName;
 
         #endregion
         #region Constructor
@@ -215,7 +215,7 @@ namespace DATN.Controllers
             }
         }
         #endregion
-
+        #region Get file and role
         /// <summary>
         /// Hàm import file data
         /// </summary>
@@ -223,7 +223,9 @@ namespace DATN.Controllers
         /// <param name="hostingEnvironment"></param>
         /// <returns></returns>
 
+
         [HttpPost("UploadFile")]
+        [Obsolete]
         public IActionResult readAndGetFile(IFormFile file, [FromServices] IHostingEnvironment hostingEnvironment)
         {
             var role = GetRole();
@@ -254,7 +256,7 @@ namespace DATN.Controllers
                         if (item.Code == Code.NotValid || ((int)item.Data) == 0)
                         {
                             i++;
-                            arrayError.Add("Dữ liệu dòng số " + i + " không hợp lệ!");
+                            arrayError.Add("Dữ liệu dòng số " + i + " đã tồn tại hoặc không hợp lệ!");
                             isValidate = false;
                         }
                     }
@@ -262,7 +264,7 @@ namespace DATN.Controllers
                     {
                         _serviceResult.Code = Code.Success;
                         _serviceResult.Data = i;
-                        _serviceResult.Messenger = "Bạn đã impore dữ liệu thành công!";
+                        _serviceResult.Messenger = "Bạn đã import dữ liệu thành công!";
                     }
                     else
                     {
@@ -323,5 +325,6 @@ namespace DATN.Controllers
             }
             return role;
         }
+        #endregion
     }
 }

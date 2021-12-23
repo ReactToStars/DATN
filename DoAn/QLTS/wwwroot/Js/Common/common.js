@@ -1,4 +1,97 @@
-﻿/**------------------------------------------------------
+﻿
+/**
+ * format attendance status
+ * Created by NTHung (12/12/2021)
+ * @param {any} status
+ */
+function formatAttendanceStatus(status) {
+    if (status == 1) {
+        status = "Có";
+    }
+    else {
+        status = "Vắng";
+    }
+    return status;
+}
+
+/**
+ * format request from practice schedule
+ * Created by HTHang (7/12/2021)
+ * @param {any} request
+ */
+function formatRequest(request) {
+    if (request == 0) {
+        request = "Đăng ký";
+    }
+    else {
+        request = "Xác nhận";
+    }
+    return request;
+}
+
+/**
+ * Format status of practice schedule
+ * Created by HTHang (26/11/2021)
+ * @param {any} status
+ */
+function formatPracticeSchedule(status) {
+    switch (status) {
+        case 0:
+            status = "Chưa dạy";
+            break;
+        case 1:
+            status = "Đã dạy";
+            break;
+    }
+    return status;
+}
+
+/**
+ * Format day function
+ * Created by NTHung (25/11/2021)
+ * 
+ * @param {any} status
+ */
+function formatDay(status) {
+    switch (status) {
+        case 0:
+            status = "Thứ 2";
+            break;
+        case 1:
+            status = "Thứ 3";
+            break;
+        case 2:
+            status = "Thứ 4";
+            break;
+        case 3:
+            status = "Thứ 5";
+            break;
+        case 4:
+            status = "Thứ 6";
+            break;
+        case 5:
+            status = "Thứ 7";
+            break;
+        case 6:
+            status = "Chủ nhật";
+            break;
+    }
+    return status;
+}
+
+/**
+ * Hàm định dạng trạng thái bảo trì
+ * @param {any} status dữ liệu dạng số
+ * Created By NTHung (14/11/2021)
+ */
+function formatMaintainance(status) {
+    if (status == 0)
+        return status = "Bình thường";
+    else
+        return status = "Bảo trì";
+}
+
+/**------------------------------------------------------
  *Hàm định dạng Ngày/Tháng/Năm
  *Author: Nguyen Dang Tung(9/12/2020)
  **@param {dob} date dữ liệu dạng date
@@ -69,7 +162,6 @@ function formatStatus(status) {
  **@param {any} number:1,2,0
  */
 function formatGender(status) {
-
     if (status == 1) {
         return status = "Nam";
     }
@@ -97,7 +189,7 @@ function formatStatusJob(statusJob) {
     }
 }
 /**
- * Lấy dữ liệu từ input qua Diolag
+ * Lấy dữ liệu từ input qua Dialog
  * Author: Nguyen Dang Tung(1/1/2021)
  * */
 function getObject(objectId) {
@@ -140,6 +232,7 @@ function resetDialog() {
     $('input[dataType="date"]').val("mm/dd/yyyy");
     $('input').removeClass('border-red');
     $('input[fieldname="PassWord"]').attr("type", 'password');
+    //$('input[type="checkbox"]').prop('checked', false);
 }
 
 /**
@@ -207,10 +300,52 @@ function generateTable(response) {
                         var td = $(`<td> <a href="/view/DetailPracticeGroup.html?moduleClassId=` + obj[moduleclassid] + `&&practiceGroupId=` + obj[objectID] + `" >Xem chi tiết</a></td>`);
                         td.addClass("text-align-center");
                         break;
-                    //case "statusjob":
-                    //    value = formatStatusJob(value);
-                    //    var td = $(`<td title="` + value + `"></td>`);
-                    //    break;
+                    case "equipment":
+                        var td = $(`<td><a href="/view/Equipment.html?ID=` + obj[objectID] + `">Chi tiết</a></td>`);
+                        td.addClass("text-align-center");
+                        break;
+                    case "maintainance":
+                        value = formatMaintainance(value);
+                        var td = $(`<td title="` + value + `"></td>`);
+                        td.addClass("text-align-center");
+                        break;
+                    case "day":
+                        value = formatDay(value);
+                        var td = $(`<td title="${value}"></td>`);
+                        td.addClass("text-align-center");
+                        break;
+                    case "practiceScheduleStatus":
+                        value = formatPracticeSchedule(value);
+                        var td = $(`<td title="${value}"></td>`);
+                        td.addClass('text-align-center');
+                        break;
+                    case "request":
+                        value = formatRequest(value);
+                        var td = $(`<td title="${value}"></td>`);
+                        td.addClass('text-align-center');
+                        break;
+                    case "attendance":
+                        let practiceGroupID = $('#practiceGroupID').val();
+                        var td = $(`<td><a href="/view/Attendance.html?PracticeScheduleID=` + obj[objectID] + `&&PracticeGroupID=` + obj[practiceGroupID] + `">Điểm danh</a></td>`);
+                        td.addClass("text-align-center");
+                        break;
+                    case "attendanceStatus":
+                        value = formatAttendanceStatus(value);
+                        var td = $(`<td title="` + value + `"></td>`);
+                        td.addClass("text-align-center");
+                        break;
+                    case "check":
+                        var checkbox;
+                        if (value == 1) {
+                            checkbox = `<input type="checkbox" checked=""/>`;
+                        }
+                        else {
+                            checkbox = `<input type="checkbox"/>`;
+                        }
+                        value = "";
+                        td.append(checkbox);
+                        td.addClass('text-align-center');
+                        break;
                     case "STT":
                         value = ind;
                         var td = $(`<td title="` + value + `"></td>`);
@@ -221,7 +356,7 @@ function generateTable(response) {
                 }
                 td.append(value);
                 $(tr).append(td);
-            })
+            });
             $('#tbListData tbody ').append(tr);
         })
         var trs = $('#tbListData tbody tr');
@@ -338,7 +473,9 @@ function hideMessengerSuccess() {
 
 function formatGenerateTable(trs) {
     $.each(trs, function (index, item) {
-        let tb = $(this).find("td").eq(5).text(); tx1 = $(this).find("td").eq(3); tx2 = $(this).find("td").eq(4);
+        let tb = $(this).find("td").eq(5).text();
+        tx1 = $(this).find("td").eq(3);
+        tx2 = $(this).find("td").eq(4);
         if (parseFloat(tb)) {
             if (!tx1.text()) {
                 tx1.text(0);
