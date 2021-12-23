@@ -1,0 +1,5117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Devart (www.devart.com), the Database Diagram File -->
+<!-- Modifying this generated file will probably render it invalid -->
+<DevartDatabaseDiagram>
+  <SchemaVersion>1.2</SchemaVersion>
+  <DatabaseProvider>59f90733-4d68-4fdf-82a7-f0fcbf5460aa</DatabaseProvider>
+  <Connection>
+    <Name>localhost</Name>
+    <Category>00000000-0000-0000-0000-000000000000</Category>
+    <ConnectionString>User Id=root;Host=localhost;Character Set=utf8</ConnectionString>
+  </Connection>
+  <Settings>
+    <DbDiagramOptions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <CustomProperties />
+    </DbDiagramOptions>
+    <Options xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PageOptions">
+      <TopLeftMargins>
+        <Width>10 mm</Width>
+        <Height>10 mm</Height>
+      </TopLeftMargins>
+      <BottomRightMargins>
+        <Width>10 mm</Width>
+        <Height>10 mm</Height>
+      </BottomRightMargins>
+      <PaperSize>
+        <Width>210 mm</Width>
+        <Height>297 mm</Height>
+      </PaperSize>
+    </Options>
+    <Options xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PrintOptions" />
+    <Options xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ViewOptions">
+      <ShadowOffset>
+        <X>4 px</X>
+        <Y>4 px</Y>
+      </ShadowOffset>
+      <CustomProperties />
+    </Options>
+  </Settings>
+  <VirtualRelations>
+    <RelationCount>0</RelationCount>
+  </VirtualRelations>
+  <Diagram Version="1.22.1.0">
+    <DiagramModel>
+      <Model xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DDRootModel">
+        <CustomProperties>
+          <OID>0</OID>
+        </CustomProperties>
+        <Children>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>1</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>40 px</X>
+              <Y>1830 px</Y>
+            </Location>
+            <Size>
+              <Width>232 px</Width>
+              <Height>263 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.attendance</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>2</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>1210 px</X>
+              <Y>330 px</Y>
+            </Location>
+            <Size>
+              <Width>199 px</Width>
+              <Height>144 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.building</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>3</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>1510 px</X>
+              <Y>900 px</Y>
+            </Location>
+            <Size>
+              <Width>196 px</Width>
+              <Height>195 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.class</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>4</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>1500 px</X>
+              <Y>610 px</Y>
+            </Location>
+            <Size>
+              <Width>196 px</Width>
+              <Height>161 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.course</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>5</OID>
+              <Comment>6</Comment>
+              <OutModel>3</OutModel>
+              <InModel>4</InModel>
+              <OutPort>7</OutPort>
+              <InPort>8</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>93 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>7</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>103 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>8</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.class.FK_class_CourseID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>6</OID>
+              <HolderModel>5</HolderModel>
+              <Port>9</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>0 px</X>
+                  <Y>64.5 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>9</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>10</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>230 px</X>
+              <Y>1340 px</Y>
+            </Location>
+            <Size>
+              <Width>240 px</Width>
+              <Height>212 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.detailmoduleclass</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>11</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>810 px</X>
+              <Y>1720 px</Y>
+            </Location>
+            <Size>
+              <Width>249 px</Width>
+              <Height>178 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.detailpracticegroup</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>12</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>648 px</X>
+              <Y>39 px</Y>
+            </Location>
+            <Size>
+              <Width>246 px</Width>
+              <Height>212 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.equipment</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>13</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>310 px</X>
+              <Y>50 px</Y>
+            </Location>
+            <Size>
+              <Width>246 px</Width>
+              <Height>229 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.maintainance</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>14</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>1500 px</X>
+              <Y>1390 px</Y>
+            </Location>
+            <Size>
+              <Width>196 px</Width>
+              <Height>168 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.majors</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>15</OID>
+              <Comment>16</Comment>
+              <OutModel>3</OutModel>
+              <InModel>14</InModel>
+              <OutPort>17</OutPort>
+              <InPort>18</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>49.1367334362203 px</X>
+                  <Y>197.553986955656 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>17</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>60.000057220461 px</X>
+                  <Y>3.84620497212791 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>18</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>1559.13673343622 px</X>
+                <Y>1366.015625 px</Y>
+              </PointD>
+              <PointD>
+                <X>1560.00005722046 px</X>
+                <Y>1366.015625 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.class.FK_class_MajorsID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>16</OID>
+              <HolderModel>15</HolderModel>
+              <Port>19</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>1.46862203109777E-05 px</X>
+                  <Y>-135.5078125 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>19</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>20</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>-190 px</X>
+              <Y>700 px</Y>
+            </Location>
+            <Size>
+              <Width>222 px</Width>
+              <Height>246 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.module</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>21</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>300 px</X>
+              <Y>900 px</Y>
+            </Location>
+            <Size>
+              <Width>221 px</Width>
+              <Height>263 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.moduleclass</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>22</OID>
+              <Comment>23</Comment>
+              <OutModel>21</OutModel>
+              <InModel>20</InModel>
+              <OutPort>24</OutPort>
+              <InPort>25</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>2.30770339627276 px</X>
+                  <Y>32.3077265045359 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>24</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>212.307693125934 px</X>
+                  <Y>233.846188099428 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>25</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>280 px</X>
+                <Y>932.307726504536 px</Y>
+              </PointD>
+              <PointD>
+                <X>280 px</X>
+                <Y>933.846188099428 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.moduleclass.FK_moduleclass_ModuleID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>23</OID>
+              <HolderModel>22</HolderModel>
+              <Port>26</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>144 px</X>
+                  <Y>-1.53846490171406 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>26</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>13.7001342773438 px</X>
+              <Y>-52.3077265045359 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>27</OID>
+              <Comment>28</Comment>
+              <OutModel>10</OutModel>
+              <InModel>21</InModel>
+              <OutPort>29</OutPort>
+              <InPort>30</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>119.909090909091 px</X>
+                  <Y>0.329545454545723 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>29</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>50.000012837924 px</X>
+                  <Y>250.769272979196 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>30</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>349.909090909091 px</X>
+                <Y>1267 px</Y>
+              </PointD>
+              <PointD>
+                <X>350.000012837924 px</X>
+                <Y>1267 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.detailmoduleclass.FK_detailmoduleclass_ModuleClassID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>28</OID>
+              <HolderModel>27</HolderModel>
+              <Port>31</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-0.0909090909090082 px</X>
+                  <Y>125 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>31</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>32</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>2040 px</X>
+              <Y>1400 px</Y>
+            </Location>
+            <Size>
+              <Width>196 px</Width>
+              <Height>127 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.ology</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>33</OID>
+              <Comment>34</Comment>
+              <OutModel>14</OutModel>
+              <InModel>32</InModel>
+              <OutPort>35</OutPort>
+              <InPort>36</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>198.461600760739 px</X>
+                  <Y>106.41031129826 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>35</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>95.25 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>36</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>1726 px</X>
+                <Y>1496.41031129826 px</Y>
+              </PointD>
+              <PointD>
+                <X>1726 px</X>
+                <Y>1495.25 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.majors.FK_majors_OlogyID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>34</OID>
+              <HolderModel>33</HolderModel>
+              <Port>37</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-187 px</X>
+                  <Y>1.16031129825956 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>37</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>4 px</X>
+              <Y>26.6666118915243 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>38</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>1830 px</X>
+              <Y>550 px</Y>
+            </Location>
+            <Size>
+              <Width>211 px</Width>
+              <Height>107 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.permission</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>39</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>637 px</X>
+              <Y>312 px</Y>
+            </Location>
+            <Size>
+              <Width>267 px</Width>
+              <Height>263 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.practicallaboratory</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>40</OID>
+              <Comment>41</Comment>
+              <OutModel>39</OutModel>
+              <InModel>2</InModel>
+              <OutPort>42</OutPort>
+              <InPort>43</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>266.076956201588 px</X>
+                  <Y>84.1538606846831 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>42</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>1.14285714285711 px</X>
+                  <Y>64.8571428571428 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>43</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>924 px</X>
+                <Y>396.153860684683 px</Y>
+              </PointD>
+              <PointD>
+                <X>924 px</X>
+                <Y>394.857142857143 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.practicallaboratory.FK_practicallaboratory_BuildingID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>41</OID>
+              <HolderModel>40</HolderModel>
+              <Port>44</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-163 px</X>
+                  <Y>1.29671346788626 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>44</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>46 px</X>
+              <Y>-46.8115889948473 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>45</OID>
+              <Comment>46</Comment>
+              <OutModel>39</OutModel>
+              <InModel>32</InModel>
+              <OutPort>47</OutPort>
+              <InPort>48</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>266.909090909091 px</X>
+                  <Y>175.022727272727 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>47</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>97.5795454545455 px</X>
+                  <Y>-0.738636363636033 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>48</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>2137.57954545455 px</X>
+                <Y>487.022727272727 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.practicallaboratory.FK_practicallaboratory_OlogyID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>46</OID>
+              <HolderModel>45</HolderModel>
+              <Port>49</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-616.789794921875 px</X>
+                  <Y>-8.32297564556939E-06 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>49</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>50</OID>
+              <Comment>51</Comment>
+              <OutModel>12</OutModel>
+              <InModel>39</InModel>
+              <OutPort>52</OutPort>
+              <InPort>53</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>122.806818181818 px</X>
+                  <Y>211.954545454545 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>52</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>133.806818181818 px</X>
+                  <Y>-0.772727272727025 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>53</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.equipment.FK_equipment_PracticalLaboratoryID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>51</OID>
+              <HolderModel>50</HolderModel>
+              <Port>54</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-5.54865050617082E-06 px</X>
+                  <Y>-30.5 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>54</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>55</OID>
+              <Comment>56</Comment>
+              <OutModel>13</OutModel>
+              <InModel>39</InModel>
+              <OutPort>57</OutPort>
+              <InPort>58</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>199.473690603579 px</X>
+                  <Y>236.315793066474 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>57</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>19.8421135054401 px</X>
+                  <Y>184.842111497705 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>58</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>509.473693847656 px</X>
+                <Y>496.842102050781 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.maintainance.FK_maintainance_PracticalLaboratoryID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>56</OID>
+              <HolderModel>55</HolderModel>
+              <Port>59</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-3.2440776749354E-06 px</X>
+                  <Y>-108.921051025391 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>59</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>-166 px</X>
+              <Y>204.670454545455 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>60</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>593 px</X>
+              <Y>1362 px</Y>
+            </Location>
+            <Size>
+              <Width>235 px</Width>
+              <Height>212 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.practicegroup</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>61</OID>
+              <Comment>62</Comment>
+              <OutModel>60</OutModel>
+              <InModel>21</InModel>
+              <OutPort>63</OutPort>
+              <InPort>64</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>14.7954545454547 px</X>
+                  <Y>0.670454545454731 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>63</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>210.795454545455 px</X>
+                  <Y>263.784090909091 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>64</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>607.795471191406 px</X>
+                <Y>1342 px</Y>
+              </PointD>
+              <PointD>
+                <X>510.795440673828 px</X>
+                <Y>1342 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.practicegroup.FK_practicegroup_ModuleClassID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>62</OID>
+              <HolderModel>61</HolderModel>
+              <Port>65</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>97.0000138716266 px</X>
+                  <Y>109.5 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>65</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>66</OID>
+              <Comment>67</Comment>
+              <OutModel>1</OutModel>
+              <InModel>60</InModel>
+              <OutPort>68</OutPort>
+              <InPort>69</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>241.538471865231 px</X>
+                  <Y>60.0000693247894 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>68</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>117.5 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>69</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>710.5 px</X>
+                <Y>1890.00012207031 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.attendance.FK_attendance_PracticeGroupID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>67</OID>
+              <HolderModel>66</HolderModel>
+              <Port>70</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-219.25 px</X>
+                  <Y>-5.2745523134945E-05 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>70</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>71</OID>
+              <Comment>72</Comment>
+              <OutModel>11</OutModel>
+              <InModel>60</InModel>
+              <OutPort>73</OutPort>
+              <InPort>74</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>84.3590071638672 px</X>
+                  <Y>8.20519159531682 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>73</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>222.384645292746 px</X>
+                  <Y>141.589798741089 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>74</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>894.359008789063 px</X>
+                <Y>1503.58984375 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.detailpracticegroup.FK_detailpracticegroup_PracticeGroupID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>72</OID>
+              <HolderModel>71</HolderModel>
+              <Port>75</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-1.62519529567362E-06 px</X>
+                  <Y>108.205078125 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>75</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>76</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>1040 px</X>
+              <Y>640 px</Y>
+            </Location>
+            <Size>
+              <Width>246 px</Width>
+              <Height>314 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.practiceschedule</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>77</OID>
+              <Comment>78</Comment>
+              <OutModel>76</OutModel>
+              <InModel>39</InModel>
+              <OutPort>79</OutPort>
+              <InPort>80</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>4.210539418905 px</X>
+                  <Y>61.0526403759986 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>79</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>133.5 px</X>
+                  <Y>0 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>80</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>770.5 px</X>
+                <Y>701.052612304688 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.practiceschedule.FK_practiceschedule_PracticalLaboratoryID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>78</OID>
+              <HolderModel>77</HolderModel>
+              <Port>81</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>134.75 px</X>
+                  <Y>2.80713111351361E-05 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>81</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>82</OID>
+              <Comment>83</Comment>
+              <OutModel>76</OutModel>
+              <InModel>60</InModel>
+              <OutPort>84</OutPort>
+              <InPort>85</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>22.3077312729076 px</X>
+                  <Y>320.000039247368 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>84</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>230.846184064652 px</X>
+                  <Y>70.3077448444274 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>85</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>1062.30773925781 px</X>
+                <Y>1432.30773925781 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.practiceschedule.FK_practiceschedule_PracticeGroupID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>83</OID>
+              <HolderModel>82</HolderModel>
+              <Port>86</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-7.98490486886294E-06 px</X>
+                  <Y>-239.15380859375 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>86</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>56 px</X>
+              <Y>-82.3077312729076 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>87</OID>
+              <Comment>88</Comment>
+              <OutModel>1</OutModel>
+              <InModel>76</InModel>
+              <OutPort>89</OutPort>
+              <InPort>90</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>218.461547941852 px</X>
+                  <Y>135.384687474496 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>89</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>219.23081541908 px</X>
+                  <Y>308.461577285678 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>90</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>1259.23081541908 px</X>
+                <Y>1965.3846874745 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>true</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.attendance.FK_attendance_PracticeScheduleID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>88</OID>
+              <HolderModel>87</HolderModel>
+              <Port>91</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-987.230834960938 px</X>
+                  <Y>505.692304661996 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>91</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>92</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>1015 px</X>
+              <Y>1453 px</Y>
+            </Location>
+            <Size>
+              <Width>226 px</Width>
+              <Height>161 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.practiceshift</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>93</OID>
+              <Comment>94</Comment>
+              <OutModel>76</OutModel>
+              <InModel>92</InModel>
+              <OutPort>95</OutPort>
+              <InPort>96</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>88.4615798532625 px</X>
+                  <Y>314.615423665246 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>95</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>112.647727272727 px</X>
+                  <Y>0.0795454545457233 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>96</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>1128.46157985326 px</X>
+                <Y>1144 px</Y>
+              </PointD>
+              <PointD>
+                <X>1127.64772727273 px</X>
+                <Y>1144 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.practiceschedule.FK_practiceschedule_PracticeShiftID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>94</OID>
+              <HolderModel>93</HolderModel>
+              <Port>97</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>0.813874775137492 px</X>
+                  <Y>-344.5 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>97</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>126 px</X>
+              <Y>-68.4615798532625 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>98</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>397 px</X>
+              <Y>655 px</Y>
+            </Location>
+            <Size>
+              <Width>218 px</Width>
+              <Height>127 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.schoolyear</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>99</OID>
+              <Comment>100</Comment>
+              <OutModel>21</OutModel>
+              <InModel>98</InModel>
+              <OutPort>101</OutPort>
+              <InPort>102</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>115.384630620833 px</X>
+                  <Y>3.3011804475791E-05 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>101</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>17.6153998233868 px</X>
+                  <Y>111.923105053649 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>102</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>415.384630620833 px</X>
+                <Y>880 px</Y>
+              </PointD>
+              <PointD>
+                <X>414.615399823387 px</X>
+                <Y>880 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.moduleclass.FK_moduleclass_SchoolYearID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>100</OID>
+              <HolderModel>99</HolderModel>
+              <Port>103</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>0.769243657942184 px</X>
+                  <Y>69 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>103</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>104</OID>
+              <Comment>105</Comment>
+              <OutModel>76</OutModel>
+              <InModel>98</InModel>
+              <OutPort>106</OutPort>
+              <InPort>107</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>2.10527623459257 px</X>
+                  <Y>126.31579908968 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>106</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>218.329545454545 px</X>
+                  <Y>112.477272727273 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>107</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>944.318181818182 px</X>
+                <Y>766.31579908968 px</Y>
+              </PointD>
+              <PointD>
+                <X>944.318181818182 px</X>
+                <Y>767.477272727273 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.practiceschedule.FK_practiceschedule_SchoolYearID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>105</OID>
+              <HolderModel>104</HolderModel>
+              <Port>108</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>260.340942382813 px</X>
+                  <Y>-1.16149583219476 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>108</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>33.5699157714844 px</X>
+              <Y>27.556818181818 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>109</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>730 px</X>
+              <Y>910 px</Y>
+            </Location>
+            <Size>
+              <Width>208 px</Width>
+              <Height>127 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.semester</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>110</OID>
+              <Comment>111</Comment>
+              <OutModel>21</OutModel>
+              <InModel>109</InModel>
+              <OutPort>112</OutPort>
+              <InPort>113</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>220.769249870933 px</X>
+                  <Y>80.7692667436331 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>112</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>2.6776241384141E-05 px</X>
+                  <Y>70.7692667436331 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>113</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.moduleclass.FK_moduleclass_SemesterID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>111</OID>
+              <HolderModel>110</HolderModel>
+              <Port>114</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-104.5 px</X>
+                  <Y>-2.03657418751391E-05 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>114</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>115</OID>
+              <Comment>116</Comment>
+              <OutModel>76</OutModel>
+              <InModel>109</InModel>
+              <OutPort>117</OutPort>
+              <InPort>118</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>0.769268944419991 px</X>
+                  <Y>249.230805882337 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>117</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>207.045454545455 px</X>
+                  <Y>87.5909090909092 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>118</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>1020 px</X>
+                <Y>889.230805882337 px</Y>
+              </PointD>
+              <PointD>
+                <X>1020 px</X>
+                <Y>997.590909090909 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.practiceschedule.FK_practiceschedule_SemesterID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>116</OID>
+              <HolderModel>115</HolderModel>
+              <Port>119</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>20 px</X>
+                  <Y>-54.1800827895382 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>119</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>120</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>1650 px</X>
+              <Y>1820 px</Y>
+            </Location>
+            <Size>
+              <Width>196 px</Width>
+              <Height>212 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.student</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>121</OID>
+              <Comment>122</Comment>
+              <OutModel>120</OutModel>
+              <InModel>3</InModel>
+              <OutPort>123</OutPort>
+              <InPort>124</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>119.560364123319 px</X>
+                  <Y>-0.879191267445776 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>123</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>97.5 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>124</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>1769.56036412332 px</X>
+                <Y>997.5 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>true</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.student.FK_Student_ClassID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>122</OID>
+              <HolderModel>121</HolderModel>
+              <Port>125</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-6.06813687227259E-05 px</X>
+                  <Y>411.25 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>125</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>126</OID>
+              <Comment>127</Comment>
+              <OutModel>1</OutModel>
+              <InModel>120</InModel>
+              <OutPort>128</OutPort>
+              <InPort>129</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>236.153856283109 px</X>
+                  <Y>169.23084256212 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>128</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>0 px</X>
+                  <Y>181 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>129</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>292 px</X>
+                <Y>1999.23084256212 px</Y>
+              </PointD>
+              <PointD>
+                <X>292 px</X>
+                <Y>2001 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.attendance.FK_Attendance_StudentID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>127</OID>
+              <HolderModel>126</HolderModel>
+              <Port>130</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-699 px</X>
+                  <Y>-1.76915743788049 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>130</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>131</OID>
+              <Comment>132</Comment>
+              <OutModel>10</OutModel>
+              <InModel>120</InModel>
+              <OutPort>133</OutPort>
+              <InPort>134</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>119.909090909091 px</X>
+                  <Y>211.284090909091 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>133</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>-0.147727272727252 px</X>
+                  <Y>105.852272727273 px</Y>
+                </Location>
+                <Anchors>Top Bottom</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>134</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>349.909090909091 px</X>
+                <Y>1925.85227272727 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.detailmoduleclass.FK_detailmoduleclass_StudentID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>132</OID>
+              <HolderModel>131</HolderModel>
+              <Port>135</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-650.045437899503 px</X>
+                  <Y>-373.852294921875 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>135</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>136</OID>
+              <Comment>137</Comment>
+              <OutModel>11</OutModel>
+              <InModel>120</InModel>
+              <OutPort>138</OutPort>
+              <InPort>139</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>250.769271878803 px</X>
+                  <Y>150.000068591194 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>138</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>1.53852211653361 px</X>
+                  <Y>50.7692993886396 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>139</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>1159 px</X>
+                <Y>1870.00006859119 px</Y>
+              </PointD>
+              <PointD>
+                <X>1159 px</X>
+                <Y>1870 px</Y>
+              </PointD>
+              <PointD>
+                <X>1527.25 px</X>
+                <Y>1870 px</Y>
+              </PointD>
+              <PointD>
+                <X>1527.25 px</X>
+                <Y>1870.76929938864 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>true</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.detailpracticegroup.FK_detailpracticegroup_StudentID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>137</OID>
+              <HolderModel>136</HolderModel>
+              <Port>140</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-284.125 px</X>
+                  <Y>6.85911936670891E-05 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>140</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>1 px</X>
+              <Y>-30.0000685911937 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>141</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>-200 px</X>
+              <Y>1260 px</Y>
+            </Location>
+            <Size>
+              <Width>196 px</Width>
+              <Height>127 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.subject</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>142</OID>
+              <Comment>143</Comment>
+              <OutModel>1</OutModel>
+              <InModel>141</InModel>
+              <OutPort>144</OutPort>
+              <InPort>145</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>-5.21739058323302 px</X>
+                  <Y>180.434824289132 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>144</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>69.1304310328117 px</X>
+                  <Y>106.521767253912 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>145</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>-130.869567871094 px</X>
+                <Y>2010.43481445313 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.attendance.FK_attendance_SubjectID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>143</OID>
+              <HolderModel>142</HolderModel>
+              <Port>146</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>170.869567871094 px</X>
+                  <Y>311.717417062569 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>146</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>147</OID>
+              <Comment>148</Comment>
+              <OutModel>20</OutModel>
+              <InModel>141</InModel>
+              <OutPort>149</OutPort>
+              <InPort>150</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>99.8734188095115 px</X>
+                  <Y>246.32910250013 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>149</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>110.522727272727 px</X>
+                  <Y>-0.227272727272521 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>150</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>-90.1265811904885 px</X>
+                <Y>966 px</Y>
+              </PointD>
+              <PointD>
+                <X>-89.4772727272726 px</X>
+                <Y>966 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.module.FK_Module_SubjectID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>148</OID>
+              <HolderModel>147</HolderModel>
+              <Port>151</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-0.649309156797131 px</X>
+                  <Y>-167 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>151</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>152</OID>
+              <Comment>153</Comment>
+              <OutModel>39</OutModel>
+              <InModel>141</InModel>
+              <OutPort>154</OutPort>
+              <InPort>155</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>50.6923329167122 px</X>
+                  <Y>251.846174527908 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>154</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>190.769230430648 px</X>
+                  <Y>27.6923549245819 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>155</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>687.692332916712 px</X>
+                <Y>641 px</Y>
+              </PointD>
+              <PointD>
+                <X>688 px</X>
+                <Y>641 px</Y>
+              </PointD>
+              <PointD>
+                <X>688 px</X>
+                <Y>1288 px</Y>
+              </PointD>
+              <PointD>
+                <X>300 px</X>
+                <Y>1288 px</Y>
+              </PointD>
+              <PointD>
+                <X>300 px</X>
+                <Y>1287.69235492458 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.practicallaboratory.FK_practicallaboratory_SubjectID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>153</OID>
+              <HolderModel>152</HolderModel>
+              <Port>156</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>-0.307667083287811 px</X>
+                  <Y>-389.5 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>156</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>157</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>70 px</X>
+              <Y>1570 px</Y>
+            </Location>
+            <Size>
+              <Width>202 px</Width>
+              <Height>195 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.teacher</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>158</OID>
+              <Comment>159</Comment>
+              <OutModel>157</OutModel>
+              <InModel>141</InModel>
+              <OutPort>160</OutPort>
+              <InPort>161</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>-9.23076810216053 px</X>
+                  <Y>77.6923681293035 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>160</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>106.923073509036 px</X>
+                  <Y>116.923127428316 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>161</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>-93.0769271850586 px</X>
+                <Y>1647.6923828125 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.teacher.FK_Teacher_SubjectID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>159</OID>
+              <HolderModel>158</HolderModel>
+              <Port>162</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>163.076927185059 px</X>
+                  <Y>130.346176723054 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>162</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>163</OID>
+              <Comment>164</Comment>
+              <OutModel>21</OutModel>
+              <InModel>157</InModel>
+              <OutPort>165</OutPort>
+              <InPort>166</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>1.53847259882679 px</X>
+                  <Y>195.384655563085 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>165</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>100.636363636364 px</X>
+                  <Y>-0.386363636363512 px</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>166</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>170.636363636364 px</X>
+                <Y>1095.38465556309 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.moduleclass.FK_moduleclass_TeacherID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>164</OID>
+              <HolderModel>163</HolderModel>
+              <Port>167</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>129.363632202148 px</X>
+                  <Y>-237.307727249415 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>167</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>168</OID>
+              <Comment>169</Comment>
+              <OutModel>60</OutModel>
+              <InModel>157</InModel>
+              <OutPort>170</OutPort>
+              <InPort>171</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>43.153869487831 px</X>
+                  <Y>212.615442371935 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>170</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>197.692317511203 px</X>
+                  <Y>94.6154456731153 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>171</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>636.153869628906 px</X>
+                <Y>1664.61547851563 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.practicegroup.FK_practicegroup_TeacherID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>169</OID>
+              <HolderModel>168</HolderModel>
+              <Port>172</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>182.076934673378 px</X>
+                  <Y>-90.615478515625 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>172</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>173</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>-20 px</X>
+              <Y>400 px</Y>
+            </Location>
+            <Size>
+              <Width>232 px</Width>
+              <Height>195 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.technicalstaff</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>174</OID>
+              <Comment>175</Comment>
+              <OutModel>13</OutModel>
+              <InModel>173</InModel>
+              <OutPort>176</OutPort>
+              <InPort>177</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>60.5263204389663 px</X>
+                  <Y>242.631582619411 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>176</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>230.526318431231 px</X>
+                  <Y>145.263164736888 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Right</Align>
+                <CustomProperties>
+                  <OID>177</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>370.526320438966 px</X>
+                <Y>545.263164736888 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>true</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.maintainance.FK_maintainance_TechnicalStaffID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>175</OID>
+              <HolderModel>174</HolderModel>
+              <Port>178</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>1.42866225019134E-05 px</X>
+                  <Y>-133.131591796875 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>178</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>-44.5941467285156 px</X>
+              <Y>93.75 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>179</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>1860 px</X>
+              <Y>790 px</Y>
+            </Location>
+            <Size>
+              <Width>202 px</Width>
+              <Height>229 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.user</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>180</OID>
+              <Comment>181</Comment>
+              <OutModel>179</OutModel>
+              <InModel>38</InModel>
+              <OutPort>182</OutPort>
+              <InPort>183</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>112.307767585893 px</X>
+                  <Y>-3.84611840784066 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>182</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>142.307767585893 px</X>
+                  <Y>Undefined</Y>
+                </Location>
+                <Anchors>Left Right</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>183</OID>
+                  <PortType>FloatAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>datn.user.FK_user_PermissionID</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationCommentModel">
+            <CustomProperties>
+              <OID>181</OID>
+              <HolderModel>180</HolderModel>
+              <Port>184</Port>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port xsi:type="LinkPort">
+                <Location>
+                  <X>2.83280801340879E-05 px</X>
+                  <Y>66.5 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>184</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+                <LinkPortAnchor>OutPoint</LinkPortAnchor>
+              </Port>
+            </PortAnchors>
+            <CommentOffset>
+              <X>22 px</X>
+              <Y>2 px</Y>
+            </CommentOffset>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>185</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3807 px</X>
+              <Y>879 px</Y>
+            </Location>
+            <Size>
+              <Width>191 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Deletebuilding</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>186</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4917 px</X>
+              <Y>1059 px</Y>
+            </Location>
+            <Size>
+              <Width>169 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Deleteclass</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>187</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4697 px</X>
+              <Y>1059 px</Y>
+            </Location>
+            <Size>
+              <Width>181 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Deletecourse</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>188</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4387 px</X>
+              <Y>1059 px</Y>
+            </Location>
+            <Size>
+              <Width>262 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_DeleteDetailModuleClass</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>189</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4077 px</X>
+              <Y>1059 px</Y>
+            </Location>
+            <Size>
+              <Width>270 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Deletedetailpracticegroup</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>190</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3827 px</X>
+              <Y>1059 px</Y>
+            </Location>
+            <Size>
+              <Width>210 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_DeleteEquipment</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>191</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3567 px</X>
+              <Y>1059 px</Y>
+            </Location>
+            <Size>
+              <Width>228 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_DeleteMaintainance</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>192</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3337 px</X>
+              <Y>1059 px</Y>
+            </Location>
+            <Size>
+              <Width>183 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Deletemajors</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>193</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3117 px</X>
+              <Y>1059 px</Y>
+            </Location>
+            <Size>
+              <Width>186 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Deletemodule</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>194</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>2857 px</X>
+              <Y>1059 px</Y>
+            </Location>
+            <Size>
+              <Width>220 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Deletemoduleclass</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>195</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>2637 px</X>
+              <Y>1059 px</Y>
+            </Location>
+            <Size>
+              <Width>173 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Deleteology</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>196</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>5117 px</X>
+              <Y>969 px</Y>
+            </Location>
+            <Size>
+              <Width>266 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Deletepracticallaboratory</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>197</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>5127 px</X>
+              <Y>1059 px</Y>
+            </Location>
+            <Size>
+              <Width>231 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Deletepracticegroup</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>198</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4817 px</X>
+              <Y>969 px</Y>
+            </Location>
+            <Size>
+              <Width>253 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_DeletePracticeSchedule</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>199</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4327 px</X>
+              <Y>969 px</Y>
+            </Location>
+            <Size>
+              <Width>210 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Deleteschoolyear</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>200</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4097 px</X>
+              <Y>969 px</Y>
+            </Location>
+            <Size>
+              <Width>188 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Deletestudent</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>201</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3877 px</X>
+              <Y>969 px</Y>
+            </Location>
+            <Size>
+              <Width>186 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Deletesubject</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>202</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3647 px</X>
+              <Y>969 px</Y>
+            </Location>
+            <Size>
+              <Width>187 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Deleteteacher</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>203</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3437 px</X>
+              <Y>969 px</Y>
+            </Location>
+            <Size>
+              <Width>165 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Deleteuser</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>204</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3197 px</X>
+              <Y>969 px</Y>
+            </Location>
+            <Size>
+              <Width>206 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_FindModuleClass</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>205</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>2897 px</X>
+              <Y>969 px</Y>
+            </Location>
+            <Size>
+              <Width>255 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_FindPracticalLaboratory</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>206</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>2637 px</X>
+              <Y>969 px</Y>
+            </Location>
+            <Size>
+              <Width>218 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_FindPracticeGroup</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>207</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>5097 px</X>
+              <Y>879 px</Y>
+            </Location>
+            <Size>
+              <Width>238 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_FindPracticeSchedule</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>208</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4857 px</X>
+              <Y>879 px</Y>
+            </Location>
+            <Size>
+              <Width>193 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_GetAttendance</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>209</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4597 px</X>
+              <Y>879 px</Y>
+            </Location>
+            <Size>
+              <Width>226 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_GetAttendanceById</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>210</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4577 px</X>
+              <Y>969 px</Y>
+            </Location>
+            <Size>
+              <Width>203 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_GetbuildingById</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>211</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>2637 px</X>
+              <Y>1149 px</Y>
+            </Location>
+            <Size>
+              <Width>178 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Getbuildings</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>212</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>2857 px</X>
+              <Y>1149 px</Y>
+            </Location>
+            <Size>
+              <Width>181 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_GetclassById</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>213</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3077 px</X>
+              <Y>1149 px</Y>
+            </Location>
+            <Size>
+              <Width>155 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Getclasss</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>214</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4057 px</X>
+              <Y>1329 px</Y>
+            </Location>
+            <Size>
+              <Width>193 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_GetcourseById</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>215</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3847 px</X>
+              <Y>1329 px</Y>
+            </Location>
+            <Size>
+              <Width>167 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Getcourses</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>216</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3567 px</X>
+              <Y>1329 px</Y>
+            </Location>
+            <Size>
+              <Width>241 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_GetDetailModuleClass</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>217</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3257 px</X>
+              <Y>1329 px</Y>
+            </Location>
+            <Size>
+              <Width>274 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_GetDetailModuleClassById</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>218</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>2967 px</X>
+              <Y>1329 px</Y>
+            </Location>
+            <Size>
+              <Width>249 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Getdetailpracticegroup</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>219</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>2637 px</X>
+              <Y>1329 px</Y>
+            </Location>
+            <Size>
+              <Width>282 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_GetdetailpracticegroupById</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>220</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>5087 px</X>
+              <Y>1239 px</Y>
+            </Location>
+            <Size>
+              <Width>189 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Getequipment</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>221</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4827 px</X>
+              <Y>1239 px</Y>
+            </Location>
+            <Size>
+              <Width>221 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_GetequipmentById</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>222</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4587 px</X>
+              <Y>1239 px</Y>
+            </Location>
+            <Size>
+              <Width>196 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Getequipments</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>223</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4307 px</X>
+              <Y>1239 px</Y>
+            </Location>
+            <Size>
+              <Width>240 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_GetMaintainanceById</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>224</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4057 px</X>
+              <Y>1239 px</Y>
+            </Location>
+            <Size>
+              <Width>215 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Getmaintainances</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>225</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3817 px</X>
+              <Y>1239 px</Y>
+            </Location>
+            <Size>
+              <Width>195 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_GetmajorsById</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>226</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3607 px</X>
+              <Y>1239 px</Y>
+            </Location>
+            <Size>
+              <Width>169 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Getmajorss</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>227</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3377 px</X>
+              <Y>1239 px</Y>
+            </Location>
+            <Size>
+              <Width>198 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_GetmoduleById</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>228</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3097 px</X>
+              <Y>1239 px</Y>
+            </Location>
+            <Size>
+              <Width>232 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_GetmoduleclassById</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>229</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>2857 px</X>
+              <Y>1239 px</Y>
+            </Location>
+            <Size>
+              <Width>207 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Getmoduleclasss</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>230</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>2637 px</X>
+              <Y>1239 px</Y>
+            </Location>
+            <Size>
+              <Width>173 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Getmodules</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>231</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>5117 px</X>
+              <Y>1149 px</Y>
+            </Location>
+            <Size>
+              <Width>185 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_GetologyById</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>232</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4917 px</X>
+              <Y>1149 px</Y>
+            </Location>
+            <Size>
+              <Width>159 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Getologys</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>233</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4677 px</X>
+              <Y>1149 px</Y>
+            </Location>
+            <Size>
+              <Width>197 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Getpermissions</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>234</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4357 px</X>
+              <Y>1149 px</Y>
+            </Location>
+            <Size>
+              <Width>278 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_GetpracticallaboratoryById</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>235</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4067 px</X>
+              <Y>1149 px</Y>
+            </Location>
+            <Size>
+              <Width>253 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Getpracticallaboratorys</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>236</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3817 px</X>
+              <Y>1149 px</Y>
+            </Location>
+            <Size>
+              <Width>210 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Getpracticegroup</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>237</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3537 px</X>
+              <Y>1149 px</Y>
+            </Location>
+            <Size>
+              <Width>243 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_GetpracticegroupById</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>238</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3277 px</X>
+              <Y>1149 px</Y>
+            </Location>
+            <Size>
+              <Width>217 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Getpracticegroups</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>239</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4327 px</X>
+              <Y>879 px</Y>
+            </Location>
+            <Size>
+              <Width>233 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_GetPracticeSchedule</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>240</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4287 px</X>
+              <Y>1329 px</Y>
+            </Location>
+            <Size>
+              <Width>265 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_GetPracticeScheduleById</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>241</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4047 px</X>
+              <Y>879 px</Y>
+            </Location>
+            <Size>
+              <Width>240 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_GetPracticeSchedules</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>242</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3327 px</X>
+              <Y>879 px</Y>
+            </Location>
+            <Size>
+              <Width>210 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_GetPracticeShifts</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>243</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>2637 px</X>
+              <Y>789 px</Y>
+            </Location>
+            <Size>
+              <Width>222 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_GetschoolyearById</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>244</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>5167 px</X>
+              <Y>669 px</Y>
+            </Location>
+            <Size>
+              <Width>196 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Getschoolyears</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>245</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4707 px</X>
+              <Y>669 px</Y>
+            </Location>
+            <Size>
+              <Width>210 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_GetsemesterById</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>246</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>2907 px</X>
+              <Y>789 px</Y>
+            </Location>
+            <Size>
+              <Width>185 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Getsemesters</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>247</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3127 px</X>
+              <Y>789 px</Y>
+            </Location>
+            <Size>
+              <Width>200 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_GetstudentById</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>248</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3367 px</X>
+              <Y>789 px</Y>
+            </Location>
+            <Size>
+              <Width>174 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Getstudents</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>249</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3587 px</X>
+              <Y>789 px</Y>
+            </Location>
+            <Size>
+              <Width>198 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_GetsubjectById</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>250</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4957 px</X>
+              <Y>669 px</Y>
+            </Location>
+            <Size>
+              <Width>172 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Getsubjects</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>251</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3817 px</X>
+              <Y>789 px</Y>
+            </Location>
+            <Size>
+              <Width>169 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_GetTeacher</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>252</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3577 px</X>
+              <Y>879 px</Y>
+            </Location>
+            <Size>
+              <Width>199 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_GetteacherById</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>253</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4247 px</X>
+              <Y>789 px</Y>
+            </Location>
+            <Size>
+              <Width>174 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Getteachers</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>254</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4457 px</X>
+              <Y>789 px</Y>
+            </Location>
+            <Size>
+              <Width>245 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_GetTechnicalStaffById</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>255</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4747 px</X>
+              <Y>789 px</Y>
+            </Location>
+            <Size>
+              <Width>220 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_GetTechnicalStaffs</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>256</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4027 px</X>
+              <Y>789 px</Y>
+            </Location>
+            <Size>
+              <Width>177 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_GetuserById</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>257</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>2637 px</X>
+              <Y>879 px</Y>
+            </Location>
+            <Size>
+              <Width>152 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Getusers</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>258</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3697 px</X>
+              <Y>669 px</Y>
+            </Location>
+            <Size>
+              <Width>213 px</Width>
+              <Height>62 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Insertbuilding</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>259</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>2877 px</X>
+              <Y>509 px</Y>
+            </Location>
+            <Size>
+              <Width>200 px</Width>
+              <Height>113 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Insertclass</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>260</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>2897 px</X>
+              <Y>669 px</Y>
+            </Location>
+            <Size>
+              <Width>206 px</Width>
+              <Height>79 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Insertcourse</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>261</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4687 px</X>
+              <Y>39 px</Y>
+            </Location>
+            <Size>
+              <Width>260 px</Width>
+              <Height>147 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_InsertDetailModuleClass</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>262</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3137 px</X>
+              <Y>669 px</Y>
+            </Location>
+            <Size>
+              <Width>268 px</Width>
+              <Height>79 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Insertdetailpracticegroup</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>263</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3117 px</X>
+              <Y>509 px</Y>
+            </Location>
+            <Size>
+              <Width>267 px</Width>
+              <Height>113 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Insertequipment</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>264</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4547 px</X>
+              <Y>319 px</Y>
+            </Location>
+            <Size>
+              <Width>267 px</Width>
+              <Height>130 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Insertmaintainance</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>265</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3447 px</X>
+              <Y>669 px</Y>
+            </Location>
+            <Size>
+              <Width>205 px</Width>
+              <Height>79 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Insertmajors</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>266</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4987 px</X>
+              <Y>39 px</Y>
+            </Location>
+            <Size>
+              <Width>235 px</Width>
+              <Height>147 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Insertmodule</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>267</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3237 px</X>
+              <Y>39 px</Y>
+            </Location>
+            <Size>
+              <Width>227 px</Width>
+              <Height>181 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Insertmoduleclass</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>268</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3087 px</X>
+              <Y>879 px</Y>
+            </Location>
+            <Size>
+              <Width>199 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Insertology</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>269</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4097 px</X>
+              <Y>39 px</Y>
+            </Location>
+            <Size>
+              <Width>280 px</Width>
+              <Height>164 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Insertpracticallaboratory</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>270</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3677 px</X>
+              <Y>509 px</Y>
+            </Location>
+            <Size>
+              <Width>249 px</Width>
+              <Height>113 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Insertpracticegroup</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>271</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>2937 px</X>
+              <Y>39 px</Y>
+            </Location>
+            <Size>
+              <Width>260 px</Width>
+              <Height>198 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_InsertPracticeSchedule</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>272</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>5007 px</X>
+              <Y>789 px</Y>
+            </Location>
+            <Size>
+              <Width>232 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Insertschoolyear</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>273</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3737 px</X>
+              <Y>319 px</Y>
+            </Location>
+            <Size>
+              <Width>207 px</Width>
+              <Height>130 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Insertstudent</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>274</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>2837 px</X>
+              <Y>879 px</Y>
+            </Location>
+            <Size>
+              <Width>210 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Insertsubject</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>275</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>5057 px</X>
+              <Y>509 px</Y>
+            </Location>
+            <Size>
+              <Width>215 px</Width>
+              <Height>96 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Insertteacher</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>276</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4777 px</X>
+              <Y>509 px</Y>
+            </Location>
+            <Size>
+              <Width>245 px</Width>
+              <Height>96 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_InsertTechnicalStaff</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>277</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3987 px</X>
+              <Y>319 px</Y>
+            </Location>
+            <Size>
+              <Width>215 px</Width>
+              <Height>130 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Insertuser</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>278</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>2637 px</X>
+              <Y>669 px</Y>
+            </Location>
+            <Size>
+              <Width>213 px</Width>
+              <Height>79 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Updatebuilding</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>279</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>2637 px</X>
+              <Y>509 px</Y>
+            </Location>
+            <Size>
+              <Width>196 px</Width>
+              <Height>113 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Updateclass</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>280</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4527 px</X>
+              <Y>509 px</Y>
+            </Location>
+            <Size>
+              <Width>206 px</Width>
+              <Height>96 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Updatecourse</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>281</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4237 px</X>
+              <Y>319 px</Y>
+            </Location>
+            <Size>
+              <Width>267 px</Width>
+              <Height>130 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_UpdateDetailModuleClass</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>282</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3967 px</X>
+              <Y>509 px</Y>
+            </Location>
+            <Size>
+              <Width>275 px</Width>
+              <Height>96 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Updatedetailpracticegroup</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>283</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4857 px</X>
+              <Y>319 px</Y>
+            </Location>
+            <Size>
+              <Width>267 px</Width>
+              <Height>130 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_UpdateEquipment</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>284</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>2637 px</X>
+              <Y>319 px</Y>
+            </Location>
+            <Size>
+              <Width>267 px</Width>
+              <Height>147 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_UpdateMaintainance</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>285</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4287 px</X>
+              <Y>509 px</Y>
+            </Location>
+            <Size>
+              <Width>205 px</Width>
+              <Height>96 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Updatemajors</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>286</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4417 px</X>
+              <Y>39 px</Y>
+            </Location>
+            <Size>
+              <Width>235 px</Width>
+              <Height>164 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Updatemodule</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>287</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3827 px</X>
+              <Y>39 px</Y>
+            </Location>
+            <Size>
+              <Width>227 px</Width>
+              <Height>181 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Updatemoduleclass</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>288</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4467 px</X>
+              <Y>669 px</Y>
+            </Location>
+            <Size>
+              <Width>199 px</Width>
+              <Height>62 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Updateology</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>289</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3507 px</X>
+              <Y>39 px</Y>
+            </Location>
+            <Size>
+              <Width>280 px</Width>
+              <Height>181 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Updatepracticallaboratory</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>290</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3207 px</X>
+              <Y>319 px</Y>
+            </Location>
+            <Size>
+              <Width>249 px</Width>
+              <Height>130 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Updatepracticegroup</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>291</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>2637 px</X>
+              <Y>39 px</Y>
+            </Location>
+            <Size>
+              <Width>260 px</Width>
+              <Height>232 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_UpdatePracticeSchedule</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>292</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3947 px</X>
+              <Y>669 px</Y>
+            </Location>
+            <Size>
+              <Width>232 px</Width>
+              <Height>62 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Updateschoolyear</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>293</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3497 px</X>
+              <Y>319 px</Y>
+            </Location>
+            <Size>
+              <Width>207 px</Width>
+              <Height>130 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Updatestudent</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>294</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4217 px</X>
+              <Y>669 px</Y>
+            </Location>
+            <Size>
+              <Width>210 px</Width>
+              <Height>62 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Updatesubject</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>295</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>3427 px</X>
+              <Y>509 px</Y>
+            </Location>
+            <Size>
+              <Width>215 px</Width>
+              <Height>113 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Updateteacher</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>296</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>5167 px</X>
+              <Y>319 px</Y>
+            </Location>
+            <Size>
+              <Width>245 px</Width>
+              <Height>113 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_UpdateTechnicalStaff</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>297</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>2947 px</X>
+              <Y>319 px</Y>
+            </Location>
+            <Size>
+              <Width>215 px</Width>
+              <Height>147 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Proc_Updateuser</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="StoredProcModel">
+            <CustomProperties>
+              <OID>298</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>4597 px</X>
+              <Y>1329 px</Y>
+            </Location>
+            <Size>
+              <Width>226 px</Width>
+              <Height>46 px</Height>
+            </Size>
+            <DbOid>
+              <Path>datn.Pro_DeleteTechnicalStaff</Path>
+              <TypeName>Procedure</TypeName>
+            </DbOid>
+          </Model>
+        </Children>
+        <ViewPort>
+          <ScaleMode>Free</ScaleMode>
+          <Scale>0.29</Scale>
+          <Location>
+            <X>-615.172444138319 px</X>
+            <Y>74.4827650707489 px</Y>
+          </Location>
+        </ViewPort>
+      </Model>
+    </DiagramModel>
+  </Diagram>
+</DevartDatabaseDiagram>
