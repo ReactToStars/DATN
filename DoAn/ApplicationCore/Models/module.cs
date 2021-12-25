@@ -18,7 +18,7 @@ namespace ApplicationCore.Models
         [Required("Mã học phần", "Thông tin mã học phần không được để trống !")]
         [MaxLength("Mã học phần", 20)]
         public string ModuleCode { get; set; }
-        //[Duplicate("Tên học phần", "Tên học phần đã tồn tại trong hệ thống !")]
+        [Duplicate("Tên học phần", "Tên học phần đã tồn tại trong hệ thống !")]
         [Required("Tên học phần", "Thông tin tên học phần không được để trống !")]
         public string ModuleName { get; set; }
         [Required("Số tín chỉ", "Thông tin số tín chỉ không được để trống!")]

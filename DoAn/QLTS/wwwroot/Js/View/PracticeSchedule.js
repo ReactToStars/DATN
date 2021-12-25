@@ -22,8 +22,9 @@ class PracticeScheduleJS extends BaseJS {
         this.initEventsPage();
         this.loadPracticeShift();
         this.loadPracticalLaboratory();
-        this.loadSemester();
-        this.loadSchoolYear();
+        this.loadModuleClass();
+        //this.loadSemester();
+        //this.loadSchoolYear();
         this.loadPracticeGroup();
     }
 
@@ -253,6 +254,31 @@ class PracticeScheduleJS extends BaseJS {
         }
     }
 
+    loadModuleClass() {
+        try {
+            let id = window.location.href;
+            var moduleClassId = id.split("&&")[0];
+            moduleClassId = moduleClassId.split("=")[1];
+            $.ajax({
+                url: "/api/v1/ModuleClass/" + moduleClassId,
+                method: "GET",
+                async: true,
+                data: null,
+                dataType: 'json',
+                connectType: 'application/json'
+            }).done(function (response) {
+                var semester = `<option value = "${response['SemesterID']}"> ${response['SemesterName']} </option>`;
+                $('.cbx_semester').append(semester);
+                var schoolYear = `<option value ="${response['SchoolYearID']}"> ${response['SchoolYearName']} </option>`;
+                $('.cbx_schoolYear').append(schoolYear);
+            }).fail(function (response) {
+                console.log(response);
+            })
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
     /**
      * Load Practice group to combobox
      * Created by HTHang (22/11/2021)
@@ -307,7 +333,6 @@ class PracticeScheduleJS extends BaseJS {
 
     btnSaveOnClick() {
         var object = getObject();
-        //console.log(object);
         var isvalidate = $('input[validate="false"]');
         try {
             if (isvalidate.length == 0) {
@@ -331,7 +356,7 @@ class PracticeScheduleJS extends BaseJS {
                         practiceScheduleJS.loadData();
                     }
                 }).fail(function (response) {
-                    //console.log(response);
+                    console.log(response);
                     var msg = response.responseJSON.Data;
                     //var msgLength = response.responseJSON.Data.length;
                     showAlertWarring(msg, "");

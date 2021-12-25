@@ -129,11 +129,11 @@ class AttendanceJS extends BaseJS {
             var studentGroup = $('.student_of_group ul li');
             var studentClass = $('.student_of_class ul li');
             if (studentClass.length == 0 && studentGroup.length == 0) {
-                showAlertWarring("Sinh viên trong lớp học phần đều đã có nhóm!");
+                showAlertWarring("Sinh viên trong nhóm thực hành đều đã được thêm!");
                 displaynone(3000);
                 return;
             } if (studentGroup.length == 0) {
-                showAlertWarring("Vui lòng chọn sinh viên muốn thêm vào nhóm!");
+                showAlertWarring("Vui lòng chọn sinh viên!");
                 displaynone(3000);
                 return;
             }

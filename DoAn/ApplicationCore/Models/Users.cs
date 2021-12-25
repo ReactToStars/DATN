@@ -24,7 +24,7 @@ namespace ApplicationCore.Models
         public string PassWord { get; set; }
         [Duplicate("Số điện thoại", "Số điện thoại đã tồn tại trong hệ thống !")]
         [Required("Số điện thoại", "Thông tin số điện thoại không được để trống !")]
-        [MaxLength("Số điện thoại", 20)]
+        [MaxLength("Số điện thoại", 12)]
         public string PhoneNumber { get; set; }
         [Duplicate("Email", "Email đã tồn tại trong hệ thống !")]
         [Required("Email", "Thông tin email không được để trống !")]

@@ -45,10 +45,11 @@ namespace DATN.Controllers
                 {
                     ListObject.Add(new Teacher()
                     {
-                        FullName = worksheet.Cells[row, 2].Value.ToString(),
-                        PhoneNumber = worksheet.Cells[row, 3].Value.ToString(),
-                        Email = worksheet.Cells[row, 4].Value.ToString(),
-                        SubjectID = Guid.Parse(worksheet.Cells[row, 5].Value.ToString()),
+                        TeacherCode = worksheet.Cells[row, 2].Value.ToString(),
+                        FullName = worksheet.Cells[row, 3].Value.ToString(),
+                        PhoneNumber = worksheet.Cells[row, 4].Value.ToString(),
+                        Email = worksheet.Cells[row, 5].Value.ToString(),
+                        SubjectID = Guid.Parse(worksheet.Cells[row, 6].Value.ToString()),
                     });
                 }
             }

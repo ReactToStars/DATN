@@ -26,7 +26,7 @@ class TeacherJS extends BaseJS {
 
     setDataUrl() {
         this.getDataUrl = "/api/v1/teacher/";
-        this.getCode = "";
+        this.getCode = "TeacherCode";
     }
 
     /**

@@ -34,9 +34,9 @@ namespace DATN.Controllers
             {
                 role = "Teacher";
             }
-            if (roleAcount == "Member")
+            if (roleAcount == "TechnicalStaff")
             {
-                role = "Member";
+                role = "TechnicalStaff";
             }
             return role;
         }

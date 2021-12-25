@@ -24,6 +24,7 @@ namespace ApplicationCore.Models
         public string ClassCode { get; set; }
 
         [Required("Tên lớp", "Thông tin tên lớp không được để trống !")]
+        [Duplicate("Tên lớp", "Tên lớp đã tồn tại trong hệ thống !")]
         public string ClassName { get; set; }
 
         [Required("Khóa học", "Thông tin khóa học không được để trống !")]
