@@ -224,7 +224,7 @@ class TeacherJS extends BaseJS {
             showAlertWarring("Bạn chưa chọn phần tử muốn xóa!", "")
         }
         else {
-            var msg = "Bạn có chắc chắn muốn xóa " + recordTitle + " không?";
+            var msg = "Bạn có chắc chắn muốn xóa giảng viên" + recordTitle + " không?";
             showAlertConfirm(msg)
         }
     }
