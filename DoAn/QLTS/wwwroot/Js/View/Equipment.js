@@ -84,7 +84,7 @@ class EquipmentJS extends BaseJS {
 
         //save
         $('#btn-save').click(this.btnSaveOnClick);
-        $('#btn-no-warring, #btn-yes-warring, #btn-ok-warring').click(closeWarring);
+        $('#btn-no-warring, #btn-yes-warring, #btn-ok-warring, .close').click(closeWarring);
         //Update
         $('#btn-update').click(this.btnUpdateOnClick);
         //Delete

@@ -243,7 +243,7 @@ class MaintainanceJS extends BaseJS {
             showAlertWarring("Bạn chưa chọn phần tử muốn xóa!", "")
         }
         else {
-            var msg = "Bạn có chắc chắn muốn xóa bản ghi không?";
+            var msg = "Bạn có chắc chắn muốn xóa bản ghi này không?";
             showAlertConfirm(msg)
         }
     }
