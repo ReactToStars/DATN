@@ -232,7 +232,10 @@ function resetDialog() {
     $('input[dataType="date"]').val("mm/dd/yyyy");
     $('input').removeClass('border-red');
     $('input[fieldname="PassWord"]').attr("type", 'password');
-    //$('input[type="checkbox"]').prop('checked', false);
+    $('#request').prop('checked', false);
+    $('#request').val('0');
+    $('input[type="date"]').val('mm/dd/yyyy');
+    $('select').prop("selectedIndex", 0);
 }
 
 /**
@@ -495,6 +498,8 @@ Enum = {
         NotValid: 400,
         Success: 200,
         NotImplemented: 501,
-        MethodNotAllowed : 405
+        MethodNotAllowed: 405,
+        Request: 300,
     }
 }
+

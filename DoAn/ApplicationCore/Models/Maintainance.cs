@@ -17,10 +17,11 @@ namespace ApplicationCore.Models
         [Required("Mã phòng TNTH", "Mã phòng thực hành không được để trống")]
         public Guid PracticalLaboratoryID{ get; set; }
 
+        public string PracticalLaboratoryCode { get; set; }
         public string PracticalLaboratoryName { get; set; }
 
-        public Nullable<DateTime> StartedDate{ get; set; }
-        public Nullable<DateTime> EndedDate{ get; set; }
+        public DateTime StartedDate{ get; set; }
+        public DateTime EndedDate { get; set; }
 
         [Required("Mã cán bộ kỹ thuật", "Mã cán bộ kỹ thuật không được để trống")]
         public Guid TechnicalStaffID { get; set; }
@@ -28,6 +29,8 @@ namespace ApplicationCore.Models
         public string FullName { get; set; }
 
         public int MaintainanceStatus { get; set; }
+
+        public int Request { get; set; }
         public string Description { get; set; }
     }
 }

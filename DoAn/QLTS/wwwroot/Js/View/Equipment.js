@@ -15,6 +15,7 @@ class EquipmentJS extends BaseJS {
         super();
         this.initEventsPage();
         this.loadPracticalLaboratory();
+        this.loadTechnicalStaff();
     }
 
     setDataUrl() {
@@ -39,6 +40,7 @@ class EquipmentJS extends BaseJS {
                 connectType: 'application/json'
             }).done(function (response) {
                 $('.txt-PracticalLaboratoryID').attr('placeholder', response['PracticalLaboratoryCode']);
+                $('.txt-PracticalLaboratoryName').attr('placeholder', response['PracticalLaboratoryName']);
                 $('.txt-PracticalLaboratoryID').attr('value', response['PracticalLaboratoryID']);
                 var spans = $('.grid-infor span[fieldName]');
                 $.each(spans, function (index, item) {
@@ -55,6 +57,28 @@ class EquipmentJS extends BaseJS {
         } catch (e) {
             console.log(e);
         }
+    }
+
+    /**
+     * load Technical Staff
+     * Created by NTHung (29/12/2021)
+     * */
+    loadTechnicalStaff() {
+        $.ajax({
+            url: "/api/v1/TechnicalStaff",
+            method: "GET",
+            async: true,
+            data: null,
+            dataType: 'json',
+            connectType: 'application/json'
+        }).done(function (response) {
+            $.each(response, function (index, item) {
+                var option = `<option value="${item['TechnicalStaffID']}">${item['FullName']}</option>`;
+                $('.cbx_technicalStaff').append(option);
+            });
+        }).fail(function (response) {
+            console.log(response);
+        });
     }
 
     /**
@@ -97,6 +121,19 @@ class EquipmentJS extends BaseJS {
         //Import file
         $('#import').click(this.importFile);
 
+        $('#btn-Request').click(function () {
+
+            resetDialog();
+            dialog.dialog('open');
+            $('#btn-save').show();
+            $('#btn-update').hide();
+            //maintainance request
+            $('.set_request').show();
+            $('.set_equipment').hide();
+
+            formModel = "MaintainanceRequest";
+        });
+        
     }
 
     /**
@@ -130,9 +167,34 @@ class EquipmentJS extends BaseJS {
      * */
     btnSaveOnClick() {
         var object = getObject();
-        var isValidate = $('input[validate="false"]');
+        //var isValidate = $('input[validate="false"]');
         try {
-            if (isValidate.length == 0) {
+            if (formModel == "MaintainanceRequest") {
+                $.ajax({
+                    url: "/api/v1/MaintainanceRequest",
+                    method: "POST",
+                    async: true,
+                    data: JSON.stringify(object),
+                    dataType: 'json',
+                    contentType: 'application/json'
+                }).done(function (response) {
+                    //console.log(response);
+                    if (response.Code == Enum.StatusResponse.MethodNotAllowed) {
+                        showAlertWarring(response.Messenger);
+                        displaynone(3000);
+                    }
+                    else if (response.Code = Enum.StatusResponse.Success) {
+                        dialog.dialog("close");
+                        var msg = "Báo cáo thành công";
+                        showMessengerSuccess(msg);
+                    }
+                }).fail(function (response) {
+                    //var msg = response.responseJSON.Data;
+                    showAlertWarring("Vui lòng kiểm tra lại dữ liệu đã nhập!");
+                    displaynone(3000);
+                });
+            }
+            else {
                 $.ajax({
                     url: "/api/v1/Equipment",
                     method: "POST",
@@ -156,7 +218,7 @@ class EquipmentJS extends BaseJS {
                     var msg = response.responseJSON.Data;
                     showAlertWarring("", msg);
                     displaynone(3000);
-                })
+                });
             }
 
         } catch (e) {
@@ -334,13 +396,21 @@ class EquipmentJS extends BaseJS {
  */
 function getObject(id) {
     var object = {};
-    object["PracticalLaboratoryID"] = $('.txt-PracticalLaboratoryID').attr('value');
-    object["EquipmentCode"] = $('.txt-EquipmentCode').val();
-    object["EquipmentName"] = $('.txt-EquipmentName').val();
-    object["Description"] = $('.txt-Description').val();
-    //object["Quantity"] = parseInt($('.txt-Quantity').val());
-    object["EquipmentStatus"] = parseInt($('.cbx_status').val());
-    object["EquipmentID"] = id;
+    if (formModel == "MaintainanceRequest") {
+        object["PracticalLaboratoryID"] = $('.txt-PracticalLaboratoryID').attr('value');
+        object["TechnicalStaffID"] = $('.cbx_technicalStaff').val();
+        object["Description"] = $('.txt-DescriptionMaintainance').val();
+    }
+    else {
+        object["PracticalLaboratoryID"] = $('.txt-PracticalLaboratoryID').attr('value');
+        object["EquipmentCode"] = $('.txt-EquipmentCode').val();
+        object["EquipmentName"] = $('.txt-EquipmentName').val();
+        object["Description"] = $('.txt-Description').val();
+        //object["Quantity"] = parseInt($('.txt-Quantity').val());
+        object["EquipmentStatus"] = parseInt($('.cbx_status').val());
+        object["EquipmentID"] = id;
+    }
+    
     return object;
 }
 

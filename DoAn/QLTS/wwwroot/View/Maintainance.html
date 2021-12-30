@@ -241,10 +241,10 @@
                             </div>
                         </div>
                         <div class="box_fitter">
-                            <select class="cbx_header cbx_practicalLaboratory info__type__emp" id="cbx_practicalLaboratory" dataType="text" fieldName="PracticalLaboratoryID">
+                            <select class="cbx_header info__type__emp" id="cbx_practicalLaboratory" dataType="text" fieldName="PracticalLaboratoryID">
                                 <option value="">-- Vui lòng chọn phòng thực hành --</option>
                             </select>
-                            <select class=" cbx_header cbx_technicalStaff info__type__emp" id="cbx_technicalStaff" dataType="text" fieldName="TechnicalStaffID">
+                            <select class=" cbx_header info__type__emp" id="cbx_technicalStaff" dataType="text" fieldName="TechnicalStaffID">
                                 <option value="">-- Vui lòng chọn cán bộ kỹ thuật --</option>
                             </select>
                         </div>
@@ -261,13 +261,15 @@
                                     <thead>
                                         <tr>
                                             <th class="text-center" fomatType="STT" style="width:5%">STT</th>
-                                            <th fieldName="PracticalLaboratoryName" class="text-align-left" style="width:15%">Tên Phòng thực hành</th>
-                                            <th fieldName="StartedDate" fomatType="ddmmyyyy" class="text-align-left" style="width:15%">Ngày bắt đầu</th>
-                                            <th fieldName="EndedDate" fomatType="ddmmyyyy" class="text-align-left" style="width:15%">Ngày kết thúc</th>
-                                            <th fieldName="TechnicalStaffCode" class="text-align-left" style="width:15%">Mã cán bộ kỹ thuật</th>
-                                            <th fieldName="FullName" class="text-align-left" style="width:15%">Tên cán bộ kỹ thuật</th>
-                                            <th fieldName="MaintainanceStatus" fomatType="maintainance" class="text-align-left" style="width:10%">Trạng thái</th>
-                                            <th fieldName="Description" class="text-align-left" style="width:10%">Mô tả</th>
+                                            <th fieldName="PracticalLaboratoryCode" class="text-align-left" style="width:10%">Mã Phòng</th>
+                                            <th fieldName="PracticalLaboratoryName" class="text-align-left" style="width:10%">Tên Phòng</th>
+                                            <th fieldName="StartedDate" fomatType="ddmmyyyy" class="text-align-left" style="width:10%">Ngày bắt đầu</th>
+                                            <th fieldName="EndedDate" fomatType="ddmmyyyy" class="text-align-left" style="width:10%">Ngày kết thúc</th>
+                                            <th fieldName="TechnicalStaffCode" class="text-align-left" style="width:10%">Mã cán bộ kỹ thuật</th>
+                                            <th fieldName="FullName" class="text-align-left" style="width:10%">Tên cán bộ kỹ thuật</th>
+                                            <th fieldName="MaintainanceStatus" fomatType="maintainance" class="text-align-left" style="width:5%">Trạng thái</th>
+                                            <th fieldName="Description" class="text-align-left" style="width:25%">Mô tả</th>
+                                            <th fieldName="Request" fomatType="check" class="text-align-left" style="width:5%">Báo cáo</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -291,14 +293,14 @@
                                         </div>
                                         <div class=" parent-sub-content">
                                             <div class=" sub-content" style="width:100%">
-                                                <div class="sub-title">Ngày bắt đầu (<span>*</span>)</div>
-                                                <input type="date" class="input-text info__type__emp" fieldName="StartedDate" dataType="date" required tabindex="2" />
+                                                <div class="sub-title">Ngày bắt đầu</div>
+                                                <input type="date" class="input-text info__type__emp" fieldName="StartedDate" tabindex="2" />
                                             </div>
                                         </div>
                                         <div class=" parent-sub-content">
                                             <div class=" sub-content" style="width:100%">
                                                 <div class="sub-title">Ngày kết thúc</div>
-                                                <input type="date" class="input-text info__type__emp" fieldName="EndedDate" dataType="date" required tabindex="3" />
+                                                <input type="date" class="input-text info__type__emp" fieldName="EndedDate" tabindex="3" />
                                             </div>
                                         </div>
                                         <div class=" parent-sub-content">
@@ -324,7 +326,14 @@
                                                 <textarea class="info__type__emp input-text" fieldName="Description" dataType="text" tabindex="6"></textarea>
                                             </div>
                                         </div>
-
+                                        <div class="parent-sub-content">
+                                            <div class=" sub-content" style="width:100%">
+                                                <div class="sub-title">
+                                                    Xác nhận
+                                                    <input style="width: 5%;" class="input-checkbox" type="checkbox" value="0" id="request" fieldname="Request" tabindex="6" />
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

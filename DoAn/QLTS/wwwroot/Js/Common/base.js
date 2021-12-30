@@ -154,7 +154,9 @@ class BaseJS {
             dialog.dialog('open');
             formModel = "Add";
 
-
+            //maintainance request
+            $('.set_request').hide();
+            $('.set_equipment').show();
         });
 
         //Sự kiện load lại dữ liệu khi nhấn refresh
@@ -167,7 +169,7 @@ class BaseJS {
 
         //Ấn form chi tiết khi nhấn hủy
         $('#btn-cancel').off('click').on('click', function () {
-            resetDialog()
+            resetDialog();
             dialog.dialog('close');
         });
 
@@ -188,6 +190,10 @@ class BaseJS {
             resetDialog();
             dialog.dialog('open');
             formModel = "Edit";
+
+            //maintainance request
+            $('.set_request').hide();
+            $('.set_equipment').show();
 
             try {
                 $.ajax({
@@ -243,7 +249,7 @@ class BaseJS {
         //Thực hiện lưu dữ liệu khi nhấn button lưu trên form chi tiết
         $('#btn-save,#btn-update').click(function () {
             //Validate dữ liệu
-            var inputValadate = $('input[required],input[type="email"],input[type="date"],select[required]');
+            var inputValadate = $('input[required],input[type="email"], input[dataType="date"], select[required]');
             $.each(inputValadate, function (index, input) {
                 $(input).trigger('blur');
             });
