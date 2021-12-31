@@ -4,10 +4,10 @@ $(document).ready(function () {
     //Define Dialog
     dialog = $(".dialog__content").dialog({
         autoOpen: false,
-        width: 350,
+        width: 355,
         modal: true,
     });
-
+    
     maintainanceJS = new MaintainanceJS();
 
 })
@@ -77,6 +77,58 @@ class MaintainanceJS extends BaseJS {
             }
         });
 
+        //submit all request
+        $('#btn-request').click(function () {
+
+            //resetDialog();
+            $('#updateTable tbody').empty();
+            generateUpdateTable(cacheData);
+            dialog.dialog('open');
+            $('#btn-save').hide();
+            $('#btn-update').show();
+            //maintainance request
+            $('.set_request').show();
+            $('.set_maintainance').hide();
+
+            formModel = "submitAll";
+
+            //all checkbox from updateTable
+            var checkAll = $('#checkAll');
+            var checkboxs = $('#updateTable tbody tr td input[type="checkbox"]');
+            if (checkboxs.length === $('#updateTable tbody tr td input[type="checkbox"]:checked').length) {
+                checkAll.prop('checked', true);
+            }
+            //checkAll changed
+            checkAll.change(function () {
+                var isCheckedAll = $(checkAll).prop('checked');
+                checkboxs.prop('checked', isCheckedAll);
+                if (isCheckedAll) {
+                    checkboxs.val('1');
+                }
+                else {
+                    checkboxs.val('0');
+                }
+            });
+
+            //checkboxs changed
+            checkboxs.change(function () {
+                var isCheckedAll = checkboxs.length === $('#updateTable tbody tr td input[type="checkbox"]:checked').length;
+                checkAll.prop('checked', isCheckedAll);
+            });
+
+            $.each(checkboxs, function (index, item) {
+                $(item).change(function (e) {
+                    if ($(this).attr('value') == '1') {
+                        $(this).val('0');
+                        $(this).prop('checked', false);
+                    }
+                    else {
+                        $(this).prop('checked', true);
+                        $(this).val('1');
+                    }
+                });
+            });
+        });
     }
 
     /**
@@ -294,39 +346,75 @@ class MaintainanceJS extends BaseJS {
      * Created by NTHung (20/11/2021)
      */
     btnUpdateOnClick() {
-        var object = getObject(recordId);
-        console.log(object);
-        var isvalidate = $('input[validate="false"]');
-        try {
-            if (isvalidate.length == 0) {
-                $.ajax({
-                    url: "/api/v1/maintainance",
-                    method: "PUT",
-                    data: JSON.stringify(object),
-                    dataType: 'json',
-                    contentType: 'application/json',
-                    async: true
-                }).done(function (response) {
-                    if (response.Code == Enum.StatusResponse.MethodNotAllowed) {
-                        showAlertWarring(response.Messenger);
+        if (formModel == "submitAll") {
+            var listObjects = getObject(recordId);
+            try {
+                $.each(listObjects, function (index, object) {
+                    $.ajax({
+                        url: "/api/v1/maintainance",
+                        method: "PUT",
+                        data: JSON.stringify(object),
+                        dataType: 'json',
+                        contentType: 'application/json',
+                        async: true
+                    }).done(function (response) {
+                        if (response.Code == Enum.StatusResponse.MethodNotAllowed) {
+                            showAlertWarring(response.Messenger);
+                            displaynone(3000);
+                        }
+                        else if (response.Code == Enum.StatusResponse.Success) {
+                            dialog.dialog("close");
+                            var msg = response.Messenger;
+                            showMessengerSuccess(msg);
+                            maintainanceJS.loadData();
+                        }
+                    }).fail(function (response) {
+                        //console.log(response);
+                        var msg = response.responseJSON.Data;
+                        showAlertWarring("", msg);
                         displaynone(3000);
-                    }
-                    else if (response.Code == Enum.StatusResponse.Success) {
-                        dialog.dialog("close");
-                        var msg = response.Messenger;
-                        showMessengerSuccess(msg);
-                        maintainanceJS.loadData();
-                    }
-                }).fail(function (response) {
-                    //console.log(response);
-                    var msg = response.responseJSON.Data;
-                    showAlertWarring("", msg);
-                    displaynone(3000);
-                })
+                    });
+                });
+            } catch (e) {
+                console.log(e);
             }
-        } catch (e) {
-            console.log(e);
         }
+        else {
+            var object = getObject(recordId);
+            console.log(object);
+            var isvalidate = $('input[validate="false"]');
+            try {
+                if (isvalidate.length == 0) {
+                    $.ajax({
+                        url: "/api/v1/maintainance",
+                        method: "PUT",
+                        data: JSON.stringify(object),
+                        dataType: 'json',
+                        contentType: 'application/json',
+                        async: true
+                    }).done(function (response) {
+                        if (response.Code == Enum.StatusResponse.MethodNotAllowed) {
+                            showAlertWarring(response.Messenger);
+                            displaynone(3000);
+                        }
+                        else if (response.Code == Enum.StatusResponse.Success) {
+                            dialog.dialog("close");
+                            var msg = response.Messenger;
+                            showMessengerSuccess(msg);
+                            maintainanceJS.loadData();
+                        }
+                    }).fail(function (response) {
+                        //console.log(response);
+                        var msg = response.responseJSON.Data;
+                        showAlertWarring("", msg);
+                        displaynone(3000);
+                    })
+                }
+            } catch (e) {
+                console.log(e);
+            }
+        }
+        
     }
     /**
      * Filter function
@@ -365,24 +453,42 @@ class MaintainanceJS extends BaseJS {
  * @param {any} id
  */
 function getObject(id) {
-    var object = {};
-    var startedDate = $('input[fieldName="StartedDate"]').val();
-    var endedDate = $('input[fieldName="EndedDate"]').val();
-    if (startedDate == "") {
-        startedDate = "0001-01-01";
+    if (formModel == "submitAll") {
+        var listObject = [];
+        $.each(cacheData, function (index, item) {
+            var object = {};
+            object['PracticalLaboratoryID'] = item['PracticalLaboratoryID'];
+            object['StartedDate'] = item['StartedDate'];
+            object['EndedDate'] = item['EndedDate'];
+            object['TechnicalStaffID'] = item['TechnicalStaffID'];
+            object['MaintainanceStatus'] = item['MaintainanceStatus'];
+            object['Description'] = item['Description'];
+            object['MaintainanceID'] = item['MaintainanceID'];
+            object["Request"] = parseInt($(`#updateTable tbody tr td input[type="checkbox"]:eq(${index})`).val());
+            listObject.push(object);
+        });
+        return listObject;
     }
-    if (endedDate == "") {
-        endedDate = "0001-01-01";
+    else {
+        var object = {};
+        var startedDate = $('input[fieldName="StartedDate"]').val();
+        var endedDate = $('input[fieldName="EndedDate"]').val();
+        if (startedDate == "") {
+            startedDate = "0001-01-01";
+        }
+        if (endedDate == "") {
+            endedDate = "0001-01-01";
+        }
+        object['PracticalLaboratoryID'] = $('.cbx_practicalLaboratory').val();
+        object['StartedDate'] = startedDate;
+        object['EndedDate'] = endedDate;
+        object['TechnicalStaffID'] = $('.cbx_technicalStaff').val();
+        object['MaintainanceStatus'] = parseInt($('.cbx_status').val());
+        object['Request'] = parseInt($('#request').val());
+        object['Description'] = $('textarea[fieldName="Description"]').val();
+        object['MaintainanceID'] = id;
+        return object;
     }
-    object['PracticalLaboratoryID'] = $('.cbx_practicalLaboratory').val();
-    object['StartedDate'] = startedDate;
-    object['EndedDate'] = endedDate;
-    object['TechnicalStaffID'] = $('.cbx_technicalStaff').val();
-    object['MaintainanceStatus'] = parseInt($('.cbx_status').val());
-    object['Request'] = parseInt($('#request').val());
-    object['Description'] = $('textarea[fieldName="Description"]').val();
-    object['MaintainanceID'] = id;
-    return object;
 }
 
 var recordId = null;

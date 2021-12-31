@@ -82,6 +82,60 @@ class PracticeSchedulesJS extends BaseJS {
                 $(this).val('1');
             }
         });
+
+        //submit all request
+        $('#btn-request').click(function () {
+
+            //resetDialog();
+            $('#updateTable tbody').empty();
+            generateUpdateTable(cacheData);
+            dialog.dialog('open');
+            $('#btn-save').hide();
+            $('#btn-update').show();
+            //maintainance request
+            $('.set_request').show();
+            $('.set_add').hide();
+            $('.set_update').hide();
+
+            formModel = "submitAll";
+
+            //all checkbox from updateTable
+            var checkAll = $('#checkAll');
+            var checkboxs = $('#updateTable tbody tr td input[type="checkbox"]');
+            if (checkboxs.length === $('#updateTable tbody tr td input[type="checkbox"]:checked').length) {
+                checkAll.prop('checked', true);
+            }
+            //checkAll changed
+            checkAll.change(function () {
+                var isCheckedAll = $(checkAll).prop('checked');
+                checkboxs.prop('checked', isCheckedAll);
+                if (isCheckedAll) {
+                    checkboxs.val('1');
+                }
+                else {
+                    checkboxs.val('0');
+                }
+            });
+
+            //checkboxs changed
+            checkboxs.change(function () {
+                var isCheckedAll = checkboxs.length === $('#updateTable tbody tr td input[type="checkbox"]:checked').length;
+                checkAll.prop('checked', isCheckedAll);
+            });
+
+            $.each(checkboxs, function (index, item) {
+                $(item).change(function (e) {
+                    if ($(this).attr('value') == '1') {
+                        $(this).val('0');
+                        $(this).prop('checked', false);
+                    }
+                    else {
+                        $(this).prop('checked', true);
+                        $(this).val('1');
+                    }
+                });
+            });
+        });
     }
 
     /**
@@ -230,11 +284,8 @@ class PracticeSchedulesJS extends BaseJS {
                 dataType: 'json',
                 connectType: 'application/json'
             }).done(function (response) {
-                //console.log(response);
-                $('.txt_practiceGroup').attr('value', response['PracticeGroupID']);
-                $('.txt_practiceGroup').attr('placeholder', response['PracticeGroupName']);
-                //$('.txt-practiceGroup').text(`${response['PracticeGroupName']}`);
-                //$('.txt-teacherName').text(`${response['FullName']}`);
+                $('.txt_practiceGroupID').attr('value', response['PracticeGroupID']);
+                $('.txt_practiceGroupName').attr('value', response['PracticeGroupName']);
                 var td = $('.grid-infor table td[fieldName]');
                 $.each(td, function (index, item) {
                     var fieldName = $(this).attr('fieldName');
@@ -398,41 +449,80 @@ class PracticeSchedulesJS extends BaseJS {
     //* Created by HTHang (26/11/2021)
 
     btnUpdateOnClick() {
-        var object = getObject(recordId);
-        console.log(object);
-        var isvalidate = $('input[validate="false"]');
-        try {
-            if (isvalidate.length == 0) {
-                $.ajax({
-                    url: "/api/v1/PracticeSchedules",
-                    method: "PUT",
-                    data: JSON.stringify(object),
-                    dataType: 'json',
-                    contentType: 'application/json',
-                    async: true
-                }).done(function (response) {
-                    console.log(response);
-                    if (response.Code == Enum.StatusResponse.MethodNotAllowed) {
-                        showAlertWarring(response.Messenger);
+        if (formModel == "Edit") {
+            var object = getObject(recordId);
+            console.log(object);
+            var isvalidate = $('input[validate="false"]');
+            try {
+                if (isvalidate.length == 0) {
+                    $.ajax({
+                        url: "/api/v1/PracticeSchedules",
+                        method: "PUT",
+                        data: JSON.stringify(object),
+                        dataType: 'json',
+                        contentType: 'application/json',
+                        async: true
+                    }).done(function (response) {
+                        console.log(response);
+                        if (response.Code == Enum.StatusResponse.MethodNotAllowed) {
+                            showAlertWarring(response.Messenger);
+                            displaynone(3000);
+                        }
+                        else if (response.Code == Enum.StatusResponse.Success) {
+                            dialog.dialog("close");
+                            var msg = response.Messenger;
+                            showMessengerSuccess(msg);
+                            practiceSchedulesJS.loadData();
+                            //setDisabled();
+                        }
+                    }).fail(function (response) {
+                        //console.log(response);
+                        var msg = response.responseJSON.Data;
+                        //var msgLength = response.responseJSON.Data.length;
+                        showAlertWarring(msg, "");
                         displaynone(3000);
-                    }
-                    else if (response.Code == Enum.StatusResponse.Success) {
-                        dialog.dialog("close");
-                        var msg = response.Messenger;
-                        showMessengerSuccess(msg);
-                        practiceSchedulesJS.loadData();
-                        //setDisabled();
-                    }
-                }).fail(function (response) {
-                    //console.log(response);
-                    var msg = response.responseJSON.Data;
-                    //var msgLength = response.responseJSON.Data.length;
-                    showAlertWarring(msg, "");
-                    displaynone(3000);
-                })
+                    })
+                }
+            } catch (e) {
+                console.log(e);
             }
-        } catch (e) {
-            console.log(e);
+        }
+        else if (formModel == "submitAll") {
+            var listObject = getObject();
+            console.log(listObject);
+            try {
+                $.each(listObject, function (index, object) {
+                    $.ajax({
+                        url: "/api/v1/PracticeSchedules",
+                        method: "PUT",
+                        data: JSON.stringify(object),
+                        dataType: 'json',
+                        contentType: 'application/json',
+                        async: true
+                    }).done(function (response) {
+                        console.log(response);
+                        if (response.Code == Enum.StatusResponse.MethodNotAllowed) {
+                            showAlertWarring(response.Messenger);
+                            displaynone(3000);
+                        }
+                        else if (response.Code == Enum.StatusResponse.Success) {
+                            dialog.dialog("close");
+                            var msg = response.Messenger;
+                            showMessengerSuccess(msg);
+                            practiceSchedulesJS.loadData();
+                            //setDisabled();
+                        }
+                    }).fail(function (response) {
+                        //console.log(response);
+                        var msg = response.responseJSON.Data;
+                        //var msgLength = response.responseJSON.Data.length;
+                        showAlertWarring(msg, "");
+                        displaynone(3000);
+                    });
+                });
+            } catch (e) {
+                console.log(e);
+            }
         }
     }
 
@@ -475,21 +565,44 @@ class PracticeSchedulesJS extends BaseJS {
  * @param {any} id
  */
 function getObject(id) {
-    var object = {};
-    object["PracticeGroupID"] = $('.txt_practiceGroup').val();
-    object['PracticeShiftID'] = $('.cbx_practiceShift').val();
-    object['PracticalLaboratoryID'] = $('.cbx_practicalLaboratory').val();
-    object['FullName'] = $('input[fieldName="FullName"]').val();
-    object['Date'] = $('input[fieldName="Date"]').val();
-    object['SemesterID'] = $('.cbx_semester').val();
-    object['SchoolYearID'] = $('.cbx_schoolYear').val();
-    object['StartTime'] = $('input[fieldName="StartTime"]').val();
-    object['EndTime'] = $('input[fieldName="EndTime"]').val();
-    object['Status'] = parseInt($('.cbx_status').val());
-    object['Request'] = parseInt($('#request').val());
-    object['Description'] = $('textarea[fieldName="Description"]').val();
-    object['PracticeScheduleID'] = id;
-    return object;
+    if (formModel == "Edit") {
+        var object = {};
+        object["PracticeGroupID"] = $('.txt_practiceGroupID').val();
+        object['PracticeShiftID'] = $('.cbx_practiceShift').val();
+        object['PracticalLaboratoryID'] = $('.cbx_practicalLaboratory').val();
+        object['FullName'] = $('input[fieldName="FullName"]').val();
+        object['Date'] = $('input[fieldName="Date"]').val();
+        object['SemesterID'] = $('.cbx_semester').val();
+        object['SchoolYearID'] = $('.cbx_schoolYear').val();
+        object['StartTime'] = $('input[fieldName="StartTime"]').val();
+        object['EndTime'] = $('input[fieldName="EndTime"]').val();
+        object['Status'] = parseInt($('.cbx_status').val());
+        object['Request'] = parseInt($('#request').val());
+        object['Description'] = $('textarea[fieldName="Description"]').val();
+        object['PracticeScheduleID'] = id;
+        return object;
+    }
+    else if (formModel == "submitAll") {
+        var listObject = [];
+        $.each(cacheData, function (index, item) {
+            var object = {};
+            object["PracticeScheduleID"] = item["PracticeScheduleID"];
+            object["PracticeGroupID"] = item["PracticeGroupID"];
+            object['PracticeShiftID'] = item["PracticeShiftID"];
+            object['PracticalLaboratoryID'] = item["PracticalLaboratoryID"];
+            object['FullName'] = item["FullName"];
+            object['Date'] = item["Date"];
+            object['SemesterID'] = item["SemesterID"];
+            object['SchoolYearID'] = item["SchoolYearID"];
+            object['StartTime'] = item["StartTime"];
+            object['EndTime'] = item["EndTime"];
+            object['Status'] = item["Status"];
+            object['Description'] = item["Description"];
+            object["Request"] = parseInt($(`#updateTable tbody tr td input[type="checkbox"]:eq(${index})`).val());
+            listObject.push(object);
+        });
+        return listObject;
+    }
 }
 
 /**

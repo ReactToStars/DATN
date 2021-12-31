@@ -9,7 +9,7 @@ $(document).ready(function () {
     });
 
     attendanceJS = new AttendanceJS();
-})
+});
 
 class AttendanceJS extends BaseJS {
     constructor() {
@@ -45,7 +45,9 @@ class AttendanceJS extends BaseJS {
             }).done(function (response) {
                 cacheData = response;
                 $('#tbListData tbody').empty();
+                $('#updateTable tbody').empty();
                 generateTable(response);
+                generateUpdateTable(response);
                 setTimeout(function () {
                     $('.loading').hide();
                 }, 500);
@@ -107,7 +109,7 @@ class AttendanceJS extends BaseJS {
         });
 
         //checkbox
-        $('#txt_attendanceStatus').change(function (e) {
+        $('#txt_attendanceStatus').change(function () {
             if ($(this).attr('value') == '1') {
                 $(this).val('0');
                 $(this).prop('checked', false);
@@ -116,6 +118,60 @@ class AttendanceJS extends BaseJS {
                 $(this).prop('checked', true);
                 $(this).val('1');
             }
+        });
+
+        //submit all request
+        $('#btn-request').click(function () {
+
+            //resetDialog();
+            $('#updateTable tbody').empty();
+            generateUpdateTable(cacheData);
+            dialog.dialog('open');
+            $('#btn-save').hide();
+            $('#btn-update').show();
+            //maintainance request
+            $('.set_request').show();
+            $('.set_add').hide();
+            $('.set_update').hide();
+
+            formModel = "submitAll";
+
+            //all checkbox from updateTable
+            var checkAll = $('#checkAll');
+            var checkboxs = $('#updateTable tbody tr td input[type="checkbox"]');
+            if (checkboxs.length === $('#updateTable tbody tr td input[type="checkbox"]:checked').length) {
+                checkAll.prop('checked', true);
+            }
+            //checkAll changed
+            checkAll.change(function () {
+                var isCheckedAll = $(checkAll).prop('checked');
+                checkboxs.prop('checked', isCheckedAll);
+                if (isCheckedAll) {
+                    checkboxs.val('1');
+                }
+                else {
+                    checkboxs.val('0');
+                }
+            });
+
+            //checkboxs changed
+            checkboxs.change(function () {
+                var isCheckedAll = checkboxs.length === $('#updateTable tbody tr td input[type="checkbox"]:checked').length;
+                checkAll.prop('checked', isCheckedAll);
+            });
+            
+            $.each(checkboxs, function (index, item) {
+                $(item).change(function (e) {
+                    if ($(this).attr('value') == '1') {
+                        $(this).val('0');
+                        $(this).prop('checked', false);
+                    }
+                    else {
+                        $(this).prop('checked', true);
+                        $(this).val('1');
+                    }
+                });
+            });
         });
     }
 
@@ -199,7 +255,7 @@ class AttendanceJS extends BaseJS {
     btnSaveOnClick() {
         //let id = window.location.href, url1 = id.split("&&")[0], id1;
         //id1 = url1.split("=")[1];
-        formMode = "Add";
+        //formMode = "Add";
         var listobject = getObject();
         $.each(listobject, function (index, items) {
 
@@ -278,7 +334,7 @@ class AttendanceJS extends BaseJS {
             showAlertWarring("Bạn chưa chọn phần tử muốn xóa!", "")
         }
         else {
-            var msg = "Bạn có chắc chắn muốn xóa sinh viên " + recordTitle+ " không?";
+            var msg = "Bạn có chắc chắn muốn xóa sinh viên " + recordTitle + " không?";
             showAlertConfirm(msg)
         }
     }
@@ -322,42 +378,82 @@ class AttendanceJS extends BaseJS {
      * Author: Nguyen Dang Tung(2/1/2021)
      */
     btnUpdateOnClick() {
-        formMode = "Edit";
-        var object = getObject(recordId);
-        //console.log(object);
-        var isvalidate = $('input[validate="false"]');
-        try {
+        if (formModel == "Edit") {
+            //formMode = "Edit";
+            var object = getObject(recordId);
+            //console.log(object);
+            var isvalidate = $('input[validate="false"]');
             if (isvalidate.length == 0) {
-                $.ajax({
-                    url: "/api/v1/attendance",
-                    method: "PUT",
-                    data: JSON.stringify(object),
-                    dataType: 'json',
-                    contentType: 'application/json',
-                    async: true
-                }).done(function (response) {
-                    if (response.Code == Enum.StatusResponse.MethodNotAllowed) {
-                        showAlertWarring(response.Messenger);
+                try {
+                    $.ajax({
+                        url: "/api/v1/attendance",
+                        method: "PUT",
+                        data: JSON.stringify(object),
+                        dataType: 'json',
+                        contentType: 'application/json',
+                        async: true
+                    }).done(function (response) {
+                        if (response.Code == Enum.StatusResponse.MethodNotAllowed) {
+                            showAlertWarring(response.Messenger);
+                            displaynone(3000);
+                        }
+                        else if (response.Code == Enum.StatusResponse.Success) {
+                            dialog.dialog("close");
+                            var msg = response.Messenger;
+                            showMessengerSuccess(msg);
+                            attendanceJS.loadData();
+                            attendanceJS.loadPracticeSchedule();
+                        }
+                    }).fail(function (response) {
+                        //console.log(response);
+                        var msg = response.responseJSON.Data;
+                        //var msgLength = response.responseJSON.Data.length;
+                        showAlertWarring(msg, "");
                         displaynone(3000);
-                    }
-                    else if (response.Code == Enum.StatusResponse.Success) {
-                        dialog.dialog("close");
-                        var msg = response.Messenger;
-                        showMessengerSuccess(msg);
-                        attendanceJS.loadData();
-                        attendanceJS.loadPracticeSchedule();
-                    }
-                }).fail(function (response) {
-                    //console.log(response);
-                    var msg = response.responseJSON.Data;
-                    //var msgLength = response.responseJSON.Data.length;
-                    showAlertWarring(msg, "");
-                    displaynone(3000);
-                })
+                    });
+                } catch (e) {
+                    console.log(e);
+                }
+
             }
-        } catch (e) {
-            console.log(e);
         }
+        else if (formModel == "submitAll") {
+            var listObject = getObject();
+
+            $.each(listObject, function (index, object) {
+                try {
+                    $.ajax({
+                        url: "/api/v1/attendance",
+                        method: "PUT",
+                        data: JSON.stringify(object),
+                        dataType: 'json',
+                        contentType: 'application/json',
+                        async: true
+                    }).done(function (response) {
+                        if (response.Code == Enum.StatusResponse.MethodNotAllowed) {
+                            showAlertWarring(response.Messenger);
+                            displaynone(3000);
+                        }
+                        else if (response.Code == Enum.StatusResponse.Success) {
+                            dialog.dialog("close");
+                            var msg = response.Messenger;
+                            showMessengerSuccess(msg);
+                            attendanceJS.loadData();
+                            attendanceJS.loadPracticeSchedule();
+                        }
+                    }).fail(function (response) {
+                        //console.log(response);
+                        var msg = response.responseJSON.Data;
+                        //var msgLength = response.responseJSON.Data.length;
+                        showAlertWarring(msg, "");
+                        displaynone(3000);
+                    });
+                } catch (e) {
+                    console.log(e);
+                }
+            });
+        }
+
     }
     /**
      * Hàm tìm kiếm dữ liệu
@@ -387,7 +483,7 @@ class AttendanceJS extends BaseJS {
 
 function getObject(id) {
 
-    if (formMode === "Add") {
+    if (formModel === "Add") {
         let ListObject = [];
         let listStudent = $(".student_of_group ul li");
         $.each(listStudent, function (index, item) {
@@ -399,7 +495,7 @@ function getObject(id) {
         });
         return ListObject;
     }
-    else if (formMode === "Edit") {
+    else if (formModel === "Edit") {
         var object = {};
         object["PracticeScheduleID"] = $('.txt_PracticeScheduleID').attr('value');
         object["StudentID"] = $(".txt_StudentID").val();
@@ -407,10 +503,25 @@ function getObject(id) {
         //object["AttendanceStatus"] = parseInt($('.cbx_attendanceStatus').val());
         object["StartTime"] = $('input[fieldName="StartTime"]').val();
         object["EndTime"] = $('input[fieldName="EndTime"]').val();
-        
+
         object['AttendanceStatus'] = parseInt($('#txt_attendanceStatus').val());
         object["AttendanceID"] = id;
         return object;
+    }
+    else if (formModel == "submitAll") {
+        var listObject = [];
+        $.each(cacheData, function (index, item) {
+            var object = {};
+            object["AttendanceID"] = item["AttendanceID"];
+            object["PracticeScheduleID"] = item["PracticeScheduleID"];
+            object["StudentID"] = item["StudentID"];
+            object["Description"] = item["Description"];
+            object["StartTime"] = item["StartTime"];
+            object["EndTime"] = item["EndTime"];
+            object["AttendanceStatus"] = parseInt($(`#updateTable tbody tr td input[type="checkbox"]:eq(${index})`).val());
+            listObject.push(object);
+        });
+        return listObject;
     }
 }
 
@@ -472,12 +583,12 @@ function resetDialog() {
     $('.student_of_class ul ').find('li').remove();
     $('.student_of_group ul ').find('li').remove();
     $('#txt_attendanceStatus').prop('checked', false);
+    //$('#updateTable tbody tr td input[type="checkbox"]').prop('checked', false);
     let id = window.location.href;
     id = id.split("&&")[1];
     id = id.split("=")[1];
     loadStudentClass(id);
 }
-
 
 var formMode = "";
 var recordId = null;

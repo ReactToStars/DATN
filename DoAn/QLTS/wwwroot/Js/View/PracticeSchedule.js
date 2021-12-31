@@ -302,8 +302,8 @@ class PracticeScheduleJS extends BaseJS {
                 connectType: 'application/json'
             }).done(function (response) {
                 //console.log(response);
-                $('.txt_practiceGroup').attr('value', response['PracticeGroupID']);
-                $('.txt_practiceGroup').attr('placeholder', response['PracticeGroupName']);
+                $('.txt_practiceGroupID').attr('value', response['PracticeGroupID']);
+                $('.txt_practiceGroupName').attr('placeholder', response['PracticeGroupName']);
                 $('.txt-practiceGroup').text(`${response['PracticeGroupName']}`);
                 $('.txt-teacherName').text(`${response['FullName']}`);
                 var td = $('.grid-infor table td[fieldName]');
@@ -573,15 +573,12 @@ class PracticeScheduleJS extends BaseJS {
  */
 function getObject(id) {
     var object = {};
-    object["PracticeGroupID"] = $('.txt_practiceGroup').attr('value');
+    object["PracticeGroupID"] = $('.txt_practiceGroupID').attr('value');
     object['PracticeShiftID'] = $('.cbx_practiceShift').val();
     object['PracticalLaboratoryID'] = $('.cbx_practicalLaboratory').val();
-    //object['Date'] = parseInt($('.cbx_date').val());
     object['Date'] = $('input[fieldName="Date"]').val();
     object['SemesterID'] = $('.cbx_semester').val();
     object['SchoolYearID'] = $('.cbx_schoolYear').val();
-    //object['StartTime'] = $('input[fieldName="StartTime"]').val();
-    //object['EndTime'] = $('input[fieldName="EndTime"]').val();
     object['Status'] = parseInt($('.cbx_status').val());
     object['Description'] = $('textarea[fieldName="Description"]').val();
     object['PracticeScheduleID'] = id;

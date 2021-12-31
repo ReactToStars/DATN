@@ -75,3 +75,8 @@
     .set_update .parent-sub-content .sub-content:nth-child(2) {
         margin-left: 20px;
     }
+
+.update-request-table {
+    height: 80vh;
+    overflow: auto;
+}

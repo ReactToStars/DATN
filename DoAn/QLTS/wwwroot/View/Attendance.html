@@ -231,6 +231,9 @@
                             </div>
                             <div class="tool-bar-right">
                                 <div>
+                                    <button class="button btn-add" id="btn-request" title="Điểm danh">Điểm danh</button>
+                                </div>
+                                <div>
                                     <button class="button btn-add" id="btn-add" title="Thêm mới">Thêm mới</button>
                                 </div>
                                 <div>
@@ -303,7 +306,7 @@
                                             <th fieldName="StartTime" class="text-align-center " style="width:10%">Thời gian bắt đầu</th>
                                             <th fieldName="EndTime" class="text-align-center " style="width:10%">Thời gian kết thúc</th>
                                             <th fieldName="Description" class="text-align-center " style="width:30%">Ghi chú</th>
-                                            <th fieldName="AttendanceStatus" fomatType="check" class="text-align-center" style="width:5%">Trạng thái</th>
+                                            <th fieldName="AttendanceStatus" fomatType="check" class="text-align-center" style="width:5%">Điểm danh</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -377,6 +380,24 @@
                                                 <div class="sub-title">Ghi chú</div>
                                                 <textarea class="input-text info__type__emp" fieldname="Description" dataType="text" tabindex="1"></textarea>
                                             </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="top col-12 set_request">
+                                        <div>
+                                            <input type="checkbox" id="checkAll" /> <span style="font-size: 16px; font-weight: bold">Chọn tất cả</span>
+                                        </div>
+                                        <div class="update-request-table">
+                                            <table id="updateTable" border="0" cellspacing="0" cellpadding="0">
+                                                <thead>
+                                                <th class="text-center" fomatType="STT">STT</th>
+                                                <th fieldName="StudentCode" class="text-align-left">Mã sinh viên</th>
+                                                <th fieldName="FullName" class="text-align-center ">Tên sinh viên</th>
+                                                <th fieldName="AttendanceStatus" fomatType="check" class="text-align-center">Điểm danh</th>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
                                 </div>

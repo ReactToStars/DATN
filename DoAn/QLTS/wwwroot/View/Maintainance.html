@@ -224,6 +224,9 @@
                             </div>
                             <div class="tool-bar-right">
                                 <div>
+                                    <button class="button btn-add" id="btn-request" title="Xác nhận bảo trì">Xác nhận bảo trì</button>
+                                </div>
+                                <div>
                                     <button class="button btn-add" id="btn-add" title="Thêm mới">Thêm mới</button>
                                 </div>
                                 <div>
@@ -282,7 +285,7 @@
                         <div id="dialog" class="dialog__content" title="Quản Lý Bảo trì" style="display:block">
                             <div class="container-fluid">
                                 <div class="row content-form">
-                                    <div class="top col-12">
+                                    <div class="top col-12 set_maintainance">
                                         <div class=" parent-sub-content">
                                             <div class=" sub-content" style="width:100%">
                                                 <div class="sub-title">Tên phòng thực hành(<span>*</span>)</div>
@@ -333,6 +336,25 @@
                                                     <input style="width: 5%;" class="input-checkbox" type="checkbox" value="0" id="request" fieldname="Request" tabindex="6" />
                                                 </div>
                                             </div>
+                                        </div>
+                                    </div>
+
+                                    <!--submit all request-->
+                                    <div class="top col-12 set_request">
+                                        <div>
+                                            <input type="checkbox" id="checkAll" /> <span style="font-size: 16px; font-weight: bold">Chọn tất cả</span>
+                                        </div>
+                                        <div class="update-request-table">
+                                            <table id="updateTable" border="0" cellspacing="0" cellpadding="0">
+                                                <thead>
+                                                <th class="text-center" fomatType="STT" style="width:5%">STT</th>
+                                                <th fieldName="PracticalLaboratoryCode" class="text-align-left">Mã Phòng</th>
+                                                <th fieldName="PracticalLaboratoryName" class="text-align-left">Tên Phòng</th>
+                                                <th fieldName="Request" fomatType="check" class="text-align-left">Báo cáo</th>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
                                 </div>

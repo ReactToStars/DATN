@@ -223,9 +223,9 @@
                                 <button class="btn-search">Tìm kiếm</button>
                             </div>
                             <div class="tool-bar-right">
-                                <!--<div>
-                                    <button class="button btn-add" id="btn-add" title="Thêm mới">Thêm mới</button>
-                                </div>-->
+                                <div>
+                                    <button class="button btn-add" id="btn-request" title="Xác nhận lịch">Xác nhận lịch</button>
+                                </div>
                                 <div>
                                     <button class="button btn-refresh" id="btn-refresh" title="Làm mới">
                                         <div class="icon-refresh"></div>
@@ -300,11 +300,12 @@
                         <div id="dialog" class="dialog__content" title="Lịch thực hành" style="display:block">
                             <div class="container-fluid">
                                 <div class="row content-form">
-                                    <div class="top col-12">
+                                    <div class="top col-12 set_update">
                                         <div class=" parent-sub-content">
                                             <div class=" sub-content" style="width:100%">
                                                 <div class="sub-title">Nhóm</div>
-                                                <input class="txt_practiceGroup input-text info__type__emp" fieldName="PracticeGroupID" dataType="text" disabled tabindex="1" />
+                                                <input class="txt_practiceGroupID input-text info__type__emp" fieldName="PracticeGroupID" dataType="text" hidden tabindex="1" />
+                                                <input class="txt_practiceGroupName input-text info__type__emp" fieldName="PracticeGroupName" dataType="text" disabled tabindex="1" />
                                             </div>
                                             <div class=" sub-content" style="width:100%">
                                                 <div class="sub-title">Ca</div>
@@ -389,6 +390,28 @@
                                                 <div class="sub-title">Ghi chú</div>
                                                 <textarea class="textarea info__type__emp" fieldName="Description" tabindex="12" dataType="text"></textarea>
                                             </div>
+                                        </div>
+                                    </div>
+
+                                    <!--submit all request-->
+                                    <div class="top col-12 set_request">
+                                        <div>
+                                            <input type="checkbox" id="checkAll" /> <span style="font-size: 16px; font-weight: bold">Chọn tất cả</span>
+                                        </div>
+                                        <div class="update-request-table">
+                                            <table id="updateTable" border="0" cellspacing="0" cellpadding="0">
+                                                <thead>
+                                                <th class="text-center" fomatType="STT">STT</th>
+                                                <th fieldName="PracticeShiftName" class="text-align-left">Ca</th>
+                                                <th fieldName="PracticeGroupName" class="text-align-left">Nhóm</th>
+                                                <th fieldName="PracticalLaboratoryName" class="text-align-left">Phòng</th>
+                                                <th fieldName="FullName" class="text-align-left">Giảng viên</th>
+                                                <th fieldName="Date" fomatType="ddmmyyyy" class="text-align-left">Ngày</th>
+                                                <th fieldName="Request" fomatType="check" class="text-align-left">Yêu cầu</th>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
                                 </div>

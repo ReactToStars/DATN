@@ -83,7 +83,9 @@ class BaseJS {
                         maxCode = maxCode + 1;
                     }
                     $('#tbListData tbody').empty();
+                    $('#updateTable tbody').empty();
                     generateTable(responses);
+                    generateUpdateTable(responses);
                     setTimeout(function () {
                         $('.loading').hide();
                     }, 500)
@@ -157,6 +159,7 @@ class BaseJS {
             //maintainance request
             $('.set_request').hide();
             $('.set_equipment').show();
+            $('.set_maintainance').show();
         });
 
         //Sự kiện load lại dữ liệu khi nhấn refresh
@@ -194,6 +197,7 @@ class BaseJS {
             //maintainance request
             $('.set_request').hide();
             $('.set_equipment').show();
+            $('.set_maintainance').show();
 
             try {
                 $.ajax({

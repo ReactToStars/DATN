@@ -354,8 +354,8 @@ class DetailModuleClassJS extends BaseJS {
                 connectType: 'application/json'
             }).done(function (response) {
                 //console.log(response);
-                $('.txt_module_class').attr('value', response['ModuleClassID']);
-                $('.txt_module_class').attr('placeholder', response['ModuleClassCode']);
+                $('.txt_module_classID').attr('value', response['ModuleClassID']);
+                $('.txt_module_classCode').attr('value', response['ModuleClassCode']);
                 var td = $('.grid-infor table td[fieldName]');
                 $.each(td, function (index, item) {
                     var fieldName = $(this).attr('fieldName');
@@ -568,7 +568,7 @@ function getObject(id) {
     else {
         object["StudentID"] = $(".cbx_student").val();
     }
-    object["ModuleClassID"] = $('.txt_module_class').attr('value');
+    object["ModuleClassID"] = $('.txt_module_classID').attr('value');
     object["FrequentPoints1"] = parseFloat($('input[fieldName="FrequentPoints1"]').val());
     object["FrequentPoints2"] = parseFloat($('input[fieldName="FrequentPoints2"]').val());
     object["MediumScore"] = parseFloat($('input[fieldName="MediumScore"]').val());
@@ -614,8 +614,9 @@ function checkPoint(input) {
 
 function resetDialog() {
     $('input[fieldName]').val("");
-    $(".cbx_course ").find('option:eq(0)').prop('selected', true)
-    $(".cbx_majors ").find('option:eq(0)').prop('selected', true)
+    $(".cbx_course ").find('option:eq(0)').prop('selected', true);
+    $(".cbx_majors ").find('option:eq(0)').prop('selected', true);
+    $(".cbx_class, .cbx_student ").find('option:eq(0)').prop('selected', true);
     //$(".cbx_class option,.cbx_student option").remove();
     //$('.cbx_class,.cbx_student ').attr("disabled", "disabled");
     $('input,select').removeClass('border-red');

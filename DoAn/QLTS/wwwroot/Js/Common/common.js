@@ -368,6 +368,61 @@ function generateTable(response) {
         console.log(e);
     }
 }
+
+function generateUpdateTable(response) {
+    try {
+        var ths = $('#updateTable thead th');
+        $.each(response, function (index, obj) {
+            var tr = $(`<tr> </tr>`);
+            objectID = $('#objectID').val();
+            var objectTitle = $('#objectTitle').val();
+            var ind = index + 1;
+            $(tr).data("recordId", obj[objectID]);
+            $(tr).data("recordTitle", obj[objectTitle]);
+            $.each(ths, function (index, th) {
+                //Lấy thông tin dữ liệu sẽ Map tương ứng với các cột 
+                var fieldName = $(th).attr('fieldName');
+                var value = obj[fieldName];
+                var fomatType = $(th).attr('fomatType');
+                var td = $(`<td title="` + value + `"></td>`);
+                switch (fomatType) {
+                    case "ddmmyyyy":
+                        value = formatDate(value);
+                        var td = $(`<td title="` + value + `"></td>`);
+                        td.addClass("text-align-center");
+                        break;
+                    case "check":
+                        var checkbox;
+                        if (value == 1) {
+                            checkbox = `<input type="checkbox" value="1" checked/>`;
+                        }
+                        else {
+                            checkbox = `<input type="checkbox" value="0"/>`;
+                        }
+                        value = "";
+                        td.append(checkbox);
+                        td.addClass('text-align-center');
+                        break;
+                    case "STT":
+                        value = ind;
+                        var td = $(`<td title="` + value + `"></td>`);
+                        td.addClass("text-align-center");
+                        break;
+                    default:
+                        break;
+                }
+                $(td).append(value);
+                $(tr).append(td);
+            });
+            $('#updateTable tbody').append(tr);
+        });
+        var trs = $('#updateTable tbody tr');
+        formatGenerateTable(trs);
+    } catch (e) {
+        console.log(e);
+    }
+}
+
 /**
  * Hàm tự động đóng hộp thông báo
  * Author: Nguyen Dang Tung (21/1/2021)
