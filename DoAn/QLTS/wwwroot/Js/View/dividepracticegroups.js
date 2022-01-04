@@ -312,12 +312,12 @@ class DividePracticeGroupsJS extends BaseJS {
         listData = cacheData.filter(function (item) {
             return (item["PracticeGroupName"] === object['PracticeGroupName']);
         });
-        if (listData.length != 0) {
-            showAlertWarring('Đã tồn tại ' + object['PracticeGroupName'] + ' trong lớp học phần!', '');
-            $('input[fieldname="PracticeGroupName"]').focus();
-            displaynone(3000);
-        }
-        else {
+        //if (listData.length != 0) {
+        //    showAlertWarring('Đã tồn tại ' + object['PracticeGroupName'] + ' trong lớp học phần!', '');
+        //    $('input[fieldname="PracticeGroupName"]').focus();
+        //    displaynone(3000);
+        //}
+        //else {
             var isvalidate = $('input[validate="false"]');
             try {
                 if (isvalidate.length == 0) {
@@ -351,7 +351,7 @@ class DividePracticeGroupsJS extends BaseJS {
             } catch (e) {
                 console.log(e);
             }
-        }
+        //}
     }
     /**
      * Hàm tìm kiếm dữ liệu
