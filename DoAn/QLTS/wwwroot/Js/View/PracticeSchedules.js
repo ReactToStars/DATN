@@ -313,6 +313,8 @@ class PracticeSchedulesJS extends BaseJS {
                 dataType: 'json',
                 connectType: 'application/json'
             }).done(function (response) {
+                $('#cbx-date').empty();
+                $('#cbx-date').append('<option value="">-- Chọn ngày -- </option>');
                 $.each(response, function (index, item) {
                     var date = new Date(item['Date']);
                     var day = date.getDate();
@@ -364,6 +366,7 @@ class PracticeSchedulesJS extends BaseJS {
                         var msg = response.Messenger;
                         showMessengerSuccess(msg);
                         practiceScheduleJS.loadData();
+                        practiceScheduleJS.loadDate();
                     }
                 }).fail(function (response) {
                     //console.log(response);
@@ -430,6 +433,7 @@ class PracticeSchedulesJS extends BaseJS {
                 }
                 else if (response.Code == Enum.StatusResponse.Success) {
                     practiceSchedulesJS.loadData();
+                    practiceSchedulesJS.loadDate();
                     var msg = response.Messenger;
                     showMessengerSuccess(msg);
                     //setDisabled();
@@ -473,6 +477,7 @@ class PracticeSchedulesJS extends BaseJS {
                             var msg = response.Messenger;
                             showMessengerSuccess(msg);
                             practiceSchedulesJS.loadData();
+                            practiceSchedulesJS.loadDate();
                             //setDisabled();
                         }
                     }).fail(function (response) {

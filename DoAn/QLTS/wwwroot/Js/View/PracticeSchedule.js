@@ -44,7 +44,7 @@ class PracticeScheduleJS extends BaseJS {
             moduleClassId = moduleClassId.split("=")[1];
             var practiceGroupId = id.split("&&")[1];
             practiceGroupId = practiceGroupId.split("=")[1];
-            
+
             $('.Back_To_Page').attr('href', `/View/detailpracticegroup.html?moduleClassId=${moduleClassId}&&practiceGroupId=${practiceGroupId}`);
 
             $('.loading').show();
@@ -60,6 +60,9 @@ class PracticeScheduleJS extends BaseJS {
                 connectType: 'application/json'
             }).done(function (response) {
                 //load Date
+                $('#cbx-date').empty();
+                $('#cbx-date').append('<option value="">-- Chọn ngày -- </option>');
+
                 $.each(response, function (index, item) {
                     var date = new Date(item['Date']);
                     var day = date.getDate();
@@ -74,6 +77,7 @@ class PracticeScheduleJS extends BaseJS {
                     date = day + '/' + month + '/' + year;
                     var option = `<option value="${item['Date']}">${date}</option>`;
                     $('#cbx-date').append(option);
+
                 });
 
                 //load Data
@@ -490,7 +494,7 @@ class PracticeScheduleJS extends BaseJS {
                 return item["PracticalLaboratoryName"].toLowerCase().includes(value.toLowerCase())
                     && (practicalLaboratoryID ? item["PracticalLaboratoryID"] === practicalLaboratoryID : item["PracticalLaboratoryID"] !== practicalLaboratoryID)
                     && (date ? item["Date"] === date : item["Date"] !== date);
-                    //&& (date ? item["Date"] === parseInt(date) : item["Date"] !== "");
+                //&& (date ? item["Date"] === parseInt(date) : item["Date"] !== "");
             });
             $('.loading').show();
             $('#tbListData tbody').empty();
