@@ -54,7 +54,7 @@ namespace DATN.Controllers
                         PracticeGroupID = Guid.Parse(worksheet.Cells[row, 2].Value.ToString()),
                         PracticeShiftID = Guid.Parse(worksheet.Cells[row, 3].Value.ToString()),
                         PracticalLaboratoryID = Guid.Parse(worksheet.Cells[row, 4].Value.ToString()),
-                        Date = DateTime.Parse(worksheet.Cells[row, 5].Value.ToString()),
+                        Date = int.Parse(worksheet.Cells[row, 5].Value.ToString()),
                         SemesterID = Guid.Parse(worksheet.Cells[row, 6].Value.ToString()),
                         SchoolYearID = Guid.Parse(worksheet.Cells[row, 7].Value.ToString()),
                         Description = worksheet.Cells[row, 8].Value.ToString(),

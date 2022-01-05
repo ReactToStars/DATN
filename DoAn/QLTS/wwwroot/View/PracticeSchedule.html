@@ -247,10 +247,10 @@
                             <select class="cbx_header info__type__emp" id="cbx-practicalLaboratory" fieldName="PracticalLaboratoryID">
                                 <option value="">---Vui lòng chọn phòng thực hành học---</option>
                             </select>
-                            <select class="cbx_header info__type__emp" id="cbx-date" fieldName="Date">
+                            <!--<select class="cbx_header info__type__emp" id="cbx-date" fieldName="Date">
                                 <option value="">--Chọn ngày--</option>
-                            </select>
-                            <!--<select class=" cbx_header info__type__emp" id="cbx-date" fieldName="Date">
+                            </select>-->
+                            <select class=" cbx_header info__type__emp" id="cbx-date" fieldName="Date">
                                 <option value="">---Vui lòng chọn ngày thực hành---</option>
                                 <option value="0">Thứ 2</option>
                                 <option value="1">Thứ 3</option>
@@ -259,7 +259,7 @@
                                 <option value="4">Thứ 6</option>
                                 <option value="5">Thứ 7</option>
                                 <option value="6">Chủ nhật</option>
-                            </select>-->
+                            </select>
                         </div>
                         <div class="box_upload">
                             <span>Vui lòng chọn file: </span>
@@ -288,7 +288,7 @@
                                             <!--<th fieldName="PracticeGroupName" class="text-align-left" style="width:10%">Nhóm</th>-->
                                             <th fieldName="PracticeShiftName" class="text-align-left" style="width:10%">Ca</th>
                                             <th fieldName="PracticalLaboratoryName" class="text-align-left" style="width:10%">Phòng</th>
-                                            <th fieldName="Date" fomatType="ddmmyyyy" class="text-align-left" style="width:10%">Ngày</th>
+                                            <th fieldName="Date" fomatType="day" class="text-align-left" style="width:10%">Ngày</th>
                                             <!--<th fieldName="StartTime" fomatType="ddmmyyyy" class="text-align-left" style="width:10%">Thời gian bắt đầu</th>
                                             <th fieldName="EndTime" fomatType="ddmmyyyy" class="text-align-left" style="width:10%">Thời gian kết thúc</th>-->
                                             <th fieldName="Status" fomatType="practiceScheduleStatus" class="text-align-left" style="width:10%">Trạng thái</th>
@@ -331,8 +331,8 @@
                                             </div>
                                             <div class=" sub-content" style="width:100%">
                                                 <div class="sub-title">Ngày <span>*</span></div>
-                                                <input type="date" class="input-text info__type__emp" fieldName="Date" dataType="date" tabindex="4" required />
-                                                <!--<select class="cbx_date info__type__emp" fieldName="Date" tabindex="4" required>
+                                                <!--<input type="date" class="input-text info__type__emp" fieldName="Date" dataType="date" tabindex="4" required />-->
+                                                <select class="cbx_date info__type__emp" fieldName="Date" tabindex="4" required>
                                                     <option>-- Chọn ngày thực hành --</option>
                                                     <option value="0">Thứ 2</option>
                                                     <option value="1">Thứ 3</option>
@@ -341,7 +341,7 @@
                                                     <option value="4">Thứ 6</option>
                                                     <option value="5">Thứ 7</option>
                                                     <option value="6">Chủ nhật</option>
-                                                </select>-->
+                                                </select>
                                             </div>
                                         </div>
                                         <div class=" parent-sub-content">

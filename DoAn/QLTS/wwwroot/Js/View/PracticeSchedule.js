@@ -60,21 +60,7 @@ class PracticeScheduleJS extends BaseJS {
                 connectType: 'application/json'
             }).done(function (response) {
                 //load Date
-                $.each(response, function (index, item) {
-                    var date = new Date(item['Date']);
-                    var day = date.getDate();
-                    var month = date.getMonth() + 1;
-                    var year = date.getFullYear();
-                    if (day < 10) {
-                        day = '0' + day;
-                    }
-                    if (month < 10) {
-                        month = '0' + month;
-                    }
-                    date = day + '/' + month + '/' + year;
-                    var option = `<option value="${item['Date']}">${date}</option>`;
-                    $('#cbx-date').append(option);
-                });
+                //loadDate(response);
 
                 //load Data
                 let responses = [];
@@ -489,8 +475,8 @@ class PracticeScheduleJS extends BaseJS {
             listData = cacheData.filter(function (item) {
                 return item["PracticalLaboratoryName"].toLowerCase().includes(value.toLowerCase())
                     && (practicalLaboratoryID ? item["PracticalLaboratoryID"] === practicalLaboratoryID : item["PracticalLaboratoryID"] !== practicalLaboratoryID)
-                    && (date ? item["Date"] === date : item["Date"] !== date);
-                    //&& (date ? item["Date"] === parseInt(date) : item["Date"] !== "");
+                    //&& (date ? item["Date"] === date : item["Date"] !== date);
+                    && (date ? item["Date"] === parseInt(date) : item["Date"] !== "");
             });
             $('.loading').show();
             $('#tbListData tbody').empty();
@@ -576,7 +562,8 @@ function getObject(id) {
     object["PracticeGroupID"] = $('.txt_practiceGroupID').attr('value');
     object['PracticeShiftID'] = $('.cbx_practiceShift').val();
     object['PracticalLaboratoryID'] = $('.cbx_practicalLaboratory').val();
-    object['Date'] = $('input[fieldName="Date"]').val();
+    //object['Date'] = $('input[fieldName="Date"]').val();
+    object['Date'] = parseInt($('.cbx_date').val());
     object['SemesterID'] = $('.cbx_semester').val();
     object['SchoolYearID'] = $('.cbx_schoolYear').val();
     object['Status'] = parseInt($('.cbx_status').val());
@@ -594,13 +581,31 @@ function resetDialog() {
     $(".txt_practiceGroup ").find('option:eq(0)').prop('selected', true);
     $(".cbx_practiceShift ").find('option:eq(0)').prop('selected', true);
     $(".cbx_practicalLaboratory ").find('option:eq(0)').prop('selected', true);
-    //$(".cbx_date ").find('option:eq(0)').prop('selected', true);
+    $(".cbx_date ").find('option:eq(0)').prop('selected', true);
     $(".cbx_schoolYear ").find('option:eq(0)').prop('selected', true);
     $(".cbx_semester").find('option:eq(0)').prop('selected', true);
     $(".cbx_status ").find('option:eq(0)').prop('selected', true);
     //$(".cbx_class option,.cbx_student option").remove();
     //$('.cbx_class,.cbx_student ').attr("disabled", "disabled");
     $('input,select,textarea').removeClass('border-red');
+}
+
+function loadDate(response) {
+    $.each(response, function (index, item) {
+        var date = new Date(item['Date']);
+        var day = date.getDate();
+        var month = date.getMonth() + 1;
+        var year = date.getFullYear();
+        if (day < 10) {
+            day = '0' + day;
+        }
+        if (month < 10) {
+            month = '0' + month;
+        }
+        date = day + '/' + month + '/' + year;
+        var option = `<option value="${item['Date']}">${date}</option>`;
+        $('#cbx-date').append(option);
+    });
 }
 
 var recordId = null;

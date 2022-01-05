@@ -26,7 +26,7 @@ class PracticeSchedulesJS extends BaseJS {
         this.loadSchoolYear();
         this.loadPracticeGroup();
         this.loadPracticalLaboratory();
-        this.loadDate();
+        //this.loadDate();
     }
 
     setDataUrl() {
@@ -543,7 +543,7 @@ class PracticeSchedulesJS extends BaseJS {
                 return (item["FullName"].toLowerCase()).includes(value.toLowerCase())
                     && (schoolyearId ? item["SchoolYearID"] === schoolyearId : item["SchoolYearID"] != schoolyearId)
                     && (semesterId ? item["SemesterID"] === semesterId : item["SemesterID"] != semesterId)
-                    && (date ? item["Date"] === date : item["Date"] !== date)
+                    && (date ? item["Date"] === parseInt(date) : item["Date"] !== "")
                     && (teacherId ? item["TeacherID"] === teacherId : item["TeacherID"] != teacherId);
             });
             $('.loading').show();
@@ -571,7 +571,8 @@ function getObject(id) {
         object['PracticeShiftID'] = $('.cbx_practiceShift').val();
         object['PracticalLaboratoryID'] = $('.cbx_practicalLaboratory').val();
         object['FullName'] = $('input[fieldName="FullName"]').val();
-        object['Date'] = $('input[fieldName="Date"]').val();
+        //object['Date'] = $('input[fieldName="Date"]').val();
+        object['Date'] = parseInt($('.cbx_date').val());
         object['SemesterID'] = $('.cbx_semester').val();
         object['SchoolYearID'] = $('.cbx_schoolYear').val();
         object['StartTime'] = $('input[fieldName="StartTime"]').val();
@@ -614,7 +615,7 @@ function resetDialog() {
     $(".txt_practiceGroup ").find('option:eq(0)').prop('selected', true);
     $(".cbx_practiceShift ").find('option:eq(0)').prop('selected', true);
     $(".cbx_practicalLaboratory ").find('option:eq(0)').prop('selected', true);
-    //$(".cbx_date ").find('option:eq(0)').prop('selected', true);
+    $(".cbx_date ").find('option:eq(0)').prop('selected', true);
     $(".cbx_schoolYear ").find('option:eq(0)').prop('selected', true);
     $(".cbx_semester").find('option:eq(0)').prop('selected', true);
     $(".cbx_status ").find('option:eq(0)').prop('selected', true);

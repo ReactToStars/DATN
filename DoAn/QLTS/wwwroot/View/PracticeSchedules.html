@@ -245,7 +245,7 @@
                             <select class="cbx_header info__type__emp" id="cbx-semester" fieldName="SemesterID">
                                 <option value="">--Chọn học kỳ--</option>
                             </select>
-                            <!--<select class="cbx_header info__type__emp" id="cbx-date">
+                            <select class="cbx_header info__type__emp" id="cbx-date">
                                 <option value="">--Chọn Ngày--</option>
                                 <option value="0">Thứ 2</option>
                                 <option value="1">Thứ 3</option>
@@ -254,10 +254,10 @@
                                 <option value="4">Thứ 6</option>
                                 <option value="5">Thứ 7</option>
                                 <option value="6">Chủ nhật</option>
-                            </select>-->
-                            <select class="cbx_header info__type__emp" id="cbx-date" fieldName="Date">
-                                <option value="">--Chọn ngày--</option>
                             </select>
+                            <!--<select class="cbx_header info__type__emp" id="cbx-date" fieldName="Date">
+                                <option value="">--Chọn ngày--</option>
+                            </select>-->
                             <select class="cbx_header info__type__emp" id="cbx-teacher" fieldName="TeacherID">
                                 <option value="">--Chọn Giảng viên--</option>
                             </select>
@@ -279,9 +279,9 @@
                                             <th fieldName="PracticeGroupName" class="text-align-left" style="width:5%">Nhóm</th>
                                             <th fieldName="PracticalLaboratoryName" class="text-align-left" style="width:10%">Phòng</th>
                                             <th fieldName="FullName" class="text-align-left" style="width:10%">Giảng viên</th>
-                                            <th fieldName="Date" fomatType="ddmmyyyy" class="text-align-left" style="width:5%">Ngày</th>
-                                            <th fieldName="StartTime" class="text-align-left" style="width:5%">Thời gian bắt đầu</th>
-                                            <th fieldName="EndTime" class="text-align-left" style="width:5%">Thời gian kết thúc</th>
+                                            <th fieldName="Date" fomatType="day" class="text-align-left" style="width:5%">Ngày</th>
+                                            <th fieldName="StartTime" fomatType="ddmmyyyy" class="text-align-left" style="width:5%">Thời gian bắt đầu</th>
+                                            <th fieldName="EndTime" fomatType="ddmmyyyy" class="text-align-left" style="width:5%">Thời gian kết thúc</th>
                                             <th fieldName="Status" fomatType="practiceScheduleStatus" class="text-align-left" style="width:5%">Trạng thái</th>
                                             <th fieldName="SemesterName" class="text-align-left" style="width:5%">Kỳ</th>
                                             <th fieldName="SchoolYearName" class="text-align-left" style="width:10%">Năm</th>
@@ -343,8 +343,8 @@
                                         <div class=" parent-sub-content">
                                             <div class=" sub-content" style="width:100%">
                                                 <div class="sub-title">Ngày <span>*</span></div>
-                                                <input type="date" class="input-text info__type__emp" fieldName="Date" dataType="date" tabindex="7" disabled />
-                                                <!--<select class="cbx_date info__type__emp" fieldName="Date" tabindex="9" disabled>
+                                                <!--<input type="date" class="input-text info__type__emp" fieldName="Date" dataType="date" tabindex="7" disabled />-->
+                                                <select class="cbx_date info__type__emp" fieldName="Date" tabindex="7">
                                                     <option>-- Chọn ngày thực hành --</option>
                                                     <option value="0">Thứ 2</option>
                                                     <option value="1">Thứ 3</option>
@@ -353,7 +353,7 @@
                                                     <option value="4">Thứ 6</option>
                                                     <option value="5">Thứ 7</option>
                                                     <option value="6">Chủ nhật</option>
-                                                </select>-->
+                                                </select>
                                             </div>
                                             <div class=" sub-content" style="width:100%">
                                                 <div class="sub-title">Trạng thái </div>
@@ -366,11 +366,11 @@
                                         <div class=" parent-sub-content">
                                             <div class="sub-content" style="width: 100%">
                                                 <div class="sub-title">Thời gian bắt đầu</div>
-                                                <input type="time" class="input-text info__type__emp" fieldName="StartTime" tabindex="9" />
+                                                <input type="date" class="input-text info__type__emp" fieldName="StartTime" tabindex="9" />
                                             </div>
                                             <div class="sub-content" style="width: 100%">
                                                 <div class="sub-title">Thời gian kết thúc</div>
-                                                <input type="time" class="input-text info__type__emp" fieldName="EndTime" tabindex="10" />
+                                                <input type="date" class="input-text info__type__emp" fieldName="EndTime" tabindex="10" />
                                             </div>
                                         </div>
                                         <div class="parent-sub-content">

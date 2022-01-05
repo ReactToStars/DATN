@@ -237,7 +237,7 @@ class AttendanceJS extends BaseJS {
                 $('.grid-infor table td[fieldName="PracticeGroupName"]').text(`${response["PracticeGroupName"]}`);
                 $('.grid-infor table td[fieldName="PracticalLaboratoryName"]').text(`${response["PracticalLaboratoryName"]}`);
                 $('.grid-infor table td[fieldName="FullName"]').text(`${response["FullName"]}`);
-                var date = formatDate(response["Date"]);
+                var date = formatDay(response["Date"]);
                 $('.grid-infor table td[fieldName="Date"]').text(`${date}`);
                 $('#absent').text(`${count}`);
             }).fail(function (response) {
