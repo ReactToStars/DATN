@@ -28,7 +28,7 @@ class DividePracticeGroupsJS extends BaseJS {
     }
 
     setDataUrl() {
-        this.getDataUrl = "/api/v1/practicegroup/";
+        this.getDataUrl = "/api/v1/DividePracticeGroups/";
         this.getCode = "";
     }
 
@@ -205,7 +205,7 @@ class DividePracticeGroupsJS extends BaseJS {
             try {
                 if (isvalidate.length == 0) {
                     $.ajax({
-                        url: "/api/v1/practicegroup",
+                        url: "/api/v1/DividePracticeGroups",
                         method: "POST",
                         data: JSON.stringify(object),
                         dataType: 'json',
@@ -221,7 +221,7 @@ class DividePracticeGroupsJS extends BaseJS {
                             var msg = response.Messenger;
                             showMessengerSuccess(msg);
                             dividepracticegroupsJS.loadData();
-                            getMaxCode("/api/v1/practicegroup")
+                            getMaxCode("/api/v1/DividePracticeGroups")
                         }
                     }).fail(function (response) {
                         //console.log(response);
@@ -276,7 +276,7 @@ class DividePracticeGroupsJS extends BaseJS {
     btnDeleteOnClick() {
         try {
             $.ajax({
-                url: "/api/v1/practicegroup/" + recordId,
+                url: "/api/v1/DividePracticeGroups/" + recordId,
                 method: "DELETE",
                 //data: null,
                 dataType: 'json',
@@ -291,7 +291,7 @@ class DividePracticeGroupsJS extends BaseJS {
                     dividepracticegroupsJS.loadData();
                     var msg = response.Messenger;
                     showMessengerSuccess(msg);
-                    getMaxCode("/api/v1/practicegroup")
+                    getMaxCode("/api/v1/DividePracticeGroups")
                 }
             }).fail(function (response) {
                 console.log(response);
@@ -322,7 +322,7 @@ class DividePracticeGroupsJS extends BaseJS {
             try {
                 if (isvalidate.length == 0) {
                     $.ajax({
-                        url: "/api/v1/practicegroup",
+                        url: "/api/v1/DividePracticeGroups",
                         method: "PUT",
                         data: JSON.stringify(object),
                         dataType: 'json',
@@ -338,7 +338,7 @@ class DividePracticeGroupsJS extends BaseJS {
                             var msg = response.Messenger;
                             showMessengerSuccess(msg);
                             dividepracticegroupsJS.loadData();
-                            getMaxCode("/api/v1/practicegroup")
+                            getMaxCode("/api/v1/DividePracticeGroups")
                         }
                     }).fail(function (response) {
                         //console.log(response);
@@ -393,6 +393,7 @@ function resetDialog() {
     $('textarea').val("");
     $('input[dataType="date"]').val("mm/dd/yyyy");
     $('input').removeClass('border-red');
+    $('select').find('option:eq(0)').prop('selected', true);
 }
 
 function getMaxCode(getDataUrl) {

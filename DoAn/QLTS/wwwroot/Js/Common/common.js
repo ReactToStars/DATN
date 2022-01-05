@@ -554,7 +554,6 @@ Enum = {
         Success: 200,
         NotImplemented: 501,
         MethodNotAllowed: 405,
-        Request: 300,
     }
 }
 

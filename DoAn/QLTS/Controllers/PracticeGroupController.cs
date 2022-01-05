@@ -20,21 +20,21 @@ namespace DATN.Controllers
             _baseService = baseService;
         }
         #endregion
-        public override string GetRole()
-        {
-            string role = "Admin";
-            var roleAcount = HttpContext.Session.GetString("Role");
-            if (roleAcount == "Teacher")
-            {
-                role = "Teacher";
-            }
-            if (roleAcount != "Teacher" && roleAcount != "Admin")
-            {
-                role = "";
-            }
+        //public override string GetRole()
+        //{
+        //    string role = "Admin";
+        //    var roleAcount = HttpContext.Session.GetString("Role");
+        //    if (roleAcount == "Teacher")
+        //    {
+        //        role = "Teacher";
+        //    }
+        //    if (roleAcount != "Teacher" && roleAcount != "Admin")
+        //    {
+        //        role = "";
+        //    }
 
 
-            return role;
-        }
+        //    return role;
+        //}
     }
 }

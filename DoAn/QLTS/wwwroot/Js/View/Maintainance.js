@@ -40,11 +40,7 @@ class MaintainanceJS extends BaseJS {
             this.filterData();
         }.bind(this));
 
-        $('#cbx_practicalLaboratory').on('change', function () {
-            this.filterData();
-        }.bind(this));
-
-        $('#cbx_technicalStaff').on('change', function () {
+        $('.cbx_header').on('change', function () {
             this.filterData();
         }.bind(this));
 
@@ -203,6 +199,7 @@ class MaintainanceJS extends BaseJS {
                 $.each(response, function (index, item) {
                     var option = `<option value=` + item['PracticalLaboratoryID'] + `>` + item['PracticalLaboratoryName'] + `</option>`;
                     $('.cbx_practicalLaboratory').append(option);
+                    $('#cbx_practicalLaboratory').append(option);
                 })
             }).fail(function (response) {
                 console.log(response);
@@ -230,6 +227,7 @@ class MaintainanceJS extends BaseJS {
                 $.each(response, function (index, item) {
                     var option = `<option value=` + item['TechnicalStaffID'] + `>` + item['FullName'] + `</option>`;
                     $('.cbx_technicalStaff').append(option);
+                    $('#cbx_technicalStaff').append(option);
                 })
             }).fail(function (response) {
                 console.log(response);
@@ -425,13 +423,16 @@ class MaintainanceJS extends BaseJS {
             var value = $('#txt-search').val();
             var practicalLaboratoryId = $('#cbx_practicalLaboratory option:selected ').val();
             var technicalStaffId = $('#cbx_technicalStaff option:selected ').val();
-            console.log(value);
+            var maintainanceStatus = $('#cbx_maintainanceStatus option:selected ').val();
+            console.log(maintainanceStatus);
             listData = cacheData.filter(function (item) {
-                return (item["PracticalLaboratoryName"].toLowerCase().includes(value.toLowerCase())
+                return (item["PracticalLaboratoryCode"].toLowerCase().includes(value.toLowerCase())
+                    || item["PracticalLaboratoryName"].toLowerCase().includes(value.toLowerCase())
                     || item["TechnicalStaffCode"].toLowerCase().includes(value.toLowerCase())
                     || item["FullName"].toLowerCase().includes(value.toLowerCase()))
                     && (practicalLaboratoryId ? item["PracticalLaboratoryID"] === practicalLaboratoryId : item["PracticalLaboratoryID"] != practicalLaboratoryId)
-                    && (technicalStaffId ? item["TechnicalStaffID"] === technicalStaffId : item["TechnicalStaffID"] != technicalStaffId);
+                    && (technicalStaffId ? item["TechnicalStaffID"] === technicalStaffId : item["TechnicalStaffID"] != technicalStaffId)
+                    && (maintainanceStatus ? item["MaintainanceStatus"] === parseInt(maintainanceStatus) : item["MaintainanceStatus"] != parseInt(maintainanceStatus));
             });
 
             $('.loading').show();
